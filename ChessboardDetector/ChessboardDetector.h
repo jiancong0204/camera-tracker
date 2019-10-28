@@ -3,7 +3,6 @@
 
 using namespace std;
 using namespace cv;
-extern Chessboard chessboard;
 
 typedef struct FindCornersResult 
 {
@@ -35,11 +34,11 @@ typedef struct ChessboardDetectorResult
 class ChessboardDetector
 {
 public:
-	ChessboardDetector();
+	ChessboardDetector(Chessboard chessboard);
 	~ChessboardDetector() {};
-	FindCornersResult findChessboardCorners(Mat image);
+	FindCornersResult findChessboardCorners(Mat image, Chessboard chessboard);
 	PerspectiveResult perspectiveChessboard(FindCornersResult corners);
-	ChessboardDetectorResult detectionResult(Mat originalImage);
+	ChessboardDetectorResult detectionResult(Mat originalImage, Chessboard chessboard);
 	ChessboardDetectorResult getResult();
 	
 private:

@@ -7,7 +7,6 @@ using namespace std;
 using namespace cv;
 using namespace zbar;
 extern ChessboardDetector detector;
-extern ChessboardDetectorResult detectionResult;
 
 
 typedef struct CodeInfo
@@ -36,13 +35,13 @@ protected:
 class BarcodeScanner:public CodeScanner
 {
 public:
-	BarcodeScanner();
+	BarcodeScanner(ChessboardDetectorResult detection);
 	~BarcodeScanner() {};
 };
 
 class QrcodeScanner:public CodeScanner
 {
 public:
-	QrcodeScanner();
+	QrcodeScanner(ChessboardDetectorResult detectionResult);
 	~QrcodeScanner() {};
 };
