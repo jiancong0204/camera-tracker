@@ -13,23 +13,41 @@ using namespace cv;
 int main()
 {
 	Chessboard chessboard = Chessboard(9, 7, 20);
+	ChessboardDetector detector = ChessboardDetector(chessboard);
+	ChessboardDetectorResult detectionResult = detector.getResult();
+
+	////////////////////////////////////////////////////////////////////
 	Grid gridPoints;
 	int number = chessboard.getHeight() * chessboard.getWidth();
 	vector<Point3f> grid(number);
 	grid = gridPoints.computeGrid(chessboard);
-	
-	ChessboardDetector detector = ChessboardDetector(chessboard);
-	ChessboardDetectorResult detectionResult = detector.getResult();
 	vector<Point2f> corners(number);
 	corners = detectionResult.corners;
-	
 	JsonFile jsonFile;
 	json cameraParams = jsonFile.loadJson("camera_parameters.json");
-	vector<float> cameraMatrix = cameraParams["matrix"];
-	vector<float> distCoeffs = cameraParams["distortion"];
+	double cam[9];
+	int k = 0;
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			cam[k] = cameraParams["matrix"][i][j];
+			k++;
+		}
+	}
+	double dist[5];
+	for (int i = 0; i < 5; i++)
+	{
+		dist[i] = cameraParams["distortion"][0][i];
+	}
 	Mat raux, taux;
-	solvePnP(grid, corners, cameraMatrix, distCoeffs, raux, taux);
+	Mat camera_matrix = Mat(3, 3, CV_64FC1, cam);
+	Mat distortion_coefficients = Mat(5, 1, CV_64FC1, dist);
+	solvePnP(grid, corners, camera_matrix, distortion_coefficients, raux, taux);
 	cout << raux << endl << endl;
+	cout << taux << endl << endl;
+	////////////////////////////////////////////////////////////////////
+
 	BarcodeScanner barcode = BarcodeScanner(detectionResult);
 	QrcodeScanner qrcode = QrcodeScanner(detectionResult);
 	namedWindow("Perspective", WINDOW_NORMAL);
