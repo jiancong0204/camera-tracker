@@ -3,13 +3,13 @@
 #include <iostream>
 
 using namespace nlohmann;
+using namespace std;
 
-class CameraParams
+class JsonFile
 {
 private:
 	json params;
 
 public:
-	CameraParams();
-	json getCameraParams();
+	json loadJson(string filename);
 };
