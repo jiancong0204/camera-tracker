@@ -70,7 +70,7 @@ CodeInfo CodeScanner::getCodeInfo(ChessboardDetectorResult detection, float find
 //}
 
 
-BarcodeScanner::BarcodeScanner()
+BarcodeScanner::BarcodeScanner(ChessboardDetectorResult detectionResult)
 {
 	CodeInfo barcodeInfo = getCodeInfo(detectionResult, -1.1, 1.2, 14.5, 1.85);
 
@@ -91,7 +91,7 @@ BarcodeScanner::BarcodeScanner()
 
 }
 
-QrcodeScanner::QrcodeScanner()
+QrcodeScanner::QrcodeScanner(ChessboardDetectorResult detectionResult)
 {
 	CodeInfo qrcodeInfo = getCodeInfo(detectionResult, 9.3, -5, 4.1, 4.1);
 	if (qrcodeInfo.originX > detectionResult.perspective.cols || qrcodeInfo.originY > detectionResult.perspective.rows || qrcodeInfo.endX < 0 || qrcodeInfo.endY < 0) {

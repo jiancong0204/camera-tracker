@@ -128,13 +128,13 @@
     <ClCompile Include="CameraTracker.cpp" />
     <ClCompile Include="Chessboard.cpp" />
     <ClCompile Include="ChessboardDetector.cpp" />
-    <ClCompile Include="ChessboardDetectorParams.cpp" />
+    <ClCompile Include="CameraParams.cpp" />
     <ClCompile Include="Scanner.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Chessboard.h" />
     <ClInclude Include="ChessboardDetector.h" />
-    <ClInclude Include="ChessboardDetectorParams.h" />
+    <ClInclude Include="CameraParams.h" />
     <ClInclude Include="Scanner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

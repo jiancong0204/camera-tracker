@@ -34,43 +34,31 @@ SOFTWARE.
 #define NLOHMANN_JSON_VERSION_MINOR 7
 #define NLOHMANN_JSON_VERSION_PATCH 0
 
-#include <algorithm> // all_of, find, for_each
-#include <cassert> // assert
-#include <ciso646> // and, not, or
-#include <cstddef> // nullptr_t, ptrdiff_t, size_t
-#include <functional> // hash, less
-#include <initializer_list> // initializer_list
-#include <iosfwd> // istream, ostream
-#include <iterator> // random_access_iterator_tag
-#include <memory> // unique_ptr
-#include <numeric> // accumulate
-#include <string> // string, stoi, to_string
-#include <utility> // declval, forward, move, pair, swap
-#include <vector> // vector
 
-#include <nlohmann/adl_serializer.hpp>
-#include <nlohmann/detail/conversions/from_json.hpp>
-#include <nlohmann/detail/conversions/to_json.hpp>
-#include <nlohmann/detail/exceptions.hpp>
-#include <nlohmann/detail/input/binary_reader.hpp>
-#include <nlohmann/detail/input/input_adapters.hpp>
-#include <nlohmann/detail/input/lexer.hpp>
-#include <nlohmann/detail/input/parser.hpp>
-#include <nlohmann/detail/iterators/internal_iterator.hpp>
-#include <nlohmann/detail/iterators/iter_impl.hpp>
-#include <nlohmann/detail/iterators/iteration_proxy.hpp>
-#include <nlohmann/detail/iterators/json_reverse_iterator.hpp>
-#include <nlohmann/detail/iterators/primitive_iterator.hpp>
-#include <nlohmann/detail/json_pointer.hpp>
-#include <nlohmann/detail/json_ref.hpp>
-#include <nlohmann/detail/macro_scope.hpp>
-#include <nlohmann/detail/meta/cpp_future.hpp>
-#include <nlohmann/detail/meta/type_traits.hpp>
-#include <nlohmann/detail/output/binary_writer.hpp>
-#include <nlohmann/detail/output/output_adapters.hpp>
-#include <nlohmann/detail/output/serializer.hpp>
-#include <nlohmann/detail/value_t.hpp>
-#include <nlohmann/json_fwd.hpp>
+
+#include "nlohmann/adl_serializer.hpp"
+#include "nlohmann/detail/conversions/from_json.hpp"
+#include "nlohmann/detail/conversions/to_json.hpp"
+#include "nlohmann/detail/exceptions.hpp"
+#include "nlohmann/detail/input/binary_reader.hpp"
+#include "nlohmann/detail/input/input_adapters.hpp"
+#include "nlohmann/detail/input/lexer.hpp"
+#include "nlohmann/detail/input/parser.hpp"
+#include "nlohmann/detail/iterators/internal_iterator.hpp"
+#include "nlohmann/detail/iterators/iter_impl.hpp"
+#include "nlohmann/detail/iterators/iteration_proxy.hpp"
+#include "nlohmann/detail/iterators/json_reverse_iterator.hpp"
+#include "nlohmann/detail/iterators/primitive_iterator.hpp"
+#include "nlohmann/detail/json_pointer.hpp"
+#include "nlohmann/detail/json_ref.hpp"
+#include "nlohmann/detail/macro_scope.hpp"
+#include "nlohmann/detail/meta/cpp_future.hpp"
+#include "nlohmann/detail/meta/type_traits.hpp"
+#include "nlohmann/detail/output/binary_writer.hpp"
+#include "nlohmann/detail/output/output_adapters.hpp"
+#include "nlohmann/detail/output/serializer.hpp"
+#include "nlohmann/detail/value_t.hpp"
+#include "nlohmann/json_fwd.hpp"
 
 /*!
 @brief namespace for Niels Lohmann
@@ -8129,6 +8117,6 @@ inline nlohmann::json::json_pointer operator "" _json_pointer(const char* s, std
     return nlohmann::json::json_pointer(std::string(s, n));
 }
 
-#include <nlohmann/detail/macro_unscope.hpp>
+#include "nlohmann/detail/macro_unscope.hpp"
 
 #endif  // INCLUDE_NLOHMANN_JSON_HPP_

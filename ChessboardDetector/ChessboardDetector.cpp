@@ -6,11 +6,11 @@
 using namespace std;
 using namespace cv;
 
-ChessboardDetector::ChessboardDetector()
+ChessboardDetector::ChessboardDetector(Chessboard chessboard)
 {
 	Mat originalImage = imread("Images/12.jpg"); // , CV_8UC1);
 	// 8-bit/single-channel image (adaptiveThreshold() can only process 8-bit single-channel image) 
-	deResult = detectionResult(originalImage);
+	deResult = detectionResult(originalImage, chessboard);
 	this->deResult = deResult;
 }
 
@@ -19,12 +19,12 @@ ChessboardDetectorResult ChessboardDetector::getResult()
 	return this->deResult;
 }
 
-ChessboardDetectorResult ChessboardDetector::detectionResult(Mat originalImage)
+ChessboardDetectorResult ChessboardDetector::detectionResult(Mat originalImage, Chessboard chessboard)
 {
 	ChessboardDetectorResult detectionResult;
 	FindCornersResult corners;
 	PerspectiveResult result;
-	corners = findChessboardCorners(originalImage);
+	corners = findChessboardCorners(originalImage, chessboard);
 	result = perspectiveChessboard(corners);
 	detectionResult.success = corners.success;
 	detectionResult.corners = corners.corners;
@@ -46,7 +46,7 @@ PerspectiveResult ChessboardDetector::perspectiveChessboard(FindCornersResult co
 	return result;
 }
 
-FindCornersResult ChessboardDetector::findChessboardCorners(Mat originalImage)
+FindCornersResult ChessboardDetector::findChessboardCorners(Mat originalImage, Chessboard chessboard)
 {
 	FindCornersResult corners;
 	corners.image = _preprocess(originalImage);
