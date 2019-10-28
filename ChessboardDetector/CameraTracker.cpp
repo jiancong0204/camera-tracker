@@ -12,9 +12,6 @@ using namespace cv;
 
 int main()
 {
-	JsonFile jsonFile;
-	json params = jsonFile.loadJson("camera_parameters.json");
-	cout << params["distortion"] << endl << endl;
 	Chessboard chessboard = Chessboard(9, 7, 20);
 	Grid gridPoints;
 	int number = chessboard.getHeight() * chessboard.getWidth();
@@ -23,7 +20,16 @@ int main()
 	
 	ChessboardDetector detector = ChessboardDetector(chessboard);
 	ChessboardDetectorResult detectionResult = detector.getResult();
-
+	vector<Point2f> corners(number);
+	corners = detectionResult.corners;
+	
+	JsonFile jsonFile;
+	json cameraParams = jsonFile.loadJson("camera_parameters.json");
+	vector<float> cameraMatrix = cameraParams["matrix"];
+	vector<float> distCoeffs = cameraParams["distortion"];
+	Mat raux, taux;
+	solvePnP(grid, corners, cameraMatrix, distCoeffs, raux, taux);
+	cout << raux << endl << endl;
 	BarcodeScanner barcode = BarcodeScanner(detectionResult);
 	QrcodeScanner qrcode = QrcodeScanner(detectionResult);
 	namedWindow("Perspective", WINDOW_NORMAL);
