@@ -33,6 +33,9 @@
     <ClCompile Include="JsonFile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Calibration.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Chessboard.h">
@@ -48,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="JsonFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Calibration.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
