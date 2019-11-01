@@ -1,15 +1,9 @@
 #include <iostream>
 #include "Grid.h"
-#include "Chessboard.h"
-#include "ChessboardDetector.h"
-#include "JsonFile.h"
 
-vector<Point3f> Grid::computeGrid(Chessboard chessboard)
+vector<Point3f> Grid::computeGrid(int height, int width, int size)
 {
-	height = chessboard.getHeight();
-	width = chessboard.getWidth();
-	size = chessboard.getSize();
-	
+
 	int half_height, half_width;
 	half_height = (int)floor(height / 2);
 	half_width = (int)floor(width / 2);

@@ -125,6 +125,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Calibration.cpp" />
     <ClCompile Include="CameraTracker.cpp" />
     <ClCompile Include="Chessboard.cpp" />
     <ClCompile Include="ChessboardDetector.cpp" />
@@ -133,6 +134,7 @@
     <ClCompile Include="Scanner.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Calibration.h" />
     <ClInclude Include="Chessboard.h" />
     <ClInclude Include="ChessboardDetector.h" />
     <ClInclude Include="JsonFile.h" />
