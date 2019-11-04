@@ -1,12 +1,6 @@
-#include "Chessboard.h"
 #include "ChessboardDetector.h"
 #include "Scanner.h"
 #include "Calibration.h"
-#include <iostream>
-#include <opencv.hpp>
-
-using namespace std;
-using namespace cv;
 
 
 int main()
@@ -49,17 +43,18 @@ int main()
 	//Mat camera_matrix = Mat(3, 3, CV_64FC1, cam);
 	//Mat distortion_coefficients = Mat(5, 1, CV_64FC1, dist);
 	//solvePnP(grid, corners, camera_matrix, distortion_coefficients, raux, taux);
-	PoseEstimation poseEstimation = PoseEstimation(chessboard.getHeight(), chessboard.getWidth(), chessboard.getSize(), detectionResult.corners);
 
-	Mat raux = poseEstimation.getRvecs();
-	Mat taux = poseEstimation.getTvecs();
-	cout << raux << endl << endl;
-	cout << taux << endl << endl;
+	PoseEstimation poseEstimation = PoseEstimation(chessboard.getGrid(), detectionResult.corners);
+
+	cv::Mat raux = poseEstimation.getRvecs();
+	cv::Mat taux = poseEstimation.getTvecs();
+	std::cout << raux << std::endl << std::endl;
+	std::cout << taux << std::endl << std:: endl;
 	////////////////////////////////////////////////////////////////////
 
 	BarcodeScanner barcode = BarcodeScanner(detectionResult);
 	QrcodeScanner qrcode = QrcodeScanner(detectionResult);
-	namedWindow("Perspective", WINDOW_NORMAL);
+	cv::namedWindow("Perspective", cv::WINDOW_NORMAL);
 	imshow("Perspective", detectionResult.perspective);
-	waitKey();
+	cv::waitKey();
 }

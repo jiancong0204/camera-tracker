@@ -1,9 +1,8 @@
 #pragma once
 #include "nlohmann/json.hpp"
-#include <iostream>
+#include <fstream>
 
-using namespace nlohmann;
-using namespace std;
+using json = nlohmann::json;
 
 class JsonFile
 {
@@ -11,5 +10,5 @@ private:
 	json params;
 
 public:
-	json loadJson(string filename);
+	json loadJson(std::string filename);
 };
