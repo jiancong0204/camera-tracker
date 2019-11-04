@@ -1,30 +1,28 @@
 #pragma once
 #include "Chessboard.h"
-
-using namespace std;
-using namespace cv;
+#include <opencv.hpp>
 
 typedef struct FindCornersResult 
 {
 	bool success;
-	vector<Point2f> corners;
-	Mat image;
+	std::vector<cv::Point2f> corners;
+	cv::Mat image;
 } FindCornersResult;
 
 typedef struct PerspectiveResult
 {
-	vector<Point2f> boundingBox;
-	vector<Point2f> boundingRectangle;
-	Mat perspective;
+	std::vector<cv::Point2f> boundingBox;
+	std::vector<cv::Point2f> boundingRectangle;
+	cv::Mat perspective;
 } PerspectiveResult;
 
 typedef struct ChessboardDetectorResult 
 {
 	bool success;
-	vector<Point2f> corners;
-	vector<Point2f> boundingBox;
-	vector<Point2f> boundingRectangle;
-	Mat perspective;
+	std::vector<cv::Point2f> corners;
+	std::vector<cv::Point2f> boundingBox;
+	std::vector<cv::Point2f> boundingRectangle;
+	cv::Mat perspective;
 	float unitWidth;
 	float unitHeight;
 	// float scale;
@@ -36,17 +34,17 @@ class ChessboardDetector
 public:
 	ChessboardDetector(Chessboard chessboard);
 	~ChessboardDetector() {};
-	FindCornersResult findChessboardCorners(Mat image, Chessboard chessboard);
+	FindCornersResult findChessboardCorners(cv::Mat image, Chessboard chessboard);
 	PerspectiveResult perspectiveChessboard(FindCornersResult corners);
-	ChessboardDetectorResult detectionResult(Mat originalImage, Chessboard chessboard);
+	ChessboardDetectorResult detectionResult(cv::Mat originalImage, Chessboard chessboard);
 	ChessboardDetectorResult getResult();
 	
 private:
 	ChessboardDetectorResult deResult;
 	int maxAxis = 860;
-	Mat _preprocess(Mat original_image);
-	Mat _compute_perspective_transform(vector<Point2f> src, vector<Point2f> dst, Mat image);
-	vector<Point2f> _compute_bounding_box(vector<Point2f> corners);
-	vector<Point2f> _compute_bounding_rectangle(vector<Point2f> src);
+	cv::Mat _preprocess(cv::Mat original_image);
+	cv::Mat _compute_perspective_transform(std::vector<cv::Point2f> src, std::vector<cv::Point2f> dst, cv::Mat image);
+	std::vector<cv::Point2f> _compute_bounding_box(std::vector<cv::Point2f> corners);
+	std::vector<cv::Point2f> _compute_bounding_rectangle(std::vector<cv::Point2f> src);
 	
 };

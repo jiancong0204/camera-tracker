@@ -1,27 +1,25 @@
 #include "Calibration.h"
 
-PoseEstimation::PoseEstimation(int height, int width, float size, vector<Point2f> detectedCorners)
+PoseEstimation::PoseEstimation(std::vector<cv::Point3f> grid, std::vector<cv::Point2f> detectedCorners)
 {
 	double cam[9];
 	double dist[5];
-	Grid gridPoints;
-	this->grid = gridPoints.computeGrid(height, width, size);
 	JsonFile jsonFile;
 	json cameraParams = jsonFile.loadJson("camera_parameters.json");
 	_get_camera_matrix(cameraParams, cam);
 	_get_distortion_coefficients(cameraParams, dist);
-	Mat cameraMatrix = Mat(3, 3, CV_64FC1, cam);
-	Mat distortionCoefficients = Mat(5, 1, CV_64FC1, dist);
-	Mat rvecs, tvecs;
-	solvePnP(this->grid, detectedCorners, cameraMatrix, distortionCoefficients, this->rvecs, this->tvecs);
+	cv::Mat cameraMatrix = cv::Mat(3, 3, CV_64FC1, cam);
+	cv::Mat distortionCoefficients = cv::Mat(5, 1, CV_64FC1, dist);
+	cv::Mat rvecs, tvecs;
+	solvePnP(grid, detectedCorners, cameraMatrix, distortionCoefficients, this->rvecs, this->tvecs);
 }
 
-Mat PoseEstimation::getRvecs()
+cv::Mat PoseEstimation::getRvecs()
 {
 	return this->rvecs;
 }
 
-Mat PoseEstimation::getTvecs()
+cv::Mat PoseEstimation::getTvecs()
 {
 	return this->tvecs;
 }
