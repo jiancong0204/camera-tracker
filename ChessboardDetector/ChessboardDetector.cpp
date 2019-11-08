@@ -2,10 +2,11 @@
 
 ChessboardDetector::ChessboardDetector(Chessboard chessboard)
 {
-	cv::Mat originalImage = cv::imread("Images/12.jpg"); // , CV_8UC1);
+	ChessboardDetector::sourceImage = cv::imread("Images/01.jpg"); // , CV_8UC1);
+	cv::Mat originalImage = sourceImage.clone();			// clone the image
 	// 8-bit/single-channel image (adaptiveThreshold() can only process 8-bit single-channel image) 
-	deResult = detectionResult(originalImage, chessboard);
-	this->deResult = deResult;
+	ChessboardDetector::deResult = detectionResult(originalImage, chessboard);
+
 }
 
 ChessboardDetectorResult ChessboardDetector::getResult()
@@ -16,12 +17,12 @@ ChessboardDetectorResult ChessboardDetector::getResult()
 ChessboardDetectorResult ChessboardDetector::detectionResult(cv::Mat originalImage, Chessboard chessboard)
 {
 	ChessboardDetectorResult detectionResult;
-	FindCornersResult corners;
 	PerspectiveResult result;
-	corners = findChessboardCorners(originalImage, chessboard);
-	result = perspectiveChessboard(corners);
-	detectionResult.success = corners.success;
-	detectionResult.corners = corners.corners;
+	ChessboardDetector::originalCorners = findChessboardCorners(originalImage, chessboard);
+	result = perspectiveChessboard(ChessboardDetector::originalCorners);
+	detectionResult.scale = ChessboardDetector::scale;
+	detectionResult.success = ChessboardDetector::originalCorners.success;
+	detectionResult.corners = ChessboardDetector::originalCorners.corners;
 	detectionResult.boundingBox = result.boundingBox;
 	detectionResult.boundingRectangle = result.boundingRectangle;
 	detectionResult.perspective = result.perspective;
@@ -55,23 +56,22 @@ cv::Mat ChessboardDetector::_preprocess(cv::Mat originalImage)
 {
 	double imageHeight = originalImage.rows; // height of the original image (pixel)
 	double imageWidth = originalImage.cols; // width of the original image (pixel)
-	double factor;
 	cv::Mat resizedImage;
 	// Calculate the resize factor /////////////////
 	if (imageHeight > imageWidth)
 	{
-		factor = maxAxis / imageHeight;
+		ChessboardDetector::scale = maxAxis / imageHeight;
 	}
 	else
 	{
-		factor = maxAxis / imageWidth;
+		ChessboardDetector::scale = maxAxis / imageWidth;
 	}
-	resize(originalImage, resizedImage, cv::Size(), factor, factor); // resize the image
+
+	resize(originalImage, resizedImage, cv::Size(), ChessboardDetector::scale, ChessboardDetector::scale); // resize the image
 
 	// apply binarization //////////////////////
 	// threshold(resizedImage, resizedImage, 100, 200, THRESH_BINARY); // naive threshold
 	// adaptiveThreshold(resizedImage, resizedImage, 255, ADAPTIVE_THRESH_MEAN_C, THRESH_BINARY, 55, 0);
-
 	return resizedImage;
 }
 
@@ -122,4 +122,9 @@ cv::Mat ChessboardDetector::_compute_perspective_transform(std::vector<cv::Point
 	cv::Mat perspective;
 	warpPerspective(image, perspective, M, cv::Size(), cv::INTER_LINEAR);
 	return perspective;
+}
+
+FindCornersResult ChessboardDetector::getOriginalCorners()
+{
+	return ChessboardDetector::originalCorners;
 }
