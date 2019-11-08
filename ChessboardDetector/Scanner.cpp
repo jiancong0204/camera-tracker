@@ -45,22 +45,6 @@ CodeInfo CodeScanner::getCodeInfo(ChessboardDetectorResult detection, float find
 	return codeInfo;
 }
 
-//String CodeScanner::getType()
-//{
-//	return this->codeType;
-//}
-//
-//String CodeScanner::getData()
-//{
-//	return this->codeData;
-//}
-//
-//Mat CodeScanner::getCode()
-//{
-//	return this->code;
-//}
-
-
 BarcodeScanner::BarcodeScanner(ChessboardDetectorResult detectionResult)
 {
 	CodeInfo barcodeInfo = getCodeInfo(detectionResult, -1.1, 1.2, 14.5, 1.85);

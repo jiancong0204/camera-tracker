@@ -1,7 +1,9 @@
 #include "Calibration.h"
 
-PoseEstimation::PoseEstimation(std::vector<cv::Point3f> grid, std::vector<cv::Point2f> detectedCorners)
+PoseEstimation::PoseEstimation(std::vector<cv::Point3f> grid, float scale, Chessboard chessboard, std::vector<cv::Point2f> corners)
 {
+	int number = chessboard.getHeight() * chessboard.getWidth();
+	PoseEstimation::corners = _rescale_image(corners, scale, number);
 	double cam[9];
 	double dist[5];
 	JsonFile jsonFile;
@@ -11,7 +13,7 @@ PoseEstimation::PoseEstimation(std::vector<cv::Point3f> grid, std::vector<cv::Po
 	cv::Mat cameraMatrix = cv::Mat(3, 3, CV_64FC1, cam);
 	cv::Mat distortionCoefficients = cv::Mat(5, 1, CV_64FC1, dist);
 	cv::Mat rvecs, tvecs;
-	solvePnP(grid, detectedCorners, cameraMatrix, distortionCoefficients, this->rvecs, this->tvecs);
+	solvePnP(grid, PoseEstimation::corners, cameraMatrix, distortionCoefficients, this->rvecs, this->tvecs);
 }
 
 cv::Mat PoseEstimation::getRvecs()
@@ -43,4 +45,18 @@ void PoseEstimation::_get_distortion_coefficients(json cameraParams, double dist
 	{
 		dist[i] = cameraParams["distortion"][0][i];
 	}
+}
+
+std::vector<cv::Point2f> PoseEstimation::_rescale_image(std::vector<cv::Point2f> resizedCorners, float scale, int number)
+{
+	std::vector<cv::Point2f> originalCorners(number);
+	float x;
+	float y;
+	for (int i = 0; i < number; i++) 
+	{
+		x = resizedCorners[i].x / scale;
+		y = resizedCorners[i].y / scale;
+		originalCorners[i] = cv::Point2f(x, y);
+	}
+	return originalCorners;
 }

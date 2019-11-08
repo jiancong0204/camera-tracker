@@ -5,10 +5,11 @@
 
 int main()
 {
+
 	Chessboard chessboard = Chessboard(9, 7, 20);
 	ChessboardDetector detector = ChessboardDetector(chessboard);
 	ChessboardDetectorResult detectionResult = detector.getResult();
-
+	FindCornersResult originalCorners = detector.getOriginalCorners();
 	////////////////////////////////////////////////////////////////////
 	//JsonFile jsonFile;
 	//json cameraParams = jsonFile.loadJson("camera_parameters.json");
@@ -44,10 +45,12 @@ int main()
 	//Mat distortion_coefficients = Mat(5, 1, CV_64FC1, dist);
 	//solvePnP(grid, corners, camera_matrix, distortion_coefficients, raux, taux);
 
-	PoseEstimation poseEstimation = PoseEstimation(chessboard.getGrid(), detectionResult.corners);
+	PoseEstimation poseEstimation = PoseEstimation(chessboard.getGrid(), detectionResult.scale, chessboard, originalCorners.corners);
 
 	cv::Mat raux = poseEstimation.getRvecs();
 	cv::Mat taux = poseEstimation.getTvecs();
+	std::cout << originalCorners.corners << std::endl << std::endl;
+	std::cout << detectionResult.corners << std::endl << std::endl;
 	std::cout << raux << std::endl << std::endl;
 	std::cout << taux << std::endl << std:: endl;
 	////////////////////////////////////////////////////////////////////
