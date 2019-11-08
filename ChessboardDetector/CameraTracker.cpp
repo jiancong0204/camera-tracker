@@ -49,8 +49,6 @@ int main()
 
 	cv::Mat raux = poseEstimation.getRvecs();
 	cv::Mat taux = poseEstimation.getTvecs();
-	std::cout << originalCorners.corners << std::endl << std::endl;
-	std::cout << detectionResult.corners << std::endl << std::endl;
 	std::cout << raux << std::endl << std::endl;
 	std::cout << taux << std::endl << std:: endl;
 	////////////////////////////////////////////////////////////////////
