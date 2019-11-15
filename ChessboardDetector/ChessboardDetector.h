@@ -23,6 +23,7 @@ typedef struct ChessboardDetectorResult
 	std::vector<cv::Point2f> boundingBox;
 	std::vector<cv::Point2f> boundingRectangle;
 	cv::Mat perspective;
+	cv::Mat perspectiveCopy;
 	float unitWidth;
 	float unitHeight;
 	float scale;
@@ -32,7 +33,7 @@ typedef struct ChessboardDetectorResult
 class ChessboardDetector
 {
 public:
-	ChessboardDetector(Chessboard chessboard);
+	ChessboardDetector(Chessboard chessboard, cv::Mat sourceImage);
 	~ChessboardDetector() {};
 	FindCornersResult findChessboardCorners(cv::Mat image, Chessboard chessboard);
 	PerspectiveResult perspectiveChessboard(FindCornersResult corners);

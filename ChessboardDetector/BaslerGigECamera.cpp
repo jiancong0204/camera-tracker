@@ -11,24 +11,25 @@
 #include "BaslerGigECamera.h"
 #include <pylon/PylonUtilityIncludes.h>
 
-
+using namespace GenICam;
 BaslerGigECamera::BaslerGigECamera() : GenericCamera()
 {
+
 	Pylon::PylonInitialize();
-	device = nullptr;
+	this->device = nullptr;
 	pitch = BASLER_DEFAULT_PITCH;
 }
 
 
 BaslerGigECamera::~BaslerGigECamera()
 {
-	if (device != nullptr)
+	if (this->device != nullptr)
 	{
-		if (device->IsOpen())
+		if (this->device->IsOpen())
 		{
-			device->Close();
+			this->device->Close();
 		}
-		delete device;
+		delete this->device;
 	}
 	Pylon::PylonTerminate();
 }
@@ -152,7 +153,7 @@ cv::Mat BaslerGigECamera::getFrame(void)  throw(std::exception)
 		for (i = 0; i < 10; i++)
 		{
 			//std::cout << "WaitForFrameTriggerReady: " << std::chrono::system_clock::now().time_since_epoch().count() << std::endl;
-			device->WaitForFrameTriggerReady(10000);
+			device->WaitForFrameTriggerReady(10);
 			//std::cout << "ExecuteSoftwareTrigger: " << std::chrono::system_clock::now().time_since_epoch().count() << std::endl;
 			device->ExecuteSoftwareTrigger();
 			//std::cout << "RetrieveResult: " << std::chrono::system_clock::now().time_since_epoch().count() << std::endl;
@@ -192,7 +193,7 @@ cv::Mat BaslerGigECamera::getFrame(void)  throw(std::exception)
 
 bool BaslerGigECamera::setExposureMode(ExposureModes mode)  throw(std::exception)
 {
-	_GenericCamera::setExposureMode(mode);
+	GenericCamera::setExposureMode(mode);
 	if (device != nullptr)
 	{
 		try

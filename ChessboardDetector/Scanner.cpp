@@ -9,13 +9,14 @@ CodeInfo CodeScanner::decode(ChessboardDetectorResult detection, CodeInfo codeIn
 	codeROI.convertTo(codeInfo.code, codeInfo.code.type());
 	resize(codeInfo.code, codeInfo.code, cv::Size(300, 300));
 	rectangle(detection.perspective, cv::Point2f(codeInfo.originX, codeInfo.originY), cv::Point2f(codeInfo.endX, codeInfo.endY), cv::Scalar(0, 250, 0), 2);
-	cv::namedWindow(name, cv::WINDOW_NORMAL);
-	cv::imshow(name, codeInfo.code);
-	cv::Mat code = codeInfo.code;
+	
+	//display the codes
+	//cv::namedWindow(name, cv::WINDOW_NORMAL);
+	//cv::imshow(name, codeInfo.code);
+
+	cv::Mat grayImage = codeInfo.code;
 	zbar::ImageScanner scanner;
 	scanner.set_config(zbar::ZBAR_NONE, zbar::ZBAR_CFG_ENABLE, 1);
-	cv::Mat grayImage;
-	cvtColor(code, grayImage, cv::COLOR_RGB2GRAY);
 	uchar* raw = (uchar*)grayImage.data;
 	zbar::Image imageZbar(grayImage.cols, grayImage.rows, "Y800", raw, grayImage.cols * grayImage.rows);
 	scanner.scan(imageZbar);
@@ -41,7 +42,7 @@ CodeInfo CodeScanner::getCodeInfo(ChessboardDetectorResult detection, float find
 	codeInfo.originY = detection.boundingRectangle[1].y + findOriginY * detection.unitHeight;
 	codeInfo.endX = codeInfo.originX + findEndX * detection.unitWidth;
 	codeInfo.endY = codeInfo.originY + findEndY * detection.unitHeight;
-	// crop the region of barcode
+	rectangle(detection.perspectiveCopy, cv::Point2f(codeInfo.originX, codeInfo.originY), cv::Point2f(codeInfo.endX, codeInfo.endY), cv::Scalar(0, 250, 0), 2);
 	return codeInfo;
 }
 
@@ -68,7 +69,7 @@ BarcodeScanner::BarcodeScanner(ChessboardDetectorResult detectionResult)
 
 QrcodeScanner::QrcodeScanner(ChessboardDetectorResult detectionResult)
 {
-	CodeInfo qrcodeInfo = getCodeInfo(detectionResult, 9.3, -5, 4.1, 4.1);
+	CodeInfo qrcodeInfo = getCodeInfo(detectionResult, 9.2, -5.1, 4.1, 4.1);
 	if (qrcodeInfo.originX > detectionResult.perspective.cols || qrcodeInfo.originY > detectionResult.perspective.rows || qrcodeInfo.endX < 0 || qrcodeInfo.endY < 0) {
 		std::cout << "No QR-Code detected!" << std::endl << std::endl;
 	}
