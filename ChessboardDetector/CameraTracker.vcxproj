@@ -66,6 +66,7 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="opencv_properties.props" />
     <Import Project="zbar_properties.props" />
+    <Import Project="pylon5.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -125,17 +126,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BaslerGigECamera.cpp" />
     <ClCompile Include="Calibration.cpp" />
     <ClCompile Include="CameraTracker.cpp" />
     <ClCompile Include="Chessboard.cpp" />
     <ClCompile Include="ChessboardDetector.cpp" />
+    <ClCompile Include="GenericCamera.cpp" />
     <ClCompile Include="JsonFile.cpp" />
     <ClCompile Include="Scanner.cpp" />
+    <ClCompile Include="TimedFrame.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaslerGigECamera.h" />
     <ClInclude Include="Calibration.h" />
     <ClInclude Include="Chessboard.h" />
     <ClInclude Include="ChessboardDetector.h" />
+    <ClInclude Include="constants.h" />
+    <ClInclude Include="GenericCamera.h" />
     <ClInclude Include="JsonFile.h" />
     <ClInclude Include="Scanner.h" />
   </ItemGroup>

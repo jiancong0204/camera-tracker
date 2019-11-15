@@ -25,14 +25,14 @@ protected:
 	CodeInfo codeInfo;
 };
 
-class BarcodeScanner:public CodeScanner
+class BarcodeScanner : public CodeScanner
 {
 public:
 	BarcodeScanner(ChessboardDetectorResult detection);
 	~BarcodeScanner() {};
 };
 
-class QrcodeScanner:public CodeScanner
+class QrcodeScanner : public CodeScanner
 {
 public:
 	QrcodeScanner(ChessboardDetectorResult detectionResult);

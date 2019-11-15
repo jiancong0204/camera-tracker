@@ -1,26 +1,27 @@
-/** @file BaslerUSBCamera.cpp
+/** @file _BaslerUSBCamera.cpp
 * @brief Body file for the Basler USB Camera class.
 *
 * File that contains the implementation of the Basler USB Camera class. It relies on Pylon/Basler inlcudes but not on Qt.
-* Except minor changes, the file BaslerUSBCamera.h, developed by Benjamin Montavon, is used.
+* Except minor changes, the file _BaslerUSBCamera.h, developed by Benjamin Montavon, is used.
 * @author Matthias Bodenbenner
 * @date 26.04.2017
 */
 
 #include "constants.h"
-#include "BaslerUSBCamera.h"
+#include "_BaslerUSBCamera.h"
 #include <pylon/PylonUtilityIncludes.h>
 #include <opencv2/imgproc.hpp>
 
+using namespace GenICam;
 
-BaslerUSBCamera::BaslerUSBCamera() : GenericCamera()
+_BaslerUSBCamera::_BaslerUSBCamera() : _GenericCamera()
 {
 	Pylon::PylonInitialize();
 	device = nullptr;
 	pitch = BASLER_DEFAULT_PITCH;
 }
 
-BaslerUSBCamera::~BaslerUSBCamera()
+_BaslerUSBCamera::~_BaslerUSBCamera()
 {
 	if (device != nullptr)
 	{
@@ -33,7 +34,7 @@ BaslerUSBCamera::~BaslerUSBCamera()
 	Pylon::PylonTerminate();
 }
 
-std::vector<std::string> BaslerUSBCamera::listAvailableDevices(void)
+std::vector<std::string> _BaslerUSBCamera::listAvailableDevices(void)
 {
 	std::vector<std::string> foundDevices;
 	try
@@ -62,7 +63,7 @@ std::vector<std::string> BaslerUSBCamera::listAvailableDevices(void)
 }
 
 
-bool BaslerUSBCamera::initialize(const std::string id)
+bool _BaslerUSBCamera::initialize(const std::string id)
 {
 	if (device != nullptr)
 	{
@@ -110,7 +111,7 @@ bool BaslerUSBCamera::initialize(const std::string id)
 	return false;
 }
 
-void BaslerUSBCamera::detach(void)
+void _BaslerUSBCamera::detach(void)
 {
 	if (device != nullptr)
 	{
@@ -130,7 +131,7 @@ void BaslerUSBCamera::detach(void)
 	}
 }
 
-cv::Mat BaslerUSBCamera::getFrame(void)
+cv::Mat _BaslerUSBCamera::getFrame(void)
 {
 	if (device == nullptr)
 	{
@@ -174,7 +175,7 @@ cv::Mat BaslerUSBCamera::getFrame(void)
 	}
 }
 
-bool BaslerUSBCamera::setExposureMode(ExposureModes mode)
+bool _BaslerUSBCamera::setExposureMode(ExposureModes mode)
 {
 	_GenericCamera::setExposureMode(mode);
 	if (device != nullptr)
@@ -207,7 +208,7 @@ bool BaslerUSBCamera::setExposureMode(ExposureModes mode)
 	return false;
 }
 
-bool BaslerUSBCamera::setExposure(const double time)
+bool _BaslerUSBCamera::setExposure(const double time)
 {
 	if (device != nullptr)
 	{
@@ -234,7 +235,7 @@ bool BaslerUSBCamera::setExposure(const double time)
 	return false;
 }
 
-double BaslerUSBCamera::getExposure(void) const
+double _BaslerUSBCamera::getExposure(void) const
 {
 	if (device != nullptr)
 	{
@@ -257,7 +258,7 @@ double BaslerUSBCamera::getExposure(void) const
 	return 0.0;
 }
 
-void BaslerUSBCamera::loadFeatureFile(const std::string filename)
+void _BaslerUSBCamera::loadFeatureFile(const std::string filename)
 {
 	if (device != nullptr)
 	{

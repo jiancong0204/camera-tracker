@@ -1,28 +1,35 @@
 #pragma once
-/** @file BaslerUSBCamera.h
-* @brief Header file for the Basler USB Camera class.
+/** @file BaslerGigECamera.h
+* @brief Header file for the Basler GigE Camera class.
 *
-* File that contains the header of the Basler USB Camera class. It relies on Pylon/Basler inlcudes but not on Qt.
-* Except minor changes, the file BaslerGigECamera.h, developed by Benjamin Montavon, is used.
-* @author Matthias Bodenbenner
-* @date 26.04.2017
+* File that contains the header of the Basler GigE Camera class. It relies on Pylon/Basler inlcudes but not on Qt.
+* @author Benjamin Montavon
+* @date 27.11.2015
 */
 
-#include "GenericCamera.h"
+#pragma once
+#include "_GenericCamera.h"
+#include "TimedFrame.h"
 #include <pylon/PylonIncludes.h>
-#include <pylon/usb/BaslerUsbInstantCamera.h>
+#include <pylon/gige/BaslerGigEInstantCamera.h>
 
-class BaslerUSBCamera : public GenericCamera
+/** @class BaslerGigECamera
+* @brief Implementation of Basler GigE Cameras.
+*
+* Class that wraps the Basler Pylon controls for GigE Camera to the generic camera controls used in the software and implements the image acquisistion
+*/
+class _BaslerGigECamera : public _GenericCamera
 {
 private:
-	Pylon::CBaslerUsbInstantCamera* device; ///< actual camera pointer as Basler device
+	Pylon::CBaslerGigEInstantCamera* device; ///< actual camera pointer as Basler device
+	std::string id;
 
 public:
 	/** constructor, takes no arguments */
-	BaslerUSBCamera();
+	 _BaslerGigECamera();
 
 	/** destructor */
-	~BaslerUSBCamera();
+	~_BaslerGigECamera();
 
 	/** static function that lists all available cameras on the network
 	* @return standard vector with device names as string
@@ -35,6 +42,11 @@ public:
 	*/
 	bool initialize(const std::string id) override;
 
+	/** reset the choosen device, i.e. first detach and then initialize it
+	* @return success of initialization progress, i.e. if the camera could be activated
+	*/
+	bool reset();
+
 	/** close the attached pylon device */
 	void detach(void) override;
 
@@ -43,6 +55,8 @@ public:
 	*/
 	cv::Mat getFrame(void) override;
 
+	TimedFrame getTimedFrame(void);
+	
 	/** set the exposure mode of the camera, choosing between automatic, manual and laser
 	* @param [in] mode desired exposure setting
 	* @return true if exposure mode could be set, false else

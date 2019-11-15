@@ -14,6 +14,7 @@ PoseEstimation::PoseEstimation(std::vector<cv::Point3f> grid, float scale, Chess
 	cv::Mat distortionCoefficients = cv::Mat(5, 1, CV_64FC1, dist);
 	cv::Mat rvecs, tvecs;
 	solvePnP(grid, PoseEstimation::corners, cameraMatrix, distortionCoefficients, this->rvecs, this->tvecs);
+	// std::cout << PoseEstimation::corners << std::endl << std::endl;
 }
 
 cv::Mat PoseEstimation::getRvecs()

@@ -42,7 +42,8 @@ std::vector<cv::Point3f> Chessboard::computeGrid()
 	half_height = (int)floor(this->height / 2);
 	half_width = (int)floor(this->width / 2);
 	cv::Point3f origin(0, 0, 0);
-	std::vector<cv::Point3f> grid(this->height * this->width);
+	int number = this->height * this->width;
+	std::vector<cv::Point3f> grid(number);
 	for (int y = origin.y + half_height * this->size; y >= origin.y - half_height * this->size; y -= this->size)
 	{
 		for (int x = origin.x + half_width * this->size; x >= origin.x - half_width * this->size; x -= this->size)

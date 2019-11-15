@@ -6,7 +6,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Link>
-      <AdditionalDependencies>libzbar-0.lib;libzbar64-0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libzbar64-0.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
 </Project>
