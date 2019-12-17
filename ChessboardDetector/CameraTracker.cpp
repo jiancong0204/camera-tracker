@@ -1,12 +1,24 @@
-#include "ChessboardDetector.h"
+﻿#include "ChessboardDetector.h"
 #include "Scanner.h"
 #include "Calibration.h"
 #include <pylon/PylonIncludes.h>
 #include "BaslerGigECamera.h"
+#include "MoveComputer.h"
 #include <conio.h>
+#include<iostream>
 
 int main()
 {
+	//LPCSTR COM5 = "COM5";
+	//LPCSTR COM6 = "COM6";
+	//MoveComputer mover;
+	//HANDLE hSerial5 = mover.OpenPort(COM5);
+	//HANDLE hSerial6 = mover.OpenPort(COM6);
+	////mover.rotateA(hSerial5);
+	//mover.initialization(hSerial5);
+	////mover.initialization(hSerial6);
+	//CloseHandle(hSerial5);
+	//CloseHandle(hSerial6);
 	BaslerGigECamera camera;
 	std::vector<std::string> cameraList = camera.listAvailableDevices();
 	std::string name = cameraList[0];
@@ -40,3 +52,4 @@ int main()
 	}
 	cv::waitKey();
 }
+
