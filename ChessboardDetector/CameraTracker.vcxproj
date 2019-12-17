@@ -133,6 +133,7 @@
     <ClCompile Include="ChessboardDetector.cpp" />
     <ClCompile Include="GenericCamera.cpp" />
     <ClCompile Include="JsonFile.cpp" />
+    <ClCompile Include="MoveComputer.cpp" />
     <ClCompile Include="Scanner.cpp" />
     <ClCompile Include="TimedFrame.cpp" />
   </ItemGroup>
@@ -144,6 +145,7 @@
     <ClInclude Include="constants.h" />
     <ClInclude Include="GenericCamera.h" />
     <ClInclude Include="JsonFile.h" />
+    <ClInclude Include="MoveComputer.h" />
     <ClInclude Include="Scanner.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
