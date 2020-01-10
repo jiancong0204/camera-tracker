@@ -33,16 +33,16 @@
     <ClCompile Include="Calibration.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BaslerGigECamera.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="TimedFrame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GenericCamera.cpp">
+    <ClCompile Include="MoveComputer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MoveComputer.cpp">
+    <ClCompile Include="BaslerGigECamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GenericCamera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -62,16 +62,19 @@
     <ClInclude Include="Calibration.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BaslerGigECamera.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="constants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GenericCamera.h">
+    <ClInclude Include="MoveComputer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MoveComputer.h">
+    <ClInclude Include="TimedFrame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaslerGigECamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GenericCamera.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
