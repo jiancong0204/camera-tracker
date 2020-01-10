@@ -14,22 +14,21 @@
 using namespace GenICam;
 BaslerGigECamera::BaslerGigECamera() : GenericCamera()
 {
-
 	Pylon::PylonInitialize();
-	this->device = nullptr;
+	device = nullptr;
 	pitch = BASLER_DEFAULT_PITCH;
 }
 
 
 BaslerGigECamera::~BaslerGigECamera()
 {
-	if (this->device != nullptr)
+	if (device != nullptr)
 	{
-		if (this->device->IsOpen())
+		if (device->IsOpen())
 		{
-			this->device->Close();
+			device->Close();
 		}
-		delete this->device;
+		delete device;
 	}
 	Pylon::PylonTerminate();
 }
@@ -153,7 +152,7 @@ cv::Mat BaslerGigECamera::getFrame(void)  throw(std::exception)
 		for (i = 0; i < 10; i++)
 		{
 			//std::cout << "WaitForFrameTriggerReady: " << std::chrono::system_clock::now().time_since_epoch().count() << std::endl;
-			device->WaitForFrameTriggerReady(10);
+			device->WaitForFrameTriggerReady(10000);
 			//std::cout << "ExecuteSoftwareTrigger: " << std::chrono::system_clock::now().time_since_epoch().count() << std::endl;
 			device->ExecuteSoftwareTrigger();
 			//std::cout << "RetrieveResult: " << std::chrono::system_clock::now().time_since_epoch().count() << std::endl;

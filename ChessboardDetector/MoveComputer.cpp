@@ -1,8 +1,12 @@
 #include "MoveComputer.h"
+
 HANDLE MoveComputer::OpenPort(LPCSTR COM)
 {
 	DWORD dwError;
 	HANDLE hSerial;
+	DCB config = { 0 };
+	config.DCBlength = sizeof(config);
+	COMMTIMEOUTS timeout = { 0 };
 	hSerial = CreateFile(COM,
 		GENERIC_READ | GENERIC_WRITE,
 		0,
@@ -16,41 +20,41 @@ HANDLE MoveComputer::OpenPort(LPCSTR COM)
 		//some other error occurred. Inform user.
 	}
 	else std::cout << "succeeded" << std::endl;
+
+	timeout.ReadIntervalTimeout = 50;
+	timeout.ReadTotalTimeoutConstant = 50;
+	timeout.ReadTotalTimeoutMultiplier = 50;
+	timeout.WriteTotalTimeoutConstant = 50;
+	timeout.WriteTotalTimeoutMultiplier = 10;
+	SetCommTimeouts(hSerial, &timeout);
+	// Prepare serial communication format
+	GetCommState(hSerial, &config);
+	config.fBinary = true;
+	config.fParity = false;
+	config.BaudRate = 921600;
+	config.ByteSize = 8;
+	config.Parity = NOPARITY;
+	config.StopBits = ONESTOPBIT;
+	config.fOutX = true;
+	config.fInX = true;
+	config.fOutxCtsFlow = false;
+	config.fOutxDsrFlow = false;
+	config.fDsrSensitivity = false;
+	config.fRtsControl = RTS_CONTROL_DISABLE;
+	config.fDtrControl = DTR_CONTROL_DISABLE;
+	SetCommState(hSerial, &config);
+	// Set the port state
+	/*if (SetCommState(hSerial, &config) == 0) {
+		CloseHandle(hSerial);
+	}*/
 	return hSerial;
 }
 
 void MoveComputer::_sendToEncoder(std::string text, HANDLE hSerial) {
-	
-	std::string code = "";
-	int ascii_value;
-	for (char c : text)
-	{
-		ascii_value = (int)c;
-		code = code.append(std::bitset<8>(ascii_value).to_string());
-	}
-	char* tmpBuffer = (char*)code.data();
-	std::cout << tmpBuffer << std::endl;
-	//DCB dcbSerialParams = { 0 };
-	//dcbSerialParams.DCBlength = sizeof(dcbSerialParams);
-	//if (!GetCommState(hSerial, &dcbSerialParams)) {
-	//	//error getting state
-	//}
-	//dcbSerialParams.BaudRate = 57600;
-	//dcbSerialParams.ByteSize = 8;
-	//dcbSerialParams.StopBits = ONESTOPBIT;
-	//dcbSerialParams.Parity = NOPARITY;
-	//if (!SetCommState(hSerial, &dcbSerialParams)) {
-	//	//error setting serial port state
-	//}
-	//COMMTIMEOUTS timeouts = { 0 };
-	//timeouts.ReadIntervalTimeout = 500;
-	//timeouts.ReadTotalTimeoutConstant = 500;
-	//timeouts.ReadTotalTimeoutMultiplier = 100;
-	//timeouts.WriteTotalTimeoutConstant = 500;
-	//timeouts.WriteTotalTimeoutMultiplier = 100;
-	//if (!SetCommTimeouts(hSerial, &timeouts)) {
-	//	//error occureed. Inform user
-	//}
+	int len = text.length();
+	unsigned char *tmpBuffer = new unsigned char[len];
+	memcpy(tmpBuffer, text.data(), text.length());  // copy count bytes (convert string to )
+
 	DWORD dwBytesWrite, dwBytesToWrite;
 	dwBytesToWrite = sizeof(tmpBuffer);
 	dwBytesWrite = 0;
@@ -59,16 +63,15 @@ void MoveComputer::_sendToEncoder(std::string text, HANDLE hSerial) {
 
 void MoveComputer::initialization(HANDLE hSerial)
 {
-	//_sendToEncoder("1RS", hSerial);
-	_sendToEncoder("1HT0", hSerial);
-	_sendToEncoder("1OH50", hSerial);
-	_sendToEncoder("1OT2", hSerial);
-	_sendToEncoder("1OR", hSerial);
-	//_sendToEncoder("2RS", hSerial);
+	//_sendToEncoder("RS##\r\n", hSerial);
+	_sendToEncoder("1HT0\r\n", hSerial);
+	_sendToEncoder("1OH50\r\n", hSerial);
+	_sendToEncoder("1OT2.2\r\n", hSerial);
+	_sendToEncoder("1OR\r\n", hSerial);
 }
 
 
 void MoveComputer::rotateA(HANDLE hSerial)
 {
-	_sendToEncoder("1PR6", hSerial);
+	_sendToEncoder("1PR6\r\n", hSerial);
 }
