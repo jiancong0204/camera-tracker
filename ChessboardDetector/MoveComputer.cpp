@@ -1,6 +1,6 @@
 #include "MoveComputer.h"
 
-HANDLE MoveComputer::OpenPort(LPCSTR COM)
+HANDLE MoveComputer::openPort(LPCSTR COM)
 {
 	DWORD dwError;
 	HANDLE hSerial;

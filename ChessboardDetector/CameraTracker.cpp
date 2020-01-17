@@ -4,19 +4,24 @@
 #include <pylon/PylonIncludes.h>
 #include "BaslerGigECamera.h"
 #include "MoveComputer.h"
-#include <conio.h>
+#include "Conex.h"
 #include <iostream>
 
 int main()
 {
-	HANDLE hSerial1, hSerial2;
-	MoveComputer mover;
-	hSerial1 = mover.OpenPort("COM5");
-	hSerial2 = mover.OpenPort("COM6");
+	unsigned char* buffer = setProportionalGain(1, 0.2);
+	std::cout << buffer << std::endl;
+	
+	//HANDLE hSerial1, hSerial2;
+	//MoveComputer mover;
+	//hSerial1 = mover.openPort("COM5");
+	//hSerial2 = mover.openPort("COM6");
 	//mover.initialization(hSerial1);
 	//mover.rotateA(hSerial1);
 	//mover.initialization(hSerial2);
-	mover.rotateA(hSerial2);
+	//mover.rotateA(hSerial2);
+
+
 	//BaslerGigECamera camera;
 	//std::vector<std::string> cameraList = camera.listAvailableDevices();
 	//std::string name = cameraList[0];

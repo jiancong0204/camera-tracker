@@ -12,7 +12,7 @@ public:
 	~MoveComputer() {};
 	void initialization(HANDLE hSerial);
 	void rotateA(HANDLE hSerial);
-	HANDLE OpenPort(LPCSTR COM);
+	HANDLE openPort(LPCSTR COM);
 private:
 	void _sendToEncoder(std::string text, HANDLE hSerial);
 };
