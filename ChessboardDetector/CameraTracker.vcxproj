@@ -131,6 +131,7 @@
     <ClCompile Include="CameraTracker.cpp" />
     <ClCompile Include="Chessboard.cpp" />
     <ClCompile Include="ChessboardDetector.cpp" />
+    <ClCompile Include="Conex.cpp" />
     <ClCompile Include="GenericCamera.cpp" />
     <ClCompile Include="JsonFile.cpp" />
     <ClCompile Include="MoveComputer.cpp" />
@@ -142,6 +143,7 @@
     <ClInclude Include="Calibration.h" />
     <ClInclude Include="Chessboard.h" />
     <ClInclude Include="ChessboardDetector.h" />
+    <ClInclude Include="Conex.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="GenericCamera.h" />
     <ClInclude Include="JsonFile.h" />
