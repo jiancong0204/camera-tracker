@@ -9,9 +9,10 @@
 
 int main()
 {
-	unsigned char* buffer = setProportionalGain(1, 0.2);
+	unsigned char* buffer = getCommandErrorString(1, 'A');
 	std::cout << buffer << std::endl;
 	
+
 	//HANDLE hSerial1, hSerial2;
 	//MoveComputer mover;
 	//hSerial1 = mover.openPort("COM5");
