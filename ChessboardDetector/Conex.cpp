@@ -397,7 +397,7 @@ unsigned char* moveRelative(int addressValue, float displacementValue)
 	return tmpBuffer;
 }
 
-unsigned char* getMotionTimeForRelativeMoce(int addressValue, float displacementValue)
+unsigned char* getMotionTimeForRelativeMove(int addressValue, float displacementValue)
 {
 	std::string address = std::to_string(addressValue);
 	std::string displacement = std::to_string(displacementValue);

@@ -1,10 +1,10 @@
 #include "MoveComputer.h"
 
-HANDLE MoveComputer::openPort(LPCSTR COM)
+HANDLE MoveComputer::_openPort(LPCSTR COM)
 {
 	DWORD dwError;
 	HANDLE hSerial;
-	DCB config = { 0 };
+	DCB config = {0}; // DCB: device control block
 	config.DCBlength = sizeof(config);
 	COMMTIMEOUTS timeout = { 0 };
 	hSerial = CreateFile(COM,
@@ -50,28 +50,41 @@ HANDLE MoveComputer::openPort(LPCSTR COM)
 	return hSerial;
 }
 
-void MoveComputer::_sendToEncoder(std::string text, HANDLE hSerial) {
-	int len = text.length();
-	unsigned char *tmpBuffer = new unsigned char[len];
-	memcpy(tmpBuffer, text.data(), text.length());  // copy count bytes (convert string to )
-
+void MoveComputer::_write(unsigned char* tmpBuffer, HANDLE hSerial) {
 	DWORD dwBytesWrite, dwBytesToWrite;
 	dwBytesToWrite = sizeof(tmpBuffer);
 	dwBytesWrite = 0;
 	WriteFile(hSerial, tmpBuffer, dwBytesToWrite, &dwBytesWrite, NULL);
 }
 
-void MoveComputer::initialization(HANDLE hSerial)
+unsigned char MoveComputer::_read(HANDLE hSerial, int NumBytesToRead) {
+	unsigned char* tmpBuffer = new unsigned char[NumBytesToRead + 1];
+	DWORD dwBytesRead = 0;
+	ReadFile(hSerial, tmpBuffer, NumBytesToRead, &dwBytesRead, NULL);
+	// std::cout << tmpBuffer << std::endl;
+	return* tmpBuffer;
+}
+
+void MoveComputer::initialization(LPCSTR COM, int address, int homeSearchType, float searchVelocity, float searchTimeOut)
 {
-	//_sendToEncoder("RS##\r\n", hSerial);
-	_sendToEncoder("1HT0\r\n", hSerial);
-	_sendToEncoder("1OH50\r\n", hSerial);
-	_sendToEncoder("1OT2.2\r\n", hSerial);
-	_sendToEncoder("1OR\r\n", hSerial);
+	//_write("RS##\r\n", hSerial);
+	HANDLE hSerial = _openPort(COM);
+	unsigned char* bufferSearchType = setHomeSearchType(address, homeSearchType);
+	unsigned char* bufferSearchVelocity = setHomeSearchVelocity(address, searchVelocity);
+	unsigned char* bufferSearchTimeOut = setHomeSearchTimeOut(address, searchTimeOut);
+	unsigned char* bufferHomeSearch = executeHomeSearch(address);
+	_write(bufferSearchType, hSerial);
+	_write(bufferSearchVelocity, hSerial);
+	_write(bufferSearchTimeOut, hSerial);
+	_write(bufferHomeSearch, hSerial);
+	CloseHandle(hSerial);
 }
 
 
-void MoveComputer::rotateA(HANDLE hSerial)
+void MoveComputer::relativeMove(LPCSTR COM, float displacement, int address)
 {
-	_sendToEncoder("1PR6\r\n", hSerial);
+	HANDLE hSerial = _openPort(COM);
+	unsigned char* bufferMove = moveRelative(address, displacement);
+	_write(bufferMove, hSerial);
+	CloseHandle(hSerial);
 }
