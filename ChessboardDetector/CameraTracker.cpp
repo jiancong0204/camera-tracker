@@ -6,12 +6,11 @@
 #include "MoveComputer.h"
 #include "Conex.h"
 #include <iostream>
-
-int main()
+int main(int argc, char* argv[])
 {
-	unsigned char* buffer = getCommandErrorString(1, 'A');
+
+	unsigned char* buffer = setAcceleration(1,2);
 	std::cout << buffer << std::endl;
-	
 
 	//HANDLE hSerial1, hSerial2;
 	//MoveComputer mover;
