@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Chessboard.h"
 
 
@@ -32,23 +31,27 @@ float Chessboard::getSize()
 	return this->size;
 }
 
-std::vector<cv::Point3f> Chessboard::getGrid()
+ std::vector<cv::Point3f> Chessboard::getGrid()\
 {
 	return this->grid;
 }
 
 std::vector<cv::Point3f> Chessboard::computeGrid()
 {
-	std::vector<cv::Point3f> grid(this->height * this->width);
-	int half_height = this->height / 2;
-	int half_width = this->width / 2;
-	int index = 0;
-	for (float y = -half_height * size; y <= half_height * size; y += this->size)
+	int half_height, half_width;
+	half_height = (int)floor(this->height / 2);
+	half_width = (int)floor(this->width / 2);
+	cv::Point3f origin(0, 0, 0);
+	int number = this->height * this->width;
+	std::vector<cv::Point3f> grid(number);
+	for (int y = origin.y + half_height * this->size; y >= origin.y - half_height * this->size; y -= this->size)
 	{
-		for (float x = -half_width * size; x <= half_width * size; x += this->size)
+		for (int x = origin.x + half_width * this->size; x >= origin.x - half_width * this->size; x -= this->size)
 		{
-			grid.at(index) = cv::Point3f(x, y, 0);
-			++index;
+			int num = (3 - (y - origin.y) / this->size) * 9 + (4 - (x - origin.x) / this->size);
+			grid[num].x = x;
+			grid[num].y = y;
+			grid[num].z = origin.z;
 		}
 	}
 	return grid;
