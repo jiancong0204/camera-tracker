@@ -21,7 +21,7 @@
 class BaslerGigECamera : public GenericCamera
 {
 private:
-	Pylon::CBaslerGigEInstantCamera* device; ///< actual camera pointer as Basler device
+	Pylon::CBaslerGigEInstantCamera* device; // actual camera pointer as Basler device
 	std::string id;
 
 public:

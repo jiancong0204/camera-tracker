@@ -86,7 +86,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BaslerGigECamera.cpp" />
-    <ClCompile Include="Calibration.cpp" />
+    <ClCompile Include="PoseEstimation.cpp" />
     <ClCompile Include="Chessboard.cpp" />
     <ClCompile Include="ChessboardDetector.cpp" />
     <ClCompile Include="Conex.cpp" />
@@ -109,7 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaslerGigECamera.h" />
-    <ClInclude Include="Calibration.h" />
+    <ClInclude Include="PoseEstimation.h" />
     <ClInclude Include="Chessboard.h" />
     <ClInclude Include="ChessboardDetector.h" />
     <ClInclude Include="Conex.h" />

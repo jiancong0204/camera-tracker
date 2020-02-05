@@ -9,7 +9,6 @@ Chessboard::Chessboard(int width, int height, float size)
 		throw std::invalid_argument("The height of the chessboard must be greater zero and odd.");
 	if (size <= 0)
 		throw std::invalid_argument("The size of the chessboard must be greater zero.");
-
 	this->width = width;
 	this->height = height;
 	this->size = size;

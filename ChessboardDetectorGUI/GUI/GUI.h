@@ -11,8 +11,7 @@
 #include "Scanner.h"
 #include "ChessboardDetector.h"
 #include "MoveComputer.h"
-#include "Calibration.h"
-#include "Calibration.h"
+#include "PoseEstimation.h"
 #include <sstream>
 #include <iostream>
 #include "BaslerGigECamera.h"
@@ -28,9 +27,11 @@ typedef const TCHAR* LPCTSTR;
 class TrackerGUI : public QMainWindow
 {
 	Q_OBJECT
+
 public:
 	TrackerGUI(QWidget *parent = Q_NULLPTR);
 	~TrackerGUI() {};
+
 private:
 	Ui::GUIClass ui;
 	bool trackingFlag = false;
@@ -39,10 +40,11 @@ private:
 	QString warning;
 	MoveComputer mover;
 	QString displacement;
-	double dispValue;
+	double dispValue = 0;
 	std::stringstream stream;
 	void _labelDisplayMat(QLabel* label, cv::Mat mat);
 	bool _isNumber(std::string str);
+
 private slots:
 	void initializationSlot();
 	void movePositiveXSlot();

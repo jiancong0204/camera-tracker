@@ -32,7 +32,6 @@ ChessboardDetectorResult ChessboardDetector::detectionResult(cv::Mat originalIma
 		cv::rectangle(detectionResult.perspectiveCopy, result.boundingRectangle[0], result.boundingRectangle[3], cv::Scalar(250, 0, 0), 2);
 		detectionResult.unitWidth = (detectionResult.boundingRectangle[0].x - detectionResult.boundingRectangle[1].x) / (chessboard.getWidth() - 1);
 		detectionResult.unitHeight = (detectionResult.boundingRectangle[0].y - detectionResult.boundingRectangle[2].y) / (chessboard.getHeight() - 1);
-
 	}
 	else
 	{
@@ -54,7 +53,7 @@ PerspectiveResult ChessboardDetector::perspectiveChessboard(FindCornersResult co
 FindCornersResult ChessboardDetector::findChessboardCorners(cv::Mat originalImage, Chessboard chessboard)
 {
 	FindCornersResult corners;
-	corners.image = _preprocess(originalImage);
+	corners.image = preprocess(originalImage);
 	cv::Size patternSize;
 	patternSize.width = chessboard.getWidth();
 	patternSize.height = chessboard.getHeight();
@@ -62,7 +61,7 @@ FindCornersResult ChessboardDetector::findChessboardCorners(cv::Mat originalImag
 	return corners;
 }
 
-cv::Mat ChessboardDetector::_preprocess(cv::Mat originalImage)
+cv::Mat ChessboardDetector::preprocess(cv::Mat originalImage)
 {
 	double imageHeight = originalImage.rows; // height of the original image (pixel)
 	double imageWidth = originalImage.cols; // width of the original image (pixel)
