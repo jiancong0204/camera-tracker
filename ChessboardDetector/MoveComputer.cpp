@@ -50,7 +50,8 @@ HANDLE MoveComputer::_openPort(LPCSTR COM)
 	return hSerial;
 }
 
-void MoveComputer::_write(unsigned char* tmpBuffer, HANDLE hSerial) {
+void MoveComputer::_write(unsigned char* tmpBuffer, HANDLE hSerial) 
+{
 	DWORD dwBytesWrite, dwBytesToWrite;
 	dwBytesToWrite = sizeof(tmpBuffer);
 	dwBytesWrite = 0;
@@ -69,13 +70,18 @@ void MoveComputer::initialization(LPCSTR COM, int address, int homeSearchType, f
 {
 	//_write("RS##\r\n", hSerial);
 	HANDLE hSerial = _openPort(COM);
+	unsigned char* reset = resetControllerAddress();
 	unsigned char* bufferSearchType = setHomeSearchType(address, homeSearchType);
 	unsigned char* bufferSearchVelocity = setHomeSearchVelocity(address, searchVelocity);
 	unsigned char* bufferSearchTimeOut = setHomeSearchTimeOut(address, searchTimeOut);
 	unsigned char* bufferHomeSearch = executeHomeSearch(address);
-	_write(bufferSearchType, hSerial);
-	_write(bufferSearchVelocity, hSerial);
-	_write(bufferSearchTimeOut, hSerial);
+	//_write(reset, hSerial);
+	//hSerial = _openPort(COM);
+	//_write(bufferSearchType, hSerial);
+	//hSerial = _openPort(COM);
+	//_write(bufferSearchVelocity, hSerial);
+	//hSerial = _openPort(COM);
+	//_write(bufferSearchTimeOut, hSerial);
 	_write(bufferHomeSearch, hSerial);
 	CloseHandle(hSerial);
 }

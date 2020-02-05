@@ -54,31 +54,42 @@ BarcodeScanner::BarcodeScanner(ChessboardDetectorResult detectionResult)
 		barcodeInfo.endY = detectionResult.perspective.rows;
 	}
 	if (barcodeInfo.originX > detectionResult.perspective.cols || barcodeInfo.originY > detectionResult.perspective.rows || barcodeInfo.endX < 0 || barcodeInfo.endY < 0) {
-		std::cout << "No barcode detected!" << std::endl << std::endl;
+		barcodeInfo.codeData = "No barcode detected!";
+		barcodeInfo.codeType = "null";
 	}
 	else if (barcodeInfo.endX > detectionResult.perspective.cols || barcodeInfo.originX < 0) {
-		std::cout << "Barcode is not complete!" << std::endl << std::endl;
+		barcodeInfo.codeData = "Barcode is not complete!";
+		barcodeInfo.codeType = "null";
 	}
 	else {
 		barcodeInfo = decode(detectionResult, barcodeInfo, "Barcode");
-		std::cout << "Type: " << barcodeInfo.codeType << std::endl;
-		std::cout << "Data: " << barcodeInfo.codeData << std::endl << std::endl;
 	}
-
+	BarcodeScanner::barCodeInfo = barcodeInfo;
 }
 
 QrcodeScanner::QrcodeScanner(ChessboardDetectorResult detectionResult)
 {
-	CodeInfo qrcodeInfo = getCodeInfo(detectionResult, 9.2, -5.1, 4.1, 4.1);
+	CodeInfo qrcodeInfo = getCodeInfo(detectionResult, 9.2, -5.1, 4.2, 4.2);
 	if (qrcodeInfo.originX > detectionResult.perspective.cols || qrcodeInfo.originY > detectionResult.perspective.rows || qrcodeInfo.endX < 0 || qrcodeInfo.endY < 0) {
-		std::cout << "No QR-Code detected!" << std::endl << std::endl;
+		qrcodeInfo.codeData =  "No QR-Code detected!";
+		qrcodeInfo.codeType = "null";
 	}
 	else if (qrcodeInfo.endY > detectionResult.perspective.rows || qrcodeInfo.endX > detectionResult.perspective.cols) {
-		std::cout << "QR-Code is not complete!" << std::endl << std::endl;
+		qrcodeInfo.codeData = "QR-Code is not complete!";
+		qrcodeInfo.codeType = "null";
 	}
 	else {
 		qrcodeInfo = decode(detectionResult, qrcodeInfo, "QRcode");
-		std::cout << "Type: " << qrcodeInfo.codeType << std::endl;
-		std::cout << "Data: " << qrcodeInfo.codeData << std::endl << std::endl;
 	}
+	QrcodeScanner::qrCodeInfo = qrcodeInfo;
+}
+
+CodeInfo BarcodeScanner::getBarCode()
+{
+	return BarcodeScanner::barCodeInfo;
+}
+
+CodeInfo QrcodeScanner::getQrCode()
+{
+	return QrcodeScanner::qrCodeInfo;
 }

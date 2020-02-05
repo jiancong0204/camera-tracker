@@ -26,6 +26,7 @@ ChessboardDetectorResult ChessboardDetector::detectionResult(cv::Mat originalIma
 		detectionResult.boundingBox = result.boundingBox;
 		detectionResult.boundingRectangle = result.boundingRectangle;
 		detectionResult.perspective = result.perspective;
+		detectionResult.image = result.image;
 		detectionResult.perspectiveCopy = cv::Mat(detectionResult.perspective.rows, detectionResult.perspective.cols, CV_8UC3);
 		cv::cvtColor(detectionResult.perspective, detectionResult.perspectiveCopy, cv::COLOR_GRAY2BGR);
 		cv::rectangle(detectionResult.perspectiveCopy, result.boundingRectangle[0], result.boundingRectangle[3], cv::Scalar(250, 0, 0), 2);
@@ -46,6 +47,7 @@ PerspectiveResult ChessboardDetector::perspectiveChessboard(FindCornersResult co
 	result.boundingBox = _compute_bounding_box(corners.corners);
 	result.boundingRectangle = _compute_bounding_rectangle(result.boundingBox);
 	result.perspective = _compute_perspective_transform(result.boundingBox, result.boundingRectangle, corners.image);
+	result.image = corners.image;
 	return result;
 }
 
