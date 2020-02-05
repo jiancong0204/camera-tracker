@@ -8,19 +8,11 @@
 #include <iostream>
 int main(int argc, char* argv[])
 {
-
-	unsigned char* buffer = setAcceleration(1,2);
-	std::cout << buffer << std::endl;
-
-	//HANDLE hSerial1, hSerial2;
-	//MoveComputer mover;
-	//hSerial1 = mover.openPort("COM5");
-	//hSerial2 = mover.openPort("COM6");
-	//mover.initialization(hSerial1);
+	MoveComputer mover;
+	//mover.initialization("COM3");
 	//mover.rotateA(hSerial1);
-	//mover.initialization(hSerial2);
-	//mover.rotateA(hSerial2);
-
+	mover.relativeMove("COM4", -4, 1);
+	
 
 	//BaslerGigECamera camera;
 	//std::vector<std::string> cameraList = camera.listAvailableDevices();

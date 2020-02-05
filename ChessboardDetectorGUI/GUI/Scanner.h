@@ -20,8 +20,6 @@ class CodeScanner
 public:
 	CodeInfo getCodeInfo(ChessboardDetectorResult detection, float findOriginX, float findOriginY, float findEndX, float findEndY);
 	CodeInfo decode(ChessboardDetectorResult detection, CodeInfo codeInfo, const std::string& name);
-
-protected:
 	CodeInfo codeInfo;
 };
 
@@ -30,6 +28,9 @@ class BarcodeScanner : public CodeScanner
 public:
 	BarcodeScanner(ChessboardDetectorResult detection);
 	~BarcodeScanner() {};
+	CodeInfo getBarCode();
+private:
+	CodeInfo barCodeInfo;
 };
 
 class QrcodeScanner : public CodeScanner
@@ -37,4 +38,7 @@ class QrcodeScanner : public CodeScanner
 public:
 	QrcodeScanner(ChessboardDetectorResult detectionResult);
 	~QrcodeScanner() {};
+	CodeInfo getQrCode();
+private:
+	CodeInfo qrCodeInfo;
 };

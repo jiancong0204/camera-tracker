@@ -1,9 +1,7 @@
 #include "MoveComputer.h"
 
-HANDLE MoveComputer::_openPort(std::string port)
+HANDLE MoveComputer::_openPort(LPCWSTR COM)
 {
-	std::wstring stemp = std::wstring(port.begin(), port.end());
-	LPCWSTR COM = stemp.c_str();
 	DWORD dwError;
 	HANDLE hSerial;
 	DCB config = {0}; // DCB: device control block
@@ -52,11 +50,14 @@ HANDLE MoveComputer::_openPort(std::string port)
 	return hSerial;
 }
 
-void MoveComputer::_write(unsigned char* tmpBuffer, HANDLE hSerial) {
+void MoveComputer::_write(unsigned char* tmpBuffer, LPCWSTR COM)
+{
+	HANDLE hSerial = _openPort(COM);
 	DWORD dwBytesWrite, dwBytesToWrite;
 	dwBytesToWrite = sizeof(tmpBuffer);
 	dwBytesWrite = 0;
 	WriteFile(hSerial, tmpBuffer, dwBytesToWrite, &dwBytesWrite, NULL);
+	CloseHandle(hSerial);
 }
 
 unsigned char MoveComputer::_read(HANDLE hSerial, int NumBytesToRead) {
@@ -67,27 +68,34 @@ unsigned char MoveComputer::_read(HANDLE hSerial, int NumBytesToRead) {
 	return* tmpBuffer;
 }
 
-void MoveComputer::initialization(std::string COM, int address, int homeSearchType, float searchVelocity, float searchTimeOut)
+void MoveComputer::initialization(LPCWSTR COM, int address, int homeSearchType, float searchVelocity, float searchTimeOut)
 {
-	//_write("RS##\r\n", hSerial);
-	HANDLE hSerial = _openPort(COM);
+	unsigned char* reset = resetController(address);
+	_write(reset, COM);
 	unsigned char* bufferSearchType = setHomeSearchType(address, homeSearchType);
 	unsigned char* bufferSearchVelocity = setHomeSearchVelocity(address, searchVelocity);
 	unsigned char* bufferSearchTimeOut = setHomeSearchTimeOut(address, searchTimeOut);
 	unsigned char* bufferHomeSearch = executeHomeSearch(address);
-	_write(bufferSearchType, hSerial);
-	_write(bufferSearchVelocity, hSerial);
-	_write(bufferSearchTimeOut, hSerial);
-	_write(bufferHomeSearch, hSerial);
+	_write(bufferSearchType, COM);
+	_write(bufferSearchVelocity, COM);
+	_write(bufferSearchTimeOut, COM);
+	_write(bufferHomeSearch, COM);
 	std::cout << bufferHomeSearch;
-	CloseHandle(hSerial);
 }
 
 
-void MoveComputer::relativeMove(std::string COM, float displacement, int address)
+void MoveComputer::relativeMove(LPCWSTR COM, float displacement, int address)
 {
-	HANDLE hSerial = _openPort(COM);
 	unsigned char* bufferMove = moveRelative(address, displacement);
-	_write(bufferMove, hSerial);
-	CloseHandle(hSerial);
+	unsigned char* bufferHomeSearch = executeHomeSearch(address);
+	_write(bufferMove, COM);
+	_write(bufferHomeSearch, COM);
+}
+
+void MoveComputer::absoluteMove(LPCWSTR COM, float position, int address)
+{
+	unsigned char* bufferMove = moveAbsolute(address, position);
+	unsigned char* bufferHomeSearch = executeHomeSearch(address);
+	_write(bufferMove, COM);
+	_write(bufferHomeSearch, COM);
 }
