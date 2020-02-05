@@ -2,6 +2,10 @@
 #include <string>
 #include <iostream>
 
+/** Contains the generation of all the supported two-letter ASCII commands used to configure and operate the CONEX-CC.
+* @The individual explanation can be found in the file 'CONEX-CC - Controller Documentation.pdf'
+*/
+
 unsigned char* getAcceleration(int addressValue); //xxAC?
 unsigned char* setAcceleration(int addressValue, float accelerationValue); //xxACnn
 unsigned char* getBacklashCompensation(int addressValue); //xxBA?

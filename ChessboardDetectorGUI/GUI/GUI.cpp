@@ -3,6 +3,7 @@
 TrackerGUI::TrackerGUI(QWidget *parent): QMainWindow(parent)
 {
 	ui.setupUi(this);
+
 	QObject::connect(ui.initialization, SIGNAL(clicked()), this, SLOT(initializationSlot()));
 	QObject::connect(ui.movePositive_x, SIGNAL(clicked()), this, SLOT(movePositiveXSlot()));
 	QObject::connect(ui.moveNegative_x, SIGNAL(clicked()), this, SLOT(moveNegativeXSlot()));
@@ -12,6 +13,7 @@ TrackerGUI::TrackerGUI(QWidget *parent): QMainWindow(parent)
 	QObject::connect(ui.goto_y, SIGNAL(clicked()), this, SLOT(gotoYSlot()));
 	QObject::connect(ui.cameraPoseEstimate, SIGNAL(clicked()), this, SLOT(cameraPoseEstimationSlot()));
 	QObject::connect(ui.trackingMode, SIGNAL(clicked()), this, SLOT(trackingModeSlot()));
+
 	ui.streaming->adjustSize();
 	ui.warning->adjustSize();
 	ui.warning->setWordWrap(true);
@@ -218,7 +220,7 @@ void TrackerGUI::cameraPoseEstimationSlot()
 	}
 	else
 	{
-		cv::Mat resizedImg = detector._preprocess(sourceImg);
+		cv::Mat resizedImg = detector.preprocess(sourceImg);
 		_labelDisplayMat(ui.streaming, resizedImg);
 		warning = "Chessboard detection failed!";
 		ui.barcode->setText("");
