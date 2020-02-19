@@ -70,7 +70,7 @@ cv::Mat ChessboardDetector::preprocess(cv::Mat originalImage)
 	if (imageHeight > imageWidth)
 	{
 		ChessboardDetector::scale = maxAxis / imageHeight;
-	}
+	}                               
 	else
 	{
 		ChessboardDetector::scale = maxAxis / imageWidth;
