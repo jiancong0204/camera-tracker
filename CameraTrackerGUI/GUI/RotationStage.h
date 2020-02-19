@@ -6,12 +6,12 @@
 #include "Conex.h"
 
 
-class MoveComputer
+class RotationStage
 {
 public:
 
-	MoveComputer() {};
-	~MoveComputer() {};
+	RotationStage() {};
+	~RotationStage() {};
 
 	/** Function that inializes the camera tracker. 
 	* Arguments: controller address, type of home search, search velocity, search time out.
@@ -24,11 +24,14 @@ public:
 	/** Function that rotates the camera tracker to a ceratain position. */
 	void absoluteMove(LPCWSTR COM, float position, int address=1);
 
+	/** Function used to open the corresponding port. */
+	HANDLE openPort(LPCWSTR COM);
+
+	bool getOpenPortEcho();
+
 private:
 
-	/** Function used to open the corresponding port. */
-	HANDLE _openPort(LPCWSTR COM);
-
+	bool openPortEcho = true;
 	/** Function used to write through a open serial port. */
 	void _write(unsigned char* tmpBuffer, LPCWSTR COM);
 

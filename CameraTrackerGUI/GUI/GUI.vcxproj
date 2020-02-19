@@ -94,7 +94,7 @@
     <ClCompile Include="GUI.cpp" />
     <ClCompile Include="JsonFile.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MoveComputer.cpp" />
+    <ClCompile Include="RotationStage.cpp" />
     <ClCompile Include="Scanner.cpp" />
     <ClCompile Include="TimedFrame.cpp" />
   </ItemGroup>
@@ -116,7 +116,7 @@
     <ClInclude Include="constants.h" />
     <ClInclude Include="GenericCamera.h" />
     <ClInclude Include="JsonFile.h" />
-    <ClInclude Include="MoveComputer.h" />
+    <ClInclude Include="RotationStage.h" />
     <ClInclude Include="Scanner.h" />
     <ClInclude Include="TimedFrame.h" />
   </ItemGroup>
