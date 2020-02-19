@@ -1,8 +1,7 @@
-#include "MoveComputer.h"
+#include "RotationStage.h"
 
-HANDLE MoveComputer::_openPort(LPCWSTR COM)
+HANDLE RotationStage::openPort(LPCWSTR COM)
 {
-	DWORD dwError;
 	HANDLE hSerial;
 	DCB config = {0}; // DCB: device control block
 	config.DCBlength = sizeof(config);
@@ -15,8 +14,7 @@ HANDLE MoveComputer::_openPort(LPCWSTR COM)
 		FILE_ATTRIBUTE_NORMAL,
 		0);
 	if (hSerial == INVALID_HANDLE_VALUE) {
-		dwError = GetLastError();
-		std::cout << dwError << std::endl;
+		this->openPortEcho = false;
 		//some other error occurred. Inform user.
 	}
 	else std::cout << "succeeded" << std::endl;
@@ -50,9 +48,9 @@ HANDLE MoveComputer::_openPort(LPCWSTR COM)
 	return hSerial;
 }
 
-void MoveComputer::_write(unsigned char* tmpBuffer, LPCWSTR COM)
+void RotationStage::_write(unsigned char* tmpBuffer, LPCWSTR COM)
 {
-	HANDLE hSerial = _openPort(COM);
+	HANDLE hSerial = openPort(COM);
 	DWORD dwBytesWrite, dwBytesToWrite;
 	dwBytesToWrite = sizeof(tmpBuffer);
 	dwBytesWrite = 0;
@@ -60,7 +58,7 @@ void MoveComputer::_write(unsigned char* tmpBuffer, LPCWSTR COM)
 	CloseHandle(hSerial);
 }
 
-unsigned char MoveComputer::_read(HANDLE hSerial, int NumBytesToRead) {
+unsigned char RotationStage::_read(HANDLE hSerial, int NumBytesToRead) {
 	unsigned char* tmpBuffer = new unsigned char[NumBytesToRead + 1];
 	DWORD dwBytesRead = 0;
 	ReadFile(hSerial, tmpBuffer, NumBytesToRead, &dwBytesRead, NULL);
@@ -68,7 +66,7 @@ unsigned char MoveComputer::_read(HANDLE hSerial, int NumBytesToRead) {
 	return* tmpBuffer;
 }
 
-void MoveComputer::initialization(LPCWSTR COM, int address, int homeSearchType, float searchVelocity, float searchTimeOut)
+void RotationStage::initialization(LPCWSTR COM, int address, int homeSearchType, float searchVelocity, float searchTimeOut)
 {
 	unsigned char* reset = resetController(address);
 	_write(reset, COM);
@@ -84,7 +82,7 @@ void MoveComputer::initialization(LPCWSTR COM, int address, int homeSearchType, 
 }
 
 
-void MoveComputer::relativeMove(LPCWSTR COM, float displacement, int address)
+void RotationStage::relativeMove(LPCWSTR COM, float displacement, int address)
 {
 	unsigned char* bufferMove = moveRelative(address, displacement);
 	unsigned char* bufferHomeSearch = executeHomeSearch(address);
@@ -92,10 +90,15 @@ void MoveComputer::relativeMove(LPCWSTR COM, float displacement, int address)
 	_write(bufferHomeSearch, COM);
 }
 
-void MoveComputer::absoluteMove(LPCWSTR COM, float position, int address)
+void RotationStage::absoluteMove(LPCWSTR COM, float position, int address)
 {
 	unsigned char* bufferMove = moveAbsolute(address, position);
 	unsigned char* bufferHomeSearch = executeHomeSearch(address);
 	_write(bufferMove, COM);
 	_write(bufferHomeSearch, COM);
+}
+
+bool RotationStage::getOpenPortEcho()
+{
+	return this->openPortEcho;
 }

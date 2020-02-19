@@ -1,6 +1,6 @@
 #pragma once
 #include "Chessboard.h"
-#include <opencv.hpp>
+
 
 /** Structure that contains the result of corner searching. */
 typedef struct FindCornersResult 

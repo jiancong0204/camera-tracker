@@ -9,8 +9,7 @@
 #include <atlstr.h>
 #include "ui_GUI.h"
 #include "Scanner.h"
-#include "ChessboardDetector.h"
-#include "MoveComputer.h"
+#include "RotationStage.h"
 #include "PoseEstimation.h"
 #include <sstream>
 #include <iostream>
@@ -37,22 +36,47 @@ private:
 	bool trackingFlag = false;
 	LPCWSTR COM1 = L"COM3";
 	LPCWSTR COM2 = L"COM4";
+	double theta[2]; // stores the angular displacement for tracking.
+	double* distance; // stores the 3-dimensional distance between the center of chessboard and the center of the image
 	QString warning;
-	MoveComputer mover;
-	QString displacement;
+	RotationStage mover; // instance for moveing the stage.
+	QString displacement; // 
 	double dispValue = 0;
 	std::stringstream stream;
+
+	/** Function that displays the matrix image from opencv in a chosen label of the GUI*/
 	void _labelDisplayMat(QLabel* label, cv::Mat mat);
+	
+	/** Function that checks if the input is a valid real number
+	* @return a boolean data type.
+	*/
 	bool _isNumber(std::string str);
+
+	/** Function that takes a current image by using Basler camera control. 
+	* @return a matrix image.
+	*/
+	cv::Mat _getImage();
+
+	/** Function that implements the tracking of chessboard. */
+	void _tracking();
 
 private slots:
 	void initializationSlot();
+
+	/** Functions to control relative retation. */
 	void movePositiveXSlot();
 	void moveNegativeXSlot();
 	void movePositiveYSlot();
 	void moveNegativeYSlot();
-	void cameraPoseEstimationSlot();
-	void trackingModeSlot();
+
+	/** Functions used to control relative retation. */
 	void gotoXSlot();
 	void gotoYSlot();
+
+	/** Function that calculates the camera pose, triggered by a related button*/
+	void cameraPoseEstimationSlot();
+
+	/** Function that decides to enter or leave the tracking mode*/
+	void trackingModeSlot();
+	
 };

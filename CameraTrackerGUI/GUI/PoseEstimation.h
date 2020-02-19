@@ -17,8 +17,12 @@ public:
 	/** Function that gets the translation vector. */
 	cv::Mat getTvecs();
 
+	double* getRotationAngle();
+
 private:
 	cv::Mat rvecs, tvecs;
+
+	double rotation[2];
 
 	/** Function that gets the camera matrix from json file. */
 	void _get_camera_matrix(json cameraParams, double cam[9]);
@@ -28,6 +32,9 @@ private:
 
 	/** Undo the resize in order to get the distance values in world coordinate system. */
 	std::vector<cv::Point2f> _rescale_image(std::vector<cv::Point2f> corners, float sclae, int number);
+
+	/** Function that calculates the rotation angles through applying Rodrigues transformation. */
+	void _rodriguesTransformation(cv::Mat raux);
 
 	std::vector<cv::Point2f> corners;
 };

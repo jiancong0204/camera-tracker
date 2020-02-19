@@ -1,5 +1,6 @@
 #pragma once
 #include <core.hpp>
+#include <opencv.hpp>
 
 
 /** Class that wraps the creation of chessboard. */

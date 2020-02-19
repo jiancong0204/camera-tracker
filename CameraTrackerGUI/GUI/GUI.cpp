@@ -36,20 +36,40 @@ TrackerGUI::TrackerGUI(QWidget *parent): QMainWindow(parent)
 void TrackerGUI::initializationSlot()
 {
 	mover.initialization(COM1);
+	bool echo1 = mover.getOpenPortEcho(); // check if opening is successful.
 	mover.initialization(COM2);
-	warning = "Initialized!";
+	bool echo2 = mover.getOpenPortEcho(); // check if opening is successful.
+	if (echo1 && echo2)
+	{
+		warning = "Initialized!";
+		ui.trackingMode->setEnabled(true);
+		ui.cameraPoseEstimate->setEnabled(true);
+		ui.moveNegative_x->setEnabled(true);
+		ui.moveNegative_y->setEnabled(true);
+		ui.movePositive_x->setEnabled(true);
+		ui.movePositive_y->setEnabled(true);
+		ui.displacement_x->setEnabled(true);
+		ui.displacement_y->setEnabled(true);
+		ui.trackingModePin->setEnabled(true);
+		ui.goto_x->setEnabled(true);
+		ui.goto_y->setEnabled(true);
+	}
+	else
+	{
+		warning = "Conection failed! Please restart.";
+		ui.goto_x->setEnabled(false);
+		ui.goto_y->setEnabled(false);
+		ui.cameraPoseEstimate->setEnabled(false);
+		ui.displacement_x->setEnabled(false);
+		ui.displacement_y->setEnabled(false);
+		ui.trackingModePin->setEnabled(false);
+		ui.trackingMode->setEnabled(false);
+		ui.moveNegative_x->setEnabled(false);
+		ui.moveNegative_y->setEnabled(false);
+		ui.movePositive_x->setEnabled(false);
+		ui.movePositive_y->setEnabled(false);
+	}
 	ui.warning->setText(warning);
-	ui.trackingMode->setEnabled(true);
-	ui.cameraPoseEstimate->setEnabled(true);
-	ui.moveNegative_x->setEnabled(true);
-	ui.moveNegative_y->setEnabled(true);
-	ui.movePositive_x->setEnabled(true);
-	ui.movePositive_y->setEnabled(true);
-	ui.displacement_x->setEnabled(true);
-	ui.displacement_y->setEnabled(true);
-	ui.trackingModePin->setEnabled(true);
-	ui.goto_x->setEnabled(true);
-	ui.goto_y->setEnabled(true);
 }
 
 void TrackerGUI::movePositiveXSlot()
@@ -156,15 +176,21 @@ void TrackerGUI::_labelDisplayMat(QLabel *label, cv::Mat mat)
 	label->show();
 	}
 
+cv::Mat TrackerGUI::_getImage()
+{
+	BaslerGigECamera camera;
+	std::vector<std::string> cameraList = camera.listAvailableDevices();
+	std::string name = cameraList[0];
+	camera.initialize(name);
+	cv::Mat sourceImg = camera.getFrame();
+	return sourceImg;
+}
+
 void TrackerGUI::cameraPoseEstimationSlot()
 {
 	QString warning1, warning2;
 	QString barData, qrData, barType, qrType;
-	BaslerGigECamera camera;
-    std::vector<std::string> cameraList = camera.listAvailableDevices();
-	std::string name = cameraList[0];
-	camera.initialize(name);
-	cv::Mat sourceImg = camera.getFrame();
+	cv::Mat sourceImg = _getImage();
 	sourceImg.convertTo(sourceImg, CV_8U);
 	Chessboard chessboard(9, 7, 20);
 	ChessboardDetector detector(chessboard, sourceImg);
@@ -174,18 +200,19 @@ void TrackerGUI::cameraPoseEstimationSlot()
 		PoseEstimation pose = PoseEstimation(chessboard.getGrid(), detectionResullt.scale, chessboard, detectionResullt.corners);
 		cv::Mat raux = pose.getRvecs();
 		cv::Mat taux = pose.getTvecs();
-		QString rotationX = QString::number(raux.at<double>(0, 0));
-		ui.rotation_x->setText(rotationX);
-		QString rotationY = QString::number(raux.at<double>(1, 0));
-		ui.rotation_y->setText(rotationY);
-		QString rotationZ = QString::number(raux.at<double>(2, 0));
-		ui.rotation_z->setText(rotationZ);
-		QString translationX = QString::number(taux.at<double>(0, 0));
-		ui.translation_x->setText(translationX);
-		QString translationY = QString::number(taux.at<double>(1, 0));
-		ui.translation_y->setText(translationY);
-		QString translationZ = QString::number(taux.at<double>(2, 0));
-		ui.translation_z->setText(translationY);
+		QString rVector[3];
+		QString tVector[3];
+		for (int i = 0; i < 3; i++)
+		{
+			rVector[i] = QString::number(raux.at<double>(i, 0));
+			tVector[i] = QString::number(taux.at<double>(i, 0));
+		}
+		ui.rotation_x->setText(rVector[0]);
+		ui.rotation_y->setText(rVector[1]);
+		ui.rotation_z->setText(rVector[2]);
+		ui.translation_x->setText(tVector[0]);
+		ui.translation_y->setText(tVector[1]);
+		ui.translation_z->setText(tVector[2]);
 		BarcodeScanner barcode = BarcodeScanner(detectionResullt);
 		QrcodeScanner qrcode = QrcodeScanner(detectionResullt);
 		CodeInfo qr = qrcode.getQrCode();
@@ -262,6 +289,36 @@ void TrackerGUI::gotoYSlot()
 	ui.warning->setText(warning);
 }
 
+void TrackerGUI::_tracking()
+{
+	cv::Mat sourceImg = _getImage();
+	Chessboard chessboard(9, 7, 20);
+	ChessboardDetector detector(chessboard, sourceImg);
+	ChessboardDetectorResult detectionResullt = detector.getResult();
+	if (detectionResullt.success)
+	{	
+		PoseEstimation pose = PoseEstimation(chessboard.getGrid(), detectionResullt.scale, chessboard, detectionResullt.corners);
+		cv::Mat taux = pose.getTvecs();
+		theta[0] = atan(taux.at<double>(1, 0) / taux.at<double>(2, 0)) * (180 / atan(1) / 4) * -1;
+		theta[1] = atan(taux.at<double>(0, 0) / taux.at<double>(2, 0)) * (180 / atan(1) / 4);
+		//ui.displacement_x->setText(QString::number(theta[0]));
+		//ui.displacement_y->setText(QString::number(theta[1]));		
+		mover.relativeMove(COM1, theta[0]);
+		mover.relativeMove(COM2, theta[1]);
+		cv::Mat currentImg = _getImage();
+		sourceImg = detector.preprocess(currentImg);
+		_labelDisplayMat(ui.streaming, sourceImg);
+		ui.warning->setText("Tracking done.");
+	}
+	else
+	{
+		warning = "Chessboard detection failed!";
+		ui.warning->setText(warning);
+		cv::Mat resizedImg = detector.preprocess(sourceImg);
+		_labelDisplayMat(ui.streaming, resizedImg);
+	}
+}
+
 void TrackerGUI::trackingModeSlot()
 {
 	if (trackingFlag == false)
@@ -271,13 +328,16 @@ void TrackerGUI::trackingModeSlot()
 			warning = "Tracking mode started!";
 			trackingFlag = true;
 			ui.warning->setText(warning);
-			ui.trackingModePin->setText("");
+			ui.trackingModePin->setText("WZL");
 			ui.trackingMode->setText("Stop tracking");
+			warning = "Tracking...";
+			ui.warning->setText(warning);
+			_tracking();
 		}
 		else
 		{
 			warning = "Incorrect PIN!";
-			ui.trackingModePin->setText("");
+			ui.trackingModePin->setText("WZL");
 			ui.warning->setText(warning);
 		}
 	}

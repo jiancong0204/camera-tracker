@@ -4,14 +4,13 @@
 #include <pylon/PylonIncludes.h>
 #include "BaslerGigECamera.h"
 #include "MoveComputer.h"
-#include "Conex.h"
 #include <iostream>
 int main(int argc, char* argv[])
 {
-	MoveComputer mover;
+	//MoveComputer mover;
 	//mover.initialization("COM3");
 	//mover.rotateA(hSerial1);
-	mover.relativeMove("COM4", -4, 1);
+	//mover.relativeMove("COM4", -4, 1);
 	
 
 	//BaslerGigECamera camera;

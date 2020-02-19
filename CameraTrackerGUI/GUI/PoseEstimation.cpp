@@ -12,8 +12,8 @@ PoseEstimation::PoseEstimation(std::vector<cv::Point3f> grid, float scale, Chess
 	_get_distortion_coefficients(cameraParams, dist);
 	cv::Mat cameraMatrix = cv::Mat(3, 3, CV_64FC1, cam);
 	cv::Mat distortionCoefficients = cv::Mat(5, 1, CV_64FC1, dist);
-	cv::Mat rvecs, tvecs;
 	solvePnP(grid, PoseEstimation::corners, cameraMatrix, distortionCoefficients, this->rvecs, this->tvecs);
+	_rodriguesTransformation(rvecs);
 	// std::cout << PoseEstimation::corners << std::endl << std::endl;
 }
 
@@ -60,4 +60,18 @@ std::vector<cv::Point2f> PoseEstimation::_rescale_image(std::vector<cv::Point2f>
 		originalCorners[i] = cv::Point2f(x, y);
 	}
 	return originalCorners;
+}
+
+void PoseEstimation::_rodriguesTransformation(cv::Mat raux)
+{
+	double rm[9];
+	cv::Mat rotMat(3, 3, CV_64FC1, rm);
+	Rodrigues(raux, rotMat);
+	this->rotation[0] = atan2(rotMat.at<double>(2, 1), rotMat.at<double>(2, 2)) * (180 / atan(1) / 4);
+	this->rotation[1] = atan2(-rotMat.at<double>(2, 0), sqrt(rotMat.at<double>(2, 0) * rotMat.at<double>(2, 0) + rotMat.at<double>(2, 2) * rotMat.at<double>(2, 2))) * (180 / atan(1) / 4);
+}
+
+double* PoseEstimation::getRotationAngle()
+{
+	return this->rotation;
 }
