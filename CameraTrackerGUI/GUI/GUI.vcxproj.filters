@@ -61,9 +61,15 @@
     <ClCompile Include="RotationStage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Tracking.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="GUI.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Tracking.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>

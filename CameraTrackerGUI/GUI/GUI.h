@@ -2,8 +2,6 @@
 
 #include <QtWidgets/QMainWindow>
 #include <QLabel>
-#include <QThread>
-#include <QTimer>
 #include <QMessageBox>
 #include <QPushButton>
 #include <atlstr.h>
@@ -14,6 +12,7 @@
 #include <sstream>
 #include <iostream>
 #include "BaslerGigECamera.h"
+#include "Tracking.h"
 
 #ifdef _UNICODE
 typedef wchar_t TCHAR;
@@ -43,7 +42,7 @@ private:
 	QString displacement; // 
 	double dispValue = 0;
 	std::stringstream stream;
-
+	QImage Img;
 	/** Function that displays the matrix image from opencv in a chosen label of the GUI*/
 	void _labelDisplayMat(QLabel* label, cv::Mat mat);
 	
@@ -59,6 +58,9 @@ private:
 
 	/** Function that implements the tracking of chessboard. */
 	void _tracking();
+
+	/** Thread for tracking.*/
+	Tracking *tracking;
 
 private slots:
 	void initializationSlot();
@@ -78,5 +80,8 @@ private slots:
 
 	/** Function that decides to enter or leave the tracking mode*/
 	void trackingModeSlot();
+	
+	/*get image from tracking thread. */
+	void getQImage(QImage qImg);
 	
 };

@@ -1,9 +1,11 @@
 #include "GUI.h"
 
-TrackerGUI::TrackerGUI(QWidget *parent): QMainWindow(parent)
+TrackerGUI::TrackerGUI(QWidget *parent) : QMainWindow(parent)
 {
 	ui.setupUi(this);
 
+	tracking = new Tracking();
+	QObject::connect(tracking, SIGNAL(returnQImage(QImage)), this, SLOT(getQImage(QImage)));
 	QObject::connect(ui.initialization, SIGNAL(clicked()), this, SLOT(initializationSlot()));
 	QObject::connect(ui.movePositive_x, SIGNAL(clicked()), this, SLOT(movePositiveXSlot()));
 	QObject::connect(ui.moveNegative_x, SIGNAL(clicked()), this, SLOT(moveNegativeXSlot()));
@@ -57,17 +59,17 @@ void TrackerGUI::initializationSlot()
 	else
 	{
 		warning = "Conection failed! Please restart.";
-		ui.goto_x->setEnabled(false);
-		ui.goto_y->setEnabled(false);
-		ui.cameraPoseEstimate->setEnabled(false);
-		ui.displacement_x->setEnabled(false);
-		ui.displacement_y->setEnabled(false);
-		ui.trackingModePin->setEnabled(false);
-		ui.trackingMode->setEnabled(false);
-		ui.moveNegative_x->setEnabled(false);
-		ui.moveNegative_y->setEnabled(false);
-		ui.movePositive_x->setEnabled(false);
-		ui.movePositive_y->setEnabled(false);
+		ui.trackingMode->setEnabled(true);
+		ui.cameraPoseEstimate->setEnabled(true);
+		ui.moveNegative_x->setEnabled(true);
+		ui.moveNegative_y->setEnabled(true);
+		ui.movePositive_x->setEnabled(true);
+		ui.movePositive_y->setEnabled(true);
+		ui.displacement_x->setEnabled(true);
+		ui.displacement_y->setEnabled(true);
+		ui.trackingModePin->setEnabled(true);
+		ui.goto_x->setEnabled(true);
+		ui.goto_y->setEnabled(true);
 	}
 	ui.warning->setText(warning);
 }
@@ -158,7 +160,6 @@ bool TrackerGUI::_isNumber(std::string str)
 void TrackerGUI::_labelDisplayMat(QLabel *label, cv::Mat mat)
 {
 	cv::Mat Rgb;
-	QImage Img;
 	if (mat.channels() == 3)//RGB Img
 	{
 		cv::cvtColor(mat, Rgb, cv::COLOR_BGR2RGB);
@@ -190,7 +191,9 @@ void TrackerGUI::cameraPoseEstimationSlot()
 {
 	QString warning1, warning2;
 	QString barData, qrData, barType, qrType;
-	cv::Mat sourceImg = _getImage();
+	//cv::Mat sourceImg = _getImage();
+
+	cv::Mat sourceImg = cv::imread("01.jpg",cv::IMREAD_GRAYSCALE);
 	sourceImg.convertTo(sourceImg, CV_8U);
 	Chessboard chessboard(9, 7, 20);
 	ChessboardDetector detector(chessboard, sourceImg);
@@ -325,14 +328,24 @@ void TrackerGUI::trackingModeSlot()
 	{
 		if (ui.trackingModePin->text().toStdString() == "WZL")
 		{
-			warning = "Tracking mode started!";
-			trackingFlag = true;
-			ui.warning->setText(warning);
+			tracking->start();
+			trackingFlag = true; 
 			ui.trackingModePin->setText("WZL");
 			ui.trackingMode->setText("Stop tracking");
 			warning = "Tracking...";
 			ui.warning->setText(warning);
-			_tracking();
+			// _tracking();
+			ui.initialization->setEnabled(false);
+			ui.cameraPoseEstimate->setEnabled(false);
+			ui.moveNegative_x->setEnabled(false);
+			ui.moveNegative_y->setEnabled(false);
+			ui.movePositive_x->setEnabled(false);
+			ui.movePositive_y->setEnabled(false);
+			ui.displacement_x->setEnabled(false);
+			ui.displacement_y->setEnabled(false);
+			ui.trackingModePin->setEnabled(false);
+			ui.goto_x->setEnabled(false);
+			ui.goto_y->setEnabled(false);
 		}
 		else
 		{
@@ -343,9 +356,26 @@ void TrackerGUI::trackingModeSlot()
 	}
 	else
 	{
+		tracking->quit();
 		warning = "Tracking mode stopped!";
 		trackingFlag = false;
 		ui.trackingMode->setText("Tracking");
 		ui.warning->setText(warning);
+		ui.initialization->setEnabled(true);
+		ui.cameraPoseEstimate->setEnabled(true);
+		ui.moveNegative_x->setEnabled(true);
+		ui.moveNegative_y->setEnabled(true);
+		ui.movePositive_x->setEnabled(true);
+		ui.movePositive_y->setEnabled(true);
+		ui.displacement_x->setEnabled(true);
+		ui.displacement_y->setEnabled(true);
+		ui.trackingModePin->setEnabled(true);
+		ui.goto_x->setEnabled(true);
+		ui.goto_y->setEnabled(true);
 	}
+}
+
+void TrackerGUI::getQImage(QImage qImg)
+{
+	ui.streaming->setPixmap(QPixmap::fromImage(qImg));
 }

@@ -97,6 +97,7 @@
     <ClCompile Include="RotationStage.cpp" />
     <ClCompile Include="Scanner.cpp" />
     <ClCompile Include="TimedFrame.cpp" />
+    <ClCompile Include="Tracking.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="GUI.h" />
@@ -119,6 +120,7 @@
     <ClInclude Include="RotationStage.h" />
     <ClInclude Include="Scanner.h" />
     <ClInclude Include="TimedFrame.h" />
+    <QtMoc Include="Tracking.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
