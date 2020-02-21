@@ -43,6 +43,9 @@ void TrackerGUI::initializationSlot()
 	bool echo2 = mover.getOpenPortEcho(); // check if opening is successful.
 	if (echo1 && echo2)
 	{
+		_initCamera();
+		sourceImg = _getImage();
+		
 		warning = "Initialized!";
 		ui.trackingMode->setEnabled(true);
 		ui.cameraPoseEstimate->setEnabled(true);
@@ -55,6 +58,7 @@ void TrackerGUI::initializationSlot()
 		ui.trackingModePin->setEnabled(true);
 		ui.goto_x->setEnabled(true);
 		ui.goto_y->setEnabled(true);
+
 	}
 	else
 	{
@@ -177,12 +181,15 @@ void TrackerGUI::_labelDisplayMat(QLabel *label, cv::Mat mat)
 	label->show();
 	}
 
-cv::Mat TrackerGUI::_getImage()
+void TrackerGUI::_initCamera()
 {
-	BaslerGigECamera camera;
 	std::vector<std::string> cameraList = camera.listAvailableDevices();
 	std::string name = cameraList[0];
 	camera.initialize(name);
+}
+
+cv::Mat TrackerGUI::_getImage()
+{
 	cv::Mat sourceImg = camera.getFrame();
 	return sourceImg;
 }
@@ -191,9 +198,8 @@ void TrackerGUI::cameraPoseEstimationSlot()
 {
 	QString warning1, warning2;
 	QString barData, qrData, barType, qrType;
-	//cv::Mat sourceImg = _getImage();
-
-	cv::Mat sourceImg = cv::imread("01.jpg",cv::IMREAD_GRAYSCALE);
+	sourceImg = _getImage();
+	//cv::Mat sourceImg = cv::imread("01.jpg",cv::IMREAD_GRAYSCALE);
 	sourceImg.convertTo(sourceImg, CV_8U);
 	Chessboard chessboard(9, 7, 20);
 	ChessboardDetector detector(chessboard, sourceImg);
