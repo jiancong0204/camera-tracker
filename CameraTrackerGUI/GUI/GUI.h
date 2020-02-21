@@ -31,6 +31,8 @@ public:
 	~TrackerGUI() {};
 
 private:
+
+	BaslerGigECamera camera;
 	Ui::GUIClass ui;
 	bool trackingFlag = false;
 	LPCWSTR COM1 = L"COM3";
@@ -43,6 +45,7 @@ private:
 	double dispValue = 0;
 	std::stringstream stream;
 	QImage Img;
+	cv::Mat sourceImg;
 	/** Function that displays the matrix image from opencv in a chosen label of the GUI*/
 	void _labelDisplayMat(QLabel* label, cv::Mat mat);
 	
@@ -55,6 +58,7 @@ private:
 	* @return a matrix image.
 	*/
 	cv::Mat _getImage();
+	void _initCamera();
 
 	/** Function that implements the tracking of chessboard. */
 	void _tracking();
