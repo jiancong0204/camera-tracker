@@ -38,6 +38,7 @@
     <Import Project="opencv_properties.props" />
     <Import Project="pylon5.props" />
     <Import Project="zbar_properties.props" />
+    <Import Project="mqtt.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -86,6 +87,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BaslerGigECamera.cpp" />
+    <ClCompile Include="mqttPublish.cpp" />
     <ClCompile Include="PoseEstimation.cpp" />
     <ClCompile Include="Chessboard.cpp" />
     <ClCompile Include="ChessboardDetector.cpp" />
@@ -110,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaslerGigECamera.h" />
+    <ClInclude Include="mqttPublish.h" />
     <ClInclude Include="PoseEstimation.h" />
     <ClInclude Include="Chessboard.h" />
     <ClInclude Include="ChessboardDetector.h" />

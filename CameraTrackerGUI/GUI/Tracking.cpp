@@ -7,40 +7,37 @@ Tracking::Tracking(QObject* parent) : QThread(parent)
 
 void Tracking::run()
 {
-		timer = new QTimer;
-		timer->start(100);
-		connect(timer, &QTimer::timeout, this, &Tracking::showImage);
-		//QThread::sleep(0.5);
-		this->exec();
+	while (TRUE) {
+		tracking();
+	}
+	this->exec();
 }
 
-void Tracking::showImage()
+void Tracking::tracking()
 {
-	cv::Mat imgBuffer;
-	double scale;
-	double max = 860;
-	int a = 1;
-	int b = 6;
-	int i = (rand() % (b - a)) + a;
-		if (i % 2 == 1)
-		{
-			imgBuffer = cv::imread("02.jpg", cv::IMREAD_GRAYSCALE);
-		}
-		else
-		{
-			imgBuffer = cv::imread("01.jpg", cv::IMREAD_GRAYSCALE);
-		}
-	scale = max / imgBuffer.cols;
-	resize(imgBuffer, img, cv::Size(), scale, scale);
-	if (img.channels() == 3)//RGB Img
+	srand((unsigned)time(NULL));
+	int a = rand() % 20;
+	QString warning;
+	// cv::Mat sourceImg = _getImage();
+	 cv::Mat sourceImg = cv::imread("Images/01.jpg", cv::IMREAD_GRAYSCALE);
+	Chessboard chessboard(9, 7, 20);
+	ChessboardDetector detector(chessboard, sourceImg);
+	ChessboardDetectorResult detectionResullt = detector.getResult();
+	if (detectionResullt.success)
 	{
-		cv::Mat Rgb;
-		cv::cvtColor(img, Rgb, cv::COLOR_BGR2RGB);
-		qImg = QImage((const uchar*)(Rgb.data), Rgb.cols, Rgb.rows, Rgb.cols * Rgb.channels(), QImage::Format_RGB888);
+		PoseEstimation pose = PoseEstimation(chessboard.getGrid(), detectionResullt.scale, chessboard, detectionResullt.corners);
+		cv::Mat taux = pose.getTvecs();
+		theta[0] = atan(taux.at<double>(1, 0) / taux.at<double>(2, 0)) * (180 / atan(1) / 4) * -1;
+		theta[1] = atan(taux.at<double>(0, 0) / taux.at<double>(2, 0)) * (180 / atan(1) / 4);
+		////ui.displacement_x->setText(QString::number(theta[0]));
+		////ui.displacement_y->setText(QString::number(theta[1]));		
+		mover.relativeMove(COM1, theta[0]);
+		mover.relativeMove(COM2, theta[1]);
+		warning = "Move " + QString::number(a) + " " + QString::number(a);
 	}
-	else//Gray Img
+	else
 	{
-		qImg = QImage((const uchar*)(img.data), img.cols, img.rows, img.cols * img.channels(), QImage::Format_Indexed8);
+		warning = "Detection failed!";
 	}
-	emit returnQImage(qImg);
+	emit returnQString(warning);
 }

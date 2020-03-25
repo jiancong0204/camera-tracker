@@ -3,9 +3,8 @@
 TrackerGUI::TrackerGUI(QWidget *parent) : QMainWindow(parent)
 {
 	ui.setupUi(this);
-
 	tracking = new Tracking();
-	QObject::connect(tracking, SIGNAL(returnQImage(QImage)), this, SLOT(getQImage(QImage)));
+	QObject::connect(tracking, SIGNAL(returnQString(QString)), this, SLOT(getQString(QString)));
 	QObject::connect(ui.initialization, SIGNAL(clicked()), this, SLOT(initializationSlot()));
 	QObject::connect(ui.movePositive_x, SIGNAL(clicked()), this, SLOT(movePositiveXSlot()));
 	QObject::connect(ui.moveNegative_x, SIGNAL(clicked()), this, SLOT(moveNegativeXSlot()));
@@ -199,7 +198,7 @@ void TrackerGUI::cameraPoseEstimationSlot()
 	QString warning1, warning2;
 	QString barData, qrData, barType, qrType;
 	// sourceImg = _getImage();
-	sourceImg = cv::imread("Images/01.jpg",cv::IMREAD_GRAYSCALE);
+	sourceImg = cv::imread("Images/02.jpg",cv::IMREAD_GRAYSCALE);
 	sourceImg.convertTo(sourceImg, CV_8U);
 	Chessboard chessboard(9, 7, 20);
 	ChessboardDetector detector(chessboard, sourceImg);
@@ -211,11 +210,23 @@ void TrackerGUI::cameraPoseEstimationSlot()
 		cv::Mat taux = pose.getTvecs();
 		QString rVector[3];
 		QString tVector[3];
+		char const* rPayload;
+		char const* tPayload;
+		std::string rString[3];
+		std::string tString[3];
 		for (int i = 0; i < 3; i++)
 		{
 			rVector[i] = QString::number(raux.at<double>(i, 0));
+			rString[i] = std::to_string(raux.at<double>(i, 0));
 			tVector[i] = QString::number(taux.at<double>(i, 0));
+			tString[i] = std::to_string(taux.at<double>(i, 0));
 		}
+		rString[0] = rString[0] + " " + rString[1] + " " + rString[2];
+		rPayload = rString[0].c_str();
+		publisher.publishPayload(rPayload, "Rotation");
+		tString[0] = tString[0] + " " + tString[1] + " " + tString[2];
+		tPayload = tString[0].c_str();
+		publisher.publishPayload(tPayload, "Translation");
 		ui.rotation_x->setText(rVector[0]);
 		ui.rotation_y->setText(rVector[1]);
 		ui.rotation_z->setText(rVector[2]);
@@ -261,6 +272,9 @@ void TrackerGUI::cameraPoseEstimationSlot()
 		warning = "Chessboard detection failed!";
 		ui.barcode->setText("");
 		ui.qrcode->setText("");
+		const char* tmpChar = warning.toStdString().c_str();
+		publisher.publishPayload(tmpChar, "Rotation");
+		publisher.publishPayload(tmpChar, "Translation");
 	}
 	ui.warning->setText(warning);
 }
@@ -298,35 +312,6 @@ void TrackerGUI::gotoYSlot()
 	ui.warning->setText(warning);
 }
 
-void TrackerGUI::_tracking()
-{
-	cv::Mat sourceImg = _getImage();
-	Chessboard chessboard(9, 7, 20);
-	ChessboardDetector detector(chessboard, sourceImg);
-	ChessboardDetectorResult detectionResullt = detector.getResult();
-	if (detectionResullt.success)
-	{	
-		PoseEstimation pose = PoseEstimation(chessboard.getGrid(), detectionResullt.scale, chessboard, detectionResullt.corners);
-		cv::Mat taux = pose.getTvecs();
-		theta[0] = atan(taux.at<double>(1, 0) / taux.at<double>(2, 0)) * (180 / atan(1) / 4) * -1;
-		theta[1] = atan(taux.at<double>(0, 0) / taux.at<double>(2, 0)) * (180 / atan(1) / 4);
-		//ui.displacement_x->setText(QString::number(theta[0]));
-		//ui.displacement_y->setText(QString::number(theta[1]));		
-		mover.relativeMove(COM1, theta[0]);
-		mover.relativeMove(COM2, theta[1]);
-		cv::Mat currentImg = _getImage();
-		sourceImg = detector.preprocess(currentImg);
-		_labelDisplayMat(ui.streaming, sourceImg);
-		ui.warning->setText("Tracking done.");
-	}
-	else
-	{
-		warning = "Chessboard detection failed!";
-		ui.warning->setText(warning);
-		cv::Mat resizedImg = detector.preprocess(sourceImg);
-		_labelDisplayMat(ui.streaming, resizedImg);
-	}
-}
 
 void TrackerGUI::trackingModeSlot()
 {
@@ -338,9 +323,8 @@ void TrackerGUI::trackingModeSlot()
 			trackingFlag = true; 
 			ui.trackingModePin->setText("WZL");
 			ui.trackingMode->setText("Stop tracking");
-			warning = "Tracking...";
-			ui.warning->setText(warning);
-			// _tracking();
+			//warning = "Tracking...";
+			//ui.warning->setText(warning);
 			ui.initialization->setEnabled(false);
 			ui.cameraPoseEstimate->setEnabled(false);
 			ui.moveNegative_x->setEnabled(false);
@@ -381,7 +365,7 @@ void TrackerGUI::trackingModeSlot()
 	}
 }
 
-void TrackerGUI::getQImage(QImage qImg)
+void TrackerGUI::getQString(QString warning)
 {
-	ui.streaming->setPixmap(QPixmap::fromImage(qImg));
+	ui.warning->setText(warning);
 }
