@@ -198,8 +198,8 @@ void TrackerGUI::cameraPoseEstimationSlot()
 {
 	QString warning1, warning2;
 	QString barData, qrData, barType, qrType;
-	sourceImg = _getImage();
-	//cv::Mat sourceImg = cv::imread("01.jpg",cv::IMREAD_GRAYSCALE);
+	// sourceImg = _getImage();
+	sourceImg = cv::imread("Images/01.jpg",cv::IMREAD_GRAYSCALE);
 	sourceImg.convertTo(sourceImg, CV_8U);
 	Chessboard chessboard(9, 7, 20);
 	ChessboardDetector detector(chessboard, sourceImg);
