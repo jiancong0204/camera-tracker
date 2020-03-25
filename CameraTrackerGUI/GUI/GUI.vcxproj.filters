@@ -64,6 +64,9 @@
     <ClCompile Include="Tracking.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="mqttPublish.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="GUI.h">
@@ -115,6 +118,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RotationStage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mqttPublish.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

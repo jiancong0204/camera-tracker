@@ -5,6 +5,8 @@
 #include <QImage>
 #include <QString>
 #include "ChessboardDetector.h"
+#include "PoseEstimation.h"
+#include "RotationStage.h"
 
 class Tracking : public QThread
 {
@@ -12,16 +14,20 @@ class Tracking : public QThread
 public:
 	Tracking(QObject* parent = 0);
 	~Tracking() {};
-	void showImage();
 
 protected:
 	void run();
+	void tracking();
+	double theta[2]; // stores the angular displacement for tracking.
+	RotationStage mover; // instance for moveing the stage.
+
 
 private:
-	QImage qImg;
 	cv::Mat img;
 	QTimer *timer;
+	LPCWSTR COM1 = L"COM3";
+	LPCWSTR COM2 = L"COM4";
 
 signals:
-	void returnQImage(QImage qImg);
+	void returnQString(QString);
 };

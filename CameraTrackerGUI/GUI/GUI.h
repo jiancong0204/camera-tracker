@@ -7,12 +7,11 @@
 #include <atlstr.h>
 #include "ui_GUI.h"
 #include "Scanner.h"
-#include "RotationStage.h"
-#include "PoseEstimation.h"
 #include <sstream>
 #include <iostream>
 #include "BaslerGigECamera.h"
 #include "Tracking.h"
+#include "mqttPublish.h"
 
 #ifdef _UNICODE
 typedef wchar_t TCHAR;
@@ -31,10 +30,9 @@ public:
 	~TrackerGUI() {};
 
 private:
-
+	Publish publisher;
 	BaslerGigECamera camera;
 	Ui::GUIClass ui;
-	bool trackingFlag = false;
 	LPCWSTR COM1 = L"COM3";
 	LPCWSTR COM2 = L"COM4";
 	double theta[2]; // stores the angular displacement for tracking.
@@ -60,11 +58,9 @@ private:
 	cv::Mat _getImage();
 	void _initCamera();
 
-	/** Function that implements the tracking of chessboard. */
-	void _tracking();
-
 	/** Thread for tracking.*/
 	Tracking *tracking;
+	bool trackingFlag = false;
 
 private slots:
 	void initializationSlot();
@@ -85,7 +81,7 @@ private slots:
 	/** Function that decides to enter or leave the tracking mode*/
 	void trackingModeSlot();
 	
-	/*get image from tracking thread. */
-	void getQImage(QImage qImg);
+	/*get warning from tracking thread. */
+	void getQString(QString warning);
 	
 };
