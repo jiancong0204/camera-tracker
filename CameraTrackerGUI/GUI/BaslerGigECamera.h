@@ -13,6 +13,7 @@
 #include <pylon/PylonIncludes.h>
 #include <pylon/gige/BaslerGigEInstantCamera.h>
 
+
 /** @class BaslerGigECamera
 * @brief Implementation of Basler GigE Cameras.
 *

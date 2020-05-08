@@ -1,25 +1,36 @@
 #include "Tracking.h"
 
 Tracking::Tracking(QObject* parent) : QThread(parent)
-{
-
-}
+{}
 
 void Tracking::run()
 {
-	while (TRUE) {
+	BaslerGigECamera temp_camera;
+	camera = temp_camera;
+	std::vector<std::string> cameraList = camera.listAvailableDevices();
+	std::string name = cameraList[0];
+	camera.initialize(name);
+	while (true) {
 		tracking();
+		if (isExist) {
+			camera.detach();
+			break;
+		}
 	}
 	this->exec();
 }
 
+void Tracking::exitThread()
+{
+    isExist = true;
+}
+
 void Tracking::tracking()
 {
-	srand((unsigned)time(NULL));
-	int a = rand() % 20;
 	QString warning;
-	// cv::Mat sourceImg = _getImage();
-	 cv::Mat sourceImg = cv::imread("Images/01.jpg", cv::IMREAD_GRAYSCALE);
+	sourceImg = camera.getFrame();
+	sourceImg.convertTo(sourceImg, CV_8U);
+	//sourceImg = cv::imread("Images/01.jpg", cv::IMREAD_GRAYSCALE);
 	Chessboard chessboard(9, 7, 20);
 	ChessboardDetector detector(chessboard, sourceImg);
 	ChessboardDetectorResult detectionResullt = detector.getResult();
@@ -33,7 +44,7 @@ void Tracking::tracking()
 		////ui.displacement_y->setText(QString::number(theta[1]));		
 		mover.relativeMove(COM1, theta[0]);
 		mover.relativeMove(COM2, theta[1]);
-		warning = "Move " + QString::number(a) + " " + QString::number(a);
+		warning = "Moving";
 	}
 	else
 	{

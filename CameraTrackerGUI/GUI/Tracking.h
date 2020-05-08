@@ -4,9 +4,11 @@
 #include <QDebug>
 #include <QImage>
 #include <QString>
+#include <windows.h>
 #include "ChessboardDetector.h"
 #include "PoseEstimation.h"
 #include "RotationStage.h"
+#include "BaslerGigECamera.h"
 
 class Tracking : public QThread
 {
@@ -14,19 +16,22 @@ class Tracking : public QThread
 public:
 	Tracking(QObject* parent = 0);
 	~Tracking() {};
+	void exitThread();
 
 protected:
 	void run();
 	void tracking();
 	double theta[2]; // stores the angular displacement for tracking.
-	RotationStage mover; // instance for moveing the stage.
-
+	RotationStage mover; // instance for moveing the stage.=
 
 private:
 	cv::Mat img;
 	QTimer *timer;
 	LPCWSTR COM1 = L"COM3";
 	LPCWSTR COM2 = L"COM4";
+	cv::Mat sourceImg;
+	bool isExist = false;
+	BaslerGigECamera camera;
 
 signals:
 	void returnQString(QString);

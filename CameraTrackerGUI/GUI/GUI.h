@@ -31,7 +31,6 @@ public:
 
 private:
 	Publish publisher;
-	BaslerGigECamera camera;
 	Ui::GUIClass ui;
 	LPCWSTR COM1 = L"COM3";
 	LPCWSTR COM2 = L"COM4";
@@ -44,6 +43,8 @@ private:
 	std::stringstream stream;
 	QImage Img;
 	cv::Mat sourceImg;
+
+	BaslerGigECamera camera;
 	/** Function that displays the matrix image from opencv in a chosen label of the GUI*/
 	void _labelDisplayMat(QLabel* label, cv::Mat mat);
 	
@@ -52,14 +53,8 @@ private:
 	*/
 	bool _isNumber(std::string str);
 
-	/** Function that takes a current image by using Basler camera control. 
-	* @return a matrix image.
-	*/
-	cv::Mat _getImage();
-	void _initCamera();
-
 	/** Thread for tracking.*/
-	Tracking *tracking;
+	Tracking* tracking = new Tracking();
 	bool trackingFlag = false;
 
 private slots:

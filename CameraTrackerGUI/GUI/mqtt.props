@@ -3,7 +3,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <IncludePath>D:\WZL_HIWI\mqtt-test\include\paho.mqt.c\src;D:\WZL_HIWI\mqtt-test\include\paho.mqt.cpp\src;$(IncludePath)</IncludePath>
+    <IncludePath>.\include\paho.mqt.c\src;.\include\paho.mqt.cpp\src;$(IncludePath)</IncludePath>
     <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup>
@@ -11,7 +11,7 @@
       <PreprocessorDefinitions>WIN64;_WINDOWS;OPENSSL;OPENSSL=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>D:\WZL_HIWI\mqtt-test\lib;$(OPENSSL_DIR);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>.\lib;$(OPENSSL_DIR)\lib\VC;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>paho-mqtt3as.lib;paho-mqttpp3.lib;ws2_32.lib;libcrypto64MDd.lib;libssl64MDd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
