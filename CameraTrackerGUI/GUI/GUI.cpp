@@ -3,8 +3,7 @@
 TrackerGUI::TrackerGUI(QWidget *parent) : QMainWindow(parent)
 {
 	ui.setupUi(this);
-	tracking = new Tracking();
-	QObject::connect(tracking, SIGNAL(returnQString(QString)), this, SLOT(getQString(QString)));
+	
 	QObject::connect(ui.initialization, SIGNAL(clicked()), this, SLOT(initializationSlot()));
 	QObject::connect(ui.movePositive_x, SIGNAL(clicked()), this, SLOT(movePositiveXSlot()));
 	QObject::connect(ui.moveNegative_x, SIGNAL(clicked()), this, SLOT(moveNegativeXSlot()));
@@ -42,8 +41,11 @@ void TrackerGUI::initializationSlot()
 	bool echo2 = mover.getOpenPortEcho(); // check if opening is successful.
 	if (echo1 && echo2)
 	{
-		_initCamera();
-		sourceImg = _getImage();
+		BaslerGigECamera temp_camera;
+		camera = temp_camera;
+		std::vector<std::string> cameraList = camera.listAvailableDevices();
+		std::string name = cameraList[0];
+		camera.initialize(name);
 		
 		warning = "Initialized!";
 		ui.trackingMode->setEnabled(true);
@@ -180,25 +182,12 @@ void TrackerGUI::_labelDisplayMat(QLabel *label, cv::Mat mat)
 	label->show();
 	}
 
-void TrackerGUI::_initCamera()
-{
-	std::vector<std::string> cameraList = camera.listAvailableDevices();
-	std::string name = cameraList[0];
-	camera.initialize(name);
-}
-
-cv::Mat TrackerGUI::_getImage()
-{
-	cv::Mat sourceImg = camera.getFrame();
-	return sourceImg;
-}
-
 void TrackerGUI::cameraPoseEstimationSlot()
 {
 	QString warning1, warning2;
 	QString barData, qrData, barType, qrType;
-	// sourceImg = _getImage();
-	sourceImg = cv::imread("Images/02.jpg",cv::IMREAD_GRAYSCALE);
+	sourceImg = camera.getFrame();
+	// sourceImg = cv::imread("Images/02.jpg",cv::IMREAD_GRAYSCALE);
 	sourceImg.convertTo(sourceImg, CV_8U);
 	Chessboard chessboard(9, 7, 20);
 	ChessboardDetector detector(chessboard, sourceImg);
@@ -319,6 +308,8 @@ void TrackerGUI::trackingModeSlot()
 	{
 		if (ui.trackingModePin->text().toStdString() == "WZL")
 		{
+			camera.detach();
+			QObject::connect(tracking, SIGNAL(returnQString(QString)), this, SLOT(getQString(QString)));
 			tracking->start();
 			trackingFlag = true; 
 			ui.trackingModePin->setText("WZL");
@@ -346,22 +337,15 @@ void TrackerGUI::trackingModeSlot()
 	}
 	else
 	{
+		tracking->exitThread();
 		tracking->quit();
 		warning = "Tracking mode stopped!";
 		trackingFlag = false;
 		ui.trackingMode->setText("Tracking");
 		ui.warning->setText(warning);
 		ui.initialization->setEnabled(true);
-		ui.cameraPoseEstimate->setEnabled(true);
-		ui.moveNegative_x->setEnabled(true);
-		ui.moveNegative_y->setEnabled(true);
-		ui.movePositive_x->setEnabled(true);
-		ui.movePositive_y->setEnabled(true);
-		ui.displacement_x->setEnabled(true);
-		ui.displacement_y->setEnabled(true);
-		ui.trackingModePin->setEnabled(true);
-		ui.goto_x->setEnabled(true);
-		ui.goto_y->setEnabled(true);
+		ui.trackingModePin->setEnabled(false);
+		ui.trackingMode->setEnabled(false);
 	}
 }
 
