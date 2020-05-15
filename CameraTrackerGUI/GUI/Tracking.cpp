@@ -10,10 +10,13 @@ void Tracking::run()
 	std::vector<std::string> cameraList = camera.listAvailableDevices();
 	std::string name = cameraList[0];
 	camera.initialize(name);
+	oFile.open("FrameRate.csv", std::ios::out | std::ios::trunc);
+	oFile << CLOCKS_PER_SEC << std::endl;
 	while (true) {
 		tracking();
 		if (isExist) {
 			camera.detach();
+			oFile.close();
 			break;
 		}
 	}
@@ -44,11 +47,18 @@ void Tracking::tracking()
 		////ui.displacement_y->setText(QString::number(theta[1]));		
 		mover.relativeMove(COM1, theta[0]);
 		mover.relativeMove(COM2, theta[1]);
-		warning = "Moving";
+		clock_t time;
+		time = clock();
+		oFile << clock() << std::endl;
+		warning = "Moving...";
 	}
 	else
 	{
-		warning = "Detection failed!";
+		// warning = "Detection failed!";
+		clock_t time;
+		time = clock();
+		oFile << clock() << std::endl;
+		warning = "Detection failed";
 	}
 	emit returnQString(warning);
 }

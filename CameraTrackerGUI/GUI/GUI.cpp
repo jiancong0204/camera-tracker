@@ -59,7 +59,7 @@ void TrackerGUI::initializationSlot()
 		ui.trackingModePin->setEnabled(true);
 		ui.goto_x->setEnabled(true);
 		ui.goto_y->setEnabled(true);
-
+		ui.initialization->setEnabled(false);
 	}
 	else
 	{

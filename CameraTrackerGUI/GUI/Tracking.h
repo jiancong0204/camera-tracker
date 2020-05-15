@@ -5,6 +5,12 @@
 #include <QImage>
 #include <QString>
 #include <windows.h>
+#include <ctime>
+
+#include <fstream> 
+#include <string>
+#include <iostream>
+#include <streambuf> 
 #include "ChessboardDetector.h"
 #include "PoseEstimation.h"
 #include "RotationStage.h"
@@ -22,9 +28,10 @@ protected:
 	void run();
 	void tracking();
 	double theta[2]; // stores the angular displacement for tracking.
-	RotationStage mover; // instance for moveing the stage.=
+	RotationStage mover; // instance for moveing the stage.
 
 private:
+	std::ofstream oFile; // define the output stream.
 	cv::Mat img;
 	QTimer *timer;
 	LPCWSTR COM1 = L"COM3";
