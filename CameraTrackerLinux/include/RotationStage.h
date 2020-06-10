@@ -19,12 +19,23 @@
 #include <termios.h> // Contains POSIX terminal control definitions
 #include <unistd.h> // write(), read(), close()
 
-
+/** 
+* @class RotationStage 
+* @brief Control of the encoder
+*
+* This class wraps the driver controlling the encoder to rotate the camera
+**/
 class RotationStage
 {
 public:
-
+    /**
+	* @brief Construct the RotationStage object
+	*/
 	RotationStage() {};
+
+	/**
+	* @brief Deconstructor
+	*/
 	~RotationStage() {};
 
 	/** 

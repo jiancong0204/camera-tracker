@@ -59,7 +59,7 @@ public:
     std::vector<cv::Point3f> getGrid();
 
 private:
-    std::vector<cv::Point3f>   grid;     /**< The coordinates of all the corners in the chessboard. */
+    std::vector<cv::Point3f>    grid;     /**< The coordinates of all the corners in the chessboard. */
     int                         width;    /**< The width of the chessboard (number of the blocks). */
     int                         height;   /**< The height of the chessboard (number of the blocks). */
     float                       size;     /**< The size of the block. */
