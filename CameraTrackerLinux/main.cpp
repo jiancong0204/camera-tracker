@@ -2,6 +2,7 @@
 #include "BaslerGigECamera.h"
 #include "Scanner.h"
 #include "RotationStage.h"
+#include "JsonUtilization.h"
 
 
 int main()

@@ -37,6 +37,7 @@ SET(source_codes
     ${BASLER_CAMERA}
     src/Conex.cpp
     src/RotationStage.cpp
+    src/JsonUtilization.cpp
 )
 
 
