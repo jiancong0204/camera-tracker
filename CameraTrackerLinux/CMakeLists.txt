@@ -38,6 +38,7 @@ SET(source_codes
     src/Conex.cpp
     src/RotationStage.cpp
     src/JsonUtilization.cpp
+    src/PoseEstimation.cpp
 )
 
 
