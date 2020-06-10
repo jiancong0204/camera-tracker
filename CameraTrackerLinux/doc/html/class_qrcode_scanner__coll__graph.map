@@ -1,0 +1,4 @@
+<map id="QrcodeScanner" name="QrcodeScanner">
+<area shape="rect" id="node2" href="$class_code_scanner.html" title="Class that contains the precedures of finding the position of code and decoding the code..." alt="" coords="132,263,261,384"/>
+<area shape="rect" id="node3" href="$struct_code_info.html" title="Structure that contains the related information of the code. " alt="" coords="5,5,105,200"/>
+</map>

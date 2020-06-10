@@ -1,0 +1,66 @@
+\hypertarget{struct_perspective_result}{}\section{Perspective\+Result Struct Reference}
+\label{struct_perspective_result}\index{Perspective\+Result@{Perspective\+Result}}
+
+
+Structure that contains the result of perspective transformation.  
+
+
+
+
+{\ttfamily \#include $<$Chessboard\+Detector.\+h$>$}
+
+
+
+Collaboration diagram for Perspective\+Result\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{struct_perspective_result__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ cv\+::\+Point2f $>$ \hyperlink{struct_perspective_result_a2780569aa3456b68798cad4697af8647}{bounding\+Box}
+\item 
+std\+::vector$<$ cv\+::\+Point2f $>$ \hyperlink{struct_perspective_result_a78e1db1b132a9e364ab5f2c3b452b611}{bounding\+Rectangle}
+\item 
+cv\+::\+Mat \hyperlink{struct_perspective_result_a0d73af1103688870135ebb3ff7bcdbdc}{image}
+\item 
+cv\+::\+Mat \hyperlink{struct_perspective_result_af3e15ad54fa2f84ad2d782a2f0fd6e73}{perspective}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structure that contains the result of perspective transformation. 
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_perspective_result_a2780569aa3456b68798cad4697af8647}\label{struct_perspective_result_a2780569aa3456b68798cad4697af8647}} 
+\index{Perspective\+Result@{Perspective\+Result}!bounding\+Box@{bounding\+Box}}
+\index{bounding\+Box@{bounding\+Box}!Perspective\+Result@{Perspective\+Result}}
+\subsubsection{\texorpdfstring{bounding\+Box}{boundingBox}}
+{\footnotesize\ttfamily std\+::vector$<$cv\+::\+Point2f$>$ Perspective\+Result\+::bounding\+Box}
+
+Parallelogram that surrounds all the corners. \mbox{\Hypertarget{struct_perspective_result_a78e1db1b132a9e364ab5f2c3b452b611}\label{struct_perspective_result_a78e1db1b132a9e364ab5f2c3b452b611}} 
+\index{Perspective\+Result@{Perspective\+Result}!bounding\+Rectangle@{bounding\+Rectangle}}
+\index{bounding\+Rectangle@{bounding\+Rectangle}!Perspective\+Result@{Perspective\+Result}}
+\subsubsection{\texorpdfstring{bounding\+Rectangle}{boundingRectangle}}
+{\footnotesize\ttfamily std\+::vector$<$cv\+::\+Point2f$>$ Perspective\+Result\+::bounding\+Rectangle}
+
+Perspective tansformation of the bounding box. \mbox{\Hypertarget{struct_perspective_result_a0d73af1103688870135ebb3ff7bcdbdc}\label{struct_perspective_result_a0d73af1103688870135ebb3ff7bcdbdc}} 
+\index{Perspective\+Result@{Perspective\+Result}!image@{image}}
+\index{image@{image}!Perspective\+Result@{Perspective\+Result}}
+\subsubsection{\texorpdfstring{image}{image}}
+{\footnotesize\ttfamily cv\+::\+Mat Perspective\+Result\+::image}
+
+Original image. \mbox{\Hypertarget{struct_perspective_result_af3e15ad54fa2f84ad2d782a2f0fd6e73}\label{struct_perspective_result_af3e15ad54fa2f84ad2d782a2f0fd6e73}} 
+\index{Perspective\+Result@{Perspective\+Result}!perspective@{perspective}}
+\index{perspective@{perspective}!Perspective\+Result@{Perspective\+Result}}
+\subsubsection{\texorpdfstring{perspective}{perspective}}
+{\footnotesize\ttfamily cv\+::\+Mat Perspective\+Result\+::perspective}
+
+image after perspection. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/bdn\+\_\+jz/bdn\+\_\+jz/\+Camera\+Tracker\+Linux/include/\hyperlink{_chessboard_detector_8h}{Chessboard\+Detector.\+h}\end{DoxyCompactItemize}

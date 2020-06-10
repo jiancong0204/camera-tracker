@@ -1,0 +1,83 @@
+\hypertarget{classChessboard}{}\section{Chessboard Class Reference}
+\label{classChessboard}\index{Chessboard@{Chessboard}}
+
+
+Creation of chessboard.  
+
+
+
+
+{\ttfamily \#include $<$Chessboard.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classChessboard_aa80499df26acccc4fd9d6449c1d847f0}{Chessboard} (int width, int height, float size)
+\begin{DoxyCompactList}\small\item\em Constructor of Chessboard class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classChessboard_a53eac522998d8d92cca409493c773f54}\label{classChessboard_a53eac522998d8d92cca409493c773f54}} 
+\hyperlink{classChessboard_a53eac522998d8d92cca409493c773f54}{$\sim$\+Chessboard} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor of Chessboard class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classChessboard_aeecfc5f0c890fec1db2a45619332459b}\label{classChessboard_aeecfc5f0c890fec1db2a45619332459b}} 
+int \hyperlink{classChessboard_aeecfc5f0c890fec1db2a45619332459b}{get\+Width} ()
+\begin{DoxyCompactList}\small\item\em Function used to obtain the width of the chessboard (number of the blocks). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classChessboard_a5cbb8122bc0f8fc08d82e0541e01f7da}\label{classChessboard_a5cbb8122bc0f8fc08d82e0541e01f7da}} 
+int \hyperlink{classChessboard_a5cbb8122bc0f8fc08d82e0541e01f7da}{get\+Height} ()
+\begin{DoxyCompactList}\small\item\em Function uesd to obtain the height of the chessboard (number of the blocks). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classChessboard_a4640a7683d77d32621fa8821f1ec3d7d}\label{classChessboard_a4640a7683d77d32621fa8821f1ec3d7d}} 
+float \hyperlink{classChessboard_a4640a7683d77d32621fa8821f1ec3d7d}{get\+Size} ()
+\begin{DoxyCompactList}\small\item\em Function used to obtain the size of the block (mm). \end{DoxyCompactList}\item 
+std\+::vector$<$ cv\+::\+Point3f $>$ \hyperlink{classChessboard_af81a2c5b8a5914ef625a7accd0f2462f}{get\+Grid} ()
+\begin{DoxyCompactList}\small\item\em Function used to get the coordinates of all the corners. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Creation of chessboard. 
+
+This class wraps the creation of a chessboard. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classChessboard_aa80499df26acccc4fd9d6449c1d847f0}\label{classChessboard_aa80499df26acccc4fd9d6449c1d847f0}} 
+\index{Chessboard@{Chessboard}!Chessboard@{Chessboard}}
+\index{Chessboard@{Chessboard}!Chessboard@{Chessboard}}
+\subsubsection{\texorpdfstring{Chessboard()}{Chessboard()}}
+{\footnotesize\ttfamily Chessboard\+::\+Chessboard (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{float}]{size }\end{DoxyParamCaption})}
+
+
+
+Constructor of Chessboard class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the chessboard. \\
+\hline
+{\em height} & Height of the chessboard. \\
+\hline
+{\em size} & Side length of each block. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classChessboard_af81a2c5b8a5914ef625a7accd0f2462f}\label{classChessboard_af81a2c5b8a5914ef625a7accd0f2462f}} 
+\index{Chessboard@{Chessboard}!get\+Grid@{get\+Grid}}
+\index{get\+Grid@{get\+Grid}!Chessboard@{Chessboard}}
+\subsubsection{\texorpdfstring{get\+Grid()}{getGrid()}}
+{\footnotesize\ttfamily std\+::vector$<$ cv\+::\+Point3f $>$ Chessboard\+::get\+Grid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function used to get the coordinates of all the corners. 
+
+\begin{DoxyReturn}{Returns}
+A vector of three-\/dimensional points. 
+\end{DoxyReturn}
+
+
+Referenced by $\sim$\+Chessboard().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/bdn\+\_\+jz/bdn\+\_\+jz/\+Camera\+Tracker\+Linux/include/\hyperlink{Chessboard_8h}{Chessboard.\+h}\item 
+/home/bdn\+\_\+jz/bdn\+\_\+jz/\+Camera\+Tracker\+Linux/src/Chessboard.\+cpp\end{DoxyCompactItemize}
