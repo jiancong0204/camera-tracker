@@ -1,23 +1,23 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/bdn_jz/bdn_jz/camera-tracker-cpp/CameraTrackerLinux/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_aa6d0/fast"
-/usr/bin/make -f CMakeFiles/cmTC_aa6d0.dir/build.make CMakeFiles/cmTC_aa6d0.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_7c057/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7c057.dir/build.make CMakeFiles/cmTC_7c057.dir/build
 make[1]: Entering directory '/home/bdn_jz/bdn_jz/camera-tracker-cpp/CameraTrackerLinux/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_aa6d0.dir/CheckSymbolExists.c.o
-/usr/bin/cc   -fPIC    -o CMakeFiles/cmTC_aa6d0.dir/CheckSymbolExists.c.o   -c /home/bdn_jz/bdn_jz/camera-tracker-cpp/CameraTrackerLinux/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_aa6d0
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aa6d0.dir/link.txt --verbose=1
-/usr/bin/cc -fPIC     -rdynamic CMakeFiles/cmTC_aa6d0.dir/CheckSymbolExists.c.o  -o cmTC_aa6d0 
-CMakeFiles/cmTC_aa6d0.dir/CheckSymbolExists.c.o: In function `main':
+Building C object CMakeFiles/cmTC_7c057.dir/CheckSymbolExists.c.o
+/usr/bin/cc   -fPIC    -o CMakeFiles/cmTC_7c057.dir/CheckSymbolExists.c.o   -c /home/bdn_jz/bdn_jz/camera-tracker-cpp/CameraTrackerLinux/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_7c057
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7c057.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC     -rdynamic CMakeFiles/cmTC_7c057.dir/CheckSymbolExists.c.o  -o cmTC_7c057 
+CMakeFiles/cmTC_7c057.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x14): undefined reference to `pthread_create'
 CheckSymbolExists.c:(.text+0x18): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_aa6d0.dir/build.make:97: recipe for target 'cmTC_aa6d0' failed
-make[1]: *** [cmTC_aa6d0] Error 1
+CMakeFiles/cmTC_7c057.dir/build.make:97: recipe for target 'cmTC_7c057' failed
+make[1]: *** [cmTC_7c057] Error 1
 make[1]: Leaving directory '/home/bdn_jz/bdn_jz/camera-tracker-cpp/CameraTrackerLinux/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_aa6d0/fast' failed
-make: *** [cmTC_aa6d0/fast] Error 2
+Makefile:126: recipe for target 'cmTC_7c057/fast' failed
+make: *** [cmTC_7c057/fast] Error 2
 
 File /home/bdn_jz/bdn_jz/camera-tracker-cpp/CameraTrackerLinux/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -37,20 +37,20 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/bdn_jz/bdn_jz/camera-tracker-cpp/CameraTrackerLinux/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_14981/fast"
-/usr/bin/make -f CMakeFiles/cmTC_14981.dir/build.make CMakeFiles/cmTC_14981.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_07ce3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_07ce3.dir/build.make CMakeFiles/cmTC_07ce3.dir/build
 make[1]: Entering directory '/home/bdn_jz/bdn_jz/camera-tracker-cpp/CameraTrackerLinux/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_14981.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_14981.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_14981
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_14981.dir/link.txt --verbose=1
-/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_14981.dir/CheckFunctionExists.c.o  -o cmTC_14981 -lpthreads 
+Building C object CMakeFiles/cmTC_07ce3.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_07ce3.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_07ce3
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_07ce3.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_07ce3.dir/CheckFunctionExists.c.o  -o cmTC_07ce3 -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_14981.dir/build.make:97: recipe for target 'cmTC_14981' failed
-make[1]: *** [cmTC_14981] Error 1
+CMakeFiles/cmTC_07ce3.dir/build.make:97: recipe for target 'cmTC_07ce3' failed
+make[1]: *** [cmTC_07ce3] Error 1
 make[1]: Leaving directory '/home/bdn_jz/bdn_jz/camera-tracker-cpp/CameraTrackerLinux/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_14981/fast' failed
-make: *** [cmTC_14981/fast] Error 2
+Makefile:126: recipe for target 'cmTC_07ce3/fast' failed
+make: *** [cmTC_07ce3/fast] Error 2
 
 
