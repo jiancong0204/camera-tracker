@@ -6,7 +6,7 @@ PoseEstimation::PoseEstimation(std::vector<cv::Point3f> grid, float scale, Chess
 	PoseEstimation::corners = _rescale_image(corners, scale, number);
 	double cam[9];
 	double dist[5];
-	json cameraParams = jsonUtilization::loadJson("camera_parameters.json");
+	json cameraParams = jsonUtilization::loadJson("../json/camera_parameters.json");
 	_get_camera_matrix(cameraParams, cam);
 	_get_distortion_coefficients(cameraParams, dist);
 	cv::Mat cameraMatrix = cv::Mat(3, 3, CV_64FC1, cam);

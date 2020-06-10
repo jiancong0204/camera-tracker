@@ -1,7 +1,7 @@
 /**
 * @file ChessboardDetector.h
 * 
-* @brief This file contains the declaration of the ChessboardDetector class.
+* @brief This file contains the declaration of the ChessboardDetector class
 * 
 * @author Jiancong Zheng 
 * @date 2020-05-29
@@ -13,7 +13,7 @@
 
 /** 
 * @struct FindCornersResult
-* @brief Structure that contains the result of corner detection. 
+* @brief Structure that contains the result of corner detection
 **/
 typedef struct FindCornersResult 
 {
@@ -36,7 +36,7 @@ typedef struct PerspectiveResult
 
 /** 
 * @struct ChessboardDetectorResult
-* @brief Structure that contains the result of chessboard detection. 
+* @brief Structure that contains the result of chessboard detection
 **/
 typedef struct ChessboardDetectorResult 
 {
