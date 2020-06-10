@@ -1,0 +1,137 @@
+\hypertarget{class_code_scanner}{}\section{Code\+Scanner Class Reference}
+\label{class_code_scanner}\index{Code\+Scanner@{Code\+Scanner}}
+
+
+Class that contains the precedures of finding the position of code and decoding the code.  
+
+
+
+
+{\ttfamily \#include $<$Scanner.\+h$>$}
+
+
+
+Inheritance diagram for Code\+Scanner\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_code_scanner__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code\+Scanner\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{class_code_scanner__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_code_scanner_a3bcd2d58ba99d3489a82c39a7982d13b}{Code\+Scanner} ()
+\begin{DoxyCompactList}\small\item\em Constructor of \hyperlink{class_code_scanner}{Code\+Scanner} class. \end{DoxyCompactList}\item 
+\hyperlink{class_code_scanner_a092360e7816a81de90384495bd0f3e44}{$\sim$\+Code\+Scanner} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor of \hyperlink{class_code_scanner}{Code\+Scanner} class. \end{DoxyCompactList}\item 
+\hyperlink{struct_code_info}{Code\+Info} \hyperlink{class_code_scanner_a8ed0db374175da430110411dac1ceba1}{get\+Code\+Info} (\hyperlink{struct_chessboard_detector_result}{Chessboard\+Detector\+Result} detection, float find\+OriginX, float find\+OriginY, float find\+EndX, float find\+EndY)
+\begin{DoxyCompactList}\small\item\em Function that estimates the coordinates of code\textquotesingle{}s corners based on the upper left corner of the chessboard. \end{DoxyCompactList}\item 
+\hyperlink{struct_code_info}{Code\+Info} \hyperlink{class_code_scanner_a9660d74f2750b274d92396be1cd63ab4}{decode} (\hyperlink{struct_chessboard_detector_result}{Chessboard\+Detector\+Result} detection, \hyperlink{struct_code_info}{Code\+Info} \hyperlink{class_code_scanner_a7f6371a29a0d630c9508c070f8c8966f}{code\+Info}, const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Function that decodes the code to get the type and data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_code_info}{Code\+Info} \hyperlink{class_code_scanner_a7f6371a29a0d630c9508c070f8c8966f}{code\+Info}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that contains the precedures of finding the position of code and decoding the code. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_code_scanner_a3bcd2d58ba99d3489a82c39a7982d13b}\label{class_code_scanner_a3bcd2d58ba99d3489a82c39a7982d13b}} 
+\index{Code\+Scanner@{Code\+Scanner}!Code\+Scanner@{Code\+Scanner}}
+\index{Code\+Scanner@{Code\+Scanner}!Code\+Scanner@{Code\+Scanner}}
+\subsubsection{\texorpdfstring{Code\+Scanner()}{CodeScanner()}}
+{\footnotesize\ttfamily Code\+Scanner\+::\+Code\+Scanner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor of \hyperlink{class_code_scanner}{Code\+Scanner} class. 
+
+\mbox{\Hypertarget{class_code_scanner_a092360e7816a81de90384495bd0f3e44}\label{class_code_scanner_a092360e7816a81de90384495bd0f3e44}} 
+\index{Code\+Scanner@{Code\+Scanner}!````~Code\+Scanner@{$\sim$\+Code\+Scanner}}
+\index{````~Code\+Scanner@{$\sim$\+Code\+Scanner}!Code\+Scanner@{Code\+Scanner}}
+\subsubsection{\texorpdfstring{$\sim$\+Code\+Scanner()}{~CodeScanner()}}
+{\footnotesize\ttfamily Code\+Scanner\+::$\sim$\+Code\+Scanner (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deconstructor of \hyperlink{class_code_scanner}{Code\+Scanner} class. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_code_scanner_a9660d74f2750b274d92396be1cd63ab4}\label{class_code_scanner_a9660d74f2750b274d92396be1cd63ab4}} 
+\index{Code\+Scanner@{Code\+Scanner}!decode@{decode}}
+\index{decode@{decode}!Code\+Scanner@{Code\+Scanner}}
+\subsubsection{\texorpdfstring{decode()}{decode()}}
+{\footnotesize\ttfamily \hyperlink{struct_code_info}{Code\+Info} Code\+Scanner\+::decode (\begin{DoxyParamCaption}\item[{\hyperlink{struct_chessboard_detector_result}{Chessboard\+Detector\+Result}}]{detection,  }\item[{\hyperlink{struct_code_info}{Code\+Info}}]{code\+Info,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Function that decodes the code to get the type and data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em detection} & Result of chessboard detection. \\
+\hline
+{\em code\+Info} & Related information about the code. \\
+\hline
+{\em name} & Name of the code. (Only used for displaying the code) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A structure of the complete information about the code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_code_scanner_a8ed0db374175da430110411dac1ceba1}\label{class_code_scanner_a8ed0db374175da430110411dac1ceba1}} 
+\index{Code\+Scanner@{Code\+Scanner}!get\+Code\+Info@{get\+Code\+Info}}
+\index{get\+Code\+Info@{get\+Code\+Info}!Code\+Scanner@{Code\+Scanner}}
+\subsubsection{\texorpdfstring{get\+Code\+Info()}{getCodeInfo()}}
+{\footnotesize\ttfamily \hyperlink{struct_code_info}{Code\+Info} Code\+Scanner\+::get\+Code\+Info (\begin{DoxyParamCaption}\item[{\hyperlink{struct_chessboard_detector_result}{Chessboard\+Detector\+Result}}]{detection,  }\item[{float}]{find\+OriginX,  }\item[{float}]{find\+OriginY,  }\item[{float}]{find\+EndX,  }\item[{float}]{find\+EndY }\end{DoxyParamCaption})}
+
+
+
+Function that estimates the coordinates of code\textquotesingle{}s corners based on the upper left corner of the chessboard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em detection} & Result of chessboard detection. \\
+\hline
+{\em find\+OriginX} & X-\/coordinate of the down left corner of the code. \\
+\hline
+{\em find\+OriginY} & Y-\/coordinate of the down left corner of the code. \\
+\hline
+{\em find\+EndX} & X-\/coordinate of the up right corner of the code. \\
+\hline
+{\em find\+EndY} & Y-\/coordinate of the up right corner of the code. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A structure of the partial information about the code 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_code_scanner_a7f6371a29a0d630c9508c070f8c8966f}\label{class_code_scanner_a7f6371a29a0d630c9508c070f8c8966f}} 
+\index{Code\+Scanner@{Code\+Scanner}!code\+Info@{code\+Info}}
+\index{code\+Info@{code\+Info}!Code\+Scanner@{Code\+Scanner}}
+\subsubsection{\texorpdfstring{code\+Info}{codeInfo}}
+{\footnotesize\ttfamily \hyperlink{struct_code_info}{Code\+Info} Code\+Scanner\+::code\+Info}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/bdn\+\_\+jz/bdn\+\_\+jz/\+Camera\+Tracker\+Linux/include/\hyperlink{_scanner_8h}{Scanner.\+h}\item 
+/home/bdn\+\_\+jz/bdn\+\_\+jz/\+Camera\+Tracker\+Linux/src/\hyperlink{_scanner_8cpp}{Scanner.\+cpp}\end{DoxyCompactItemize}

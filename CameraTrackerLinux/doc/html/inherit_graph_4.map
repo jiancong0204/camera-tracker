@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_code_scanner.html" title="Class that contains the precedures of finding the position of code and decoding the code..." alt="" coords="5,31,107,57"/>
+<area shape="rect" id="node2" href="$class_barcode_scanner.html" title="Class that contains the precedures of finding the position of barcode and decoding the barcode..." alt="" coords="155,5,273,32"/>
+<area shape="rect" id="node3" href="$class_qrcode_scanner.html" title="Class that contains the precedures of finding the position of QR&#45;code and decoding the QR&#45;code..." alt="" coords="158,56,270,83"/>
+</map>
