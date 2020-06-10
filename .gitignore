@@ -2,5 +2,6 @@
 *x64/
 *Debug/
 *packages/
+*/build
 build/*
 */build/*
