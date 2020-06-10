@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['height',['height',['../class_chessboard.html#ad7baa62b4f5f47627bae49a53475a56c',1,'Chessboard']]]
+  ['grid',['grid',['../class_chessboard.html#aa503005107b822a202c296598a81096b',1,'Chessboard']]]
 ];

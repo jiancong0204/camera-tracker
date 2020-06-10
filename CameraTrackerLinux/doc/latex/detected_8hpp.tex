@@ -1,0 +1,51 @@
+\hypertarget{detected_8hpp}{}\section{/home/bdn\+\_\+jz/bdn\+\_\+jz/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/nlohmann/detail/meta/detected.hpp File Reference}
+\label{detected_8hpp}\index{/home/bdn\+\_\+jz/bdn\+\_\+jz/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/nlohmann/detail/meta/detected.\+hpp@{/home/bdn\+\_\+jz/bdn\+\_\+jz/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/nlohmann/detail/meta/detected.\+hpp}}
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include \char`\"{}nlohmann/detail/meta/void\+\_\+t.\+hpp\char`\"{}}\newline
+Include dependency graph for detected.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=273pt]{detected_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{detected_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structnlohmann_1_1detail_1_1nonesuch}{nlohmann\+::detail\+::nonesuch}
+\item 
+struct \hyperlink{structnlohmann_1_1detail_1_1detector}{nlohmann\+::detail\+::detector$<$ Default, Always\+Void, Op, Args $>$}
+\item 
+struct \hyperlink{structnlohmann_1_1detail_1_1detector_3_01_default_00_01void__t_3_01_op_3_01_args_8_8_8_01_4_01_4_00_01_op_00_01_args_8_8_8_01_4}{nlohmann\+::detail\+::detector$<$ Default, void\+\_\+t$<$ Op$<$ Args... $>$ $>$, Op, Args... $>$}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacenlohmann}{nlohmann}
+\begin{DoxyCompactList}\small\item\em namespace for Niels Lohmann \end{DoxyCompactList}\item 
+ \hyperlink{namespacenlohmann_1_1detail}{nlohmann\+::detail}
+\begin{DoxyCompactList}\small\item\em detail namespace with internal helper functions \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$template$<$ class... $>$ class Op, class... Args$>$ }\\using \hyperlink{namespacenlohmann_1_1detail_a9135fcf616d6ac6e231a86e0a055ac44}{nlohmann\+::detail\+::is\+\_\+detected} = typename detector$<$ nonesuch, void, Op, Args... $>$\+::value\+\_\+t
+\item 
+{\footnotesize template$<$template$<$ class... $>$ class Op, class... Args$>$ }\\using \hyperlink{namespacenlohmann_1_1detail_a37e97a32d0b94ce5f745427e4e40204d}{nlohmann\+::detail\+::detected\+\_\+t} = typename detector$<$ nonesuch, void, Op, Args... $>$\+::type
+\item 
+{\footnotesize template$<$class Default , template$<$ class... $>$ class Op, class... Args$>$ }\\using \hyperlink{namespacenlohmann_1_1detail_a240ce21919ab08e8a6cb3a5cfa412bce}{nlohmann\+::detail\+::detected\+\_\+or} = detector$<$ Default, void, Op, Args... $>$
+\item 
+{\footnotesize template$<$class Default , template$<$ class... $>$ class Op, class... Args$>$ }\\using \hyperlink{namespacenlohmann_1_1detail_a7ac5b8ef0363101275a2827b3b117dcf}{nlohmann\+::detail\+::detected\+\_\+or\+\_\+t} = typename detected\+\_\+or$<$ Default, Op, Args... $>$\+::type
+\item 
+{\footnotesize template$<$class Expected , template$<$ class... $>$ class Op, class... Args$>$ }\\using \hyperlink{namespacenlohmann_1_1detail_a7542b4dbac07817fd4849ecfa4619def}{nlohmann\+::detail\+::is\+\_\+detected\+\_\+exact} = std\+::is\+\_\+same$<$ Expected, detected\+\_\+t$<$ Op, Args... $>$ $>$
+\item 
+{\footnotesize template$<$class To , template$<$ class... $>$ class Op, class... Args$>$ }\\using \hyperlink{namespacenlohmann_1_1detail_a5262e531c46e357b33007060f294673b}{nlohmann\+::detail\+::is\+\_\+detected\+\_\+convertible} = std\+::is\+\_\+convertible$<$ detected\+\_\+t$<$ Op, Args... $>$, To $>$
+\end{DoxyCompactItemize}

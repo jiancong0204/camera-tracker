@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['good',['GOOD',['../constants_8h.html#ae9749bac8d6973b92725af092d0a76bca8eb0135a04a7e7daf1ca4abf2c87832c',1,'constants.h']]]
+  ['cbor',['cbor',['../namespacenlohmann_1_1detail.html#aa554fc6a11519e4f347deb25a9f0db40aaf9de350d652f0c9055ddab514bd23ea',1,'nlohmann::detail']]]
 ];

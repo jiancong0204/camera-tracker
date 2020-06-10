@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['code',['code',['../struct_code_info.html#aeaec8d442ba7cf5b8a946f3da849ebfe',1,'CodeInfo']]],
-  ['codedata',['codeData',['../struct_code_info.html#a01341cc7b99f93fbdd052f6d3e5b1e20',1,'CodeInfo']]],
-  ['codeheight',['codeHeight',['../struct_code_info.html#a8035a0d0891b25d59693e23f192e3a29',1,'CodeInfo']]],
-  ['codeinfo',['codeInfo',['../class_code_scanner.html#a7f6371a29a0d630c9508c070f8c8966f',1,'CodeScanner']]],
-  ['codetype',['codeType',['../struct_code_info.html#aa93c41fefb9505ee55963d60ec1299e7',1,'CodeInfo']]],
-  ['codewidth',['codeWidth',['../struct_code_info.html#ab8493ec1c1f670d1060bde6c261f9e80',1,'CodeInfo']]],
-  ['corners',['corners',['../struct_find_corners_result.html#a138337b67fb9eb6010ec7c9a276a009f',1,'FindCornersResult::corners()'],['../struct_chessboard_detector_result.html#a69a0fd183e694c1fb80bbad1ed2d6833',1,'ChessboardDetectorResult::corners()']]]
+  ['barcodeinfo',['barCodeInfo',['../class_barcode_scanner.html#a843ee092e719a72ed88002e89d9e9992',1,'BarcodeScanner']]],
+  ['basicjsontype',['BasicJsonType',['../classnlohmann_1_1detail_1_1iter__impl.html#abf18f18793f84b0222aebb5a2a87da7a',1,'nlohmann::detail::iter_impl']]],
+  ['begin_5fvalue',['begin_value',['../classnlohmann_1_1detail_1_1primitive__iterator__t.html#afcb3bcf9da8aa95bd82067d1a67c2326',1,'nlohmann::detail::primitive_iterator_t']]],
+  ['boolean',['boolean',['../unionnlohmann_1_1basic__json_1_1json__value.html#afd0f8ec00c40301efffd01a276959371',1,'nlohmann::basic_json::json_value']]],
+  ['boundingbox',['boundingBox',['../struct_perspective_result.html#a2780569aa3456b68798cad4697af8647',1,'PerspectiveResult::boundingBox()'],['../struct_chessboard_detector_result.html#a6887aab98e7283ccfa4a51f8714d5260',1,'ChessboardDetectorResult::boundingBox()']]],
+  ['boundingrectangle',['boundingRectangle',['../struct_perspective_result.html#a78e1db1b132a9e364ab5f2c3b452b611',1,'PerspectiveResult::boundingRectangle()'],['../struct_chessboard_detector_result.html#a1c1c71bb678c2eb872d9f8c4ae0a9871',1,'ChessboardDetectorResult::boundingRectangle()']]],
+  ['byte',['byte',['../classnlohmann_1_1detail_1_1parse__error.html#a9505aaa1ca943be927eec7cc579592ff',1,'nlohmann::detail::parse_error']]]
 ];
