@@ -1,3 +1,0 @@
-/home/bdn_jz/bdn_jz/camera-tracker-cpp/CameraTrackerLinux/build/CMakeFiles/rebuild_cache.dir
-/home/bdn_jz/bdn_jz/camera-tracker-cpp/CameraTrackerLinux/build/CMakeFiles/camera_tracker.dir
-/home/bdn_jz/bdn_jz/camera-tracker-cpp/CameraTrackerLinux/build/CMakeFiles/edit_cache.dir
