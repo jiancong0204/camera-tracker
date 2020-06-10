@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['qrcodescanner',['QrcodeScanner',['../class_qrcode_scanner.html',1,'']]]
+  ['genericcamera',['GenericCamera',['../class_generic_camera.html',1,'']]]
 ];

@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['max_5fangle',['MAX_ANGLE',['../constants_8h.html#af3c82099d63a2d91d68bd62d954059c7',1,'constants.h']]],
-  ['max_5fimage_5faxis',['MAX_IMAGE_AXIS',['../constants_8h.html#a7736a4df685c629365fa2a6001a8b08b',1,'constants.h']]],
-  ['measure_5fperformance_5fbarrier',['MEASURE_PERFORMANCE_BARRIER',['../constants_8h.html#aec3698fa38dbcb13be0976e53dae92c3',1,'constants.h']]],
-  ['min_5fdistance',['MIN_DISTANCE',['../constants_8h.html#a549d41dcf9444ed7d6df1da3c73e7d16',1,'constants.h']]],
-  ['mutex_5ftimeout',['MUTEX_TIMEOUT',['../constants_8h.html#a8af0c73884cd609b9cfc7495f70807b5',1,'constants.h']]]
+  ['laser_5fexpose_5fiterations',['LASER_EXPOSE_ITERATIONS',['../constants_8h.html#a6c7ea402893dffa8ab4020dc647b2245',1,'constants.h']]],
+  ['left_5fcalib_5floc',['LEFT_CALIB_LOC',['../constants_8h.html#a2366d8e6e85d83991c14dca7561048b2',1,'constants.h']]],
+  ['left_5fcam',['LEFT_CAM',['../constants_8h.html#aac018fc017489b79204fe23a3072ed97',1,'constants.h']]]
 ];
