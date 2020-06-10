@@ -2,6 +2,11 @@
 \label{class_rotation_stage}\index{Rotation\+Stage@{Rotation\+Stage}}
 
 
+Control of the encoder.  
+
+
+
+
 {\ttfamily \#include $<$Rotation\+Stage.\+h$>$}
 
 
@@ -17,9 +22,9 @@ Collaboration diagram for Rotation\+Stage\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_rotation_stage_a14ae00fd0137138b8fa3c653498d13e9}{Rotation\+Stage} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Construct the \hyperlink{class_rotation_stage}{Rotation\+Stage} object. \end{DoxyCompactList}\item 
 \hyperlink{class_rotation_stage_a3023bae2d8de9f084036de453d8ac374}{$\sim$\+Rotation\+Stage} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
 void \hyperlink{class_rotation_stage_a47d308cbc52332ea2df332ecea062bae}{initialize} (std\+::string U\+SB, int address=1, int home\+Search\+Type=0, float search\+Velocity=50, float search\+Time\+Out=2.\+2)
 \begin{DoxyCompactList}\small\item\em Function that inializes the camera tracker. \end{DoxyCompactList}\item 
 void \hyperlink{class_rotation_stage_a6f465da2aaca6b2dc6e808135e3c27e3}{relative\+Move} (std\+::string U\+SB, float displacement, int address=1)
@@ -40,6 +45,11 @@ int \hyperlink{class_rotation_stage_a3c76fa916da6c1804f62d61e9092ec1c}{serial\+P
 \end{DoxyCompactItemize}
 
 
+\subsection{Detailed Description}
+Control of the encoder. 
+
+This class wraps the driver controlling the encoder to rotate the camera 
+
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_rotation_stage_a14ae00fd0137138b8fa3c653498d13e9}\label{class_rotation_stage_a14ae00fd0137138b8fa3c653498d13e9}} 
 \index{Rotation\+Stage@{Rotation\+Stage}!Rotation\+Stage@{Rotation\+Stage}}
@@ -47,11 +57,19 @@ int \hyperlink{class_rotation_stage_a3c76fa916da6c1804f62d61e9092ec1c}{serial\+P
 \subsubsection{\texorpdfstring{Rotation\+Stage()}{RotationStage()}}
 {\footnotesize\ttfamily Rotation\+Stage\+::\+Rotation\+Stage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Construct the \hyperlink{class_rotation_stage}{Rotation\+Stage} object. 
+
 \mbox{\Hypertarget{class_rotation_stage_a3023bae2d8de9f084036de453d8ac374}\label{class_rotation_stage_a3023bae2d8de9f084036de453d8ac374}} 
 \index{Rotation\+Stage@{Rotation\+Stage}!````~Rotation\+Stage@{$\sim$\+Rotation\+Stage}}
 \index{````~Rotation\+Stage@{$\sim$\+Rotation\+Stage}!Rotation\+Stage@{Rotation\+Stage}}
 \subsubsection{\texorpdfstring{$\sim$\+Rotation\+Stage()}{~RotationStage()}}
 {\footnotesize\ttfamily Rotation\+Stage\+::$\sim$\+Rotation\+Stage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Deconstructor. 
 
 
 
