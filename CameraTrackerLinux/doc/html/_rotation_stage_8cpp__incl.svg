@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="_rotation_stage_8h.html" target="_top" xlink:title="This file contains the declaration of the RotationStage class. ">
+<g id="a_node2"><a xlink:href="_rotation_stage_8h.html" target="_top" target="_top" xlink:title="This file contains the declaration of the RotationStage class. ">
 <polygon fill="#ffffff" stroke="#000000" points="138,-112.5 138,-131.5 225,-131.5 225,-112.5 138,-112.5"/>
 <text text-anchor="middle" x="181.5" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">RotationStage.h</text>
 </a>
@@ -60,7 +60,7 @@
 <!-- Node4 -->
 <g id="node5" class="node">
 <title>Node4</title>
-<g id="a_node5"><a xlink:href="_conex_8h.html" target="_top" xlink:title="Conex.h">
+<g id="a_node5"><a xlink:href="_conex_8h.html" target="_top" target="_top" xlink:title="Conex.h">
 <polygon fill="#ffffff" stroke="#000000" points="88,-56.5 88,-75.5 141,-75.5 141,-56.5 88,-56.5"/>
 <text text-anchor="middle" x="114.5" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Conex.h</text>
 </a>

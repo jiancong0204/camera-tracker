@@ -33,7 +33,7 @@
 <!-- Node2 -->
 <g id="node3" class="node">
 <title>Node2</title>
-<g id="a_node3"><a xlink:href="_chessboard_detector_8h.html" target="_top" xlink:title="This file contains the declaration of the ChessboardDetector class. ">
+<g id="a_node3"><a xlink:href="_chessboard_detector_8h.html" target="_top" target="_top" xlink:title="This file contains the declaration of the ChessboardDetector class. ">
 <polygon fill="#ffffff" stroke="#000000" points="63.5,-112.5 63.5,-131.5 178.5,-131.5 178.5,-112.5 63.5,-112.5"/>
 <text text-anchor="middle" x="121" y="-119.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">ChessboardDetector.h</text>
 </a>
@@ -48,7 +48,7 @@
 <!-- Node3 -->
 <g id="node4" class="node">
 <title>Node3</title>
-<g id="a_node4"><a xlink:href="_chessboard_8h.html" target="_top" xlink:title="This file contains the declaration of the Chessboard class. ">
+<g id="a_node4"><a xlink:href="_chessboard_8h.html" target="_top" target="_top" xlink:title="This file contains the declaration of the Chessboard class. ">
 <polygon fill="#ffffff" stroke="#000000" points="82.5,-56.5 82.5,-75.5 159.5,-75.5 159.5,-56.5 82.5,-56.5"/>
 <text text-anchor="middle" x="121" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Chessboard.h</text>
 </a>

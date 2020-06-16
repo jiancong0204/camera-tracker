@@ -11,22 +11,12 @@ abstract input adapter interface
 
 
 
-Inheritance diagram for nlohmann\+:\+:detail\+:\+:input\+\_\+adapter\+\_\+protocol\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{structnlohmann_1_1detail_1_1input__adapter__protocol__inherit__graph}
-\end{center}
-\end{figure}
+Inheritance diagram for nlohmann\+:\+:detail\+:\+:input\+\_\+adapter\+\_\+protocol\+:
+% FIG 0
 
 
-Collaboration diagram for nlohmann\+:\+:detail\+:\+:input\+\_\+adapter\+\_\+protocol\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=216pt]{structnlohmann_1_1detail_1_1input__adapter__protocol__coll__graph}
-\end{center}
-\end{figure}
+Collaboration diagram for nlohmann\+:\+:detail\+:\+:input\+\_\+adapter\+\_\+protocol\+:
+% FIG 1
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -42,31 +32,33 @@ abstract input adapter interface
 Produces a stream of std\+::char\+\_\+traits$<$char$>$\+::int\+\_\+type characters from a std\+::istream, a buffer, or some other input type. Accepts the return of exactly one non-\/\+E\+OF character for future input. The int\+\_\+type characters returned consist of all valid char values as positive values (typically unsigned char), plus an E\+OF value outside that range, specified by the value of the function std\+::char\+\_\+traits$<$char$>$\+::eof(). This value is typically -\/1, but could be any arbitrary value which is not a valid char value. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{structnlohmann_1_1detail_1_1input__adapter__protocol_a92dac74def4ac5adacd0684088bd4082}\label{structnlohmann_1_1detail_1_1input__adapter__protocol_a92dac74def4ac5adacd0684088bd4082}} 
 \index{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol@{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol}!````~input\+\_\+adapter\+\_\+protocol@{$\sim$input\+\_\+adapter\+\_\+protocol}}
 \index{````~input\+\_\+adapter\+\_\+protocol@{$\sim$input\+\_\+adapter\+\_\+protocol}!nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol@{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol}}
-\subsubsection{\texorpdfstring{$\sim$input\+\_\+adapter\+\_\+protocol()}{~input\_adapter\_protocol()}}
-{\footnotesize\ttfamily virtual nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol\+::$\sim$input\+\_\+adapter\+\_\+protocol (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
-
+\subsubsection[{\texorpdfstring{$\sim$input\+\_\+adapter\+\_\+protocol()=default}{~input_adapter_protocol()=default}}]{\setlength{\rightskip}{0pt plus 5cm}virtual nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol\+::$\sim$input\+\_\+adapter\+\_\+protocol (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}\hypertarget{structnlohmann_1_1detail_1_1input__adapter__protocol_a92dac74def4ac5adacd0684088bd4082}{}\label{structnlohmann_1_1detail_1_1input__adapter__protocol_a92dac74def4ac5adacd0684088bd4082}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{structnlohmann_1_1detail_1_1input__adapter__protocol_aac10a6a4048a8ce8e2ed50277692a3ca}\label{structnlohmann_1_1detail_1_1input__adapter__protocol_aac10a6a4048a8ce8e2ed50277692a3ca}} 
 \index{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol@{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol}!get\+\_\+character@{get\+\_\+character}}
 \index{get\+\_\+character@{get\+\_\+character}!nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol@{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol}}
-\subsubsection{\texorpdfstring{get\+\_\+character()}{get\_character()}}
-{\footnotesize\ttfamily virtual std\+::char\+\_\+traits$<$char$>$\+::int\+\_\+type nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol\+::get\+\_\+character (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
+\subsubsection[{\texorpdfstring{get\+\_\+character()=0}{get_character()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\+::char\+\_\+traits$<$char$>$\+::int\+\_\+type nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol\+::get\+\_\+character (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{structnlohmann_1_1detail_1_1input__adapter__protocol_aac10a6a4048a8ce8e2ed50277692a3ca}{}\label{structnlohmann_1_1detail_1_1input__adapter__protocol_aac10a6a4048a8ce8e2ed50277692a3ca}
 
 
 get a character \mbox{[}0,255\mbox{]} or std\+::char\+\_\+traits$<$char$>$\+::eof(). 
 
 
 
-Implemented in \hyperlink{classnlohmann_1_1detail_1_1wide__string__input__adapter_abb62b34cf77e557ce5321b7f2490c3b0}{nlohmann\+::detail\+::wide\+\_\+string\+\_\+input\+\_\+adapter$<$ Wide\+String\+Type $>$}, \hyperlink{classnlohmann_1_1detail_1_1input__buffer__adapter_ae9e195b04f3551fafb0925aafba00124}{nlohmann\+::detail\+::input\+\_\+buffer\+\_\+adapter}, \hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter_ae0760af923583de6354725e901d1869d}{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}, and \hyperlink{classnlohmann_1_1detail_1_1file__input__adapter_a0d4ff48617c8f63c30babdfd09482329}{nlohmann\+::detail\+::file\+\_\+input\+\_\+adapter}.
+Implemented in \hyperlink{classnlohmann_1_1detail_1_1wide__string__input__adapter_a337a9052b18a9dcda49a36fcc9c3d083}{nlohmann\+::detail\+::wide\+\_\+string\+\_\+input\+\_\+adapter$<$ Wide\+String\+Type $>$}, \hyperlink{classnlohmann_1_1detail_1_1input__buffer__adapter_a3a8ded2e453b8372353aed38302f30f1}{nlohmann\+::detail\+::input\+\_\+buffer\+\_\+adapter}, \hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter_ae0760af923583de6354725e901d1869d}{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}, and \hyperlink{classnlohmann_1_1detail_1_1file__input__adapter_a9faaa1d99d08f50cacc57d1904d7cce1}{nlohmann\+::detail\+::file\+\_\+input\+\_\+adapter}.
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/bdn\+\_\+jz/bdn\+\_\+jz/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/nlohmann/detail/input/\hyperlink{input__adapters_8hpp}{input\+\_\+adapters.\+hpp}\end{DoxyCompactItemize}
+/home/jc/\+H\+I\+W\+I/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/nlohmann/detail/input/\hyperlink{input__adapters_8hpp}{input\+\_\+adapters.\+hpp}\end{DoxyCompactItemize}

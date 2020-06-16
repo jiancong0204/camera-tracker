@@ -24,13 +24,13 @@ if (edges && edges.length) {
                 <circle id="rim" cx="0" cy="0" r="7"/>
                 <circle id="rim2" cx="0" cy="0" r="3.5"/>
                 <g id="zoomPlus">
-                        <use xlink:href="#rim" fill="#404040">
+                        <use xlink:href="#rim" target="_top" fill="#404040">
                                 <set attributeName="fill" to="#808080" begin="zoomplus.mouseover" end="zoomplus.mouseout"/>
                         </use>
                         <path d="M-4,0h8M0,-4v8" fill="none" stroke="white" stroke-width="1.5" pointer-events="none"/>
                 </g>
                 <g id="zoomMin">
-                        <use xlink:href="#rim" fill="#404040">
+                        <use xlink:href="#rim" target="_top" fill="#404040">
                                 <set attributeName="fill" to="#808080" begin="zoomminus.mouseover" end="zoomminus.mouseout"/>
                         </use>
                         <path d="M-4,0h8" fill="none" stroke="white" stroke-width="1.5" pointer-events="none"/>
@@ -39,7 +39,7 @@ if (edges && edges.length) {
                         <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
                 </g>
                <g id="resetDef">
-                       <use xlink:href="#rim2" fill="#404040">
+                       <use xlink:href="#rim2" target="_top" fill="#404040">
                                <set attributeName="fill" to="#808080" begin="reset.mouseover" end="reset.mouseout"/>
                        </use>
                </g>
@@ -50,7 +50,7 @@ var viewWidth = 548;
 var viewHeight = 239;
 var sectionId = 'dynsection-1';
 </script>
-<script xlink:href="svgpan.js"/>
+<script xlink:href="svgpan.js" target="_top"/>
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>/home/bdn_jz/bdn_jz/camera&#45;tracker&#45;cpp/CameraTrackerLinux/include/ChessboardDetector.h</title>
@@ -67,7 +67,7 @@ var sectionId = 'dynsection-1';
 <!-- Node5 -->
 <g id="node2" class="node">
 <title>Node5</title>
-<g id="a_node2"><a xlink:href="_pose_estimation_8h.html" target="_top" xlink:title="This file contains the declaration of the PoseEstimation class. ">
+<g id="a_node2"><a xlink:href="_pose_estimation_8h.html" target="_top" target="_top" xlink:title="This file contains the declaration of the PoseEstimation class. ">
 <polygon fill="#ffffff" stroke="#000000" points="49.5,-89.5 49.5,-141.5 193.5,-141.5 193.5,-89.5 49.5,-89.5"/>
 <text text-anchor="start" x="57.5" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/home/bdn_jz/bdn_jz</text>
 <text text-anchor="start" x="57.5" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/camera&#45;tracker&#45;cpp</text>
@@ -85,7 +85,7 @@ var sectionId = 'dynsection-1';
 <!-- Node6 -->
 <g id="node3" class="node">
 <title>Node6</title>
-<g id="a_node3"><a xlink:href="main_8cpp.html" target="_top" xlink:title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/main.cpp">
+<g id="a_node3"><a xlink:href="main_8cpp.html" target="_top" target="_top" xlink:title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/main.cpp">
 <polygon fill="#ffffff" stroke="#000000" points="145,-6 145,-47 298,-47 298,-6 145,-6"/>
 <text text-anchor="start" x="153" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/home/bdn_jz/bdn_jz</text>
 <text text-anchor="start" x="153" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/camera&#45;tracker&#45;cpp</text>
@@ -102,7 +102,7 @@ var sectionId = 'dynsection-1';
 <!-- Node8 -->
 <g id="node5" class="node">
 <title>Node8</title>
-<g id="a_node5"><a xlink:href="_scanner_8h.html" target="_top" xlink:title="This file contains the declaration of the Scanner class. ">
+<g id="a_node5"><a xlink:href="_scanner_8h.html" target="_top" target="_top" xlink:title="This file contains the declaration of the Scanner class. ">
 <polygon fill="#ffffff" stroke="#000000" points="249.5,-89.5 249.5,-141.5 393.5,-141.5 393.5,-89.5 249.5,-89.5"/>
 <text text-anchor="start" x="257.5" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/home/bdn_jz/bdn_jz</text>
 <text text-anchor="start" x="257.5" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/camera&#45;tracker&#45;cpp</text>
@@ -120,7 +120,7 @@ var sectionId = 'dynsection-1';
 <!-- Node10 -->
 <g id="node7" class="node">
 <title>Node10</title>
-<g id="a_node7"><a xlink:href="_chessboard_detector_8cpp.html" target="_top" xlink:title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/src\l/ChessboardDetector.cpp">
+<g id="a_node7"><a xlink:href="_chessboard_detector_8cpp.html" target="_top" target="_top" xlink:title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/src\l/ChessboardDetector.cpp">
 <polygon fill="#ffffff" stroke="#000000" points="411.5,-89.5 411.5,-141.5 539.5,-141.5 539.5,-89.5 411.5,-89.5"/>
 <text text-anchor="start" x="419.5" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/home/bdn_jz/bdn_jz</text>
 <text text-anchor="start" x="419.5" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/camera&#45;tracker&#45;cpp</text>
@@ -144,7 +144,7 @@ var sectionId = 'dynsection-1';
 <!-- Node7 -->
 <g id="node4" class="node">
 <title>Node7</title>
-<g id="a_node4"><a xlink:href="_pose_estimation_8cpp.html" target="_top" xlink:title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/src\l/PoseEstimation.cpp">
+<g id="a_node4"><a xlink:href="_pose_estimation_8cpp.html" target="_top" target="_top" xlink:title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/src\l/PoseEstimation.cpp">
 <polygon fill="#ffffff" stroke="#000000" points="0,-.5 0,-52.5 127,-52.5 127,-.5 0,-.5"/>
 <text text-anchor="start" x="8" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/home/bdn_jz/bdn_jz</text>
 <text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/camera&#45;tracker&#45;cpp</text>
@@ -168,7 +168,7 @@ var sectionId = 'dynsection-1';
 <!-- Node9 -->
 <g id="node6" class="node">
 <title>Node9</title>
-<g id="a_node6"><a xlink:href="_scanner_8cpp.html" target="_top" xlink:title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/src\l/Scanner.cpp">
+<g id="a_node6"><a xlink:href="_scanner_8cpp.html" target="_top" target="_top" xlink:title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/src\l/Scanner.cpp">
 <polygon fill="#ffffff" stroke="#000000" points="316,-.5 316,-52.5 443,-52.5 443,-.5 316,-.5"/>
 <text text-anchor="start" x="324" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/home/bdn_jz/bdn_jz</text>
 <text text-anchor="start" x="324" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/camera&#45;tracker&#45;cpp</text>
@@ -187,29 +187,29 @@ var sectionId = 'dynsection-1';
 </svg>
         <g id="navigator" transform="translate(0 0)" fill="#404254">
                 <rect fill="#f2f5e9" fill-opacity="0.5" stroke="#606060" stroke-width=".5" x="0" y="0" width="60" height="60"/>
-                <use id="zoomplus" xlink:href="#zoomPlus" x="17" y="9" onmousedown="handleZoom(evt,'in')"/>
-                <use id="zoomminus" xlink:href="#zoomMin" x="42" y="9" onmousedown="handleZoom(evt,'out')"/>
-                <use id="reset" xlink:href="#resetDef" x="30" y="36" onmousedown="handleReset()"/>
-                <g id="arrowUp" xlink:href="#dirArrow" transform="translate(30 24)" onmousedown="handlePan(0,-1)">
-                  <use xlink:href="#rim" fill="#404040">
+                <use id="zoomplus" xlink:href="#zoomPlus" target="_top" x="17" y="9" onmousedown="handleZoom(evt,'in')"/>
+                <use id="zoomminus" xlink:href="#zoomMin" target="_top" x="42" y="9" onmousedown="handleZoom(evt,'out')"/>
+                <use id="reset" xlink:href="#resetDef" target="_top" x="30" y="36" onmousedown="handleReset()"/>
+                <g id="arrowUp" xlink:href="#dirArrow" target="_top" transform="translate(30 24)" onmousedown="handlePan(0,-1)">
+                  <use xlink:href="#rim" target="_top" fill="#404040">
                         <set attributeName="fill" to="#808080" begin="arrowUp.mouseover" end="arrowUp.mouseout"/>
                   </use>
                   <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
                 </g>
-                <g id="arrowRight" xlink:href="#dirArrow" transform="rotate(90) translate(36 -43)" onmousedown="handlePan(1,0)">
-                  <use xlink:href="#rim" fill="#404040">
+                <g id="arrowRight" xlink:href="#dirArrow" target="_top" transform="rotate(90) translate(36 -43)" onmousedown="handlePan(1,0)">
+                  <use xlink:href="#rim" target="_top" fill="#404040">
                         <set attributeName="fill" to="#808080" begin="arrowRight.mouseover" end="arrowRight.mouseout"/>
                   </use>
                   <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
                 </g>
-                <g id="arrowDown" xlink:href="#dirArrow" transform="rotate(180) translate(-30 -48)" onmousedown="handlePan(0,1)">
-                  <use xlink:href="#rim" fill="#404040">
+                <g id="arrowDown" xlink:href="#dirArrow" target="_top" transform="rotate(180) translate(-30 -48)" onmousedown="handlePan(0,1)">
+                  <use xlink:href="#rim" target="_top" fill="#404040">
                         <set attributeName="fill" to="#808080" begin="arrowDown.mouseover" end="arrowDown.mouseout"/>
                   </use>
                   <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
                 </g>
-                <g id="arrowLeft" xlink:href="#dirArrow" transform="rotate(270) translate(-36 17)" onmousedown="handlePan(-1,0)">
-                  <use xlink:href="#rim" fill="#404040">
+                <g id="arrowLeft" xlink:href="#dirArrow" target="_top" transform="rotate(270) translate(-36 17)" onmousedown="handlePan(-1,0)">
+                  <use xlink:href="#rim" target="_top" fill="#404040">
                         <set attributeName="fill" to="#808080" begin="arrowLeft.mouseover" end="arrowLeft.mouseout"/>
                   </use>
                   <path fill="none" stroke="white" stroke-width="1.5" d="M0,-3.0v7 M-2.5,-0.5L0,-3.0L2.5,-0.5"/>
@@ -217,7 +217,7 @@ var sectionId = 'dynsection-1';
         </g>
         <svg viewBox="0 0 15 15" width="100%" height="30px" preserveAspectRatio="xMaxYMin meet">
          <g id="arrow_out" transform="scale(0.3 0.3)">
-          <a xlink:href="_chessboard_detector_8h__dep__incl_org.svg" target="_base">
+          <a xlink:href="_chessboard_detector_8h__dep__incl_org.svg" target="_top" target="_base">
            <rect id="button" ry="5" rx="5" y="6" x="6" height="38" width="38"
                 fill="#f2f5e9" fill-opacity="0.5" stroke="#606060" stroke-width="1.0"/>
            <path id="arrow"

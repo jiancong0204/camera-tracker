@@ -58,7 +58,7 @@ FindCornersResult ChessboardDetector::findChessboardCorners(cv::Mat originalImag
 	cv::Size patternSize;
 	patternSize.width = chessboard.getWidth();
 	patternSize.height = chessboard.getHeight();
-	corners.success = findChessboardCornersSB(corners.image, patternSize, corners.corners);
+	corners.success = cv::findChessboardCornersSB(corners.image, patternSize, corners.corners);
 	return corners;
 }
 
@@ -127,7 +127,7 @@ std::vector<cv::Point2f> ChessboardDetector::_compute_bounding_rectangle(std::ve
 
 cv::Mat ChessboardDetector::_compute_perspective_transform(std::vector<cv::Point2f> src, std::vector<cv::Point2f> dst, cv::Mat image)
 {
- // corresponding points for perspective transformation
+    // corresponding points for perspective transformation
 	cv::Mat M = getPerspectiveTransform(src, dst);
 	cv::Mat perspective;
 	warpPerspective(image, perspective, M, cv::Size(), cv::INTER_LINEAR);

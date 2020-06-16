@@ -1,8 +1,9 @@
 var searchData=
 [
   ['w',['w',['../structnlohmann_1_1detail_1_1dtoa__impl_1_1boundaries.html#ad1668c60aeade5f2557fafed8b8aee1a',1,'nlohmann::detail::dtoa_impl::boundaries']]],
-  ['what',['what',['../classnlohmann_1_1detail_1_1exception.html#a2ecff34cee144f843644a252a07cdadc',1,'nlohmann::detail::exception']]],
-  ['wide_5fstring_5finput_5fadapter',['wide_string_input_adapter',['../classnlohmann_1_1detail_1_1wide__string__input__adapter.html',1,'nlohmann::detail::wide_string_input_adapter&lt; WideStringType &gt;'],['../classnlohmann_1_1detail_1_1wide__string__input__adapter.html#a85c8bddae20bc00d64dd7a2c87109357',1,'nlohmann::detail::wide_string_input_adapter::wide_string_input_adapter()']]],
+  ['what',['what',['../classnlohmann_1_1detail_1_1exception.html#a60ab30cf1d348a6f559804564af0c0e5',1,'nlohmann::detail::exception']]],
+  ['wide_5fstring_5finput_5fadapter',['wide_string_input_adapter',['../classnlohmann_1_1detail_1_1wide__string__input__adapter.html',1,'nlohmann::detail']]],
+  ['wide_5fstring_5finput_5fadapter',['wide_string_input_adapter',['../classnlohmann_1_1detail_1_1wide__string__input__adapter.html#a85c8bddae20bc00d64dd7a2c87109357',1,'nlohmann::detail::wide_string_input_adapter']]],
   ['wide_5fstring_5finput_5fhelper',['wide_string_input_helper',['../structnlohmann_1_1detail_1_1wide__string__input__helper.html',1,'nlohmann::detail']]],
   ['wide_5fstring_5finput_5fhelper_3c_20widestringtype_2c_202_20_3e',['wide_string_input_helper&lt; WideStringType, 2 &gt;',['../structnlohmann_1_1detail_1_1wide__string__input__helper_3_01_wide_string_type_00_012_01_4.html',1,'nlohmann::detail']]],
   ['width',['width',['../class_chessboard.html#a508e83c453e3aef8af69bdb934262d83',1,'Chessboard']]],

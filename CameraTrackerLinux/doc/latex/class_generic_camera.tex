@@ -11,22 +11,12 @@ abstract camera base class.
 
 
 
-Inheritance diagram for Generic\+Camera\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[height=550pt]{class_generic_camera__inherit__graph}
-\end{center}
-\end{figure}
+Inheritance diagram for Generic\+Camera\+:
+% FIG 0
 
 
-Collaboration diagram for Generic\+Camera\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=190pt]{class_generic_camera__coll__graph}
-\end{center}
-\end{figure}
+Collaboration diagram for Generic\+Camera\+:
+% FIG 1
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -51,19 +41,19 @@ virtual bool \hyperlink{class_generic_camera_a62365678e9254bde587de4a50ffb7887}{
 \item 
 virtual double \hyperlink{class_generic_camera_ae3fe4b50577c854037b7a77dade27487}{get\+Exposure} (void) const =0
 \item 
-\hyperlink{constants_8h_a6e920987695b1da6e2df4e41dc867e18}{Exposure\+Modes} \hyperlink{class_generic_camera_afdd27d857471c1bca22f10520ef28a35}{get\+Exposure\+Mode} (void) const
+\hyperlink{constants_8h_a6e920987695b1da6e2df4e41dc867e18}{Exposure\+Modes} \hyperlink{class_generic_camera_af7ce9bb0a20a3b23393ac4c0425947fa}{get\+Exposure\+Mode} (void) const 
 \item 
-\hyperlink{constants_8h_ae9749bac8d6973b92725af092d0a76bc}{Exposure\+States} \hyperlink{class_generic_camera_a31369d7e310827a9ac3b4366ddcbf22e}{get\+Exposure\+State} (void) const
+\hyperlink{constants_8h_ae9749bac8d6973b92725af092d0a76bc}{Exposure\+States} \hyperlink{class_generic_camera_a4d22534042a4d1ffe3cdb6c80f41b6a1}{get\+Exposure\+State} (void) const 
 \item 
 virtual bool \hyperlink{class_generic_camera_ad20a7c33465d6791563f77a637ceed83}{laser\+Exposure} (cv\+::\+Mat \&image)
 \item 
 virtual void \hyperlink{class_generic_camera_a393e01ba0b1bc18ad43f00cc62ccea4e}{load\+Feature\+File} (const std\+::string filename)=0
 \item 
-const std\+::string \hyperlink{class_generic_camera_a7f97060cc4089fb4d8834ce8c055a561}{get\+Name} (void) const
+const std\+::string \hyperlink{class_generic_camera_a7bd510ed7ceea669ec496f106e9a0fb3}{get\+Name} (void) const 
 \item 
 void \hyperlink{class_generic_camera_aae87f93ed0741bbfa4881f551cd1a73c}{set\+Pitch} (double new\+Pitch)
 \item 
-const double \hyperlink{class_generic_camera_a429fbb0069ed11630ba5284235563f87}{get\+Pitch} (void) const
+const double \hyperlink{class_generic_camera_ab8f1cb756fe87d29cbf2ea15c929b329}{get\+Pitch} (void) const 
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -86,37 +76,41 @@ abstract camera base class.
 abstract camera base class where of all camera types used have to be derived, providing a unified interface 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_generic_camera_ace942cddd443bb28aeee5e49b10aa374}\label{class_generic_camera_ace942cddd443bb28aeee5e49b10aa374}} 
 \index{Generic\+Camera@{Generic\+Camera}!Generic\+Camera@{Generic\+Camera}}
 \index{Generic\+Camera@{Generic\+Camera}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{Generic\+Camera()}{GenericCamera()}}
-{\footnotesize\ttfamily Generic\+Camera\+::\+Generic\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-constructor, takes no arguments \mbox{\Hypertarget{class_generic_camera_a8a523a465c0db18b59b6113c6d308962}\label{class_generic_camera_a8a523a465c0db18b59b6113c6d308962}} 
-\index{Generic\+Camera@{Generic\+Camera}!````~Generic\+Camera@{$\sim$\+Generic\+Camera}}
+\subsubsection[{\texorpdfstring{Generic\+Camera()}{GenericCamera()}}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+Camera\+::\+Generic\+Camera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_generic_camera_ace942cddd443bb28aeee5e49b10aa374}{}\label{class_generic_camera_ace942cddd443bb28aeee5e49b10aa374}
+constructor, takes no arguments \index{Generic\+Camera@{Generic\+Camera}!````~Generic\+Camera@{$\sim$\+Generic\+Camera}}
 \index{````~Generic\+Camera@{$\sim$\+Generic\+Camera}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{$\sim$\+Generic\+Camera()}{~GenericCamera()}}
-{\footnotesize\ttfamily Generic\+Camera\+::$\sim$\+Generic\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
+\subsubsection[{\texorpdfstring{$\sim$\+Generic\+Camera()}{~GenericCamera()}}]{\setlength{\rightskip}{0pt plus 5cm}Generic\+Camera\+::$\sim$\+Generic\+Camera (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_generic_camera_a8a523a465c0db18b59b6113c6d308962}{}\label{class_generic_camera_a8a523a465c0db18b59b6113c6d308962}
 virtual destructor 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_generic_camera_a86a91e987d6142e5417b2c07542e0aa4}\label{class_generic_camera_a86a91e987d6142e5417b2c07542e0aa4}} 
 \index{Generic\+Camera@{Generic\+Camera}!detach@{detach}}
 \index{detach@{detach}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{detach()}{detach()}}
-{\footnotesize\ttfamily virtual void Generic\+Camera\+::detach (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
+\subsubsection[{\texorpdfstring{detach(void)=0}{detach(void)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Generic\+Camera\+::detach (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_generic_camera_a86a91e987d6142e5417b2c07542e0aa4}{}\label{class_generic_camera_a86a91e987d6142e5417b2c07542e0aa4}
 close the attached device, purely virtual 
 
 Implemented in \hyperlink{class_basler_gig_e_camera_a13a51a76116cccbd537725457d83254f}{Basler\+Gig\+E\+Camera}.
 
-\mbox{\Hypertarget{class_generic_camera_ae3fe4b50577c854037b7a77dade27487}\label{class_generic_camera_ae3fe4b50577c854037b7a77dade27487}} 
 \index{Generic\+Camera@{Generic\+Camera}!get\+Exposure@{get\+Exposure}}
 \index{get\+Exposure@{get\+Exposure}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{get\+Exposure()}{getExposure()}}
-{\footnotesize\ttfamily virtual double Generic\+Camera\+::get\+Exposure (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
+\subsubsection[{\texorpdfstring{get\+Exposure(void) const =0}{getExposure(void) const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual double Generic\+Camera\+::get\+Exposure (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_generic_camera_ae3fe4b50577c854037b7a77dade27487}{}\label{class_generic_camera_ae3fe4b50577c854037b7a77dade27487}
 get the current exposure time \begin{DoxyReturn}{Returns}
 current exposure time in milliseconds 
 \end{DoxyReturn}
@@ -124,30 +118,33 @@ current exposure time in milliseconds
 
 Implemented in \hyperlink{class_basler_gig_e_camera_a5f7897cae5155958ecaa8b2b9196e4e6}{Basler\+Gig\+E\+Camera}.
 
-\mbox{\Hypertarget{class_generic_camera_afdd27d857471c1bca22f10520ef28a35}\label{class_generic_camera_afdd27d857471c1bca22f10520ef28a35}} 
 \index{Generic\+Camera@{Generic\+Camera}!get\+Exposure\+Mode@{get\+Exposure\+Mode}}
 \index{get\+Exposure\+Mode@{get\+Exposure\+Mode}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{get\+Exposure\+Mode()}{getExposureMode()}}
-{\footnotesize\ttfamily \hyperlink{constants_8h_a6e920987695b1da6e2df4e41dc867e18}{Exposure\+Modes} Generic\+Camera\+::get\+Exposure\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
+\subsubsection[{\texorpdfstring{get\+Exposure\+Mode(void) const }{getExposureMode(void) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Exposure\+Modes} Generic\+Camera\+::get\+Exposure\+Mode (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_generic_camera_af7ce9bb0a20a3b23393ac4c0425947fa}{}\label{class_generic_camera_af7ce9bb0a20a3b23393ac4c0425947fa}
 get the current exposure mode set \begin{DoxyReturn}{Returns}
 current exposure mode 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_generic_camera_a31369d7e310827a9ac3b4366ddcbf22e}\label{class_generic_camera_a31369d7e310827a9ac3b4366ddcbf22e}} 
 \index{Generic\+Camera@{Generic\+Camera}!get\+Exposure\+State@{get\+Exposure\+State}}
 \index{get\+Exposure\+State@{get\+Exposure\+State}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{get\+Exposure\+State()}{getExposureState()}}
-{\footnotesize\ttfamily \hyperlink{constants_8h_ae9749bac8d6973b92725af092d0a76bc}{Exposure\+States} Generic\+Camera\+::get\+Exposure\+State (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
+\subsubsection[{\texorpdfstring{get\+Exposure\+State(void) const }{getExposureState(void) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Exposure\+States} Generic\+Camera\+::get\+Exposure\+State (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_generic_camera_a4d22534042a4d1ffe3cdb6c80f41b6a1}{}\label{class_generic_camera_a4d22534042a4d1ffe3cdb6c80f41b6a1}
 get the current exposure state \begin{DoxyReturn}{Returns}
 current exposure state 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_generic_camera_abeaa74ba34179da70ec2c4bbb9b0d793}\label{class_generic_camera_abeaa74ba34179da70ec2c4bbb9b0d793}} 
 \index{Generic\+Camera@{Generic\+Camera}!get\+Frame@{get\+Frame}}
 \index{get\+Frame@{get\+Frame}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{get\+Frame()}{getFrame()}}
-{\footnotesize\ttfamily virtual cv\+::\+Mat Generic\+Camera\+::get\+Frame (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
+\subsubsection[{\texorpdfstring{get\+Frame(void)=0}{getFrame(void)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual cv\+::\+Mat Generic\+Camera\+::get\+Frame (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_generic_camera_abeaa74ba34179da70ec2c4bbb9b0d793}{}\label{class_generic_camera_abeaa74ba34179da70ec2c4bbb9b0d793}
 get a single frame from the camera and convert it to an open\+CV matrix, purely virtual \begin{DoxyReturn}{Returns}
 acquired frame in open\+CV matrix format. 
 \end{DoxyReturn}
@@ -155,30 +152,33 @@ acquired frame in open\+CV matrix format.
 
 Implemented in \hyperlink{class_basler_gig_e_camera_a8e2789aa27a9b0a8075457223afa415e}{Basler\+Gig\+E\+Camera}.
 
-\mbox{\Hypertarget{class_generic_camera_a7f97060cc4089fb4d8834ce8c055a561}\label{class_generic_camera_a7f97060cc4089fb4d8834ce8c055a561}} 
 \index{Generic\+Camera@{Generic\+Camera}!get\+Name@{get\+Name}}
 \index{get\+Name@{get\+Name}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{get\+Name()}{getName()}}
-{\footnotesize\ttfamily const std\+::string Generic\+Camera\+::get\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
+\subsubsection[{\texorpdfstring{get\+Name(void) const }{getName(void) const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string Generic\+Camera\+::get\+Name (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_generic_camera_a7bd510ed7ceea669ec496f106e9a0fb3}{}\label{class_generic_camera_a7bd510ed7ceea669ec496f106e9a0fb3}
 get a string as a human readable identifier, i.\+e. a name \begin{DoxyReturn}{Returns}
 camera name 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_generic_camera_a429fbb0069ed11630ba5284235563f87}\label{class_generic_camera_a429fbb0069ed11630ba5284235563f87}} 
 \index{Generic\+Camera@{Generic\+Camera}!get\+Pitch@{get\+Pitch}}
 \index{get\+Pitch@{get\+Pitch}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{get\+Pitch()}{getPitch()}}
-{\footnotesize\ttfamily const double Generic\+Camera\+::get\+Pitch (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
+\subsubsection[{\texorpdfstring{get\+Pitch(void) const }{getPitch(void) const }}]{\setlength{\rightskip}{0pt plus 5cm}const double Generic\+Camera\+::get\+Pitch (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_generic_camera_ab8f1cb756fe87d29cbf2ea15c929b329}{}\label{class_generic_camera_ab8f1cb756fe87d29cbf2ea15c929b329}
 get function for the camera pitch value \begin{DoxyReturn}{Returns}
 camera pitch value 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_generic_camera_ad050957bbb8003fc55f4656d43347f1e}\label{class_generic_camera_ad050957bbb8003fc55f4656d43347f1e}} 
 \index{Generic\+Camera@{Generic\+Camera}!initialize@{initialize}}
 \index{initialize@{initialize}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{initialize()}{initialize()}}
-{\footnotesize\ttfamily virtual bool Generic\+Camera\+::initialize (\begin{DoxyParamCaption}\item[{const std\+::string}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
+\subsubsection[{\texorpdfstring{initialize(const std\+::string id)=0}{initialize(const std::string id)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Generic\+Camera\+::initialize (
+\begin{DoxyParamCaption}
+\item[{const std\+::string}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_generic_camera_ad050957bbb8003fc55f4656d43347f1e}{}\label{class_generic_camera_ad050957bbb8003fc55f4656d43347f1e}
 initialize the choosen device, passing the name from the list as string, purely virtual 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em id} & name of the device to start \\
@@ -191,21 +191,23 @@ success of initialization progress, i.\+e. if the camera could be activated
 
 Implemented in \hyperlink{class_basler_gig_e_camera_a1690e409075c423eec92a039781989df}{Basler\+Gig\+E\+Camera}.
 
-\mbox{\Hypertarget{class_generic_camera_ad20a7c33465d6791563f77a637ceed83}\label{class_generic_camera_ad20a7c33465d6791563f77a637ceed83}} 
 \index{Generic\+Camera@{Generic\+Camera}!laser\+Exposure@{laser\+Exposure}}
 \index{laser\+Exposure@{laser\+Exposure}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{laser\+Exposure()}{laserExposure()}}
-{\footnotesize\ttfamily bool Generic\+Camera\+::laser\+Exposure (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{image }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
+\subsubsection[{\texorpdfstring{laser\+Exposure(cv\+::\+Mat \&image)}{laserExposure(cv::Mat &image)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Generic\+Camera\+::laser\+Exposure (
+\begin{DoxyParamCaption}
+\item[{cv\+::\+Mat \&}]{image}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_generic_camera_ad20a7c33465d6791563f77a637ceed83}{}\label{class_generic_camera_ad20a7c33465d6791563f77a637ceed83}
 set the exposure time more suited for a laser beam by checking whether any area is overexposed. the function should be called iteratively. \begin{DoxyReturn}{Returns}
 true if image is properly exposed, false else 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_generic_camera_a393e01ba0b1bc18ad43f00cc62ccea4e}\label{class_generic_camera_a393e01ba0b1bc18ad43f00cc62ccea4e}} 
 \index{Generic\+Camera@{Generic\+Camera}!load\+Feature\+File@{load\+Feature\+File}}
 \index{load\+Feature\+File@{load\+Feature\+File}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{load\+Feature\+File()}{loadFeatureFile()}}
-{\footnotesize\ttfamily virtual void Generic\+Camera\+::load\+Feature\+File (\begin{DoxyParamCaption}\item[{const std\+::string}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
+\subsubsection[{\texorpdfstring{load\+Feature\+File(const std\+::string filename)=0}{loadFeatureFile(const std::string filename)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Generic\+Camera\+::load\+Feature\+File (
+\begin{DoxyParamCaption}
+\item[{const std\+::string}]{filename}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_generic_camera_a393e01ba0b1bc18ad43f00cc62ccea4e}{}\label{class_generic_camera_a393e01ba0b1bc18ad43f00cc62ccea4e}
 load a file containing predefined settings, purely virtual 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em filename} & name of the file \\
@@ -215,12 +217,13 @@ load a file containing predefined settings, purely virtual
 
 Implemented in \hyperlink{class_basler_gig_e_camera_aa7e8cde9ecc7b2375146f41a6e35840e}{Basler\+Gig\+E\+Camera}.
 
-\mbox{\Hypertarget{class_generic_camera_a62365678e9254bde587de4a50ffb7887}\label{class_generic_camera_a62365678e9254bde587de4a50ffb7887}} 
 \index{Generic\+Camera@{Generic\+Camera}!set\+Exposure@{set\+Exposure}}
 \index{set\+Exposure@{set\+Exposure}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{set\+Exposure()}{setExposure()}}
-{\footnotesize\ttfamily virtual bool Generic\+Camera\+::set\+Exposure (\begin{DoxyParamCaption}\item[{const double}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
+\subsubsection[{\texorpdfstring{set\+Exposure(const double time)=0}{setExposure(const double time)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool Generic\+Camera\+::set\+Exposure (
+\begin{DoxyParamCaption}
+\item[{const double}]{time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_generic_camera_a62365678e9254bde587de4a50ffb7887}{}\label{class_generic_camera_a62365678e9254bde587de4a50ffb7887}
 manually set the exposure time of the camera, only works if the mode is not automatic, purely virtual 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em time} & exposure time in milliseconds \\
@@ -233,12 +236,13 @@ true if exposure time vcould be written to the device, false else
 
 Implemented in \hyperlink{class_basler_gig_e_camera_a99f9cd699aac5cb1025cb7086fbba7c0}{Basler\+Gig\+E\+Camera}.
 
-\mbox{\Hypertarget{class_generic_camera_a5c3bd3ca0d691cf9026f8c91b3cf7c66}\label{class_generic_camera_a5c3bd3ca0d691cf9026f8c91b3cf7c66}} 
 \index{Generic\+Camera@{Generic\+Camera}!set\+Exposure\+Mode@{set\+Exposure\+Mode}}
 \index{set\+Exposure\+Mode@{set\+Exposure\+Mode}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{set\+Exposure\+Mode()}{setExposureMode()}}
-{\footnotesize\ttfamily bool Generic\+Camera\+::set\+Exposure\+Mode (\begin{DoxyParamCaption}\item[{\hyperlink{constants_8h_a6e920987695b1da6e2df4e41dc867e18}{Exposure\+Modes}}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
+\subsubsection[{\texorpdfstring{set\+Exposure\+Mode(\+Exposure\+Modes mode)=0}{setExposureMode(ExposureModes mode)=0}}]{\setlength{\rightskip}{0pt plus 5cm}bool Generic\+Camera\+::set\+Exposure\+Mode (
+\begin{DoxyParamCaption}
+\item[{{\bf Exposure\+Modes}}]{mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_generic_camera_a5c3bd3ca0d691cf9026f8c91b3cf7c66}{}\label{class_generic_camera_a5c3bd3ca0d691cf9026f8c91b3cf7c66}
 set the exposure mode of the camera, choosing between automatic, manual and laser, purely virtual 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em mode} & desired exposure setting \\
@@ -251,12 +255,13 @@ true if exposure mode could be set, false else
 
 Implemented in \hyperlink{class_basler_gig_e_camera_a228061fb068600be59b4e83c0e8a8e50}{Basler\+Gig\+E\+Camera}.
 
-\mbox{\Hypertarget{class_generic_camera_aae87f93ed0741bbfa4881f551cd1a73c}\label{class_generic_camera_aae87f93ed0741bbfa4881f551cd1a73c}} 
 \index{Generic\+Camera@{Generic\+Camera}!set\+Pitch@{set\+Pitch}}
 \index{set\+Pitch@{set\+Pitch}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{set\+Pitch()}{setPitch()}}
-{\footnotesize\ttfamily void Generic\+Camera\+::set\+Pitch (\begin{DoxyParamCaption}\item[{double}]{new\+Pitch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
+\subsubsection[{\texorpdfstring{set\+Pitch(double new\+Pitch)}{setPitch(double newPitch)}}]{\setlength{\rightskip}{0pt plus 5cm}void Generic\+Camera\+::set\+Pitch (
+\begin{DoxyParamCaption}
+\item[{double}]{new\+Pitch}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_generic_camera_aae87f93ed0741bbfa4881f551cd1a73c}{}\label{class_generic_camera_aae87f93ed0741bbfa4881f551cd1a73c}
 lock a camera permamently to a thread 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em timeout} & time in milliseconds for try\+Lock() to wait \\
@@ -273,52 +278,37 @@ output of try\+Lock()unlocks the camera from a thread set a new camera Pitch
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_generic_camera_af73c8a9c6218780d50bda3a835d16770}\label{class_generic_camera_af73c8a9c6218780d50bda3a835d16770}} 
 \index{Generic\+Camera@{Generic\+Camera}!exposure\+Mode@{exposure\+Mode}}
 \index{exposure\+Mode@{exposure\+Mode}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{exposure\+Mode}{exposureMode}}
-{\footnotesize\ttfamily \hyperlink{constants_8h_a6e920987695b1da6e2df4e41dc867e18}{Exposure\+Modes} Generic\+Camera\+::exposure\+Mode\hspace{0.3cm}{\ttfamily [protected]}}
-
+\subsubsection[{\texorpdfstring{exposure\+Mode}{exposureMode}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Exposure\+Modes} Generic\+Camera\+::exposure\+Mode\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_generic_camera_af73c8a9c6218780d50bda3a835d16770}{}\label{class_generic_camera_af73c8a9c6218780d50bda3a835d16770}
 
 
 current exposure mode set 
 
-\mbox{\Hypertarget{class_generic_camera_a92600846c7691baabbc78af3b6e1cb67}\label{class_generic_camera_a92600846c7691baabbc78af3b6e1cb67}} 
 \index{Generic\+Camera@{Generic\+Camera}!exposure\+State@{exposure\+State}}
 \index{exposure\+State@{exposure\+State}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{exposure\+State}{exposureState}}
-{\footnotesize\ttfamily \hyperlink{constants_8h_ae9749bac8d6973b92725af092d0a76bc}{Exposure\+States} Generic\+Camera\+::exposure\+State\hspace{0.3cm}{\ttfamily [protected]}}
-
+\subsubsection[{\texorpdfstring{exposure\+State}{exposureState}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Exposure\+States} Generic\+Camera\+::exposure\+State\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_generic_camera_a92600846c7691baabbc78af3b6e1cb67}{}\label{class_generic_camera_a92600846c7691baabbc78af3b6e1cb67}
 
 
 current state of the exposure 
 
-\mbox{\Hypertarget{class_generic_camera_a1d0a61c9839147adaa86e9c456e3ce0c}\label{class_generic_camera_a1d0a61c9839147adaa86e9c456e3ce0c}} 
 \index{Generic\+Camera@{Generic\+Camera}!exposure\+Step@{exposure\+Step}}
 \index{exposure\+Step@{exposure\+Step}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{exposure\+Step}{exposureStep}}
-{\footnotesize\ttfamily double Generic\+Camera\+::exposure\+Step\hspace{0.3cm}{\ttfamily [protected]}}
-
+\subsubsection[{\texorpdfstring{exposure\+Step}{exposureStep}}]{\setlength{\rightskip}{0pt plus 5cm}double Generic\+Camera\+::exposure\+Step\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_generic_camera_a1d0a61c9839147adaa86e9c456e3ce0c}{}\label{class_generic_camera_a1d0a61c9839147adaa86e9c456e3ce0c}
 
 
 smallest step between two exposure times 
 
-\mbox{\Hypertarget{class_generic_camera_a12b86f8137447dd8af1864eb9bb062ee}\label{class_generic_camera_a12b86f8137447dd8af1864eb9bb062ee}} 
 \index{Generic\+Camera@{Generic\+Camera}!name@{name}}
 \index{name@{name}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{name}{name}}
-{\footnotesize\ttfamily std\+::string Generic\+Camera\+::name\hspace{0.3cm}{\ttfamily [protected]}}
-
+\subsubsection[{\texorpdfstring{name}{name}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Generic\+Camera\+::name\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_generic_camera_a12b86f8137447dd8af1864eb9bb062ee}{}\label{class_generic_camera_a12b86f8137447dd8af1864eb9bb062ee}
 
 
 device identifier 
 
-\mbox{\Hypertarget{class_generic_camera_a565f94ee10ad6333ca6e59a2fe8d32bb}\label{class_generic_camera_a565f94ee10ad6333ca6e59a2fe8d32bb}} 
 \index{Generic\+Camera@{Generic\+Camera}!pitch@{pitch}}
 \index{pitch@{pitch}!Generic\+Camera@{Generic\+Camera}}
-\subsubsection{\texorpdfstring{pitch}{pitch}}
-{\footnotesize\ttfamily double Generic\+Camera\+::pitch\hspace{0.3cm}{\ttfamily [protected]}}
-
+\subsubsection[{\texorpdfstring{pitch}{pitch}}]{\setlength{\rightskip}{0pt plus 5cm}double Generic\+Camera\+::pitch\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_generic_camera_a565f94ee10ad6333ca6e59a2fe8d32bb}{}\label{class_generic_camera_a565f94ee10ad6333ca6e59a2fe8d32bb}
 
 
 ratio of millimeter per pixel 
@@ -327,5 +317,5 @@ ratio of millimeter per pixel
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/bdn\+\_\+jz/bdn\+\_\+jz/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/\hyperlink{_generic_camera_8h}{Generic\+Camera.\+h}\item 
-/home/bdn\+\_\+jz/bdn\+\_\+jz/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/src/\hyperlink{_generic_camera_8cpp}{Generic\+Camera.\+cpp}\end{DoxyCompactItemize}
+/home/jc/\+H\+I\+W\+I/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/\hyperlink{_generic_camera_8h}{Generic\+Camera.\+h}\item 
+/home/jc/\+H\+I\+W\+I/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/src/\hyperlink{_generic_camera_8cpp}{Generic\+Camera.\+cpp}\end{DoxyCompactItemize}

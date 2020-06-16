@@ -6,22 +6,12 @@
 
 
 
-Inheritance diagram for nlohmann\+:\+:detail\+:\+:input\+\_\+stream\+\_\+adapter\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=216pt]{classnlohmann_1_1detail_1_1input__stream__adapter__inherit__graph}
-\end{center}
-\end{figure}
+Inheritance diagram for nlohmann\+:\+:detail\+:\+:input\+\_\+stream\+\_\+adapter\+:
+% FIG 0
 
 
-Collaboration diagram for nlohmann\+:\+:detail\+:\+:input\+\_\+stream\+\_\+adapter\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=216pt]{classnlohmann_1_1detail_1_1input__stream__adapter__coll__graph}
-\end{center}
-\end{figure}
+Collaboration diagram for nlohmann\+:\+:detail\+:\+:input\+\_\+stream\+\_\+adapter\+:
+% FIG 1
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -52,39 +42,44 @@ std\+::streambuf \& \hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter
 Input adapter for a (caching) istream. Ignores a U\+FT Byte Order Mark at beginning of input. Does not support changing the underlying std\+::streambuf in mid-\/input. Maintains underlying std\+::istream and std\+::streambuf to support subsequent use of standard std\+::istream operations to process any input characters following those used in parsing the J\+S\+ON input. Clears the std\+::istream flags; any input errors (e.\+g., E\+OF) will be detected by the first subsequent call for input from the std\+::istream. 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_a2d71eb469267abd864f765481d1e823f}\label{classnlohmann_1_1detail_1_1input__stream__adapter_a2d71eb469267abd864f765481d1e823f}} 
 \index{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}!````~input\+\_\+stream\+\_\+adapter@{$\sim$input\+\_\+stream\+\_\+adapter}}
 \index{````~input\+\_\+stream\+\_\+adapter@{$\sim$input\+\_\+stream\+\_\+adapter}!nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}}
-\subsubsection{\texorpdfstring{$\sim$input\+\_\+stream\+\_\+adapter()}{~input\_stream\_adapter()}}
-{\footnotesize\ttfamily nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::$\sim$input\+\_\+stream\+\_\+adapter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}
-
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_af487152e4606d013eb4ec6a90eaf82ea}\label{classnlohmann_1_1detail_1_1input__stream__adapter_af487152e4606d013eb4ec6a90eaf82ea}} 
+\subsubsection[{\texorpdfstring{$\sim$input\+\_\+stream\+\_\+adapter() override}{~input_stream_adapter() override}}]{\setlength{\rightskip}{0pt plus 5cm}nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::$\sim$input\+\_\+stream\+\_\+adapter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}}\hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_a2d71eb469267abd864f765481d1e823f}{}\label{classnlohmann_1_1detail_1_1input__stream__adapter_a2d71eb469267abd864f765481d1e823f}
 \index{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}!input\+\_\+stream\+\_\+adapter@{input\+\_\+stream\+\_\+adapter}}
 \index{input\+\_\+stream\+\_\+adapter@{input\+\_\+stream\+\_\+adapter}!nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}}
-\subsubsection{\texorpdfstring{input\+\_\+stream\+\_\+adapter()}{input\_stream\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::input\+\_\+stream\+\_\+adapter (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
-
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_a5190fe4d0c5ff2e3b348b28ee3bb2218}\label{classnlohmann_1_1detail_1_1input__stream__adapter_a5190fe4d0c5ff2e3b348b28ee3bb2218}} 
+\subsubsection[{\texorpdfstring{input\+\_\+stream\+\_\+adapter(std\+::istream \&i)}{input_stream_adapter(std::istream &i)}}]{\setlength{\rightskip}{0pt plus 5cm}nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::input\+\_\+stream\+\_\+adapter (
+\begin{DoxyParamCaption}
+\item[{std\+::istream \&}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_af487152e4606d013eb4ec6a90eaf82ea}{}\label{classnlohmann_1_1detail_1_1input__stream__adapter_af487152e4606d013eb4ec6a90eaf82ea}
 \index{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}!input\+\_\+stream\+\_\+adapter@{input\+\_\+stream\+\_\+adapter}}
 \index{input\+\_\+stream\+\_\+adapter@{input\+\_\+stream\+\_\+adapter}!nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}}
-\subsubsection{\texorpdfstring{input\+\_\+stream\+\_\+adapter()}{input\_stream\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::input\+\_\+stream\+\_\+adapter (\begin{DoxyParamCaption}\item[{const \hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter}{input\+\_\+stream\+\_\+adapter} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
-
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_a0ae74b874f7db43640905cb7f2442b1d}\label{classnlohmann_1_1detail_1_1input__stream__adapter_a0ae74b874f7db43640905cb7f2442b1d}} 
+\subsubsection[{\texorpdfstring{input\+\_\+stream\+\_\+adapter(const input\+\_\+stream\+\_\+adapter \&)=delete}{input_stream_adapter(const input_stream_adapter &)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::input\+\_\+stream\+\_\+adapter (
+\begin{DoxyParamCaption}
+\item[{const {\bf input\+\_\+stream\+\_\+adapter} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_a5190fe4d0c5ff2e3b348b28ee3bb2218}{}\label{classnlohmann_1_1detail_1_1input__stream__adapter_a5190fe4d0c5ff2e3b348b28ee3bb2218}
 \index{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}!input\+\_\+stream\+\_\+adapter@{input\+\_\+stream\+\_\+adapter}}
 \index{input\+\_\+stream\+\_\+adapter@{input\+\_\+stream\+\_\+adapter}!nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}}
-\subsubsection{\texorpdfstring{input\+\_\+stream\+\_\+adapter()}{input\_stream\_adapter()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::input\+\_\+stream\+\_\+adapter (\begin{DoxyParamCaption}\item[{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter}{input\+\_\+stream\+\_\+adapter} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
-
+\subsubsection[{\texorpdfstring{input\+\_\+stream\+\_\+adapter(input\+\_\+stream\+\_\+adapter \&\&)=delete}{input_stream_adapter(input_stream_adapter &&)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::input\+\_\+stream\+\_\+adapter (
+\begin{DoxyParamCaption}
+\item[{{\bf input\+\_\+stream\+\_\+adapter} \&\&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_a0ae74b874f7db43640905cb7f2442b1d}{}\label{classnlohmann_1_1detail_1_1input__stream__adapter_a0ae74b874f7db43640905cb7f2442b1d}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_ae0760af923583de6354725e901d1869d}\label{classnlohmann_1_1detail_1_1input__stream__adapter_ae0760af923583de6354725e901d1869d}} 
 \index{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}!get\+\_\+character@{get\+\_\+character}}
 \index{get\+\_\+character@{get\+\_\+character}!nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}}
-\subsubsection{\texorpdfstring{get\+\_\+character()}{get\_character()}}
-{\footnotesize\ttfamily std\+::char\+\_\+traits$<$char$>$\+::int\+\_\+type nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::get\+\_\+character (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
-
+\subsubsection[{\texorpdfstring{get\+\_\+character() override}{get_character() override}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::char\+\_\+traits$<$char$>$\+::int\+\_\+type nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::get\+\_\+character (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_ae0760af923583de6354725e901d1869d}{}\label{classnlohmann_1_1detail_1_1input__stream__adapter_ae0760af923583de6354725e901d1869d}
 
 
 get a character \mbox{[}0,255\mbox{]} or std\+::char\+\_\+traits$<$char$>$\+::eof(). 
@@ -93,39 +88,35 @@ get a character \mbox{[}0,255\mbox{]} or std\+::char\+\_\+traits$<$char$>$\+::eo
 
 Implements \hyperlink{structnlohmann_1_1detail_1_1input__adapter__protocol_aac10a6a4048a8ce8e2ed50277692a3ca}{nlohmann\+::detail\+::input\+\_\+adapter\+\_\+protocol}.
 
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_aeac5048221929b8f7558d1698dd0fb3a}\label{classnlohmann_1_1detail_1_1input__stream__adapter_aeac5048221929b8f7558d1698dd0fb3a}} 
 \index{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}!operator=@{operator=}}
 \index{operator=@{operator=}!nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}}
-\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter}{input\+\_\+stream\+\_\+adapter}\& nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter}{input\+\_\+stream\+\_\+adapter} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
-
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_a3577dff99cc91968557b52959b0363e4}\label{classnlohmann_1_1detail_1_1input__stream__adapter_a3577dff99cc91968557b52959b0363e4}} 
+\subsubsection[{\texorpdfstring{operator=(input\+\_\+stream\+\_\+adapter \&)=delete}{operator=(input_stream_adapter &)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf input\+\_\+stream\+\_\+adapter}\& nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf input\+\_\+stream\+\_\+adapter} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_aeac5048221929b8f7558d1698dd0fb3a}{}\label{classnlohmann_1_1detail_1_1input__stream__adapter_aeac5048221929b8f7558d1698dd0fb3a}
 \index{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}!operator=@{operator=}}
 \index{operator=@{operator=}!nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}}
-\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter}{input\+\_\+stream\+\_\+adapter}\& nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::operator= (\begin{DoxyParamCaption}\item[{\hyperlink{classnlohmann_1_1detail_1_1input__stream__adapter}{input\+\_\+stream\+\_\+adapter} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
-
+\subsubsection[{\texorpdfstring{operator=(input\+\_\+stream\+\_\+adapter \&\&)=delete}{operator=(input_stream_adapter &&)=delete}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf input\+\_\+stream\+\_\+adapter}\& nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf input\+\_\+stream\+\_\+adapter} \&\&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [delete]}}\hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_a3577dff99cc91968557b52959b0363e4}{}\label{classnlohmann_1_1detail_1_1input__stream__adapter_a3577dff99cc91968557b52959b0363e4}
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_ac3afada8eaf7d6cd2b475a3388d5e992}\label{classnlohmann_1_1detail_1_1input__stream__adapter_ac3afada8eaf7d6cd2b475a3388d5e992}} 
 \index{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}!is@{is}}
 \index{is@{is}!nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}}
-\subsubsection{\texorpdfstring{is}{is}}
-{\footnotesize\ttfamily std\+::istream\& nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::is\hspace{0.3cm}{\ttfamily [private]}}
-
+\subsubsection[{\texorpdfstring{is}{is}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::istream\& nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::is\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_ac3afada8eaf7d6cd2b475a3388d5e992}{}\label{classnlohmann_1_1detail_1_1input__stream__adapter_ac3afada8eaf7d6cd2b475a3388d5e992}
 
 
 the associated input stream 
 
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_addd96de4b5cbd9925ed5d8a0f0261143}\label{classnlohmann_1_1detail_1_1input__stream__adapter_addd96de4b5cbd9925ed5d8a0f0261143}} 
 \index{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}!sb@{sb}}
 \index{sb@{sb}!nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter@{nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter}}
-\subsubsection{\texorpdfstring{sb}{sb}}
-{\footnotesize\ttfamily std\+::streambuf\& nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::sb\hspace{0.3cm}{\ttfamily [private]}}
-
+\subsubsection[{\texorpdfstring{sb}{sb}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::streambuf\& nlohmann\+::detail\+::input\+\_\+stream\+\_\+adapter\+::sb\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classnlohmann_1_1detail_1_1input__stream__adapter_addd96de4b5cbd9925ed5d8a0f0261143}{}\label{classnlohmann_1_1detail_1_1input__stream__adapter_addd96de4b5cbd9925ed5d8a0f0261143}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/bdn\+\_\+jz/bdn\+\_\+jz/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/nlohmann/detail/input/\hyperlink{input__adapters_8hpp}{input\+\_\+adapters.\+hpp}\end{DoxyCompactItemize}
+/home/jc/\+H\+I\+W\+I/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/nlohmann/detail/input/\hyperlink{input__adapters_8hpp}{input\+\_\+adapters.\+hpp}\end{DoxyCompactItemize}

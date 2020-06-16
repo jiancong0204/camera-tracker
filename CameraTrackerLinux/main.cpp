@@ -7,10 +7,10 @@
 
 int main()
 {
-    BaslerGigECamera camera;
-    std::vector<std::string> cameraList = camera.listAvailableDevices();
-	std::string name = cameraList[0];
-	camera.initialize(name);
+    // BaslerGigECamera camera;
+    // std::vector<std::string> cameraList = camera.listAvailableDevices();
+	// std::string name = cameraList[0];
+	// camera.initialize(name);
 	// cv::Mat img = camera.getFrame();
     cv::Mat img = cv::imread("../Images/01.jpg",cv::IMREAD_GRAYSCALE);
     img.convertTo(img, CV_8U);

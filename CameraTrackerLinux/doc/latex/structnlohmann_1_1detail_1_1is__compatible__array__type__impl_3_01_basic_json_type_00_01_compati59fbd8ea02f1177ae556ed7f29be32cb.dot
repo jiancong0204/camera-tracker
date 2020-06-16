@@ -1,0 +1,7 @@
+digraph "nlohmann::detail::is_compatible_array_type_impl&lt; BasicJsonType, CompatibleArrayType, enable_if_t&lt; is_detected&lt; value_type_t, CompatibleArrayType &gt;::value andis_detected&lt; iterator_t, CompatibleArrayType &gt;::value andnot is_iterator_traits&lt; iterator_traits&lt; CompatibleArrayType &gt; &gt;::value &gt; &gt;"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{nlohmann::detail::is\l_compatible_array_type\l_impl\< BasicJsonType, Compatible\lArrayType, enable_if_t\< is_detected\l\< value_type_t, CompatibleArrayType\l \>::value andis_detected\< iterator\l_t, CompatibleArrayType \>::value andnot\l is_iterator_traits\< iterator_traits\< CompatibleArray\lType \> \>::value \> \>\n|+ value\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}
