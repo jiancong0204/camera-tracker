@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['hex',['HEX',['../_c_make_c_compiler_id_8c.html#a46d5d95daa1bef867bd0179594310ed5',1,'HEX():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a46d5d95daa1bef867bd0179594310ed5',1,'HEX():&#160;CMakeCXXCompilerId.cpp']]]
+  ['json_5fcatch',['JSON_CATCH',['../macro__scope_8hpp.html#a6954bec49ed2a2dfb938c1131c82740a',1,'macro_scope.hpp']]],
+  ['json_5finternal_5fcatch',['JSON_INTERNAL_CATCH',['../macro__scope_8hpp.html#a5478b7564e65634cc69432ed3cb6490e',1,'macro_scope.hpp']]],
+  ['json_5fthrow',['JSON_THROW',['../macro__scope_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f',1,'macro_scope.hpp']]],
+  ['json_5ftry',['JSON_TRY',['../macro__scope_8hpp.html#a985d3b82445302c57257f6432f261fe9',1,'macro_scope.hpp']]]
 ];

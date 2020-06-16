@@ -157,6 +157,13 @@ namespace conex
      * 
      * @param addressValue Controller value
      * @return Command code
+     * 
+     * Home Type nn:
+     * 0: use MZ switch and encoder Index.
+	 * 1: use current position as HOME.
+	 * 2: use MZ switch only.
+	 * 3: use EoR- switch and encoder Index.
+	 * 4: use EoR- switch only.
      */
     std::string getStageIdentifier(int addressValue); // ID
 

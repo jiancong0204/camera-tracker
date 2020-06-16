@@ -21,7 +21,7 @@
 <!-- Node3 -->
 <g id="node2" class="node">
 <title>Node3</title>
-<g id="a_node2"><a xlink:href="_basler_gig_e_camera_8h.html" target="_top" xlink:title="Header file for the Basler GigE Camera class. ">
+<g id="a_node2"><a xlink:href="_basler_gig_e_camera_8h.html" target="_top" target="_top" xlink:title="Header file for the Basler GigE Camera class. ">
 <polygon fill="#ffffff" stroke="#000000" points="83.5,-89.5 83.5,-141.5 227.5,-141.5 227.5,-89.5 83.5,-89.5"/>
 <text text-anchor="start" x="91.5" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/home/bdn_jz/bdn_jz</text>
 <text text-anchor="start" x="91.5" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/camera&#45;tracker&#45;cpp</text>
@@ -39,7 +39,7 @@
 <!-- Node6 -->
 <g id="node5" class="node">
 <title>Node6</title>
-<g id="a_node5"><a xlink:href="_timed_frame_8cpp.html" target="_top" xlink:title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/src\l/TimedFrame.cpp">
+<g id="a_node5"><a xlink:href="_timed_frame_8cpp.html" target="_top" target="_top" xlink:title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/src\l/TimedFrame.cpp">
 <polygon fill="#ffffff" stroke="#000000" points="246,-89.5 246,-141.5 373,-141.5 373,-89.5 246,-89.5"/>
 <text text-anchor="start" x="254" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/home/bdn_jz/bdn_jz</text>
 <text text-anchor="start" x="254" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/camera&#45;tracker&#45;cpp</text>
@@ -57,7 +57,7 @@
 <!-- Node4 -->
 <g id="node3" class="node">
 <title>Node4</title>
-<g id="a_node3"><a xlink:href="main_8cpp.html" target="_top" xlink:title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/main.cpp">
+<g id="a_node3"><a xlink:href="main_8cpp.html" target="_top" target="_top" xlink:title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/main.cpp">
 <polygon fill="#ffffff" stroke="#000000" points="0,-6 0,-47 153,-47 153,-6 0,-6"/>
 <text text-anchor="start" x="8" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/home/bdn_jz/bdn_jz</text>
 <text text-anchor="start" x="8" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/camera&#45;tracker&#45;cpp</text>
@@ -74,7 +74,7 @@
 <!-- Node5 -->
 <g id="node4" class="node">
 <title>Node5</title>
-<g id="a_node4"><a xlink:href="_basler_gig_e_camera_8cpp.html" target="_top" xlink:title="Body file for the Basler GigE Camera class. ">
+<g id="a_node4"><a xlink:href="_basler_gig_e_camera_8cpp.html" target="_top" target="_top" xlink:title="Body file for the Basler GigE Camera class. ">
 <polygon fill="#ffffff" stroke="#000000" points="171,-.5 171,-52.5 298,-52.5 298,-.5 171,-.5"/>
 <text text-anchor="start" x="179" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/home/bdn_jz/bdn_jz</text>
 <text text-anchor="start" x="179" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">/camera&#45;tracker&#45;cpp</text>

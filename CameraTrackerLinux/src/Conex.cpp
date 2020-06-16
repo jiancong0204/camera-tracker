@@ -114,12 +114,13 @@ std::string conex::getHomeSearchType(int addressValue)
 
 std::string conex::setHomeSearchType(int addressValue, int homeTypeValue)
 {
-	/*Home Type nn:
-	  0: use MZ switch and encoder Index.
-	  1: use current position as HOME.
-	  2: use MZ switch only.
-	  3: use EoR- switch and encoder Index.
-	  4: use EoR- switch only.*/
+	/** Home Type nn:
+     * 0: use MZ switch and encoder Index.
+	 * 1: use current position as HOME.
+	 * 2: use MZ switch only.
+	 * 3: use EoR- switch and encoder Index.
+	 * 4: use EoR- switch only.
+	 **/
 	std::string address = std::to_string(addressValue);
 	std::string homeType = std::to_string(homeTypeValue);
 	std::string code = address + "HT" + homeType + "\r\n";

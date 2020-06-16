@@ -21,12 +21,12 @@ Collaboration diagram for nlohmann\+:\+:detail\+:\+:parser$<$ Basic\+Json\+Type 
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-enum \hyperlink{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebe}{parse\+\_\+event\+\_\+t} \+: uint8\+\_\+t \{ \newline
+enum \hyperlink{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebe}{parse\+\_\+event\+\_\+t} \+: uint8\+\_\+t \{ \\*
 \hyperlink{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebeae73f17027cb0acbb537f29d0a6944b26}{parse\+\_\+event\+\_\+t\+::object\+\_\+start}, 
 \hyperlink{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebeaf63e2a2468a37aa4f394fcc3bcb8249c}{parse\+\_\+event\+\_\+t\+::object\+\_\+end}, 
 \hyperlink{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebeaa4388a3d92419edbb1c6efd4d52461f3}{parse\+\_\+event\+\_\+t\+::array\+\_\+start}, 
 \hyperlink{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebea49642fb732aa2e112188fba1f9d3ef7f}{parse\+\_\+event\+\_\+t\+::array\+\_\+end}, 
-\newline
+\\*
 \hyperlink{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebea3c6e0b8a9c15224a8228b9a98ca1531d}{parse\+\_\+event\+\_\+t\+::key}, 
 \hyperlink{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebea2063c1608d6e0baf80249c42e2be5804}{parse\+\_\+event\+\_\+t\+::value}
  \}
@@ -82,7 +82,7 @@ const bool \hyperlink{classnlohmann_1_1detail_1_1parser_a3de1ea054cfa606e79fa077
 
 
 \subsection{Detailed Description}
-\subsubsection*{template$<$typename Basic\+Json\+Type$>$\newline
+\subsubsection*{template$<$typename Basic\+Json\+Type$>$\\*
 class nlohmann\+::detail\+::parser$<$ Basic\+Json\+Type $>$}
 
 syntax analysis 
@@ -90,101 +90,62 @@ syntax analysis
 This class implements a recursive decent parser. 
 
 \subsection{Member Typedef Documentation}
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a16030c5af158a94d1c799f82ff3a0147}\label{classnlohmann_1_1detail_1_1parser_a16030c5af158a94d1c799f82ff3a0147}} 
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!lexer\+\_\+t@{lexer\+\_\+t}}
 \index{lexer\+\_\+t@{lexer\+\_\+t}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{lexer\+\_\+t}{lexer\_t}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-using \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::\hyperlink{classnlohmann_1_1detail_1_1parser_a16030c5af158a94d1c799f82ff3a0147}{lexer\+\_\+t} =  \hyperlink{classnlohmann_1_1detail_1_1lexer}{lexer}$<$Basic\+Json\+Type$>$\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a8ca8e734da0632c2731fc3b9547dcf28}\label{classnlohmann_1_1detail_1_1parser_a8ca8e734da0632c2731fc3b9547dcf28}} 
+\subsubsection[{\texorpdfstring{lexer\+\_\+t}{lexer_t}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ using {\bf nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::{\bf lexer\+\_\+t} =  {\bf lexer}$<$Basic\+Json\+Type$>$\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classnlohmann_1_1detail_1_1parser_a16030c5af158a94d1c799f82ff3a0147}{}\label{classnlohmann_1_1detail_1_1parser_a16030c5af158a94d1c799f82ff3a0147}
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!number\+\_\+float\+\_\+t@{number\+\_\+float\+\_\+t}}
 \index{number\+\_\+float\+\_\+t@{number\+\_\+float\+\_\+t}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{number\+\_\+float\+\_\+t}{number\_float\_t}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-using \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::\hyperlink{classnlohmann_1_1detail_1_1parser_a8ca8e734da0632c2731fc3b9547dcf28}{number\+\_\+float\+\_\+t} =  typename Basic\+Json\+Type\+::number\+\_\+float\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_aa0362897269e0a7e50ae07be05f42d8e}\label{classnlohmann_1_1detail_1_1parser_aa0362897269e0a7e50ae07be05f42d8e}} 
+\subsubsection[{\texorpdfstring{number\+\_\+float\+\_\+t}{number_float_t}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ using {\bf nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::{\bf number\+\_\+float\+\_\+t} =  typename Basic\+Json\+Type\+::number\+\_\+float\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classnlohmann_1_1detail_1_1parser_a8ca8e734da0632c2731fc3b9547dcf28}{}\label{classnlohmann_1_1detail_1_1parser_a8ca8e734da0632c2731fc3b9547dcf28}
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!number\+\_\+integer\+\_\+t@{number\+\_\+integer\+\_\+t}}
 \index{number\+\_\+integer\+\_\+t@{number\+\_\+integer\+\_\+t}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{number\+\_\+integer\+\_\+t}{number\_integer\_t}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-using \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::\hyperlink{classnlohmann_1_1detail_1_1parser_aa0362897269e0a7e50ae07be05f42d8e}{number\+\_\+integer\+\_\+t} =  typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a3773ccef366c61da2e6a8c0eda36d0ec}\label{classnlohmann_1_1detail_1_1parser_a3773ccef366c61da2e6a8c0eda36d0ec}} 
+\subsubsection[{\texorpdfstring{number\+\_\+integer\+\_\+t}{number_integer_t}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ using {\bf nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::{\bf number\+\_\+integer\+\_\+t} =  typename Basic\+Json\+Type\+::number\+\_\+integer\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classnlohmann_1_1detail_1_1parser_aa0362897269e0a7e50ae07be05f42d8e}{}\label{classnlohmann_1_1detail_1_1parser_aa0362897269e0a7e50ae07be05f42d8e}
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!number\+\_\+unsigned\+\_\+t@{number\+\_\+unsigned\+\_\+t}}
 \index{number\+\_\+unsigned\+\_\+t@{number\+\_\+unsigned\+\_\+t}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{number\+\_\+unsigned\+\_\+t}{number\_unsigned\_t}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-using \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::\hyperlink{classnlohmann_1_1detail_1_1parser_a3773ccef366c61da2e6a8c0eda36d0ec}{number\+\_\+unsigned\+\_\+t} =  typename Basic\+Json\+Type\+::number\+\_\+unsigned\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_ad250ad4f2b4af4a497e727c963162ff1}\label{classnlohmann_1_1detail_1_1parser_ad250ad4f2b4af4a497e727c963162ff1}} 
+\subsubsection[{\texorpdfstring{number\+\_\+unsigned\+\_\+t}{number_unsigned_t}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ using {\bf nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::{\bf number\+\_\+unsigned\+\_\+t} =  typename Basic\+Json\+Type\+::number\+\_\+unsigned\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classnlohmann_1_1detail_1_1parser_a3773ccef366c61da2e6a8c0eda36d0ec}{}\label{classnlohmann_1_1detail_1_1parser_a3773ccef366c61da2e6a8c0eda36d0ec}
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!parser\+\_\+callback\+\_\+t@{parser\+\_\+callback\+\_\+t}}
 \index{parser\+\_\+callback\+\_\+t@{parser\+\_\+callback\+\_\+t}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{parser\+\_\+callback\+\_\+t}{parser\_callback\_t}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-using \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::\hyperlink{classnlohmann_1_1detail_1_1parser_ad250ad4f2b4af4a497e727c963162ff1}{parser\+\_\+callback\+\_\+t} =  std\+::function$<$bool(int depth, \hyperlink{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebe}{parse\+\_\+event\+\_\+t} event, Basic\+Json\+Type\& parsed)$>$}
-
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_af67b9b0405262c40be2b13adaab8b046}\label{classnlohmann_1_1detail_1_1parser_af67b9b0405262c40be2b13adaab8b046}} 
+\subsubsection[{\texorpdfstring{parser\+\_\+callback\+\_\+t}{parser_callback_t}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ using {\bf nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::{\bf parser\+\_\+callback\+\_\+t} =  std\+::function$<$bool(int depth, {\bf parse\+\_\+event\+\_\+t} event, Basic\+Json\+Type\& parsed)$>$}\hypertarget{classnlohmann_1_1detail_1_1parser_ad250ad4f2b4af4a497e727c963162ff1}{}\label{classnlohmann_1_1detail_1_1parser_ad250ad4f2b4af4a497e727c963162ff1}
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!string\+\_\+t@{string\+\_\+t}}
 \index{string\+\_\+t@{string\+\_\+t}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{string\+\_\+t}{string\_t}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-using \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::\hyperlink{classnlohmann_1_1detail_1_1parser_af67b9b0405262c40be2b13adaab8b046}{string\+\_\+t} =  typename Basic\+Json\+Type\+::string\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}
-
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a21d247111b332785b7acf3f8e487d117}\label{classnlohmann_1_1detail_1_1parser_a21d247111b332785b7acf3f8e487d117}} 
+\subsubsection[{\texorpdfstring{string\+\_\+t}{string_t}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ using {\bf nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::{\bf string\+\_\+t} =  typename Basic\+Json\+Type\+::string\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classnlohmann_1_1detail_1_1parser_af67b9b0405262c40be2b13adaab8b046}{}\label{classnlohmann_1_1detail_1_1parser_af67b9b0405262c40be2b13adaab8b046}
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!token\+\_\+type@{token\+\_\+type}}
 \index{token\+\_\+type@{token\+\_\+type}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{token\+\_\+type}{token\_type}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-using \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::\hyperlink{classnlohmann_1_1detail_1_1parser_a21d247111b332785b7acf3f8e487d117}{token\+\_\+type} =  typename \hyperlink{classnlohmann_1_1detail_1_1lexer_a3f313cdbe187cababfc5e06f0b69b098}{lexer\+\_\+t\+::token\+\_\+type}\hspace{0.3cm}{\ttfamily [private]}}
-
+\subsubsection[{\texorpdfstring{token\+\_\+type}{token_type}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ using {\bf nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::{\bf token\+\_\+type} =  typename {\bf lexer\+\_\+t\+::token\+\_\+type}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classnlohmann_1_1detail_1_1parser_a21d247111b332785b7acf3f8e487d117}{}\label{classnlohmann_1_1detail_1_1parser_a21d247111b332785b7acf3f8e487d117}
 
 
 \subsection{Member Enumeration Documentation}
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebe}\label{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebe}} 
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!parse\+\_\+event\+\_\+t@{parse\+\_\+event\+\_\+t}}
 \index{parse\+\_\+event\+\_\+t@{parse\+\_\+event\+\_\+t}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{parse\+\_\+event\+\_\+t}{parse\_event\_t}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-enum \hyperlink{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebe}{nlohmann\+::detail\+::parser\+::parse\+\_\+event\+\_\+t} \+: uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{object\+\_\+start@{object\+\_\+start}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}\index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!object\+\_\+start@{object\+\_\+start}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebeae73f17027cb0acbb537f29d0a6944b26}\label{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebeae73f17027cb0acbb537f29d0a6944b26}} 
-object\+\_\+start&the parser read {\ttfamily \{} and started to process a J\+S\+ON object \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{object\+\_\+end@{object\+\_\+end}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}\index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!object\+\_\+end@{object\+\_\+end}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebeaf63e2a2468a37aa4f394fcc3bcb8249c}\label{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebeaf63e2a2468a37aa4f394fcc3bcb8249c}} 
-object\+\_\+end&the parser read {\ttfamily \}} and finished processing a J\+S\+ON object \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{array\+\_\+start@{array\+\_\+start}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}\index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!array\+\_\+start@{array\+\_\+start}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebeaa4388a3d92419edbb1c6efd4d52461f3}\label{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebeaa4388a3d92419edbb1c6efd4d52461f3}} 
-array\+\_\+start&the parser read {\ttfamily \mbox{[}} and started to process a J\+S\+ON array \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{array\+\_\+end@{array\+\_\+end}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}\index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!array\+\_\+end@{array\+\_\+end}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebea49642fb732aa2e112188fba1f9d3ef7f}\label{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebea49642fb732aa2e112188fba1f9d3ef7f}} 
-array\+\_\+end&the parser read {\ttfamily \mbox{]}} and finished processing a J\+S\+ON array \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{key@{key}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}\index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!key@{key}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebea3c6e0b8a9c15224a8228b9a98ca1531d}\label{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebea3c6e0b8a9c15224a8228b9a98ca1531d}} 
-key&the parser read a key of a value in an object \\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{value@{value}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}\index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!value@{value}}}\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebea2063c1608d6e0baf80249c42e2be5804}\label{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebea2063c1608d6e0baf80249c42e2be5804}} 
-value&the parser finished reading a J\+S\+ON value \\
-\hline
-
-\end{DoxyEnumFields}
+\subsubsection[{\texorpdfstring{parse\+\_\+event\+\_\+t}{parse_event_t}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ enum {\bf nlohmann\+::detail\+::parser\+::parse\+\_\+event\+\_\+t} \+: uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}\hypertarget{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebe}{}\label{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebe}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{object\+\_\+start@{object\+\_\+start}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}\index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!object\+\_\+start@{object\+\_\+start}}\item[{\em 
+object\+\_\+start\hypertarget{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebeae73f17027cb0acbb537f29d0a6944b26}{}\label{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebeae73f17027cb0acbb537f29d0a6944b26}
+}]the parser read {\ttfamily \{} and started to process a J\+S\+ON object \index{object\+\_\+end@{object\+\_\+end}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}\index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!object\+\_\+end@{object\+\_\+end}}\item[{\em 
+object\+\_\+end\hypertarget{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebeaf63e2a2468a37aa4f394fcc3bcb8249c}{}\label{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebeaf63e2a2468a37aa4f394fcc3bcb8249c}
+}]the parser read {\ttfamily \}} and finished processing a J\+S\+ON object \index{array\+\_\+start@{array\+\_\+start}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}\index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!array\+\_\+start@{array\+\_\+start}}\item[{\em 
+array\+\_\+start\hypertarget{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebeaa4388a3d92419edbb1c6efd4d52461f3}{}\label{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebeaa4388a3d92419edbb1c6efd4d52461f3}
+}]the parser read {\ttfamily \mbox{[}} and started to process a J\+S\+ON array \index{array\+\_\+end@{array\+\_\+end}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}\index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!array\+\_\+end@{array\+\_\+end}}\item[{\em 
+array\+\_\+end\hypertarget{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebea49642fb732aa2e112188fba1f9d3ef7f}{}\label{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebea49642fb732aa2e112188fba1f9d3ef7f}
+}]the parser read {\ttfamily \mbox{]}} and finished processing a J\+S\+ON array \index{key@{key}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}\index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!key@{key}}\item[{\em 
+key\hypertarget{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebea3c6e0b8a9c15224a8228b9a98ca1531d}{}\label{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebea3c6e0b8a9c15224a8228b9a98ca1531d}
+}]the parser read a key of a value in an object \index{value@{value}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}\index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!value@{value}}\item[{\em 
+value\hypertarget{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebea2063c1608d6e0baf80249c42e2be5804}{}\label{classnlohmann_1_1detail_1_1parser_a37ac88c864dda495f72cb62776b0bebea2063c1608d6e0baf80249c42e2be5804}
+}]the parser finished reading a J\+S\+ON value \end{description}
+\end{Desc}
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a1a2bd258b7e99f86b7e6a3c41373ba55}\label{classnlohmann_1_1detail_1_1parser_a1a2bd258b7e99f86b7e6a3c41373ba55}} 
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!parser@{parser}}
 \index{parser@{parser}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{parser()}{parser()}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-\hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::\hyperlink{classnlohmann_1_1detail_1_1parser}{parser} (\begin{DoxyParamCaption}\item[{\hyperlink{namespacenlohmann_1_1detail_ae132f8cd5bb24c5e9b40ad0eafedf1c2}{detail\+::input\+\_\+adapter\+\_\+t} \&\&}]{adapter,  }\item[{const \hyperlink{classnlohmann_1_1detail_1_1parser_ad250ad4f2b4af4a497e727c963162ff1}{parser\+\_\+callback\+\_\+t}}]{cb = {\ttfamily nullptr},  }\item[{const bool}]{allow\+\_\+exceptions\+\_\+ = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
-
+\subsubsection[{\texorpdfstring{parser(detail\+::input\+\_\+adapter\+\_\+t \&\&adapter, const parser\+\_\+callback\+\_\+t cb=nullptr, const bool allow\+\_\+exceptions\+\_\+=true)}{parser(detail::input_adapter_t &&adapter, const parser_callback_t cb=nullptr, const bool allow_exceptions_=true)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ {\bf nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::{\bf parser} (
+\begin{DoxyParamCaption}
+\item[{{\bf detail\+::input\+\_\+adapter\+\_\+t} \&\&}]{adapter, }
+\item[{const {\bf parser\+\_\+callback\+\_\+t}}]{cb = {\ttfamily nullptr}, }
+\item[{const bool}]{allow\+\_\+exceptions\+\_\+ = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\hypertarget{classnlohmann_1_1detail_1_1parser_a1a2bd258b7e99f86b7e6a3c41373ba55}{}\label{classnlohmann_1_1detail_1_1parser_a1a2bd258b7e99f86b7e6a3c41373ba55}
 
 
 a parser reading from an input adapter 
@@ -192,13 +153,13 @@ a parser reading from an input adapter
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a20997b42262856935b60fc91bf05bf3f}\label{classnlohmann_1_1detail_1_1parser_a20997b42262856935b60fc91bf05bf3f}} 
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!accept@{accept}}
 \index{accept@{accept}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{accept()}{accept()}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-bool \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::accept (\begin{DoxyParamCaption}\item[{const bool}]{strict = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
+\subsubsection[{\texorpdfstring{accept(const bool strict=true)}{accept(const bool strict=true)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ bool {\bf nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::accept (
+\begin{DoxyParamCaption}
+\item[{const bool}]{strict = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classnlohmann_1_1detail_1_1parser_a20997b42262856935b60fc91bf05bf3f}{}\label{classnlohmann_1_1detail_1_1parser_a20997b42262856935b60fc91bf05bf3f}
 
 
 public accept interface 
@@ -211,31 +172,33 @@ public accept interface
 \begin{DoxyReturn}{Returns}
 whether the input is a proper J\+S\+ON text 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a1328166d9e9b655399fdc890d47e4990}\label{classnlohmann_1_1detail_1_1parser_a1328166d9e9b655399fdc890d47e4990}} 
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!exception\+\_\+message@{exception\+\_\+message}}
 \index{exception\+\_\+message@{exception\+\_\+message}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{exception\+\_\+message()}{exception\_message()}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-\hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21}{std\+::string} \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::exception\+\_\+message (\begin{DoxyParamCaption}\item[{const \hyperlink{classnlohmann_1_1detail_1_1parser_a21d247111b332785b7acf3f8e487d117}{token\+\_\+type}}]{expected,  }\item[{const \hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21}{std\+::string} \&}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a33f3859d0dd402445b5859070fd24bab}\label{classnlohmann_1_1detail_1_1parser_a33f3859d0dd402445b5859070fd24bab}} 
+\subsubsection[{\texorpdfstring{exception\+\_\+message(const token\+\_\+type expected, const std\+::string \&context)}{exception_message(const token_type expected, const std::string &context)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ {\bf std\+::string} {\bf nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::exception\+\_\+message (
+\begin{DoxyParamCaption}
+\item[{const {\bf token\+\_\+type}}]{expected, }
+\item[{const {\bf std\+::string} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classnlohmann_1_1detail_1_1parser_a1328166d9e9b655399fdc890d47e4990}{}\label{classnlohmann_1_1detail_1_1parser_a1328166d9e9b655399fdc890d47e4990}
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!get\+\_\+token@{get\+\_\+token}}
 \index{get\+\_\+token@{get\+\_\+token}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{get\+\_\+token()}{get\_token()}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-\hyperlink{classnlohmann_1_1detail_1_1parser_a21d247111b332785b7acf3f8e487d117}{token\+\_\+type} \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::get\+\_\+token (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
+\subsubsection[{\texorpdfstring{get\+\_\+token()}{get_token()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ {\bf token\+\_\+type} {\bf nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::get\+\_\+token (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classnlohmann_1_1detail_1_1parser_a33f3859d0dd402445b5859070fd24bab}{}\label{classnlohmann_1_1detail_1_1parser_a33f3859d0dd402445b5859070fd24bab}
 
 
 get next token from lexer 
 
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a14338d8f3174601c0b2b7ef28752ab17}\label{classnlohmann_1_1detail_1_1parser_a14338d8f3174601c0b2b7ef28752ab17}} 
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!parse@{parse}}
 \index{parse@{parse}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{parse()}{parse()}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-\hyperlink{namespacenlohmann_1_1detail_a59fca69799f6b9e366710cb9043aa77d}{void} \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::parse (\begin{DoxyParamCaption}\item[{const bool}]{strict,  }\item[{Basic\+Json\+Type \&}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
+\subsubsection[{\texorpdfstring{parse(const bool strict, Basic\+Json\+Type \&result)}{parse(const bool strict, BasicJsonType &result)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ {\bf void} {\bf nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::parse (
+\begin{DoxyParamCaption}
+\item[{const bool}]{strict, }
+\item[{Basic\+Json\+Type \&}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classnlohmann_1_1detail_1_1parser_a14338d8f3174601c0b2b7ef28752ab17}{}\label{classnlohmann_1_1detail_1_1parser_a14338d8f3174601c0b2b7ef28752ab17}
 
 
 public parser interface 
@@ -256,65 +219,48 @@ public parser interface
 {\em parse\+\_\+error.\+103} & if to\+\_\+unicode fails \\
 \hline
 \end{DoxyExceptions}
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a14e34931965064b26e118eb72cbd5e25}\label{classnlohmann_1_1detail_1_1parser_a14e34931965064b26e118eb72cbd5e25}} 
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!sax\+\_\+parse@{sax\+\_\+parse}}
 \index{sax\+\_\+parse@{sax\+\_\+parse}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{sax\+\_\+parse()}{sax\_parse()}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-template$<$typename S\+AX $>$ \\
-bool \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::sax\+\_\+parse (\begin{DoxyParamCaption}\item[{S\+AX $\ast$}]{sax,  }\item[{const bool}]{strict = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_ad256ac6f45b213d29096a04b5aa3c587}\label{classnlohmann_1_1detail_1_1parser_ad256ac6f45b213d29096a04b5aa3c587}} 
+\subsubsection[{\texorpdfstring{sax\+\_\+parse(\+S\+A\+X $\ast$sax, const bool strict=true)}{sax_parse(SAX *sax, const bool strict=true)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ template$<$typename S\+AX $>$ bool {\bf nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::sax\+\_\+parse (
+\begin{DoxyParamCaption}
+\item[{S\+AX $\ast$}]{sax, }
+\item[{const bool}]{strict = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classnlohmann_1_1detail_1_1parser_a14e34931965064b26e118eb72cbd5e25}{}\label{classnlohmann_1_1detail_1_1parser_a14e34931965064b26e118eb72cbd5e25}
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!sax\+\_\+parse\+\_\+internal@{sax\+\_\+parse\+\_\+internal}}
 \index{sax\+\_\+parse\+\_\+internal@{sax\+\_\+parse\+\_\+internal}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{sax\+\_\+parse\+\_\+internal()}{sax\_parse\_internal()}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-template$<$typename S\+AX $>$ \\
-bool \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::sax\+\_\+parse\+\_\+internal (\begin{DoxyParamCaption}\item[{S\+AX $\ast$}]{sax }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
-
+\subsubsection[{\texorpdfstring{sax\+\_\+parse\+\_\+internal(\+S\+A\+X $\ast$sax)}{sax_parse_internal(SAX *sax)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ template$<$typename S\+AX $>$ bool {\bf nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::sax\+\_\+parse\+\_\+internal (
+\begin{DoxyParamCaption}
+\item[{S\+AX $\ast$}]{sax}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classnlohmann_1_1detail_1_1parser_ad256ac6f45b213d29096a04b5aa3c587}{}\label{classnlohmann_1_1detail_1_1parser_ad256ac6f45b213d29096a04b5aa3c587}
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a3de1ea054cfa606e79fa07741f081b5f}\label{classnlohmann_1_1detail_1_1parser_a3de1ea054cfa606e79fa07741f081b5f}} 
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!allow\+\_\+exceptions@{allow\+\_\+exceptions}}
 \index{allow\+\_\+exceptions@{allow\+\_\+exceptions}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{allow\+\_\+exceptions}{allow\_exceptions}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-const bool \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::allow\+\_\+exceptions = true\hspace{0.3cm}{\ttfamily [private]}}
-
+\subsubsection[{\texorpdfstring{allow\+\_\+exceptions}{allow_exceptions}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ const bool {\bf nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::allow\+\_\+exceptions = true\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classnlohmann_1_1detail_1_1parser_a3de1ea054cfa606e79fa07741f081b5f}{}\label{classnlohmann_1_1detail_1_1parser_a3de1ea054cfa606e79fa07741f081b5f}
 
 
 whether to throw exceptions in case of errors 
 
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a7600d272ec605e3ffdc8512b3585f476}\label{classnlohmann_1_1detail_1_1parser_a7600d272ec605e3ffdc8512b3585f476}} 
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!callback@{callback}}
 \index{callback@{callback}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{callback}{callback}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-const \hyperlink{classnlohmann_1_1detail_1_1parser_ad250ad4f2b4af4a497e727c963162ff1}{parser\+\_\+callback\+\_\+t} \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::callback = nullptr\hspace{0.3cm}{\ttfamily [private]}}
-
+\subsubsection[{\texorpdfstring{callback}{callback}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ const {\bf parser\+\_\+callback\+\_\+t} {\bf nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::callback = nullptr\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classnlohmann_1_1detail_1_1parser_a7600d272ec605e3ffdc8512b3585f476}{}\label{classnlohmann_1_1detail_1_1parser_a7600d272ec605e3ffdc8512b3585f476}
 
 
 callback function 
 
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a932e49f6f4d291557846744319245994}\label{classnlohmann_1_1detail_1_1parser_a932e49f6f4d291557846744319245994}} 
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!last\+\_\+token@{last\+\_\+token}}
 \index{last\+\_\+token@{last\+\_\+token}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{last\+\_\+token}{last\_token}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-\hyperlink{classnlohmann_1_1detail_1_1parser_a21d247111b332785b7acf3f8e487d117}{token\+\_\+type} \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::last\+\_\+token = token\+\_\+type\+::uninitialized\hspace{0.3cm}{\ttfamily [private]}}
-
+\subsubsection[{\texorpdfstring{last\+\_\+token}{last_token}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ {\bf token\+\_\+type} {\bf nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::last\+\_\+token = token\+\_\+type\+::uninitialized\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classnlohmann_1_1detail_1_1parser_a932e49f6f4d291557846744319245994}{}\label{classnlohmann_1_1detail_1_1parser_a932e49f6f4d291557846744319245994}
 
 
 the type of the last read token 
 
-\mbox{\Hypertarget{classnlohmann_1_1detail_1_1parser_a22dcc815551a4052b87797b34171b352}\label{classnlohmann_1_1detail_1_1parser_a22dcc815551a4052b87797b34171b352}} 
 \index{nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}!m\+\_\+lexer@{m\+\_\+lexer}}
 \index{m\+\_\+lexer@{m\+\_\+lexer}!nlohmann\+::detail\+::parser@{nlohmann\+::detail\+::parser}}
-\subsubsection{\texorpdfstring{m\+\_\+lexer}{m\_lexer}}
-{\footnotesize\ttfamily template$<$typename Basic\+Json\+Type $>$ \\
-\hyperlink{classnlohmann_1_1detail_1_1parser_a16030c5af158a94d1c799f82ff3a0147}{lexer\+\_\+t} \hyperlink{classnlohmann_1_1detail_1_1parser}{nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::m\+\_\+lexer\hspace{0.3cm}{\ttfamily [private]}}
-
+\subsubsection[{\texorpdfstring{m\+\_\+lexer}{m_lexer}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Basic\+Json\+Type $>$ {\bf lexer\+\_\+t} {\bf nlohmann\+::detail\+::parser}$<$ Basic\+Json\+Type $>$\+::m\+\_\+lexer\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classnlohmann_1_1detail_1_1parser_a22dcc815551a4052b87797b34171b352}{}\label{classnlohmann_1_1detail_1_1parser_a22dcc815551a4052b87797b34171b352}
 
 
 the lexer 
@@ -323,4 +269,4 @@ the lexer
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/bdn\+\_\+jz/bdn\+\_\+jz/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/nlohmann/detail/input/\hyperlink{parser_8hpp}{parser.\+hpp}\end{DoxyCompactItemize}
+/home/jc/\+H\+I\+W\+I/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/nlohmann/detail/input/\hyperlink{parser_8hpp}{parser.\+hpp}\end{DoxyCompactItemize}
