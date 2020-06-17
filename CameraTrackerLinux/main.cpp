@@ -73,12 +73,10 @@ int main(int argc, char* argv[])
     // Tracker tracker;
     // tracker.tracking();
 
-    QApplication GUI(argc, argv);
-    QMainWindow *window = new QMainWindow;
-    window->setFixedSize(500, 500);
-    // window->setLayout(vbLayout);
-    window->show();
-    return GUI.exec();
+    QApplication a(argc, argv);
+    GUI gui;
+    gui.show();
+    return a.exec();
 
     return 0;
 }
