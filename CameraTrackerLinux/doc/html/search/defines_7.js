@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['max_5fangle',['MAX_ANGLE',['../constants_8h.html#af3c82099d63a2d91d68bd62d954059c7',1,'constants.h']]],
-  ['max_5fimage_5faxis',['MAX_IMAGE_AXIS',['../constants_8h.html#a7736a4df685c629365fa2a6001a8b08b',1,'constants.h']]],
-  ['measure_5fperformance_5fbarrier',['MEASURE_PERFORMANCE_BARRIER',['../constants_8h.html#aec3698fa38dbcb13be0976e53dae92c3',1,'constants.h']]],
-  ['min_5fdistance',['MIN_DISTANCE',['../constants_8h.html#a549d41dcf9444ed7d6df1da3c73e7d16',1,'constants.h']]],
-  ['mutex_5ftimeout',['MUTEX_TIMEOUT',['../constants_8h.html#a8af0c73884cd609b9cfc7495f70807b5',1,'constants.h']]]
+  ['json_5fcatch',['JSON_CATCH',['../macro__scope_8hpp.html#a6954bec49ed2a2dfb938c1131c82740a',1,'macro_scope.hpp']]],
+  ['json_5finternal_5fcatch',['JSON_INTERNAL_CATCH',['../macro__scope_8hpp.html#a5478b7564e65634cc69432ed3cb6490e',1,'macro_scope.hpp']]],
+  ['json_5fthrow',['JSON_THROW',['../macro__scope_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f',1,'macro_scope.hpp']]],
+  ['json_5ftry',['JSON_TRY',['../macro__scope_8hpp.html#a985d3b82445302c57257f6432f261fe9',1,'macro_scope.hpp']]]
 ];

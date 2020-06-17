@@ -1,8 +1,0 @@
-digraph "Graphical Class Hierarchy"
-{
- // INTERACTIVE_SVG=YES
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  rankdir="LR";
-  Node1 [label="nlohmann::detail::has\l_non_default_from_json\l\< BasicJsonType, T, enable\l_if_t\< not is_basic_json\<\l T \>::value \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structnlohmann_1_1detail_1_1has__non__default__from__json_3_01_basic_json_type_00_01_t_00_01enab81bd4c814ac1146ff15f3f4636933207.html"];
-}

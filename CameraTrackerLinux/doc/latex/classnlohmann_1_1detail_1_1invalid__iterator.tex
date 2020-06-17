@@ -12,11 +12,23 @@ exception indicating errors with iterators
 
 
 Inheritance diagram for nlohmann\+:\+:detail\+:\+:invalid\+\_\+iterator\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classnlohmann_1_1detail_1_1invalid__iterator__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for nlohmann\+:\+:detail\+:\+:invalid\+\_\+iterator\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classnlohmann_1_1detail_1_1invalid__iterator__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -38,14 +50,14 @@ This exception is thrown if iterators passed to a library function do not match 
 Exceptions have ids 2xx.
 
 \tabulinesep=1mm
-\begin{longtabu} spread 0pt [c]{*3{|X[-1]}|}
+\begin{longtabu} spread 0pt [c]{*{3}{|X[-1]}|}
 \hline
-\rowcolor{\tableheadbgcolor}{\bf name / id }&{\bf example message }&{\bf description  }\\\cline{1-3}
+\rowcolor{\tableheadbgcolor}\textbf{ name / id }&\textbf{ example message }&\textbf{ description  }\\\cline{1-3}
 \endfirsthead
 \hline
 \endfoot
 \hline
-\rowcolor{\tableheadbgcolor}{\bf name / id }&{\bf example message }&{\bf description  }\\\cline{1-3}
+\rowcolor{\tableheadbgcolor}\textbf{ name / id }&\textbf{ example message }&\textbf{ description  }\\\cline{1-3}
 \endhead
 json.\+exception.\+invalid\+\_\+iterator.\+201 &iterators are not compatible &The iterators passed to constructor basic\+\_\+json(\+Input\+I\+T first, Input\+I\+T last) are not compatible, meaning they do not belong to the same container. Therefore, the range ({\itshape first}, {\itshape last}) is invalid. \\\cline{1-3}
 json.\+exception.\+invalid\+\_\+iterator.\+202 &iterator does not fit current value &In an erase or insert function, the passed iterator {\itshape pos} does not belong to the J\+S\+ON value for which the function was called. It hence does not define a valid position for the deletion/insertion. \\\cline{1-3}
@@ -81,27 +93,23 @@ version 3.\+0.\+0
 
 
 \subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1invalid__iterator_adf4a6697420f3bddb4addfc0b98f6ee2}\label{classnlohmann_1_1detail_1_1invalid__iterator_adf4a6697420f3bddb4addfc0b98f6ee2}} 
 \index{nlohmann\+::detail\+::invalid\+\_\+iterator@{nlohmann\+::detail\+::invalid\+\_\+iterator}!invalid\+\_\+iterator@{invalid\+\_\+iterator}}
 \index{invalid\+\_\+iterator@{invalid\+\_\+iterator}!nlohmann\+::detail\+::invalid\+\_\+iterator@{nlohmann\+::detail\+::invalid\+\_\+iterator}}
-\subsubsection[{\texorpdfstring{invalid\+\_\+iterator(int id\+\_\+, const char $\ast$what\+\_\+arg)}{invalid_iterator(int id_, const char *what_arg)}}]{\setlength{\rightskip}{0pt plus 5cm}nlohmann\+::detail\+::invalid\+\_\+iterator\+::invalid\+\_\+iterator (
-\begin{DoxyParamCaption}
-\item[{int}]{id\+\_\+, }
-\item[{const char $\ast$}]{what\+\_\+arg}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}\hypertarget{classnlohmann_1_1detail_1_1invalid__iterator_adf4a6697420f3bddb4addfc0b98f6ee2}{}\label{classnlohmann_1_1detail_1_1invalid__iterator_adf4a6697420f3bddb4addfc0b98f6ee2}
+\subsubsection{\texorpdfstring{invalid\+\_\+iterator()}{invalid\_iterator()}}
+{\footnotesize\ttfamily nlohmann\+::detail\+::invalid\+\_\+iterator\+::invalid\+\_\+iterator (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+,  }\item[{const char $\ast$}]{what\+\_\+arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classnlohmann_1_1detail_1_1invalid__iterator_a4e849260a3caa1b288c7e619130c6c09}\label{classnlohmann_1_1detail_1_1invalid__iterator_a4e849260a3caa1b288c7e619130c6c09}} 
 \index{nlohmann\+::detail\+::invalid\+\_\+iterator@{nlohmann\+::detail\+::invalid\+\_\+iterator}!create@{create}}
 \index{create@{create}!nlohmann\+::detail\+::invalid\+\_\+iterator@{nlohmann\+::detail\+::invalid\+\_\+iterator}}
-\subsubsection[{\texorpdfstring{create(int id\+\_\+, const std\+::string \&what\+\_\+arg)}{create(int id_, const std::string &what_arg)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf invalid\+\_\+iterator} nlohmann\+::detail\+::invalid\+\_\+iterator\+::create (
-\begin{DoxyParamCaption}
-\item[{int}]{id\+\_\+, }
-\item[{const {\bf std\+::string} \&}]{what\+\_\+arg}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\hypertarget{classnlohmann_1_1detail_1_1invalid__iterator_a4e849260a3caa1b288c7e619130c6c09}{}\label{classnlohmann_1_1detail_1_1invalid__iterator_a4e849260a3caa1b288c7e619130c6c09}
+\subsubsection{\texorpdfstring{create()}{create()}}
+{\footnotesize\ttfamily static \hyperlink{classnlohmann_1_1detail_1_1invalid__iterator}{invalid\+\_\+iterator} nlohmann\+::detail\+::invalid\+\_\+iterator\+::create (\begin{DoxyParamCaption}\item[{int}]{id\+\_\+,  }\item[{const \hyperlink{namespacenlohmann_1_1detail_a1ed8fc6239da25abcaf681d30ace4985ab45cffe084dd3d20d928bee85e7b0f21}{std\+::string} \&}]{what\+\_\+arg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-/home/jc/\+H\+I\+W\+I/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/nlohmann/detail/\hyperlink{exceptions_8hpp}{exceptions.\+hpp}\end{DoxyCompactItemize}
+/home/bdn\+\_\+jz/bdn\+\_\+jz/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/nlohmann/detail/\hyperlink{exceptions_8hpp}{exceptions.\+hpp}\end{DoxyCompactItemize}

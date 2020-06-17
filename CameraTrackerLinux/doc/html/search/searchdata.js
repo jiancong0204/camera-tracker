@@ -10,7 +10,7 @@ var indexSectionsWithContent =
   7: "eiptv",
   8: "abcdegijklmnoprsuv",
   9: ":bdo",
-  10: "bcdeijlmnprtv",
+  10: "abcdehijlmnprstv",
   11: "cd"
 };
 

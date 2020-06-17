@@ -23,5 +23,6 @@ var searchData=
   ['_7eqrcodescanner',['~QrcodeScanner',['../class_qrcode_scanner.html#ad8670545dad4e8918b94f870f184ce80',1,'QrcodeScanner']]],
   ['_7erotationstage',['~RotationStage',['../class_rotation_stage.html#a3023bae2d8de9f084036de453d8ac374',1,'RotationStage']]],
   ['_7eserializer',['~serializer',['../classnlohmann_1_1detail_1_1serializer.html#aa6c62b51cbebb185307df851dc0167f0',1,'nlohmann::detail::serializer']]],
-  ['_7etimedframe',['~TimedFrame',['../class_timed_frame.html#a4be9ac0c21706f905a503fa035fd2e68',1,'TimedFrame']]]
+  ['_7etimedframe',['~TimedFrame',['../class_timed_frame.html#a4be9ac0c21706f905a503fa035fd2e68',1,'TimedFrame']]],
+  ['_7etracker',['~Tracker',['../class_tracker.html#a0ed1e23312cfe7fcfe5f2ac2abd69163',1,'Tracker']]]
 ];

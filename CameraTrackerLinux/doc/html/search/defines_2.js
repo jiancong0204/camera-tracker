@@ -1,6 +1,21 @@
 var searchData=
 [
-  ['debug',['DEBUG',['../constants_8h.html#ad72dbcf6d0153db1b8d8a58001feed83',1,'constants.h']]],
-  ['dout',['DOUT',['../constants_8h.html#a29779b3f0f58b3bd6a1baca88021c4df',1,'constants.h']]],
-  ['dshow',['DSHOW',['../constants_8h.html#afe67f82eb9c5f9b21b8fda0638ed4874',1,'constants.h']]]
+  ['c_5fdialect',['C_DIALECT',['../_c_make_c_compiler_id_8c.html#a07f8e5783674099cd7f5110e22a78cdb',1,'CMakeCCompilerId.c']]],
+  ['canny_5fmax_5fthreshold',['CANNY_MAX_THRESHOLD',['../constants_8h.html#a9f9ca7a9a0789cf570ab3f0772ccfd6f',1,'constants.h']]],
+  ['canny_5fmin_5fthreshold',['CANNY_MIN_THRESHOLD',['../constants_8h.html#ab0cfbe1ce4855ea05fc84dadf183414a',1,'constants.h']]],
+  ['cd_5fdefault',['CD_DEFAULT',['../constants_8h.html#af7877d5baf4e2e56e33e8131ea4baf6b',1,'constants.h']]],
+  ['cd_5ffeature',['CD_FEATURE',['../constants_8h.html#af2d9c506d3acbff804caeba40e94b7d9',1,'constants.h']]],
+  ['cd_5fmeta',['CD_META',['../constants_8h.html#a2d0c40a1cc18d63608cd689e3ad35ca6',1,'constants.h']]],
+  ['cd_5ftemplate',['CD_TEMPLATE',['../constants_8h.html#a5a33f0f7759d7133fbd4a976c51295d0',1,'constants.h']]],
+  ['compiler_5fid',['COMPILER_ID',['../_c_make_c_compiler_id_8c.html#a81dee0709ded976b2e0319239f72d174',1,'COMPILER_ID():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#a81dee0709ded976b2e0319239f72d174',1,'COMPILER_ID():&#160;CMakeCXXCompilerId.cpp']]],
+  ['cv_5f8_5ftype',['CV_8_TYPE',['../constants_8h.html#aa97b7c8af312feae18c3cb3daff56e03',1,'constants.h']]],
+  ['cv_5fcolor_5ftype',['CV_COLOR_TYPE',['../constants_8h.html#a04143359709e6bc191324cdf9674b1e5',1,'constants.h']]],
+  ['cv_5fcpp_5f8_5ftype',['CV_CPP_8_TYPE',['../constants_8h.html#a0007c154f7281b17ecacda4af3fa5b13',1,'constants.h']]],
+  ['cv_5fcpp_5ftype',['CV_CPP_TYPE',['../constants_8h.html#ae7e5fc3d2bd8eb54b7c3bd9d2e81db31',1,'constants.h']]],
+  ['cv_5fdownscale_5f12_5f8',['CV_DOWNSCALE_12_8',['../constants_8h.html#a1f0468e0c9de8c0fd38d0d3ac10c2db0',1,'constants.h']]],
+  ['cv_5fmax_5fvalue',['CV_MAX_VALUE',['../constants_8h.html#a0e0900848f313188778907d811e612b9',1,'constants.h']]],
+  ['cv_5fmono_5ftype',['CV_MONO_TYPE',['../constants_8h.html#a34a0a66cad070887d8b259e5e2fd0c67',1,'constants.h']]],
+  ['cv_5fupscale_5f12_5f16',['CV_UPSCALE_12_16',['../constants_8h.html#a8282ccd73e76b7526e5ffc742667767a',1,'constants.h']]],
+  ['cv_5fupscale_5f8_5f16',['CV_UPSCALE_8_16',['../constants_8h.html#a8d5bca0308ac32963ea4f97f578baad4',1,'constants.h']]],
+  ['cxx_5fstd',['CXX_STD',['../_c_make_c_x_x_compiler_id_8cpp.html#a34cc889e576a1ae6c84ae9e0a851ba21',1,'CMakeCXXCompilerId.cpp']]]
 ];

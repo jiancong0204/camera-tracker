@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['nlohmann_5fbasic_5fjson_5ftpl',['NLOHMANN_BASIC_JSON_TPL',['../macro__scope_8hpp.html#a80b7254e63f199a1f656f07ae551f632',1,'macro_scope.hpp']]],
-  ['nlohmann_5fbasic_5fjson_5ftpl_5fdeclaration',['NLOHMANN_BASIC_JSON_TPL_DECLARATION',['../macro__scope_8hpp.html#a0643bd74c2dc6f0e4e420b8190ea8f0f',1,'macro_scope.hpp']]],
-  ['nlohmann_5fjson_5fserialize_5fenum',['NLOHMANN_JSON_SERIALIZE_ENUM',['../macro__scope_8hpp.html#a4c5d399dfa9252e70f876756f3f49084',1,'macro_scope.hpp']]],
-  ['nlohmann_5fjson_5fversion_5fmajor',['NLOHMANN_JSON_VERSION_MAJOR',['../json_8hpp.html#a7c94253db90041af11dd946a49f0f8a4',1,'json.hpp']]],
-  ['nlohmann_5fjson_5fversion_5fminor',['NLOHMANN_JSON_VERSION_MINOR',['../json_8hpp.html#ab5ca1e164894d78d3276d2e5fe58c5e3',1,'json.hpp']]],
-  ['nlohmann_5fjson_5fversion_5fpatch',['NLOHMANN_JSON_VERSION_PATCH',['../json_8hpp.html#a307e0238ebc35e99ea45c68823eb83eb',1,'json.hpp']]]
+  ['laser_5fexpose_5fiterations',['LASER_EXPOSE_ITERATIONS',['../constants_8h.html#a6c7ea402893dffa8ab4020dc647b2245',1,'constants.h']]],
+  ['left_5fcalib_5floc',['LEFT_CALIB_LOC',['../constants_8h.html#a2366d8e6e85d83991c14dca7561048b2',1,'constants.h']]],
+  ['left_5fcam',['LEFT_CAM',['../constants_8h.html#aac018fc017489b79204fe23a3072ed97',1,'constants.h']]]
 ];

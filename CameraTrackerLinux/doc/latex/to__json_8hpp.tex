@@ -1,22 +1,34 @@
-\hypertarget{to__json_8hpp}{}\section{/home/jc/\+H\+I\+W\+I/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/nlohmann/detail/conversions/to\+\_\+json.hpp File Reference}
-\label{to__json_8hpp}\index{/home/jc/\+H\+I\+W\+I/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/nlohmann/detail/conversions/to\+\_\+json.\+hpp@{/home/jc/\+H\+I\+W\+I/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/nlohmann/detail/conversions/to\+\_\+json.\+hpp}}
-{\ttfamily \#include $<$algorithm$>$}\\*
-{\ttfamily \#include $<$ciso646$>$}\\*
-{\ttfamily \#include $<$iterator$>$}\\*
-{\ttfamily \#include $<$string$>$}\\*
-{\ttfamily \#include $<$tuple$>$}\\*
-{\ttfamily \#include $<$type\+\_\+traits$>$}\\*
-{\ttfamily \#include $<$utility$>$}\\*
-{\ttfamily \#include $<$valarray$>$}\\*
-{\ttfamily \#include $<$vector$>$}\\*
-{\ttfamily \#include \char`\"{}nlohmann/detail/iterators/iteration\+\_\+proxy.\+hpp\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}nlohmann/detail/meta/cpp\+\_\+future.\+hpp\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}nlohmann/detail/meta/type\+\_\+traits.\+hpp\char`\"{}}\\*
-{\ttfamily \#include \char`\"{}nlohmann/detail/value\+\_\+t.\+hpp\char`\"{}}\\*
+\hypertarget{to__json_8hpp}{}\section{/home/bdn\+\_\+jz/bdn\+\_\+jz/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/nlohmann/detail/conversions/to\+\_\+json.hpp File Reference}
+\label{to__json_8hpp}\index{/home/bdn\+\_\+jz/bdn\+\_\+jz/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/nlohmann/detail/conversions/to\+\_\+json.\+hpp@{/home/bdn\+\_\+jz/bdn\+\_\+jz/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/nlohmann/detail/conversions/to\+\_\+json.\+hpp}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$ciso646$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$tuple$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$valarray$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}nlohmann/detail/iterators/iteration\+\_\+proxy.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nlohmann/detail/meta/cpp\+\_\+future.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nlohmann/detail/meta/type\+\_\+traits.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nlohmann/detail/value\+\_\+t.\+hpp\char`\"{}}\newline
 Include dependency graph for to\+\_\+json.\+hpp\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{to__json_8hpp__incl}
+\end{center}
+\end{figure}
 This graph shows which files directly or indirectly include this file\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{to__json_8hpp__dep__incl}
+\end{center}
+\end{figure}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -66,7 +78,7 @@ struct \hyperlink{structnlohmann_1_1detail_1_1to__json__fn}{nlohmann\+::detail\+
 \item 
 {\footnotesize template$<$typename Basic\+Json\+Type $>$ }\\void \hyperlink{namespacenlohmann_1_1detail_aeca6fb5fede5ed1e12a4420d98a5692b}{nlohmann\+::detail\+::to\+\_\+json} (Basic\+Json\+Type \&j, const std\+::vector$<$ bool $>$ \&e)
 \item 
-{\footnotesize template$<$typename Basic\+Json\+Type , typename Compatible\+Array\+Type , enable\+\_\+if\+\_\+t$<$ is\+\_\+compatible\+\_\+array\+\_\+type$<$ Basic\+Json\+Type, Compatible\+Array\+Type $>$\+::value andnot is\+\_\+compatible\+\_\+object\+\_\+type$<$ Basic\+Json\+Type, Compatible\+Array\+Type $>$\+::value andnot is\+\_\+compatible\+\_\+string\+\_\+type$<$ Basic\+Json\+Type, Compatible\+Array\+Type $>$\+::value andnot is\+\_\+basic\+\_\+json$<$ Compatible\+Array\+Type $>$\+::value, int $>$  = 0$>$ }\\void \hyperlink{namespacenlohmann_1_1detail_a3afebc132c5ff83f9cd160e52030fdfd}{nlohmann\+::detail\+::to\+\_\+json} (Basic\+Json\+Type \&j, const Compatible\+Array\+Type \&arr)
+{\footnotesize template$<$typename Basic\+Json\+Type , typename Compatible\+Array\+Type , enable\+\_\+if\+\_\+t$<$ is\+\_\+compatible\+\_\+array\+\_\+type$<$ Basic\+Json\+Type, Compatible\+Array\+Type $>$\+::value and not is\+\_\+compatible\+\_\+object\+\_\+type$<$ Basic\+Json\+Type, Compatible\+Array\+Type $>$\+::value and not is\+\_\+compatible\+\_\+string\+\_\+type$<$ Basic\+Json\+Type, Compatible\+Array\+Type $>$\+::value and not is\+\_\+basic\+\_\+json$<$ Compatible\+Array\+Type $>$\+::value, int $>$  = 0$>$ }\\void \hyperlink{namespacenlohmann_1_1detail_a3afebc132c5ff83f9cd160e52030fdfd}{nlohmann\+::detail\+::to\+\_\+json} (Basic\+Json\+Type \&j, const Compatible\+Array\+Type \&arr)
 \item 
 {\footnotesize template$<$typename Basic\+Json\+Type , typename T , enable\+\_\+if\+\_\+t$<$ std\+::is\+\_\+convertible$<$ T, Basic\+Json\+Type $>$\+::value, int $>$  = 0$>$ }\\void \hyperlink{namespacenlohmann_1_1detail_a7f7c7b9760161b774cdc0b4b838fae64}{nlohmann\+::detail\+::to\+\_\+json} (Basic\+Json\+Type \&j, const std\+::valarray$<$ T $>$ \&arr)
 \item 

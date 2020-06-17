@@ -59,16 +59,12 @@ std\+::vector$<$ cv\+::\+Point2f $>$ \hyperlink{class_pose_estimation_a2cfe879dc
 Estimate the pose of the camera according to the target. 
 
 \subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_pose_estimation_a74fd22a29c472c35ad6d184f7d2761ca}\label{class_pose_estimation_a74fd22a29c472c35ad6d184f7d2761ca}} 
 \index{Pose\+Estimation@{Pose\+Estimation}!Pose\+Estimation@{Pose\+Estimation}}
 \index{Pose\+Estimation@{Pose\+Estimation}!Pose\+Estimation@{Pose\+Estimation}}
-\subsubsection[{\texorpdfstring{Pose\+Estimation(std\+::vector$<$ cv\+::\+Point3f $>$ grid, float scale, Chessboard chessboard, std\+::vector$<$ cv\+::\+Point2f $>$ corners)}{PoseEstimation(std::vector< cv::Point3f > grid, float scale, Chessboard chessboard, std::vector< cv::Point2f > corners)}}]{\setlength{\rightskip}{0pt plus 5cm}Pose\+Estimation\+::\+Pose\+Estimation (
-\begin{DoxyParamCaption}
-\item[{std\+::vector$<$ cv\+::\+Point3f $>$}]{grid, }
-\item[{float}]{scale, }
-\item[{{\bf Chessboard}}]{chessboard, }
-\item[{std\+::vector$<$ cv\+::\+Point2f $>$}]{corners}
-\end{DoxyParamCaption}
-)}\hypertarget{class_pose_estimation_a74fd22a29c472c35ad6d184f7d2761ca}{}\label{class_pose_estimation_a74fd22a29c472c35ad6d184f7d2761ca}
+\subsubsection{\texorpdfstring{Pose\+Estimation()}{PoseEstimation()}}
+{\footnotesize\ttfamily Pose\+Estimation\+::\+Pose\+Estimation (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+Point3f $>$}]{grid,  }\item[{float}]{scale,  }\item[{\hyperlink{class_chessboard}{Chessboard}}]{chessboard,  }\item[{std\+::vector$<$ cv\+::\+Point2f $>$}]{corners }\end{DoxyParamCaption})}
+
 
 
 Constructor that calculates the rotation vector and translation vector based on chessboard and corners. 
@@ -84,13 +80,12 @@ Constructor that calculates the rotation vector and translation vector based on 
 {\em corners} & Coordinates of the corners \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_pose_estimation_ae50cca9fa13a705c4e71f3607e88fed5}\label{class_pose_estimation_ae50cca9fa13a705c4e71f3607e88fed5}} 
 \index{Pose\+Estimation@{Pose\+Estimation}!````~Pose\+Estimation@{$\sim$\+Pose\+Estimation}}
 \index{````~Pose\+Estimation@{$\sim$\+Pose\+Estimation}!Pose\+Estimation@{Pose\+Estimation}}
-\subsubsection[{\texorpdfstring{$\sim$\+Pose\+Estimation()}{~PoseEstimation()}}]{\setlength{\rightskip}{0pt plus 5cm}Pose\+Estimation\+::$\sim$\+Pose\+Estimation (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_pose_estimation_ae50cca9fa13a705c4e71f3607e88fed5}{}\label{class_pose_estimation_ae50cca9fa13a705c4e71f3607e88fed5}
+\subsubsection{\texorpdfstring{$\sim$\+Pose\+Estimation()}{~PoseEstimation()}}
+{\footnotesize\ttfamily Pose\+Estimation\+::$\sim$\+Pose\+Estimation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 
 
 Deconstructor. 
@@ -98,14 +93,12 @@ Deconstructor.
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pose_estimation_a965906535e05ba20e70b2f3a27ca5257}\label{class_pose_estimation_a965906535e05ba20e70b2f3a27ca5257}} 
 \index{Pose\+Estimation@{Pose\+Estimation}!\+\_\+get\+\_\+camera\+\_\+matrix@{\+\_\+get\+\_\+camera\+\_\+matrix}}
 \index{\+\_\+get\+\_\+camera\+\_\+matrix@{\+\_\+get\+\_\+camera\+\_\+matrix}!Pose\+Estimation@{Pose\+Estimation}}
-\subsubsection[{\texorpdfstring{\+\_\+get\+\_\+camera\+\_\+matrix(json camera\+Params, double cam[9])}{_get_camera_matrix(json cameraParams, double cam[9])}}]{\setlength{\rightskip}{0pt plus 5cm}void Pose\+Estimation\+::\+\_\+get\+\_\+camera\+\_\+matrix (
-\begin{DoxyParamCaption}
-\item[{{\bf json}}]{camera\+Params, }
-\item[{double}]{cam\mbox{[}9\mbox{]}}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_pose_estimation_a965906535e05ba20e70b2f3a27ca5257}{}\label{class_pose_estimation_a965906535e05ba20e70b2f3a27ca5257}
+\subsubsection{\texorpdfstring{\+\_\+get\+\_\+camera\+\_\+matrix()}{\_get\_camera\_matrix()}}
+{\footnotesize\ttfamily void Pose\+Estimation\+::\+\_\+get\+\_\+camera\+\_\+matrix (\begin{DoxyParamCaption}\item[{\hyperlink{_json_utilization_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}]{camera\+Params,  }\item[{double}]{cam\mbox{[}9\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
 
 
 Function that gets the camera matrix from json file. 
@@ -117,14 +110,12 @@ Function that gets the camera matrix from json file.
 \mbox{\tt out}  & {\em cam} & Camera matrix \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_pose_estimation_a612cfe658e71f673cb834c9257541a17}\label{class_pose_estimation_a612cfe658e71f673cb834c9257541a17}} 
 \index{Pose\+Estimation@{Pose\+Estimation}!\+\_\+get\+\_\+distortion\+\_\+coefficients@{\+\_\+get\+\_\+distortion\+\_\+coefficients}}
 \index{\+\_\+get\+\_\+distortion\+\_\+coefficients@{\+\_\+get\+\_\+distortion\+\_\+coefficients}!Pose\+Estimation@{Pose\+Estimation}}
-\subsubsection[{\texorpdfstring{\+\_\+get\+\_\+distortion\+\_\+coefficients(json camera\+Params, double dist[5])}{_get_distortion_coefficients(json cameraParams, double dist[5])}}]{\setlength{\rightskip}{0pt plus 5cm}void Pose\+Estimation\+::\+\_\+get\+\_\+distortion\+\_\+coefficients (
-\begin{DoxyParamCaption}
-\item[{{\bf json}}]{camera\+Params, }
-\item[{double}]{dist\mbox{[}5\mbox{]}}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_pose_estimation_a612cfe658e71f673cb834c9257541a17}{}\label{class_pose_estimation_a612cfe658e71f673cb834c9257541a17}
+\subsubsection{\texorpdfstring{\+\_\+get\+\_\+distortion\+\_\+coefficients()}{\_get\_distortion\_coefficients()}}
+{\footnotesize\ttfamily void Pose\+Estimation\+::\+\_\+get\+\_\+distortion\+\_\+coefficients (\begin{DoxyParamCaption}\item[{\hyperlink{_json_utilization_8h_ab701e3ac61a85b337ec5c1abaad6742d}{json}}]{camera\+Params,  }\item[{double}]{dist\mbox{[}5\mbox{]} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
 
 
 Function that gets the distortion coefficients from json file. 
@@ -136,15 +127,12 @@ Function that gets the distortion coefficients from json file.
 \mbox{\tt out}  & {\em dist} & Distortion matrix \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_pose_estimation_a3c5cee6eed85be0e4b4d69e6763584ae}\label{class_pose_estimation_a3c5cee6eed85be0e4b4d69e6763584ae}} 
 \index{Pose\+Estimation@{Pose\+Estimation}!\+\_\+rescale\+\_\+image@{\+\_\+rescale\+\_\+image}}
 \index{\+\_\+rescale\+\_\+image@{\+\_\+rescale\+\_\+image}!Pose\+Estimation@{Pose\+Estimation}}
-\subsubsection[{\texorpdfstring{\+\_\+rescale\+\_\+image(std\+::vector$<$ cv\+::\+Point2f $>$ corners, float scale, int number)}{_rescale_image(std::vector< cv::Point2f > corners, float scale, int number)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ cv\+::\+Point2f $>$ Pose\+Estimation\+::\+\_\+rescale\+\_\+image (
-\begin{DoxyParamCaption}
-\item[{std\+::vector$<$ cv\+::\+Point2f $>$}]{corners, }
-\item[{float}]{scale, }
-\item[{int}]{number}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_pose_estimation_a3c5cee6eed85be0e4b4d69e6763584ae}{}\label{class_pose_estimation_a3c5cee6eed85be0e4b4d69e6763584ae}
+\subsubsection{\texorpdfstring{\+\_\+rescale\+\_\+image()}{\_rescale\_image()}}
+{\footnotesize\ttfamily std\+::vector$<$ cv\+::\+Point2f $>$ Pose\+Estimation\+::\+\_\+rescale\+\_\+image (\begin{DoxyParamCaption}\item[{std\+::vector$<$ cv\+::\+Point2f $>$}]{corners,  }\item[{float}]{scale,  }\item[{int}]{number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
 
 
 Undo the resize in order to get the distance values in world coordinate system. 
@@ -161,13 +149,12 @@ Undo the resize in order to get the distance values in world coordinate system.
 \begin{DoxyReturn}{Returns}
 Coordinates of the corners in the original image 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_pose_estimation_a446ca032027332f9310e97ed5f986528}\label{class_pose_estimation_a446ca032027332f9310e97ed5f986528}} 
 \index{Pose\+Estimation@{Pose\+Estimation}!\+\_\+rodrigues\+Transformation@{\+\_\+rodrigues\+Transformation}}
 \index{\+\_\+rodrigues\+Transformation@{\+\_\+rodrigues\+Transformation}!Pose\+Estimation@{Pose\+Estimation}}
-\subsubsection[{\texorpdfstring{\+\_\+rodrigues\+Transformation(cv\+::\+Mat raux)}{_rodriguesTransformation(cv::Mat raux)}}]{\setlength{\rightskip}{0pt plus 5cm}void Pose\+Estimation\+::\+\_\+rodrigues\+Transformation (
-\begin{DoxyParamCaption}
-\item[{cv\+::\+Mat}]{raux}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_pose_estimation_a446ca032027332f9310e97ed5f986528}{}\label{class_pose_estimation_a446ca032027332f9310e97ed5f986528}
+\subsubsection{\texorpdfstring{\+\_\+rodrigues\+Transformation()}{\_rodriguesTransformation()}}
+{\footnotesize\ttfamily void Pose\+Estimation\+::\+\_\+rodrigues\+Transformation (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{raux }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
 
 
 Function that calculates the rotation angles through applying Rodrigues transformation. 
@@ -177,13 +164,12 @@ Function that calculates the rotation angles through applying Rodrigues transfor
 {\em raux} & Rotation vector in cv\+::\+Mat \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_pose_estimation_a4fe253f2290df2645631999128081ea4}\label{class_pose_estimation_a4fe253f2290df2645631999128081ea4}} 
 \index{Pose\+Estimation@{Pose\+Estimation}!get\+Rotation\+Angle@{get\+Rotation\+Angle}}
 \index{get\+Rotation\+Angle@{get\+Rotation\+Angle}!Pose\+Estimation@{Pose\+Estimation}}
-\subsubsection[{\texorpdfstring{get\+Rotation\+Angle()}{getRotationAngle()}}]{\setlength{\rightskip}{0pt plus 5cm}double $\ast$ Pose\+Estimation\+::get\+Rotation\+Angle (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{class_pose_estimation_a4fe253f2290df2645631999128081ea4}{}\label{class_pose_estimation_a4fe253f2290df2645631999128081ea4}
+\subsubsection{\texorpdfstring{get\+Rotation\+Angle()}{getRotationAngle()}}
+{\footnotesize\ttfamily double $\ast$ Pose\+Estimation\+::get\+Rotation\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 
 
 Get rotation angles. 
@@ -191,13 +177,12 @@ Get rotation angles.
 \begin{DoxyReturn}{Returns}
 Array of rotation angles of elevation and azimuth 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_pose_estimation_a7623a2e105e03b2994654b17a41b12ea}\label{class_pose_estimation_a7623a2e105e03b2994654b17a41b12ea}} 
 \index{Pose\+Estimation@{Pose\+Estimation}!get\+Rvecs@{get\+Rvecs}}
 \index{get\+Rvecs@{get\+Rvecs}!Pose\+Estimation@{Pose\+Estimation}}
-\subsubsection[{\texorpdfstring{get\+Rvecs()}{getRvecs()}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat Pose\+Estimation\+::get\+Rvecs (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{class_pose_estimation_a7623a2e105e03b2994654b17a41b12ea}{}\label{class_pose_estimation_a7623a2e105e03b2994654b17a41b12ea}
+\subsubsection{\texorpdfstring{get\+Rvecs()}{getRvecs()}}
+{\footnotesize\ttfamily cv\+::\+Mat Pose\+Estimation\+::get\+Rvecs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 
 
 Function that gets the rotation vector. 
@@ -205,13 +190,12 @@ Function that gets the rotation vector.
 \begin{DoxyReturn}{Returns}
 A 3$\ast$1 rotation matrix 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_pose_estimation_a2b02f885606ca11898a5aa3f6bf04b31}\label{class_pose_estimation_a2b02f885606ca11898a5aa3f6bf04b31}} 
 \index{Pose\+Estimation@{Pose\+Estimation}!get\+Tvecs@{get\+Tvecs}}
 \index{get\+Tvecs@{get\+Tvecs}!Pose\+Estimation@{Pose\+Estimation}}
-\subsubsection[{\texorpdfstring{get\+Tvecs()}{getTvecs()}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat Pose\+Estimation\+::get\+Tvecs (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}\hypertarget{class_pose_estimation_a2b02f885606ca11898a5aa3f6bf04b31}{}\label{class_pose_estimation_a2b02f885606ca11898a5aa3f6bf04b31}
+\subsubsection{\texorpdfstring{get\+Tvecs()}{getTvecs()}}
+{\footnotesize\ttfamily cv\+::\+Mat Pose\+Estimation\+::get\+Tvecs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
 
 
 Function that gets the translation vector. 
@@ -222,21 +206,33 @@ A 3$\ast$1 translation matrix
 
 
 \subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_pose_estimation_a2cfe879dc7fe7841709b3e22d306f7c0}\label{class_pose_estimation_a2cfe879dc7fe7841709b3e22d306f7c0}} 
 \index{Pose\+Estimation@{Pose\+Estimation}!corners@{corners}}
 \index{corners@{corners}!Pose\+Estimation@{Pose\+Estimation}}
-\subsubsection[{\texorpdfstring{corners}{corners}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$cv\+::\+Point2f$>$ Pose\+Estimation\+::corners\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_pose_estimation_a2cfe879dc7fe7841709b3e22d306f7c0}{}\label{class_pose_estimation_a2cfe879dc7fe7841709b3e22d306f7c0}
+\subsubsection{\texorpdfstring{corners}{corners}}
+{\footnotesize\ttfamily std\+::vector$<$cv\+::\+Point2f$>$ Pose\+Estimation\+::corners\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pose_estimation_a6f4078b9cf03b4dbee49cfcd32bc0b07}\label{class_pose_estimation_a6f4078b9cf03b4dbee49cfcd32bc0b07}} 
 \index{Pose\+Estimation@{Pose\+Estimation}!rotation@{rotation}}
 \index{rotation@{rotation}!Pose\+Estimation@{Pose\+Estimation}}
-\subsubsection[{\texorpdfstring{rotation}{rotation}}]{\setlength{\rightskip}{0pt plus 5cm}double Pose\+Estimation\+::rotation\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_pose_estimation_a6f4078b9cf03b4dbee49cfcd32bc0b07}{}\label{class_pose_estimation_a6f4078b9cf03b4dbee49cfcd32bc0b07}
+\subsubsection{\texorpdfstring{rotation}{rotation}}
+{\footnotesize\ttfamily double Pose\+Estimation\+::rotation\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pose_estimation_a58c73c54cbdab59e168f1645c6cba239}\label{class_pose_estimation_a58c73c54cbdab59e168f1645c6cba239}} 
 \index{Pose\+Estimation@{Pose\+Estimation}!rvecs@{rvecs}}
 \index{rvecs@{rvecs}!Pose\+Estimation@{Pose\+Estimation}}
-\subsubsection[{\texorpdfstring{rvecs}{rvecs}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat Pose\+Estimation\+::rvecs\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_pose_estimation_a58c73c54cbdab59e168f1645c6cba239}{}\label{class_pose_estimation_a58c73c54cbdab59e168f1645c6cba239}
+\subsubsection{\texorpdfstring{rvecs}{rvecs}}
+{\footnotesize\ttfamily cv\+::\+Mat Pose\+Estimation\+::rvecs\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_pose_estimation_a60141045de99ad2f8b9c87471a198afe}\label{class_pose_estimation_a60141045de99ad2f8b9c87471a198afe}} 
 \index{Pose\+Estimation@{Pose\+Estimation}!tvecs@{tvecs}}
 \index{tvecs@{tvecs}!Pose\+Estimation@{Pose\+Estimation}}
-\subsubsection[{\texorpdfstring{tvecs}{tvecs}}]{\setlength{\rightskip}{0pt plus 5cm}cv\+::\+Mat Pose\+Estimation\+::tvecs\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_pose_estimation_a60141045de99ad2f8b9c87471a198afe}{}\label{class_pose_estimation_a60141045de99ad2f8b9c87471a198afe}
+\subsubsection{\texorpdfstring{tvecs}{tvecs}}
+{\footnotesize\ttfamily cv\+::\+Mat Pose\+Estimation\+::tvecs\hspace{0.3cm}{\ttfamily [private]}}
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-/home/jc/\+H\+I\+W\+I/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/\hyperlink{_pose_estimation_8h}{Pose\+Estimation.\+h}\item 
-/home/jc/\+H\+I\+W\+I/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/src/\hyperlink{_pose_estimation_8cpp}{Pose\+Estimation.\+cpp}\end{DoxyCompactItemize}
+/home/bdn\+\_\+jz/bdn\+\_\+jz/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/\hyperlink{_pose_estimation_8h}{Pose\+Estimation.\+h}\item 
+/home/bdn\+\_\+jz/bdn\+\_\+jz/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/src/\hyperlink{_pose_estimation_8cpp}{Pose\+Estimation.\+cpp}\end{DoxyCompactItemize}

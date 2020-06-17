@@ -5,7 +5,21 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 project(CameraTracker)
+
+#OpenCV
 find_package(OpenCV REQUIRED)
+
+# QT
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC ON)
+
+if(CMAKE_VERSION VERSION_LESS "3.7.0")
+    set(CMAKE_INCLUDE_CURRENT_DIR ON)
+endif()
+
+find_package(Qt5 COMPONENTS Widgets REQUIRED)
+
 
 # Set environment for Pylon
 ## Translate from Makefile of the samples
@@ -68,4 +82,5 @@ target_link_libraries(camera_tracker
     ${OpenCV_LIBS} 
     ${LDLIBS}
     zbar
+    Qt5::Widgets
 )

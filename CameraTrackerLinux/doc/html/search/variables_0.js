@@ -6,5 +6,7 @@ var searchData=
   ['array_5findex',['array_index',['../classnlohmann_1_1detail_1_1iteration__proxy__value.html#ad3d18c83aff5e9f4bdbf99385b29a39a',1,'nlohmann::detail::iteration_proxy_value']]],
   ['array_5findex_5flast',['array_index_last',['../classnlohmann_1_1detail_1_1iteration__proxy__value.html#aac6e7cc0c17242a0a42c14d1e714747c',1,'nlohmann::detail::iteration_proxy_value']]],
   ['array_5findex_5fstr',['array_index_str',['../classnlohmann_1_1detail_1_1iteration__proxy__value.html#a434324f7bed312c5b4aaedd3c6664e28',1,'nlohmann::detail::iteration_proxy_value']]],
-  ['array_5fiterator',['array_iterator',['../structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d',1,'nlohmann::detail::internal_iterator']]]
+  ['array_5fiterator',['array_iterator',['../structnlohmann_1_1detail_1_1internal__iterator.html#a8294a6e6f01b58e1cce8fbae66a50b5d',1,'nlohmann::detail::internal_iterator']]],
+  ['azimuthangle',['azimuthAngle',['../class_tracker.html#abef36dbbea142e3f6e8fa599b03914e1',1,'Tracker']]],
+  ['azimuthport',['azimuthPort',['../class_rotation_stage.html#a50832a485e32836d10c4ebc2846fc93f',1,'RotationStage']]]
 ];

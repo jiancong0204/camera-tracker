@@ -1,7 +1,0 @@
-digraph "GenericCamera"
-{
- // INTERACTIVE_SVG=YES
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="{GenericCamera\n|# name\l# exposureStep\l# exposureMode\l# pitch\l# exposureState\l|+ GenericCamera()\l+ ~GenericCamera()\l+ initialize()\l+ detach()\l+ getFrame()\l+ setExposureMode()\l+ setExposure()\l+ getExposure()\l+ getExposureMode()\l+ getExposureState()\l+ laserExposure()\l+ loadFeatureFile()\l+ getName()\l+ setPitch()\l+ getPitch()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-}
