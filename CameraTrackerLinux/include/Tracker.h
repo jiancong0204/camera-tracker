@@ -30,38 +30,29 @@ public:
     ~Tracker() {};
 
     /**
-     * @brief Start tracking
+     * @brief Tracking functionality
      * 
      */
-    void startTracking();
+    void tracking();
 
     /**
      * @brief Get azimuth angle
      * 
      * @return Azimuth angle 
      */
-    double getAzimuth();
+    float getAzimuth();
 
     /**
      * @brief Get elevation angle
      * 
      * @return Elevation angle 
      */
-    double getElevation();
+    float getElevation();
 
 private:
-    double             azimuthAngle;       //< Azimuth angle
-    double             elevationAngle;     //< Elevation angle
+    float              azimuthAngle;       //< Azimuth angle
+    float              elevationAngle;     //< Elevation angle
     RotationStage      rs;                 //< RotationStage object
-
-
-    /**
-     * @brief 
-     * 
-     * @param azimuthAngle 
-     * @param elevationAngle 
-     */
-    void _moveCamera(double azimuthAngle, double elevationAngle);
 
     /**
      * @brief Compute rotation angles
