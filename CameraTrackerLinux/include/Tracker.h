@@ -60,5 +60,4 @@ private:
      * @param img Current image
      */
     void _computeRotationAngles(cv::Mat img);
-
-}
+};

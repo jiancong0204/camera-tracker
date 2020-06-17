@@ -54,6 +54,7 @@ SET(source_codes
     src/RotationStage.cpp
     src/JsonUtilization.cpp
     src/PoseEstimation.cpp
+    src/Tracker.cpp
 )
 
 
