@@ -1,10 +1,12 @@
 <map id="/home/bdn_jz/bdn_jz/camera&#45;tracker&#45;cpp/CameraTrackerLinux/include/nlohmann/detail/iterators/primitive_iterator.hpp" name="/home/bdn_jz/bdn_jz/camera&#45;tracker&#45;cpp/CameraTrackerLinux/include/nlohmann/detail/iterators/primitive_iterator.hpp">
-<area shape="rect" id="node2" href="$json_8hpp.html" title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/include\l/nlohmann/json.hpp" alt="" coords="145,405,337,476"/>
-<area shape="rect" id="node8" href="$internal__iterator_8hpp.html" title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/include\l/nlohmann/detail/iterators\l/internal_iterator.hpp" alt="" coords="186,139,378,224"/>
-<area shape="rect" id="node9" href="$iter__impl_8hpp.html" title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/include\l/nlohmann/detail/iterators\l/iter_impl.hpp" alt="" coords="278,272,470,357"/>
-<area shape="rect" id="node3" href="$_json_utilization_8h.html" title="This file contains the declaration of the namespace jsonUtilization. " alt="" coords="145,524,337,595"/>
+<area shape="rect" id="node2" href="$json_8hpp.html" title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/include\l/nlohmann/json.hpp" alt="" coords="247,405,439,476"/>
+<area shape="rect" id="node10" href="$internal__iterator_8hpp.html" title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/include\l/nlohmann/detail/iterators\l/internal_iterator.hpp" alt="" coords="289,139,481,224"/>
+<area shape="rect" id="node11" href="$iter__impl_8hpp.html" title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/include\l/nlohmann/detail/iterators\l/iter_impl.hpp" alt="" coords="381,272,573,357"/>
+<area shape="rect" id="node3" href="$_json_utilization_8h.html" title="This file contains the declaration of the namespace jsonUtilization. " alt="" coords="247,524,439,595"/>
 <area shape="rect" id="node4" href="$_pose_estimation_8h.html" title="This file contains the declaration of the PoseEstimation class. " alt="" coords="145,643,337,713"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/main.cpp" alt="" coords="5,769,209,825"/>
-<area shape="rect" id="node7" href="$_json_utilization_8cpp.html" title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/src\l/JsonUtilization.cpp" alt="" coords="361,643,531,713"/>
-<area shape="rect" id="node6" href="$_pose_estimation_8cpp.html" title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/src\l/PoseEstimation.cpp" alt="" coords="233,761,403,832"/>
+<area shape="rect" id="node9" href="$_json_utilization_8cpp.html" title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/src\l/JsonUtilization.cpp" alt="" coords="361,643,531,713"/>
+<area shape="rect" id="node5" href="$_tracker_8h.html" title="This file contains declarations of the Tracker class. " alt="" coords="145,761,337,832"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/main.cpp" alt="" coords="5,887,209,943"/>
+<area shape="rect" id="node8" href="$_pose_estimation_8cpp.html" title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/src\l/PoseEstimation.cpp" alt="" coords="361,761,531,832"/>
+<area shape="rect" id="node7" href="$_tracker_8cpp.html" title="/home/bdn_jz/bdn_jz\l/camera&#45;tracker&#45;cpp\l/CameraTrackerLinux/src\l/Tracker.cpp" alt="" coords="233,880,403,951"/>
 </map>

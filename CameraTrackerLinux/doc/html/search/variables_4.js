@@ -1,6 +1,8 @@
 var searchData=
 [
   ['e',['e',['../structnlohmann_1_1detail_1_1dtoa__impl_1_1diyfp.html#ae22e170815983961447c429f324c944d',1,'nlohmann::detail::dtoa_impl::diyfp::e()'],['../structnlohmann_1_1detail_1_1dtoa__impl_1_1cached__power.html#a9e89bc89bb7bf4361f43ea27eed91d23',1,'nlohmann::detail::dtoa_impl::cached_power::e()']]],
+  ['elevationangle',['elevationAngle',['../class_tracker.html#aed5b4c7d6d46607fefac6b1df2d41e18',1,'Tracker']]],
+  ['elevationport',['elevationPort',['../class_rotation_stage.html#a7e9ded06868713a22c1f630ce14c8f4e',1,'RotationStage']]],
   ['empty_5fstr',['empty_str',['../classnlohmann_1_1detail_1_1iteration__proxy__value.html#af970916a35c40e75e2317a6a08370324',1,'nlohmann::detail::iteration_proxy_value']]],
   ['end_5fvalue',['end_value',['../classnlohmann_1_1detail_1_1primitive__iterator__t.html#aa37c37da44f19e6ec1d7d4a9910511c7',1,'nlohmann::detail::primitive_iterator_t']]],
   ['endx',['endX',['../struct_code_info.html#afcbf3d398415769aba6f875c29395ec7',1,'CodeInfo']]],

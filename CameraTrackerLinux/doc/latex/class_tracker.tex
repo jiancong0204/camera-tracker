@@ -1,0 +1,147 @@
+\hypertarget{class_tracker}{}\section{Tracker Class Reference}
+\label{class_tracker}\index{Tracker@{Tracker}}
+
+
+{\ttfamily \#include $<$Tracker.\+h$>$}
+
+
+
+Collaboration diagram for Tracker\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_tracker__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tracker_adf214393a14e8bf23de2fc8231e239ec}{Tracker} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \hyperlink{class_tracker}{Tracker} object. \end{DoxyCompactList}\item 
+\hyperlink{class_tracker_a0ed1e23312cfe7fcfe5f2ac2abd69163}{$\sim$\+Tracker} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \hyperlink{class_tracker}{Tracker} object. \end{DoxyCompactList}\item 
+void \hyperlink{class_tracker_acef915ffe13cd44ca398e78a8ffae63e}{tracking} ()
+\begin{DoxyCompactList}\small\item\em Tracking functionality. \end{DoxyCompactList}\item 
+float \hyperlink{class_tracker_ab764ba74f2cd49081f5054b8496e73e2}{get\+Azimuth} ()
+\begin{DoxyCompactList}\small\item\em Get azimuth angle. \end{DoxyCompactList}\item 
+float \hyperlink{class_tracker_a093248f73573ee7ebb4099954d950de9}{get\+Elevation} ()
+\begin{DoxyCompactList}\small\item\em Get elevation angle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_tracker_af6646cbba34dd68025f980a0c5338750}{\+\_\+compute\+Rotation\+Angles} (cv\+::\+Mat img)
+\begin{DoxyCompactList}\small\item\em Compute rotation angles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{class_tracker_abef36dbbea142e3f6e8fa599b03914e1}{azimuth\+Angle}
+\item 
+float \hyperlink{class_tracker_aed5b4c7d6d46607fefac6b1df2d41e18}{elevation\+Angle}
+\item 
+\hyperlink{class_rotation_stage}{Rotation\+Stage} \hyperlink{class_tracker_ad671e7016dce486eab4eb384d0443446}{rs}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_tracker_adf214393a14e8bf23de2fc8231e239ec}\label{class_tracker_adf214393a14e8bf23de2fc8231e239ec}} 
+\index{Tracker@{Tracker}!Tracker@{Tracker}}
+\index{Tracker@{Tracker}!Tracker@{Tracker}}
+\subsubsection{\texorpdfstring{Tracker()}{Tracker()}}
+{\footnotesize\ttfamily Tracker\+::\+Tracker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \hyperlink{class_tracker}{Tracker} object. 
+
+\mbox{\Hypertarget{class_tracker_a0ed1e23312cfe7fcfe5f2ac2abd69163}\label{class_tracker_a0ed1e23312cfe7fcfe5f2ac2abd69163}} 
+\index{Tracker@{Tracker}!````~Tracker@{$\sim$\+Tracker}}
+\index{````~Tracker@{$\sim$\+Tracker}!Tracker@{Tracker}}
+\subsubsection{\texorpdfstring{$\sim$\+Tracker()}{~Tracker()}}
+{\footnotesize\ttfamily Tracker\+::$\sim$\+Tracker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroy the \hyperlink{class_tracker}{Tracker} object. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_tracker_af6646cbba34dd68025f980a0c5338750}\label{class_tracker_af6646cbba34dd68025f980a0c5338750}} 
+\index{Tracker@{Tracker}!\+\_\+compute\+Rotation\+Angles@{\+\_\+compute\+Rotation\+Angles}}
+\index{\+\_\+compute\+Rotation\+Angles@{\+\_\+compute\+Rotation\+Angles}!Tracker@{Tracker}}
+\subsubsection{\texorpdfstring{\+\_\+compute\+Rotation\+Angles()}{\_computeRotationAngles()}}
+{\footnotesize\ttfamily void Tracker\+::\+\_\+compute\+Rotation\+Angles (\begin{DoxyParamCaption}\item[{cv\+::\+Mat}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Compute rotation angles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & Current image \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_tracker_ab764ba74f2cd49081f5054b8496e73e2}\label{class_tracker_ab764ba74f2cd49081f5054b8496e73e2}} 
+\index{Tracker@{Tracker}!get\+Azimuth@{get\+Azimuth}}
+\index{get\+Azimuth@{get\+Azimuth}!Tracker@{Tracker}}
+\subsubsection{\texorpdfstring{get\+Azimuth()}{getAzimuth()}}
+{\footnotesize\ttfamily float Tracker\+::get\+Azimuth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get azimuth angle. 
+
+\begin{DoxyReturn}{Returns}
+Azimuth angle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tracker_a093248f73573ee7ebb4099954d950de9}\label{class_tracker_a093248f73573ee7ebb4099954d950de9}} 
+\index{Tracker@{Tracker}!get\+Elevation@{get\+Elevation}}
+\index{get\+Elevation@{get\+Elevation}!Tracker@{Tracker}}
+\subsubsection{\texorpdfstring{get\+Elevation()}{getElevation()}}
+{\footnotesize\ttfamily float Tracker\+::get\+Elevation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get elevation angle. 
+
+\begin{DoxyReturn}{Returns}
+Elevation angle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_tracker_acef915ffe13cd44ca398e78a8ffae63e}\label{class_tracker_acef915ffe13cd44ca398e78a8ffae63e}} 
+\index{Tracker@{Tracker}!tracking@{tracking}}
+\index{tracking@{tracking}!Tracker@{Tracker}}
+\subsubsection{\texorpdfstring{tracking()}{tracking()}}
+{\footnotesize\ttfamily void Tracker\+::tracking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Tracking functionality. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_tracker_abef36dbbea142e3f6e8fa599b03914e1}\label{class_tracker_abef36dbbea142e3f6e8fa599b03914e1}} 
+\index{Tracker@{Tracker}!azimuth\+Angle@{azimuth\+Angle}}
+\index{azimuth\+Angle@{azimuth\+Angle}!Tracker@{Tracker}}
+\subsubsection{\texorpdfstring{azimuth\+Angle}{azimuthAngle}}
+{\footnotesize\ttfamily float Tracker\+::azimuth\+Angle\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_tracker_aed5b4c7d6d46607fefac6b1df2d41e18}\label{class_tracker_aed5b4c7d6d46607fefac6b1df2d41e18}} 
+\index{Tracker@{Tracker}!elevation\+Angle@{elevation\+Angle}}
+\index{elevation\+Angle@{elevation\+Angle}!Tracker@{Tracker}}
+\subsubsection{\texorpdfstring{elevation\+Angle}{elevationAngle}}
+{\footnotesize\ttfamily float Tracker\+::elevation\+Angle\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_tracker_ad671e7016dce486eab4eb384d0443446}\label{class_tracker_ad671e7016dce486eab4eb384d0443446}} 
+\index{Tracker@{Tracker}!rs@{rs}}
+\index{rs@{rs}!Tracker@{Tracker}}
+\subsubsection{\texorpdfstring{rs}{rs}}
+{\footnotesize\ttfamily \hyperlink{class_rotation_stage}{Rotation\+Stage} Tracker\+::rs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/bdn\+\_\+jz/bdn\+\_\+jz/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/include/\hyperlink{_tracker_8h}{Tracker.\+h}\item 
+/home/bdn\+\_\+jz/bdn\+\_\+jz/camera-\/tracker-\/cpp/\+Camera\+Tracker\+Linux/src/\hyperlink{_tracker_8cpp}{Tracker.\+cpp}\end{DoxyCompactItemize}

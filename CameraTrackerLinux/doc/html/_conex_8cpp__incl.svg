@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="node2" class="node">
 <title>Node1</title>
-<g id="a_node2"><a xlink:href="_conex_8h.html" target="_top" target="_top" xlink:title="Conex.h">
+<g id="a_node2"><a xlink:href="_conex_8h.html" target="_top" xlink:title="This file contains declarations of functions creating CONEX&#45;CC commands. ">
 <polygon fill="#ffffff" stroke="#000000" points="37,-56.5 37,-75.5 90,-75.5 90,-56.5 37,-56.5"/>
 <text text-anchor="middle" x="63.5" y="-63.5" font-family="Helvetica,sans-Serif" font-size="10.00" fill="#000000">Conex.h</text>
 </a>
