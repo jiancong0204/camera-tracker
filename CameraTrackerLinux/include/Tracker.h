@@ -5,6 +5,7 @@
  * @date 2020-06-17
  */
 
+#pragma once
 #include "ChessboardDetector.h"
 #include "BaslerGigECamera.h"
 #include "RotationStage.h"

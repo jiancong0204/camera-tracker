@@ -14,12 +14,13 @@ void Tracker::tracking()
 	std::string name = cameraList[0];
 	camera.initialize(name);
 
-    // TODO: while loop
+    while (true)
+    {
 	    cv::Mat img = camera.getFrame();
         _computeRotationAngles(img);
         this->rs.relativeMoveElevation(this->elevationAngle);
         this->rs.relativeMoveAzimuth(this->azimuthAngle);
-
+    }
     camera.detach();
 }
 
