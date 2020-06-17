@@ -69,6 +69,7 @@ SET(source_codes
     src/JsonUtilization.cpp
     src/PoseEstimation.cpp
     src/Tracker.cpp
+    src/GUI.cpp
 )
 
 
