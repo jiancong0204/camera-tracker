@@ -19,7 +19,7 @@ if(CMAKE_VERSION VERSION_LESS "3.7.0")
 endif()
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
-
+qt5_wrap_ui(UI_FILES TrackerGUI.ui)
 
 # Set environment for Pylon
 ## Translate from Makefile of the samples
@@ -69,7 +69,7 @@ SET(source_codes
     src/JsonUtilization.cpp
     src/PoseEstimation.cpp
     src/Tracker.cpp
-    src/GUI.cpp
+    src/TrackerGUI.cpp
 )
 
 
@@ -77,7 +77,11 @@ link_directories(
     ${ZBAR_LINK_DIRS}
 )
 
-add_executable(camera_tracker ${source_codes})
+add_executable(camera_tracker 
+    ${source_codes} 
+    ${UI_FILES}
+    include/TrackerGUI.h
+)
 
 target_link_libraries(camera_tracker 
     ${OpenCV_LIBS} 
@@ -85,3 +89,5 @@ target_link_libraries(camera_tracker
     zbar
     Qt5::Widgets
 )
+
+qt5_use_modules(camera_tracker Widgets)
