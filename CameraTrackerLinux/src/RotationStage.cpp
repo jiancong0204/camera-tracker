@@ -1,5 +1,15 @@
 #include "RotationStage.h"
 
+void RotationStage::setElevationPort(std::string portName)
+{
+    this->elevationPort = portName;
+}
+
+void RotationStage::setAzimuthPort(std::string portName)
+{
+    this->azimuthPort = portName;
+}
+
 void RotationStage::_openPort(std::string USB)
 {
     std::string tmpString = "/dev/tty" + USB;
@@ -48,38 +58,74 @@ void RotationStage::_write(std::string USB, std::string code)
 	close(this->serialPort);
 }
 
-void RotationStage::initialize(std::string USB, int address, int homeSearchType, float searchVelocity, float searchTimeOut)
+void RotationStage::initializeElevation(int address, int homeSearchType, float searchVelocity, float searchTimeOut)
 {
     std::string code;
 
     code = conex::resetController(1);
-    _write(USB, code);
+    _write(this->elevationPort, code);
     sleep(1);
 
 	code = conex::setHomeSearchType(1, 0);
-    _write(USB, code);
+    _write(this->elevationPort, code);
 
 	code = conex::setHomeSearchVelocity(1, 50);
-    _write(USB, code);
+    _write(this->elevationPort, code);
 
 	code = conex::setHomeSearchTimeOut(1, 2.200);
-    _write(USB, code);
+    _write(this->elevationPort, code);
 
 	code = conex::executeHomeSearch(1);
-    _write(USB, code);
+    _write(this->elevationPort, code);
+}
+
+void RotationStage::initializeAzimuth(int address, int homeSearchType, float searchVelocity, float searchTimeOut)
+{
+    std::string code;
+
+    code = conex::resetController(1);
+    _write(this->azimuthPort, code);
+    sleep(1);
+
+	code = conex::setHomeSearchType(1, 0);
+    _write(this->azimuthPort, code);
+
+	code = conex::setHomeSearchVelocity(1, 50);
+    _write(this->azimuthPort, code);
+
+	code = conex::setHomeSearchTimeOut(1, 2.200);
+    _write(this->azimuthPort, code);
+
+	code = conex::executeHomeSearch(1);
+    _write(this->azimuthPort, code);
 }
 
 
-void RotationStage::relativeMove(std::string USB, float displacement, int address)
+void RotationStage::relativeMoveElevation(float displacement, int address)
 {
     std::string code;
 	code = conex::moveRelative(address, displacement);
-    _write(USB, code);
+    _write(this->elevationPort, code);
 }
 
-void RotationStage::absoluteMove(std::string USB, float position, int address)
+void RotationStage::relativeMoveAzimuth(float displacement, int address)
+{
+    std::string code;
+	code = conex::moveRelative(address, displacement);
+    _write(this->azimuthPort, code);
+}
+
+
+void RotationStage::absoluteMoveElevation(float position, int address)
 {
     std::string code;
 	code = conex::moveAbsolute(address, position);
-    _write(USB, code);
+    _write(this->elevationPort, code);
+}
+
+void RotationStage::absoluteMoveAzimuth(float position, int address)
+{
+    std::string code;
+	code = conex::moveAbsolute(address, position);
+    _write(this->azimuthPort, code);
 }

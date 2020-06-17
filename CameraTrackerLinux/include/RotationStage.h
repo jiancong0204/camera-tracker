@@ -37,35 +37,70 @@ public:
 	* @brief Deconstructor
 	*/
 	~RotationStage() {};
+    
+	/**
+    * @brief Set port for elevation
+	* @param portName Name of the port for elevation
+	*/
+	void setElevationPort(std::string portName="USB0");
+
+    /**
+	* @brief set port for azimuth
+	* @param portName Name of the port for azimuth
+	*/
+	void setAzimuthPort(std::string portName="USB1");
 
 	/** 
-	* @brief Function that inializes the camera tracker
+	* @brief Function that inializes the elevation angle
 	* @param address Controller address
 	* @param homeSearchType Type of home search, search velocity
 	* @param searchVelocity Velocity of home search
 	* @param searchTimeOut Home search time-out
 	*/
-	void initialize(std::string USB, int address=1, int homeSearchType=0, float searchVelocity=50, float searchTimeOut=2.2);
+	void initializeElevation(int address=1, int homeSearchType=0, float searchVelocity=50, float searchTimeOut=2.2);
 
 	/** 
-	* @brief Function that rotates the camera tracker for a certain angle
-	* @param USB File name of the corresponding serial port
+	* @brief Function that inializes the azimuth angle
+	* @param address Controller address
+	* @param homeSearchType Type of home search, search velocity
+	* @param searchVelocity Velocity of home search
+	* @param searchTimeOut Home search time-out
+	*/
+	void initializeAzimuth(int address=1, int homeSearchType=0, float searchVelocity=50, float searchTimeOut=2.2);
+
+	/** 
+	* @brief Function that rotates the camera tracker for a certain elevation angle
 	* @param displacement Displacement of the intended rotation
 	* @param address Controller address
 	*/
-	void relativeMove(std::string USB, float displacement, int address=1);
+	void relativeMoveElevation(float displacement, int address=1);
     
 	/** 
-	* @brief Function that rotates the camera tracker to a ceratain position
-	* @param USB File name of the corresponding serial port
+	* @brief Function that rotates the camera tracker for a certain azimuth angle
+	* @param displacement Displacement of the intended rotation
+	* @param address Controller address
+	*/
+	void relativeMoveAzimuth(float displacement, int address=1);
+
+	/** 
+	* @brief Function that rotates the camera tracker to a ceratain elevation position
 	* @param position Destination of the intended rotation
 	* @param address Controller address
 	*/
-	void absoluteMove(std::string USB, float position, int address=1);
+	void absoluteMoveElevation(float position, int address=1);
+
+	/** 
+	* @brief Function that rotates the camera tracker to a ceratain azimuth position
+	* @param position Destination of the intended rotation
+	* @param address Controller address
+	*/
+	void absoluteMoveAzimuth(float position, int address=1);
 
 private:
 
-    int serialPort; //< Number of the serial port
+    int             serialPort;        //< Number of the serial port
+	std::string     elevationPort;     //< Port for elevation
+	std::string     azimuthPort;       //< port for azimuth
 
 	/** 
 	* @brief Function used to open the corresponding port

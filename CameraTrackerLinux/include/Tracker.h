@@ -36,19 +36,6 @@ public:
     void startTracking();
 
     /**
-     * @brief Take the current image
-     * 
-     */
-    void takeImage();
-
-    /**
-     * @brief Get the current image
-     * 
-     * @return Image
-     */
-    cv::Mat getImage();
-
-    /**
      * @brief Get azimuth angle
      * 
      * @return Azimuth angle 
@@ -63,9 +50,10 @@ public:
     double getElevation();
 
 private:
-    cv::Mat img; //< Current image
-    double azimuthAngle;
-    double elevationAngle;
+    double             azimuthAngle;       //< Azimuth angle
+    double             elevationAngle;     //< Elevation angle
+    RotationStage      rs;                 //< RotationStage object
+
 
     /**
      * @brief 
