@@ -4,7 +4,7 @@
 #include "RotationStage.h"
 #include "PoseEstimation.h"
 #include "Tracker.h"
-#include "GUI.h"
+#include "TrackerGUI.h"
 
 int main(int argc, char* argv[])
 {
@@ -74,8 +74,8 @@ int main(int argc, char* argv[])
     // tracker.tracking();
 
     QApplication a(argc, argv);
-    GUI gui;
-    gui.show();
+    TrackerGUI w;
+    w.show();
     return a.exec();
 
     return 0;
