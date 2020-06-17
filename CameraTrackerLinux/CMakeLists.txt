@@ -8,13 +8,24 @@ project(CameraTracker)
 find_package(OpenCV REQUIRED)
 
 # Set environment for Pylon
-SET(PYLON_INCLUDE_DIRS
-    /opt/pylon5/include
-)
+## Translate from Makefile of the samples
+set(PYLON_ROOT "/opt/pylon5")
 
-SET(PYLON_LINK_DIRS
-    /opt/pylon5/lib64
-)   
+include_directories("${PROJECT_BINARY_DIR}")
+include_directories("${PYLON_ROOT}/include")
+
+EXEC_PROGRAM("${PYLON_ROOT}/bin/pylon-config" ARGS --cflags OUTPUT_VARIABLE CPPFLAGS)
+#SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${CPPFLAGS}" CACHE STRING "CPPFLAGS")
+SET(CPPFLAGS "${CPPFLAGS}" CACHE STRING "CPPFLAGS")
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${CPPFLAGS}")
+
+EXEC_PROGRAM("${PYLON_ROOT}/bin/pylon-config" ARGS --libs-rpath OUTPUT_VARIABLE LDFLAGS)
+#SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${LDFLAGS}" CACHE STRING "LDFLAGS")
+SET(LDFLAGS "${LDFLAGS}" CACHE STRING "LDFLAGS")
+SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${LDFLAGS}")
+
+EXEC_PROGRAM("${PYLON_ROOT}/bin/pylon-config" ARGS --libs OUTPUT_VARIABLE LDLIBS)
+SET(LDLIBS "${LDLIBS}" CACHE STRING "LDLIBS")
 
 # zbar
 SET(ZBAR_LINK_DIRS
@@ -24,7 +35,6 @@ SET(ZBAR_LINK_DIRS
 include_directories( 
     include
     ${OpenCV_INCLUDE_DIRS}
-    ${PYLON_INCLUDE_DIRS}
     )
 
 # Source files
@@ -48,7 +58,6 @@ SET(source_codes
 
 
 link_directories(
-    ${PYLON_LINK_DIRS}
     ${ZBAR_LINK_DIRS}
 )
 
@@ -56,10 +65,6 @@ add_executable(camera_tracker ${source_codes})
 
 target_link_libraries(camera_tracker 
     ${OpenCV_LIBS} 
-    pylonutility 
-    pylonbase 
-    GenApi_gcc_v3_1_Basler_pylon
-    GCBase_gcc_v3_1_Basler_pylon
-    GCBase_gcc_v3_1_Basler_pylon
+    ${LDLIBS}
     zbar
 )
