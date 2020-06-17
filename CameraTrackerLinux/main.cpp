@@ -4,8 +4,9 @@
 #include "RotationStage.h"
 #include "PoseEstimation.h"
 #include "Tracker.h"
+#include "GUI.h"
 
-int main()
+int main(int argc, char* argv[])
 {
     // BaslerGigECamera camera;
     // std::vector<std::string> cameraList = camera.listAvailableDevices();
@@ -69,7 +70,15 @@ int main()
     // rs.relativeMoveElevation(15);
     // rs.relativeMoveAzimuth(15);
 
-    Tracker tracker;
-    tracker.tracking();
+    // Tracker tracker;
+    // tracker.tracking();
+
+    QApplication GUI(argc, argv);
+    QMainWindow *window = new QMainWindow;
+    window->setFixedSize(500, 500);
+    // window->setLayout(vbLayout);
+    window->show();
+    return GUI.exec();
+
     return 0;
 }
