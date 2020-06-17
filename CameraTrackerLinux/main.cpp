@@ -57,7 +57,7 @@ int main()
         // return -1;
     }
 
-    cv::namedWindow( "Display window", cv::WINDOW_AUTOSIZE ); // Create a window for display
+    cv::namedWindow( "Display window", cv::WINDOW_OPENGL ); // Create a window for display
     cv::imshow( "Display window", img );
     cv::waitKey(0); // Wait for a keystroke in the window
     // RotationStage rs;
