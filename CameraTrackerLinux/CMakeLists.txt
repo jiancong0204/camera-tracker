@@ -19,7 +19,7 @@ if(CMAKE_VERSION VERSION_LESS "3.7.0")
 endif()
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
-qt5_wrap_ui(UI_FILES TrackerGUI.ui)
+qt5_wrap_ui(UI_FILES src/TrackerGUI.ui)
 
 # Set environment for Pylon
 ## Translate from Makefile of the samples
