@@ -21,7 +21,7 @@ endif()
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 qt5_wrap_ui(UI_FILES src/TrackerGUI.ui)
 
-# Set environment for Pylon
+# Pylon5
 ## Translate from Makefile of the sample
 set(PYLON_ROOT "/opt/pylon5")
 
@@ -41,11 +41,16 @@ SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${LDFLAGS}")
 EXEC_PROGRAM("${PYLON_ROOT}/bin/pylon-config" ARGS --libs OUTPUT_VARIABLE PYLON_LIBS)
 SET(PYLON_LIBS "${PYLON_LIBS}" CACHE STRING "PYLON_LIBS")
 
-# zbar
+# Zbar
 SET(ZBAR_LINK_DIRS
     /usr/lib/aarch64-linux-gnu
 )
 
+link_directories(
+    ${ZBAR_LINK_DIRS}
+)
+
+# Include directories
 include_directories( 
     include
     ${OpenCV_INCLUDE_DIRS}
@@ -70,11 +75,6 @@ SET(source_codes
     src/PoseEstimation.cpp
     src/Tracker.cpp
     src/TrackerGUI.cpp
-)
-
-
-link_directories(
-    ${ZBAR_LINK_DIRS}
 )
 
 add_executable(camera_tracker 
