@@ -1,4 +1,0 @@
-<map id="ChessboardDetector" name="ChessboardDetector">
-<area shape="rect" id="node2" href="$struct_chessboard_detector_result.html" title="Structure that contains the result of chessboard detection. " alt="" coords="5,5,185,215"/>
-<area shape="rect" id="node3" href="$struct_find_corners_result.html" title="Structure that contains the result of corner detection. " alt="" coords="210,57,341,163"/>
-</map>
