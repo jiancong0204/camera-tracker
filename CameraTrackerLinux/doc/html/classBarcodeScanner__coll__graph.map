@@ -1,4 +1,0 @@
-<map id="BarcodeScanner" name="BarcodeScanner">
-<area shape="rect" id="node2" href="$classCodeScanner.html" title="Class that contains the precedures of finding the position of code and decoding the code..." alt="" coords="14,95,115,121"/>
-<area shape="rect" id="node3" href="$structCodeInfo.html" title="Structure that contains the related information of the code. " alt="" coords="27,5,102,32"/>
-</map>
