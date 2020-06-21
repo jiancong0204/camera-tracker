@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.5)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -7,6 +7,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 project(CameraTracker)
 
 #OpenCV
+set(OpenCV_DIR "/opt/opencv-4.1.2/build")
 find_package(OpenCV REQUIRED)
 
 # QT
