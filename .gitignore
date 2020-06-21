@@ -2,6 +2,6 @@
 *x64/
 *Debug/
 *packages/
-/build
-/html
-/latex
+build/
+html/
+latex/
