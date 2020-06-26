@@ -44,6 +44,8 @@ TrackerGUI::TrackerGUI(QWidget *parent) :
 TrackerGUI::~TrackerGUI()
 {
     delete ui;
+    delete tracking;
+	delete camera;
 }
 
 void TrackerGUI::initializationSlot()
@@ -57,9 +59,11 @@ void TrackerGUI::initializationSlot()
     if (this->isCameraInitialized == false)
 	{
         // Initialize camera
-        std::vector<std::string> cameraList = this->camera.listAvailableDevices();
+	    this->tracking = new Tracker();
+        this->camera = new BaslerGigECamera();
+        std::vector<std::string> cameraList = this->camera->listAvailableDevices();
 	    std::string name = cameraList[0];
-	    this->camera.initialize(name);
+	    this->camera->initialize(name);
 		this->isCameraInitialized = true;
 	}
 
@@ -211,7 +215,7 @@ void TrackerGUI::cameraPoseEstimationSlot()
 	cv::Mat sourceImg;
 	QString warning, warning1, warning2;
 	QString barData, qrData, barType, qrType;
-	sourceImg = this->camera.getFrame();
+	sourceImg = this->camera->getFrame();
 	// sourceImg = cv::imread("../Images/01.jpg",cv::IMREAD_GRAYSCALE);
 	sourceImg.convertTo(sourceImg, CV_8U);
 	Chessboard chessboard(9, 7, 20);
@@ -316,13 +320,15 @@ void TrackerGUI::_labelDisplayMat(QLabel *label, cv::Mat mat)
 
 void TrackerGUI::trackingModeSlot()
 {
-    if (trackingFlag == false)
+    if (this->trackingFlag == false)
 	{
 		if (ui->trackingModePin->text().toStdString() == "WZL")
 		{
-			this->camera.detach();
+			// this->camera->detach();
+			delete this->camera;
+			this->isCameraInitialized = false;
 			QObject::connect(tracking, SIGNAL(returnQString(QString)), this, SLOT(getQString(QString)));
-			trackingFlag = true; 
+			this->trackingFlag = true; 
 			ui->trackingModePin->setText("WZL");
 			ui->trackingMode->setText("Stop tracking");
 			QString warning = "Tracking...";
@@ -338,7 +344,8 @@ void TrackerGUI::trackingModeSlot()
 			ui->trackingModePin->setEnabled(false);
 			ui->goto_x->setEnabled(false);
 			ui->goto_y->setEnabled(false);
-            tracking->start();
+			
+            this->tracking->start();
 		}
 		else
 		{
@@ -349,14 +356,17 @@ void TrackerGUI::trackingModeSlot()
 	}
 	else
 	{
-		tracking->quitThread();
-		tracking->quit();
+		this->tracking->quitThread();
+		this->tracking->quit();
+		this->tracking->wait();
 		QString warning = "Tracking mode stopped!";
-		trackingFlag = false;
+		this->trackingFlag = false;
 		ui->trackingMode->setText("Tracking");
 		ui->warning->setText(warning);
 		ui->initialization->setEnabled(true);
 		ui->trackingModePin->setEnabled(false);
 		ui->trackingMode->setEnabled(false);
+		// this->tracking->terminate();
+		delete this->tracking;
 	}
 }
