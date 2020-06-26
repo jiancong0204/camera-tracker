@@ -11,13 +11,13 @@ TrackerGUI::TrackerGUI(QWidget *parent) :
     // Connect slots and corresponding buttons
     QObject::connect(ui->initialization, SIGNAL(clicked()), this, SLOT(initializationSlot()));
     QObject::connect(ui->movePositive_x, SIGNAL(clicked()), this, SLOT(movePositiveElevationSlot()));
-	QObject::connect(ui->moveNegative_x, SIGNAL(clicked()), this, SLOT(moveNegativeElevationSlot()));
-	QObject::connect(ui->movePositive_y, SIGNAL(clicked()), this, SLOT(movePositiveAzimuthSlot()));
-	QObject::connect(ui->moveNegative_y, SIGNAL(clicked()), this, SLOT(moveNegativeAzimuthSlot()));
-	QObject::connect(ui->goto_x, SIGNAL(clicked()), this, SLOT(gotoElevationSlot()));
-	QObject::connect(ui->goto_y, SIGNAL(clicked()), this, SLOT(gotoAzimuthSlot()));
-	QObject::connect(ui->cameraPoseEstimate, SIGNAL(clicked()), this, SLOT(cameraPoseEstimationSlot()));
-	QObject::connect(ui->trackingMode, SIGNAL(clicked()), this, SLOT(trackingModeSlot()));
+    QObject::connect(ui->moveNegative_x, SIGNAL(clicked()), this, SLOT(moveNegativeElevationSlot()));
+    QObject::connect(ui->movePositive_y, SIGNAL(clicked()), this, SLOT(movePositiveAzimuthSlot()));
+    QObject::connect(ui->moveNegative_y, SIGNAL(clicked()), this, SLOT(moveNegativeAzimuthSlot()));
+    QObject::connect(ui->goto_x, SIGNAL(clicked()), this, SLOT(gotoElevationSlot()));
+    QObject::connect(ui->goto_y, SIGNAL(clicked()), this, SLOT(gotoAzimuthSlot()));
+    QObject::connect(ui->cameraPoseEstimate, SIGNAL(clicked()), this, SLOT(cameraPoseEstimationSlot()));
+    QObject::connect(ui->trackingMode, SIGNAL(clicked()), this, SLOT(trackingModeSlot()));
 
     // Warning for initialization
 	ui->streaming->adjustSize();
