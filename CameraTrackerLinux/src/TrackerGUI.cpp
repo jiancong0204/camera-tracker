@@ -117,12 +117,12 @@ void TrackerGUI::movePositiveElevationSlot()
     if (_isNumber(displacement.toUtf8().constData()))
     {
         dispValue = ui->displacement_x->text().toDouble();
-		warning = "Rotate " + ui->displacement_x->text() + " in elevation direction";
+        warning = "Rotate " + ui->displacement_x->text() + " in elevation direction";
     }
     else 
     {
-		dispValue = 0;
-		warning = "Warning: The input value must be a valid real number!";
+        dispValue = 0;
+        warning = "Warning: The input value must be a valid real number!";
     }
     rs.relativeMoveElevation(dispValue);
     ui->warning->setText(warning);
@@ -137,12 +137,12 @@ void TrackerGUI::moveNegativeElevationSlot()
     if (_isNumber(displacement.toUtf8().constData()))
     {
         dispValue = ui->displacement_x->text().toDouble() * -1;
-		warning = "Rotate -" + ui->displacement_x->text() + " in elevation direction";
+        warning = "Rotate -" + ui->displacement_x->text() + " in elevation direction";
     }
     else 
     {
-		dispValue = 0;
-		warning = "Warning: The input value must be a valid real number!";
+        dispValue = 0;
+        warning = "Warning: The input value must be a valid real number!";
     }
     rs.relativeMoveElevation(dispValue);
     ui->warning->setText(warning);
@@ -157,12 +157,12 @@ void TrackerGUI::movePositiveAzimuthSlot()
     if (_isNumber(displacement.toUtf8().constData()))
     {
         dispValue = ui->displacement_y->text().toDouble();
-		warning = "Rotate " + ui->displacement_y->text() + " in azimuth direction";
+        warning = "Rotate " + ui->displacement_y->text() + " in azimuth direction";
     }
     else 
     {
-		dispValue = 0;
-		warning = "Warning: The input value must be a valid real number!";
+        dispValue = 0;
+        warning = "Warning: The input value must be a valid real number!";
     }
     rs.relativeMoveAzimuth(dispValue);
     ui->warning->setText(warning);
@@ -177,12 +177,12 @@ void TrackerGUI::moveNegativeAzimuthSlot()
     if (_isNumber(displacement.toUtf8().constData()))
     {
         dispValue = ui->displacement_y->text().toDouble() * -1;
-		warning = "Rotate -" + ui->displacement_y->text() + " in azimuth direction";
+        warning = "Rotate -" + ui->displacement_y->text() + " in azimuth direction";
     }
     else 
     {
-		dispValue = 0;
-		warning = "Warning: The input value must be a valid real number!";
+        dispValue = 0;
+        warning = "Warning: The input value must be a valid real number!";
     }
     rs.relativeMoveAzimuth(dispValue);
     ui->warning->setText(warning);
@@ -197,12 +197,12 @@ void TrackerGUI::gotoElevationSlot()
     if (_isNumber(displacement.toUtf8().constData()))
     {
         dispValue = ui->displacement_x->text().toDouble();
-		warning = "Rotate elevation angle to " + ui->displacement_x->text();
+        warning = "Rotate elevation angle to " + ui->displacement_x->text();
     }
     else 
     {
-		dispValue = 0;
-		warning = "Warning: The input value must be a valid real number!";
+        dispValue = 0;
+        warning = "Warning: The input value must be a valid real number!";
     }
     rs.absoluteMoveElevation(dispValue);
     ui->warning->setText(warning);
@@ -217,12 +217,12 @@ void TrackerGUI::gotoAzimuthSlot()
     if (_isNumber(displacement.toUtf8().constData()))
     {
         dispValue = ui->displacement_y->text().toDouble();
-		warning = "Rotate azimuth angle to " + ui->displacement_x->text();
+        warning = "Rotate azimuth angle to " + ui->displacement_x->text();
     }
     else 
     {
-		dispValue = 0;
-		warning = "Warning: The input value must be a valid real number!";
+        dispValue = 0;
+        warning = "Warning: The input value must be a valid real number!";
     }
     rs.absoluteMoveAzimuth(dispValue);
     ui->warning->setText(warning);
