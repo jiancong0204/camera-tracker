@@ -17,6 +17,7 @@ TrackerGUI::TrackerGUI(QWidget *parent) :
 	QObject::connect(ui->goto_x, SIGNAL(clicked()), this, SLOT(gotoElevationSlot()));
 	QObject::connect(ui->goto_y, SIGNAL(clicked()), this, SLOT(gotoAzimuthSlot()));
 	QObject::connect(ui->cameraPoseEstimate, SIGNAL(clicked()), this, SLOT(cameraPoseEstimationSlot()));
+	QObject::connect(ui->trackingMode, SIGNAL(clicked()), this, SLOT(trackingModeSlot()));
 
     // Warning for initialization
 	ui->streaming->adjustSize();
@@ -308,4 +309,51 @@ void TrackerGUI::_labelDisplayMat(QLabel *label, cv::Mat mat)
 	//ui->processPushButton->setEnabled(true);
 	label->resize(label->pixmap()->size());
 	label->show();
+}
+
+void TrackerGUI::trackingModeSlot()
+{
+    if (trackingFlag == false)
+	{
+		if (ui->trackingModePin->text().toStdString() == "WZL")
+		{
+			camera.detach();
+			QObject::connect(tracking, SIGNAL(returnQString(QString)), this, SLOT(getQString(QString)));
+			trackingFlag = true; 
+			ui->trackingModePin->setText("WZL");
+			ui->trackingMode->setText("Stop tracking");
+			QString warning = "Tracking...";
+			ui->warning->setText(warning);
+			ui->initialization->setEnabled(false);
+			ui->cameraPoseEstimate->setEnabled(false);
+			ui->moveNegative_x->setEnabled(false);
+			ui->moveNegative_y->setEnabled(false);
+			ui->movePositive_x->setEnabled(false);
+			ui->movePositive_y->setEnabled(false);
+			ui->displacement_x->setEnabled(false);
+			ui->displacement_y->setEnabled(false);
+			ui->trackingModePin->setEnabled(false);
+			ui->goto_x->setEnabled(false);
+			ui->goto_y->setEnabled(false);
+            tracking->start();
+		}
+		else
+		{
+			QString warning = "Incorrect PIN!";
+			ui->trackingModePin->setText("WZL");
+			ui->warning->setText(warning);
+		}
+	}
+	else
+	{
+		tracking->quitThread();
+		tracking->quit();
+		QString warning = "Tracking mode stopped!";
+		trackingFlag = false;
+		ui->trackingMode->setText("Tracking");
+		ui->warning->setText(warning);
+		ui->initialization->setEnabled(true);
+		ui->trackingModePin->setEnabled(false);
+		ui->trackingMode->setEnabled(false);
+	}
 }

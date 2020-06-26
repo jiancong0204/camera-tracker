@@ -12,6 +12,7 @@
 #include "Scanner.h"
 #include "RotationStage.h"
 #include "PoseEstimation.h"
+#include "Tracker.h"
 
 
 namespace Ui {
@@ -27,10 +28,13 @@ public:
     ~TrackerGUI();
 
 private:
-    Ui::TrackerGUI       *ui;        /**< Object for UI */
-    RotationStage        rs;         /**< Object for rotation stage control*/
-    BaslerGigECamera     camera;     /**< Object for camera */
+    Ui::TrackerGUI                           *ui;        /**< Object for UI */
+    RotationStage                            rs;         /**< Object for rotation stage control*/
+    BaslerGigECamera                         camera;     /**< Object for camera */
 
+	// Thread for tracking.
+	Tracker*                                 tracking = new Tracker();     /**< Object for tracking thread */
+	bool                                     trackingFlag = false;          /**< Whether the tracking mode is executed */
 /**
  * @brief Function that comfirms the input is a valid number
  * 
@@ -97,6 +101,12 @@ private slots:
      * 
      */
     void cameraPoseEstimationSlot();
+
+    /**
+     * @brief Enter or leave the tracking mode
+     * 
+     */
+	void trackingModeSlot();
 };
 
 #endif // TRACKERGUI_H
