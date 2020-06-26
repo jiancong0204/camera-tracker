@@ -81,17 +81,17 @@ void TrackerGUI::initializationSlot()
 
 
     QString warning = "Initialized!";
-	ui->trackingMode->setEnabled(true);
-	ui->cameraPoseEstimate->setEnabled(true);
-	ui->moveNegative_x->setEnabled(true);
-	ui->moveNegative_y->setEnabled(true);
-	ui->movePositive_x->setEnabled(true);
-	ui->movePositive_y->setEnabled(true);
-	ui->displacement_x->setEnabled(true);
-	ui->displacement_y->setEnabled(true);
-	ui->trackingModePin->setEnabled(true);
-	ui->goto_x->setEnabled(true);
-	ui->goto_y->setEnabled(true);
+    ui->trackingMode->setEnabled(true);
+    ui->cameraPoseEstimate->setEnabled(true);
+    ui->moveNegative_x->setEnabled(true);  
+    ui->moveNegative_y->setEnabled(true);
+    ui->movePositive_x->setEnabled(true);
+    ui->movePositive_y->setEnabled(true);
+    ui->displacement_x->setEnabled(true);
+    ui->displacement_y->setEnabled(true);
+    ui->trackingModePin->setEnabled(true);
+    ui->goto_x->setEnabled(true);
+    ui->goto_y->setEnabled(true);
     ui->warning->setText(warning);
 }
 
@@ -110,7 +110,7 @@ bool TrackerGUI::_isNumber(std::string str)
 
 void TrackerGUI::movePositiveElevationSlot()
 {
-	ui->streaming->clear();
+    ui->streaming->clear();
     QString warning;
     double dispValue;
     QString displacement = ui->displacement_x->text();
@@ -130,7 +130,7 @@ void TrackerGUI::movePositiveElevationSlot()
 
 void TrackerGUI::moveNegativeElevationSlot()
 {
-	ui->streaming->clear();
+    ui->streaming->clear();
     QString warning;
     double dispValue;
     QString displacement = ui->displacement_x->text();
@@ -150,7 +150,7 @@ void TrackerGUI::moveNegativeElevationSlot()
 
 void TrackerGUI::movePositiveAzimuthSlot()
 {
-	ui->streaming->clear();
+    ui->streaming->clear();
     QString warning;
     double dispValue;
     QString displacement = ui->displacement_y->text();
@@ -170,7 +170,7 @@ void TrackerGUI::movePositiveAzimuthSlot()
 
 void TrackerGUI::moveNegativeAzimuthSlot()
 {
-	ui->streaming->clear();
+    ui->streaming->clear();
     QString warning;
     double dispValue;
     QString displacement = ui->displacement_y->text();
@@ -190,7 +190,7 @@ void TrackerGUI::moveNegativeAzimuthSlot()
 
 void TrackerGUI::gotoElevationSlot()
 {
-	ui->streaming->clear();
+    ui->streaming->clear();
     QString warning;
     double dispValue;
     QString displacement = ui->displacement_x->text();
@@ -210,7 +210,7 @@ void TrackerGUI::gotoElevationSlot()
 
 void TrackerGUI::gotoAzimuthSlot()
 {
-	ui->streaming->clear();
+    ui->streaming->clear();
     QString warning;
     double dispValue;
     QString displacement = ui->displacement_y->text();
@@ -230,8 +230,8 @@ void TrackerGUI::gotoAzimuthSlot()
 
 void TrackerGUI::cameraPoseEstimationSlot()
 {
-	ui->streaming->clear();
-	ui->rotation_x->clear();
+    ui->streaming->clear();
+    ui->rotation_x->clear();
     ui->rotation_y->clear();
     ui->rotation_z->clear();
     ui->translation_x->clear();
