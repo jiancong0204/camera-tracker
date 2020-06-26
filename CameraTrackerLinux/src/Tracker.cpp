@@ -13,19 +13,21 @@ void Tracker::run()
     std::vector<std::string> cameraList = camera.listAvailableDevices();
 	std::string name = cameraList[0];
 	camera.initialize(name);
-
     while (true)
     {
-        if (quitting) {
+        if (this->quitting) {
             break;
         }
-        cv::Mat img = camera.getFrame();
-        _computeRotationAngles(img);
-        this->rs.relativeMoveElevation(this->elevationAngle);
-        this->rs.relativeMoveAzimuth(this->azimuthAngle);
+        else 
+        {
+            cv::Mat img = camera.getFrame();
+            _computeRotationAngles(img);
+            this->rs.relativeMoveElevation(this->elevationAngle);
+            this->rs.relativeMoveAzimuth(this->azimuthAngle);
+        }
     }
-    camera.detach();
-    this->exec();
+    // camera.detach();
+    return;
 }
 
 float Tracker::getAzimuth()
