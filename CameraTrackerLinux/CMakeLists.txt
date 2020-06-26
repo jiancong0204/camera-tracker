@@ -82,6 +82,7 @@ add_executable(camera_tracker
     ${source_codes} 
     ${UI_FILES}
     include/TrackerGUI.h
+    include/Tracker.h
 )
 
 target_link_libraries(camera_tracker 
