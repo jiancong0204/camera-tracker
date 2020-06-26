@@ -71,11 +71,11 @@ void TrackerGUI::initializationSlot()
 	{
         this->tracking = new Tracker();
 
-	    // Initialize camera
-        // this->camera = new BaslerGigECamera();
-        // std::vector<std::string> cameraList = this->camera->listAvailableDevices();
-        // std::string name = cameraList[0];
-        // this->camera->initialize(name);
+        // Initialize camera
+        this->camera = new BaslerGigECamera();
+        std::vector<std::string> cameraList = this->camera->listAvailableDevices();
+        std::string name = cameraList[0];
+        this->camera->initialize(name);
 		this->isCameraInitialized = true;
 	}
 
@@ -242,8 +242,8 @@ void TrackerGUI::cameraPoseEstimationSlot()
 	cv::Mat sourceImg;
 	QString warning, warning1, warning2;
 	QString barData, qrData, barType, qrType;
-	// sourceImg = this->camera->getFrame();
-	sourceImg = cv::imread("../Images/01.jpg",cv::IMREAD_GRAYSCALE);
+	sourceImg = this->camera->getFrame();
+	// sourceImg = cv::imread("../Images/01.jpg",cv::IMREAD_GRAYSCALE);
 	sourceImg.convertTo(sourceImg, CV_8U);
 	Chessboard chessboard(9, 7, 20);
 	ChessboardDetector detector(chessboard, sourceImg);
@@ -368,7 +368,7 @@ void TrackerGUI::trackingModeSlot()
 	{
 		if (ui->trackingModePin->text().toStdString() == "WZL")
 		{
-			// delete this->camera;
+			delete this->camera;
 			this->isCameraInitialized = false;
 			QObject::connect(tracking, &Tracker::returnQImage, this, &TrackerGUI::showQImageSlot);
 			this->trackingFlag = true; 
