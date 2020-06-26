@@ -180,7 +180,7 @@ void TrackerGUI::_labelDisplayMat(QLabel *label, cv::Mat mat)
 	//ui->processPushButton->setEnabled(true);
 	label->resize(label->pixmap()->size());
 	label->show();
-	}
+}
 
 void TrackerGUI::cameraPoseEstimationSlot()
 {
