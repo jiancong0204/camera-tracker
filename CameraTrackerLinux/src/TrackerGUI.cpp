@@ -56,14 +56,26 @@ void TrackerGUI::initializationSlot()
     rs.initializeElevation();
     rs.initializeAzimuth();
 
+    // Clear text
+	ui->streaming->clear();
+	ui->rotation_x->clear();
+	ui->rotation_y->clear();
+	ui->rotation_z->clear();
+	ui->translation_x->clear();
+	ui->translation_y->clear();
+	ui->translation_z->clear();
+	ui->qrcode->clear();
+	ui->barcode->clear();
+
     if (this->isCameraInitialized == false)
 	{
-        // Initialize camera
         this->tracking = new Tracker();
-        this->camera = new BaslerGigECamera();
-        std::vector<std::string> cameraList = this->camera->listAvailableDevices();
-        std::string name = cameraList[0];
-        this->camera->initialize(name);
+
+	    // Initialize camera
+        // this->camera = new BaslerGigECamera();
+        // std::vector<std::string> cameraList = this->camera->listAvailableDevices();
+        // std::string name = cameraList[0];
+        // this->camera->initialize(name);
 		this->isCameraInitialized = true;
 	}
 
@@ -98,6 +110,7 @@ bool TrackerGUI::_isNumber(std::string str)
 
 void TrackerGUI::movePositiveElevationSlot()
 {
+	ui->streaming->clear();
     QString warning;
     double dispValue;
     QString displacement = ui->displacement_x->text();
@@ -117,6 +130,7 @@ void TrackerGUI::movePositiveElevationSlot()
 
 void TrackerGUI::moveNegativeElevationSlot()
 {
+	ui->streaming->clear();
     QString warning;
     double dispValue;
     QString displacement = ui->displacement_x->text();
@@ -136,6 +150,7 @@ void TrackerGUI::moveNegativeElevationSlot()
 
 void TrackerGUI::movePositiveAzimuthSlot()
 {
+	ui->streaming->clear();
     QString warning;
     double dispValue;
     QString displacement = ui->displacement_y->text();
@@ -155,6 +170,7 @@ void TrackerGUI::movePositiveAzimuthSlot()
 
 void TrackerGUI::moveNegativeAzimuthSlot()
 {
+	ui->streaming->clear();
     QString warning;
     double dispValue;
     QString displacement = ui->displacement_y->text();
@@ -174,6 +190,7 @@ void TrackerGUI::moveNegativeAzimuthSlot()
 
 void TrackerGUI::gotoElevationSlot()
 {
+	ui->streaming->clear();
     QString warning;
     double dispValue;
     QString displacement = ui->displacement_x->text();
@@ -193,6 +210,7 @@ void TrackerGUI::gotoElevationSlot()
 
 void TrackerGUI::gotoAzimuthSlot()
 {
+	ui->streaming->clear();
     QString warning;
     double dispValue;
     QString displacement = ui->displacement_y->text();
@@ -212,11 +230,20 @@ void TrackerGUI::gotoAzimuthSlot()
 
 void TrackerGUI::cameraPoseEstimationSlot()
 {
+	ui->streaming->clear();
+	ui->rotation_x->clear();
+    ui->rotation_y->clear();
+    ui->rotation_z->clear();
+    ui->translation_x->clear();
+    ui->translation_y->clear();
+    ui->translation_z->clear();
+    ui->qrcode->clear();
+    ui->barcode->clear();
 	cv::Mat sourceImg;
 	QString warning, warning1, warning2;
 	QString barData, qrData, barType, qrType;
-	sourceImg = this->camera->getFrame();
-	// sourceImg = cv::imread("../Images/01.jpg",cv::IMREAD_GRAYSCALE);
+	// sourceImg = this->camera->getFrame();
+	sourceImg = cv::imread("../Images/01.jpg",cv::IMREAD_GRAYSCALE);
 	sourceImg.convertTo(sourceImg, CV_8U);
 	Chessboard chessboard(9, 7, 20);
 	ChessboardDetector detector(chessboard, sourceImg);
@@ -288,8 +315,14 @@ void TrackerGUI::cameraPoseEstimationSlot()
 		cv::Mat resizedImg = detector.preprocess(sourceImg);
 		_labelDisplayMat(ui->streaming, resizedImg);
 		warning = "Chessboard detection failed!";
-		ui->barcode->setText("");
-		ui->qrcode->setText("");
+		ui->rotation_x->clear();
+        ui->rotation_y->clear();
+        ui->rotation_z->clear();
+        ui->translation_x->clear();
+        ui->translation_y->clear();
+        ui->translation_z->clear();
+        ui->qrcode->clear();
+        ui->barcode->clear();
 		// const char* tmpChar = warning.toStdString().c_str();
 		// publisher.publishPayload(tmpChar, "Rotation");
 		// publisher.publishPayload(tmpChar, "Translation");
@@ -320,14 +353,24 @@ void TrackerGUI::_labelDisplayMat(QLabel *label, cv::Mat mat)
 
 void TrackerGUI::trackingModeSlot()
 {
+	// Clear text
+	ui->streaming->clear();
+	ui->rotation_x->clear();
+	ui->rotation_y->clear();
+	ui->rotation_z->clear();
+	ui->translation_x->clear();
+	ui->translation_y->clear();
+	ui->translation_z->clear();
+	ui->qrcode->clear();
+	ui->barcode->clear();
+
     if (this->trackingFlag == false)
 	{
 		if (ui->trackingModePin->text().toStdString() == "WZL")
 		{
-			// this->camera->detach();
-			delete this->camera;
+			// delete this->camera;
 			this->isCameraInitialized = false;
-			QObject::connect(tracking, SIGNAL(returnQString(QString)), this, SLOT(getQString(QString)));
+			QObject::connect(tracking, &Tracker::returnQImage, this, &TrackerGUI::showQImageSlot);
 			this->trackingFlag = true; 
 			ui->trackingModePin->setText("WZL");
 			ui->trackingMode->setText("Stop tracking");
@@ -368,4 +411,11 @@ void TrackerGUI::trackingModeSlot()
 		ui->trackingModePin->setEnabled(false);
 		ui->trackingMode->setEnabled(false);
 	}
+}
+
+void TrackerGUI::showQImageSlot(QImage qImg)
+{
+    QImage image = qImg;
+    image.scaled(ui->streaming->width(), ui->streaming->height());
+    ui->streaming->setPixmap(QPixmap::fromImage(image));
 }
