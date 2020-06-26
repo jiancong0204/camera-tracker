@@ -1,5 +1,5 @@
 /** @file GenericCamera.cpp
-* @brief Boday of the camera base class.
+* @brief Body of the camera base class.
 *
 * File implementing the abstract base class functions for any kind of camera devices
 * @author Benjamin Montavon
