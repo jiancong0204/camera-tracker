@@ -15,7 +15,7 @@
 #include "PoseEstimation.h"
 
 /**
- * @brief 
+ * @brief Tracker class
  * 
  */
 class Tracker : public QThread
