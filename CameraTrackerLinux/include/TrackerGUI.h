@@ -28,13 +28,12 @@ public:
     ~TrackerGUI();
 
 private:
-    Ui::TrackerGUI                           *ui;                             /**< Object for UI */
-    RotationStage                            rs;                              /**< Object for rotation stage control*/
-    BaslerGigECamera                         camera;                          /**< Object for camera */
-    bool                                     isCameraInitialized = false;     /**< Flag that confirms the camera is initialized */
-	// Thread for tracking.
-	Tracker*                                 tracking = new Tracker();        /**< Object for tracking thread */
-	bool                                     trackingFlag = false;            /**< Whether the tracking mode is executed */
+    Ui::TrackerGUI       *ui;                             /**< Object for UI */
+    RotationStage        rs;                              /**< Object for rotation stage control*/
+    BaslerGigECamera*    camera;                          /**< Object for camera */
+    bool                 isCameraInitialized = false;     /**< Flag that confirms the camera is initialized */
+    Tracker*             tracking;                        /**< Object for tracking thread */
+	bool                 trackingFlag = false;            /**< Whether the tracking mode is executed */
 /**
  * @brief Function that comfirms the input is a valid number
  * 
