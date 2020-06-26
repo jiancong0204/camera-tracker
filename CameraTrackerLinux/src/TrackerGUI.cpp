@@ -359,14 +359,13 @@ void TrackerGUI::trackingModeSlot()
 		this->tracking->quitThread();
 		this->tracking->quit();
 		this->tracking->wait();
-		QString warning = "Tracking mode stopped!";
+		delete this->tracking;
+		QString warning = "Tracking mode stopped!\nInitialization is required!";
 		this->trackingFlag = false;
 		ui->trackingMode->setText("Tracking");
 		ui->warning->setText(warning);
 		ui->initialization->setEnabled(true);
 		ui->trackingModePin->setEnabled(false);
 		ui->trackingMode->setEnabled(false);
-		// this->tracking->terminate();
-		delete this->tracking;
 	}
 }
