@@ -106,6 +106,12 @@ private slots:
      * 
      */
 	void trackingModeSlot();
+
+    /**
+     * @brief Show QImage signal
+     * 
+     */
+    void showQImageSlot(QImage qImg);
 };
 
 #endif // TRACKERGUI_H
