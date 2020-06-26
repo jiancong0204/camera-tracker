@@ -20,8 +20,10 @@ void Tracker::run()
         }
         else 
         {
-            cv::Mat img = camera.getFrame();
-            _computeRotationAngles(img);
+            this->img = camera.getFrame();
+            // this->img = cv::imread("../Images/01.jpg",cv::IMREAD_GRAYSCALE);
+            _emitImage();
+            _computeRotationAngles(this->img);
             this->rs.relativeMoveElevation(this->elevationAngle);
             this->rs.relativeMoveAzimuth(this->azimuthAngle);
         }
@@ -40,11 +42,11 @@ float Tracker::getElevation()
     return this->elevationAngle;
 }
 
-void Tracker::_computeRotationAngles(cv::Mat img)
+void Tracker::_computeRotationAngles(cv::Mat image)
 {
-    img.convertTo(img, CV_8U);
+    image.convertTo(image, CV_8U);
     Chessboard chessboard(9, 7, 20);
-	ChessboardDetector detector(chessboard, img);
+	ChessboardDetector detector(chessboard, image);
 	ChessboardDetectorResult detectionResullt = detector.getResult();
 
     if (detectionResullt.success)
@@ -53,6 +55,7 @@ void Tracker::_computeRotationAngles(cv::Mat img)
         PoseEstimation pose = PoseEstimation(chessboard.getGrid(), detectionResullt.scale, chessboard, detectionResullt.corners);
         cv::Mat raux = pose.getRvecs();
         cv::Mat taux = pose.getTvecs();
+        this->resizedImg = detector.preprocess(image);
         this->elevationAngle = atan(taux.at<double>(1, 0) / taux.at<double>(2, 0)) * (180 / atan(1) / 4) * -1;
 		this->azimuthAngle = atan(taux.at<double>(0, 0) / taux.at<double>(2, 0)) * (180 / atan(1) / 4);
     }
@@ -67,4 +70,21 @@ void Tracker::_computeRotationAngles(cv::Mat img)
 void Tracker::quitThread()
 {
     this->quitting = true;
+}
+
+void Tracker::_emitImage()
+{
+    QImage qImg;
+	cv::Mat rgb;
+	if (this->resizedImg.channels() == 3)//RGB Img
+	{
+		cv::cvtColor(this->resizedImg, rgb, cv::COLOR_BGR2RGB);
+		qImg = QImage((const uchar*)(rgb.data), rgb.cols, rgb.rows, rgb.cols * rgb.channels(), QImage::Format_RGB888);
+	}
+	else//Gray Img
+	{
+		qImg = QImage((const uchar*)(this->resizedImg.data), this->resizedImg.cols, this->resizedImg.rows, this->resizedImg.cols * this->resizedImg.channels(), QImage::Format_Indexed8);
+	}
+        
+    emit returnQImage(qImg);
 }
