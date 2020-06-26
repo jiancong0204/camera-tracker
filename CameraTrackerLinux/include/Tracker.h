@@ -7,7 +7,7 @@
 
 #pragma once
 #include <QThread>
-#include <QTimer>
+#include <QImage>
 
 #include "ChessboardDetector.h"
 #include "BaslerGigECamera.h"
@@ -66,15 +66,33 @@ public:
      */
     void quitThread();
 
+signals:
+
+    /**
+     * @brief Signal for transmitting the image
+     * 
+     */
+    void returnQImage(QImage);
+
 private:
+
     float              azimuthAngle;       //< Azimuth angle
     float              elevationAngle;     //< Elevation angle
     RotationStage      rs;                 //< RotationStage object
     bool               quitting;           //< Flag for quitting the thread
+    cv::Mat            img;                //< Image from Gige-camera
+    cv::Mat            resizedImg;         //< Resized image
     /**
      * @brief Compute rotation angles
      * 
      * @param img Current image
      */
     void _computeRotationAngles(cv::Mat img);
+
+    /**
+     * @brief Emit the image
+     * 
+     * @param img Image
+     */
+    void _emitImage();
 };
