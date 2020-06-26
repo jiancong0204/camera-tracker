@@ -54,11 +54,15 @@ void TrackerGUI::initializationSlot()
     rs.initializeElevation();
     rs.initializeAzimuth();
 
-    // Initialize camera
-    // BaslerGigECamera camera;
-    // std::vector<std::string> cameraList = camera.listAvailableDevices();
-	// std::string name = cameraList[0];
-	// camera.initialize(name);
+    if (this->isCameraInitialized == false)
+	{
+        // Initialize camera
+        std::vector<std::string> cameraList = this->camera.listAvailableDevices();
+	    std::string name = cameraList[0];
+	    this->camera.initialize(name);
+		this->isCameraInitialized = true;
+	}
+
 
     QString warning = "Initialized!";
 	ui->trackingMode->setEnabled(true);
@@ -72,7 +76,6 @@ void TrackerGUI::initializationSlot()
 	ui->trackingModePin->setEnabled(true);
 	ui->goto_x->setEnabled(true);
 	ui->goto_y->setEnabled(true);
-	ui->initialization->setEnabled(false);
     ui->warning->setText(warning);
 }
 
@@ -208,8 +211,8 @@ void TrackerGUI::cameraPoseEstimationSlot()
 	cv::Mat sourceImg;
 	QString warning, warning1, warning2;
 	QString barData, qrData, barType, qrType;
-	// sourceImg = camera.getFrame();
-	sourceImg = cv::imread("../Images/01.jpg",cv::IMREAD_GRAYSCALE);
+	sourceImg = this->camera.getFrame();
+	// sourceImg = cv::imread("../Images/01.jpg",cv::IMREAD_GRAYSCALE);
 	sourceImg.convertTo(sourceImg, CV_8U);
 	Chessboard chessboard(9, 7, 20);
 	ChessboardDetector detector(chessboard, sourceImg);
@@ -317,7 +320,7 @@ void TrackerGUI::trackingModeSlot()
 	{
 		if (ui->trackingModePin->text().toStdString() == "WZL")
 		{
-			camera.detach();
+			this->camera.detach();
 			QObject::connect(tracking, SIGNAL(returnQString(QString)), this, SLOT(getQString(QString)));
 			trackingFlag = true; 
 			ui->trackingModePin->setText("WZL");
