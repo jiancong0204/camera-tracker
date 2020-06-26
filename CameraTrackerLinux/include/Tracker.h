@@ -6,6 +6,9 @@
  */
 
 #pragma once
+#include <QThread>
+#include <QTimer>
+
 #include "ChessboardDetector.h"
 #include "BaslerGigECamera.h"
 #include "RotationStage.h"
@@ -15,14 +18,18 @@
  * @brief 
  * 
  */
-class Tracker
+class Tracker : public QThread
 {
+
+    Q_OBJECT
+
 public:
+
     /**
      * @brief Construct a new Tracker object
      * 
      */
-    Tracker() {};
+    Tracker(QObject* parent = 0) : QThread(parent) {};
 
     /**
      * @brief Destroy the Tracker object
@@ -31,10 +38,10 @@ public:
     ~Tracker() {};
 
     /**
-     * @brief Tracking functionality
+     * @brief Start tracking
      * 
      */
-    void tracking();
+    void run();
 
     /**
      * @brief Get azimuth angle
@@ -50,11 +57,17 @@ public:
      */
     float getElevation();
 
+    /**
+     * @brief Exit the thread
+     * 
+     */
+    void quitThread();
+
 private:
     float              azimuthAngle;       //< Azimuth angle
     float              elevationAngle;     //< Elevation angle
     RotationStage      rs;                 //< RotationStage object
-
+    bool               quitting;           //< Flag for quitting the thread
     /**
      * @brief Compute rotation angles
      * 

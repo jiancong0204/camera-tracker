@@ -1,6 +1,6 @@
 #include "Tracker.h"
 
-void Tracker::tracking()
+void Tracker::run()
 {
     // Initialize the rotation stage
     this->rs.setElevationPort();
@@ -16,12 +16,16 @@ void Tracker::tracking()
 
     while (true)
     {
-	    cv::Mat img = camera.getFrame();
+        if (quitting) {
+            break;
+        }
+        cv::Mat img = camera.getFrame();
         _computeRotationAngles(img);
         this->rs.relativeMoveElevation(this->elevationAngle);
         this->rs.relativeMoveAzimuth(this->azimuthAngle);
     }
     camera.detach();
+    this->exec();
 }
 
 float Tracker::getAzimuth()
@@ -45,8 +49,8 @@ void Tracker::_computeRotationAngles(cv::Mat img)
     {
         printf("Chessboard detection is successful!\n");
         PoseEstimation pose = PoseEstimation(chessboard.getGrid(), detectionResullt.scale, chessboard, detectionResullt.corners);
-	    cv::Mat raux = pose.getRvecs();
-	    cv::Mat taux = pose.getTvecs();
+        cv::Mat raux = pose.getRvecs();
+        cv::Mat taux = pose.getTvecs();
         this->elevationAngle = atan(taux.at<double>(1, 0) / taux.at<double>(2, 0)) * (180 / atan(1) / 4) * -1;
 		this->azimuthAngle = atan(taux.at<double>(0, 0) / taux.at<double>(2, 0)) * (180 / atan(1) / 4);
     }
@@ -56,4 +60,9 @@ void Tracker::_computeRotationAngles(cv::Mat img)
         this->elevationAngle = 0;
         this->azimuthAngle = 0;
     }
+}
+
+void Tracker::quitThread()
+{
+    this->quitting = true;
 }
