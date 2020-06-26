@@ -29,7 +29,10 @@ public:
      * @brief Construct a new Tracker object
      * 
      */
-    Tracker(QObject* parent = 0) : QThread(parent) {};
+    Tracker(QObject* parent = 0) : QThread(parent) 
+    {
+        this->quitting = false;
+    };
 
     /**
      * @brief Destroy the Tracker object
