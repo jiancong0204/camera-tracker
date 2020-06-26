@@ -239,82 +239,82 @@ void TrackerGUI::cameraPoseEstimationSlot()
     ui->translation_z->clear();
     ui->qrcode->clear();
     ui->barcode->clear();
-	cv::Mat sourceImg;
-	QString warning, warning1, warning2;
-	QString barData, qrData, barType, qrType;
-	sourceImg = this->camera->getFrame();
-	// sourceImg = cv::imread("../Images/01.jpg",cv::IMREAD_GRAYSCALE);
-	sourceImg.convertTo(sourceImg, CV_8U);
-	Chessboard chessboard(9, 7, 20);
-	ChessboardDetector detector(chessboard, sourceImg);
-	ChessboardDetectorResult detectionResullt = detector.getResult();
-	if (detectionResullt.success)
-	{
-		PoseEstimation pose = PoseEstimation(chessboard.getGrid(), detectionResullt.scale, chessboard, detectionResullt.corners);
-		cv::Mat raux = pose.getRvecs();
-		cv::Mat taux = pose.getTvecs();
-		QString rVector[3];
-		QString tVector[3];
-		char const* rPayload;
-		char const* tPayload;
-		std::string rString[3];
-		std::string tString[3];
-		for (int i = 0; i < 3; i++)
-		{
-			rVector[i] = QString::number(raux.at<double>(i, 0));
-			rString[i] = std::to_string(raux.at<double>(i, 0));
-			tVector[i] = QString::number(taux.at<double>(i, 0));
-			tString[i] = std::to_string(taux.at<double>(i, 0));
-		}
-		rString[0] = rString[0] + " " + rString[1] + " " + rString[2];
-		rPayload = rString[0].c_str();
-		// publisher.publishPayload(rPayload, "Rotation");
-		tString[0] = tString[0] + " " + tString[1] + " " + tString[2];
-		tPayload = tString[0].c_str();
-		// publisher.publishPayload(tPayload, "Translation");
-		ui->rotation_x->setText(rVector[0]);
-		ui->rotation_y->setText(rVector[1]);
-		ui->rotation_z->setText(rVector[2]);
-		ui->translation_x->setText(tVector[0]);
-		ui->translation_y->setText(tVector[1]);
-		ui->translation_z->setText(tVector[2]);
-		BarcodeScanner barcode = BarcodeScanner(detectionResullt);
-		QrcodeScanner qrcode = QrcodeScanner(detectionResullt);
-		CodeInfo qr = qrcode.getQrCode();
-		CodeInfo bar = barcode.getBarCode();
-		if (qr.codeType == "null")
-		{
-			warning1 = QString::fromStdString(qr.codeData);
-			ui->qrcode->setText("");
-		}
-		else
-		{
-			warning1 = "";
-			qrData = QString::fromStdString(qr.codeData);
-			qrType = QString::fromStdString(qr.codeType);
-			ui->qrcode->setText("Type: " + qrType + "; " + "Data: " + qrData + ";");
-		}
-		if (bar.codeType == "null")
-		{
-			warning2 = QString::fromStdString(bar.codeData);
-			ui->barcode->setText("");
-		}
-		else 
-		{
-			warning2 = "";
-			barData = QString::fromStdString(bar.codeData);
-			barType = QString::fromStdString(bar.codeType);
-			ui->barcode->setText("Type: " + barType + "; " + "Data: " + barData + ";");
-		}
-		warning = warning1 + "\n" + warning2;
-		_labelDisplayMat(ui->streaming, detectionResullt.image);
+    cv::Mat sourceImg;
+    QString warning, warning1, warning2;
+    QString barData, qrData, barType, qrType;
+    sourceImg = this->camera->getFrame();
+    // sourceImg = cv::imread("../Images/01.jpg",cv::IMREAD_GRAYSCALE);
+    sourceImg.convertTo(sourceImg, CV_8U);
+    Chessboard chessboard(9, 7, 20);
+    ChessboardDetector detector(chessboard, sourceImg);
+    ChessboardDetectorResult detectionResullt = detector.getResult();
+    if (detectionResullt.success)
+    {
+        PoseEstimation pose = PoseEstimation(chessboard.getGrid(), detectionResullt.scale, chessboard, detectionResullt.corners);
+        cv::Mat raux = pose.getRvecs();
+        cv::Mat taux = pose.getTvecs();
+        QString rVector[3];
+        QString tVector[3];
+        char const* rPayload;
+        char const* tPayload;
+        std::string rString[3];
+        std::string tString[3];
+        for (int i = 0; i < 3; i++)
+        {
+            rVector[i] = QString::number(raux.at<double>(i, 0));
+            rString[i] = std::to_string(raux.at<double>(i, 0));
+            tVector[i] = QString::number(taux.at<double>(i, 0));
+            tString[i] = std::to_string(taux.at<double>(i, 0));
+        }
+        rString[0] = rString[0] + " " + rString[1] + " " + rString[2];
+        rPayload = rString[0].c_str();
+        // publisher.publishPayload(rPayload, "Rotation");
+        tString[0] = tString[0] + " " + tString[1] + " " + tString[2];
+        tPayload = tString[0].c_str();
+        // publisher.publishPayload(tPayload, "Translation");
+        ui->rotation_x->setText(rVector[0]);
+        ui->rotation_y->setText(rVector[1]);
+        ui->rotation_z->setText(rVector[2]);
+        ui->translation_x->setText(tVector[0]);
+        ui->translation_y->setText(tVector[1]);
+        ui->translation_z->setText(tVector[2]);
+        BarcodeScanner barcode = BarcodeScanner(detectionResullt);
+        QrcodeScanner qrcode = QrcodeScanner(detectionResullt);
+        CodeInfo qr = qrcode.getQrCode();
+        CodeInfo bar = barcode.getBarCode();
+        if (qr.codeType == "null")
+        {
+            warning1 = QString::fromStdString(qr.codeData);
+            ui->qrcode->setText("");
+        }
+        else
+        {
+            warning1 = "";
+            qrData = QString::fromStdString(qr.codeData);
+            qrType = QString::fromStdString(qr.codeType);
+            ui->qrcode->setText("Type: " + qrType + "; " + "Data: " + qrData + ";");
+        }
+        if (bar.codeType == "null")
+        {
+            warning2 = QString::fromStdString(bar.codeData);
+            ui->barcode->setText("");
+        }
+        else 
+        {
+            warning2 = "";
+            barData = QString::fromStdString(bar.codeData);
+            barType = QString::fromStdString(bar.codeType);
+            ui->barcode->setText("Type: " + barType + "; " + "Data: " + barData + ";");
+        }
+        warning = warning1 + "\n" + warning2;
+        _labelDisplayMat(ui->streaming, detectionResullt.image);
 
-	}
-	else
-	{
-		cv::Mat resizedImg = detector.preprocess(sourceImg);
-		_labelDisplayMat(ui->streaming, resizedImg);
-		warning = "Chessboard detection failed!";
+    }
+    else
+    {
+        cv::Mat resizedImg = detector.preprocess(sourceImg);
+        _labelDisplayMat(ui->streaming, resizedImg);
+        warning = "Chessboard detection failed!";
 		ui->rotation_x->clear();
         ui->rotation_y->clear();
         ui->rotation_z->clear();
@@ -323,11 +323,11 @@ void TrackerGUI::cameraPoseEstimationSlot()
         ui->translation_z->clear();
         ui->qrcode->clear();
         ui->barcode->clear();
-		// const char* tmpChar = warning.toStdString().c_str();
-		// publisher.publishPayload(tmpChar, "Rotation");
-		// publisher.publishPayload(tmpChar, "Translation");
-	}
-	ui->warning->setText(warning);
+        // const char* tmpChar = warning.toStdString().c_str();
+        // publisher.publishPayload(tmpChar, "Rotation");
+        // publisher.publishPayload(tmpChar, "Translation");
+    }
+    ui->warning->setText(warning);
 }
 
 void TrackerGUI::_labelDisplayMat(QLabel *label, cv::Mat mat)
