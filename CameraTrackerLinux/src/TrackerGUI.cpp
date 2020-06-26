@@ -6,6 +6,7 @@ TrackerGUI::TrackerGUI(QWidget *parent) :
     ui(new Ui::TrackerGUI)
 {
     ui->setupUi(this);
+    ui->streaming->setText("");
 
     // Connect slots and corresponding buttons
     QObject::connect(ui->initialization, SIGNAL(clicked()), this, SLOT(initializationSlot()));
