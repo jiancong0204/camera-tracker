@@ -1,8 +1,18 @@
 #ifndef TRACKERGUI_H
 #define TRACKERGUI_H
 
+#pragma once
 #include <QMainWindow>
 #include <QApplication>
+#include <QLabel>
+
+#include <sstream>
+#include "ChessboardDetector.h"
+#include "BaslerGigECamera.h"
+#include "Scanner.h"
+#include "RotationStage.h"
+#include "PoseEstimation.h"
+
 
 namespace Ui {
 class TrackerGUI;
@@ -17,7 +27,26 @@ public:
     ~TrackerGUI();
 
 private:
-    Ui::TrackerGUI *ui;
+    Ui::TrackerGUI       *ui;        /**< Object for UI */
+    RotationStage        rs;         /**< Object for rotation stage control*/
+    BaslerGigECamera     camera;     /**< Object for camera */
+
+/**
+ * @brief Function that comfirms the input is a valid number
+ * 
+ * @param str Input string
+ * @return true The input is a valid number
+ * @return false The input is not a valid number
+ */
+bool _isNumber(std::string str);
+
+/**
+ * @brief Display image of cv::Mat in a label
+ * 
+ * @param label Label for display
+ * @param mat Image of cv::Mat
+ */
+void _labelDisplayMat(QLabel* label, cv::Mat mat);
 
 private slots:
 
@@ -28,40 +57,40 @@ private slots:
     void initializationSlot();
 
     /**
-     * @brief  Slot for moving in positive x
+     * @brief  Slot for changing elevation angle in positive direction
      * 
      */
-	void movePositiveXSlot();
+	void movePositiveElevationSlot();
 
     /**
-     * @brief Slot for moving in negative x
+     * @brief Slot for changing elevation angle in negative direction
      * 
      */
-	void moveNegativeXSlot();
+	void moveNegativeElevationSlot();
 
     /**
-     * @brief Slot for moving in positive y
+     * @brief Slot for changing azimuth angle in positive direction
      * 
      */
-	void movePositiveYSlot();
+	void movePositiveAzimuthSlot();
 
     /**
-     * @brief Slot for moving in negative y
+     * @brief Slot for changing azimuth angle in negative direction
      * 
      */
-	void moveNegativeYSlot();
+	void moveNegativeAzimuthSlot();
 
     /**
-     * @brief Slot for absolute moving in x-direction
+     * @brief Slot for absolute moving in elevation-direction
      * 
      */
-	void gotoXSlot();
+	void gotoElevationSlot();
 
     /**
-     * @brief Slot for absolute moving in y-direction
+     * @brief Slot for absolute moving in azimuth-direction
      * 
      */
-	void gotoYSlot();
+	void gotoAzimuthSlot();
 
     /**
      * @brief Slot for pose estimation
