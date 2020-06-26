@@ -59,11 +59,11 @@ void TrackerGUI::initializationSlot()
     if (this->isCameraInitialized == false)
 	{
         // Initialize camera
-	    this->tracking = new Tracker();
+        this->tracking = new Tracker();
         this->camera = new BaslerGigECamera();
         std::vector<std::string> cameraList = this->camera->listAvailableDevices();
-	    std::string name = cameraList[0];
-	    this->camera->initialize(name);
+        std::string name = cameraList[0];
+        this->camera->initialize(name);
 		this->isCameraInitialized = true;
 	}
 
