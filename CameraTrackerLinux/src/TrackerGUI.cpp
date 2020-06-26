@@ -20,32 +20,32 @@ TrackerGUI::TrackerGUI(QWidget *parent) :
     QObject::connect(ui->trackingMode, SIGNAL(clicked()), this, SLOT(trackingModeSlot()));
 
     // Warning for initialization
-	ui->streaming->adjustSize();
-	ui->warning->adjustSize();
-	ui->warning->setWordWrap(true);
-	ui->warning->setAlignment(Qt::AlignTop);
-	ui->warning->setStyleSheet("color:red;");
-	ui->warning->setText("Initialization is required!");
-    
+    ui->streaming->adjustSize();
+    ui->warning->adjustSize();
+    ui->warning->setWordWrap(true);
+    ui->warning->setAlignment(Qt::AlignTop);
+    ui->warning->setStyleSheet("color:red;");
+    ui->warning->setText("Initialization is required!");
+
     // Disable buttons before initialization
-	ui->goto_x->setEnabled(false);
-	ui->goto_y->setEnabled(false);
-	ui->cameraPoseEstimate->setEnabled(false);
-	ui->displacement_x->setEnabled(false);
-	ui->displacement_y->setEnabled(false);
-	ui->trackingModePin->setEnabled(false);
-	ui->trackingMode->setEnabled(false);
-	ui->moveNegative_x->setEnabled(false);
-	ui->moveNegative_y->setEnabled(false);
-	ui->movePositive_x->setEnabled(false);
-	ui->movePositive_y->setEnabled(false);
+    ui->goto_x->setEnabled(false);
+    ui->goto_y->setEnabled(false);
+    ui->cameraPoseEstimate->setEnabled(false);
+    ui->displacement_x->setEnabled(false);
+    ui->displacement_y->setEnabled(false);
+    ui->trackingModePin->setEnabled(false);
+    ui->trackingMode->setEnabled(false);
+    ui->moveNegative_x->setEnabled(false);
+    ui->moveNegative_y->setEnabled(false);
+    ui->movePositive_x->setEnabled(false);
+    ui->movePositive_y->setEnabled(false);
 }
 
 TrackerGUI::~TrackerGUI()
 {
     delete ui;
     delete tracking;
-	delete camera;
+    delete camera;
 }
 
 void TrackerGUI::initializationSlot()
@@ -57,18 +57,18 @@ void TrackerGUI::initializationSlot()
     rs.initializeAzimuth();
 
     // Clear text
-	ui->streaming->clear();
-	ui->rotation_x->clear();
-	ui->rotation_y->clear();
-	ui->rotation_z->clear();
-	ui->translation_x->clear();
-	ui->translation_y->clear();
-	ui->translation_z->clear();
-	ui->qrcode->clear();
-	ui->barcode->clear();
+    ui->streaming->clear();
+    ui->rotation_x->clear();
+    ui->rotation_y->clear();
+    ui->rotation_z->clear();
+    ui->translation_x->clear();
+    ui->translation_y->clear();
+    ui->translation_z->clear();
+    ui->qrcode->clear();
+    ui->barcode->clear();
 
     if (this->isCameraInitialized == false)
-	{
+    {
         this->tracking = new Tracker();
 
         // Initialize camera
@@ -76,8 +76,8 @@ void TrackerGUI::initializationSlot()
         std::vector<std::string> cameraList = this->camera->listAvailableDevices();
         std::string name = cameraList[0];
         this->camera->initialize(name);
-		this->isCameraInitialized = true;
-	}
+        this->isCameraInitialized = true;
+    }
 
 
     QString warning = "Initialized!";
