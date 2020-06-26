@@ -333,84 +333,84 @@ void TrackerGUI::cameraPoseEstimationSlot()
 void TrackerGUI::_labelDisplayMat(QLabel *label, cv::Mat mat)
 {
     QImage Img;
-	cv::Mat Rgb;
-	if (mat.channels() == 3)//RGB Img
-	{
-		cv::cvtColor(mat, Rgb, cv::COLOR_BGR2RGB);
-		Img = QImage((const uchar*)(Rgb.data), Rgb.cols, Rgb.rows, Rgb.cols * Rgb.channels(), QImage::Format_RGB888);
-	}
-	else//Gray Img
-	{
-		Img = QImage((const uchar*)(mat.data), mat.cols, mat.rows, mat.cols * mat.channels(), QImage::Format_Indexed8);
-	}
-	
-	label->clear();
-	label->setPixmap(QPixmap::fromImage(Img));
-	//ui->processPushButton->setEnabled(true);
-	label->resize(label->pixmap()->size());
-	label->show();
+    cv::Mat Rgb;
+    if (mat.channels() == 3)//RGB Img
+    {
+        cv::cvtColor(mat, Rgb, cv::COLOR_BGR2RGB);
+        Img = QImage((const uchar*)(Rgb.data), Rgb.cols, Rgb.rows, Rgb.cols * Rgb.channels(), QImage::Format_RGB888);
+    }
+    else//Gray Img
+    {
+        Img = QImage((const uchar*)(mat.data), mat.cols, mat.rows, mat.cols * mat.channels(), QImage::Format_Indexed8);
+    }
+
+    label->clear();
+    label->setPixmap(QPixmap::fromImage(Img));
+    //ui->processPushButton->setEnabled(true);
+    label->resize(label->pixmap()->size());
+    label->show();
 }
 
 void TrackerGUI::trackingModeSlot()
 {
-	// Clear text
-	ui->streaming->clear();
-	ui->rotation_x->clear();
-	ui->rotation_y->clear();
-	ui->rotation_z->clear();
-	ui->translation_x->clear();
-	ui->translation_y->clear();
-	ui->translation_z->clear();
-	ui->qrcode->clear();
-	ui->barcode->clear();
+    // Clear text
+    ui->streaming->clear();
+    ui->rotation_x->clear();
+    ui->rotation_y->clear();
+    ui->rotation_z->clear();
+    ui->translation_x->clear();
+    ui->translation_y->clear();
+    ui->translation_z->clear();
+    ui->qrcode->clear();
+    ui->barcode->clear();
 
     if (this->trackingFlag == false)
-	{
-		if (ui->trackingModePin->text().toStdString() == "WZL")
-		{
-			delete this->camera;
-			this->isCameraInitialized = false;
-			QObject::connect(tracking, &Tracker::returnQImage, this, &TrackerGUI::showQImageSlot);
-			this->trackingFlag = true; 
-			ui->trackingModePin->setText("WZL");
-			ui->trackingMode->setText("Stop tracking");
-			QString warning = "Tracking...";
-			ui->warning->setText(warning);
-			ui->initialization->setEnabled(false);
-			ui->cameraPoseEstimate->setEnabled(false);
-			ui->moveNegative_x->setEnabled(false);
-			ui->moveNegative_y->setEnabled(false);
-			ui->movePositive_x->setEnabled(false);
-			ui->movePositive_y->setEnabled(false);
-			ui->displacement_x->setEnabled(false);
-			ui->displacement_y->setEnabled(false);
-			ui->trackingModePin->setEnabled(false);
-			ui->goto_x->setEnabled(false);
-			ui->goto_y->setEnabled(false);
-			
+    {
+        if (ui->trackingModePin->text().toStdString() == "WZL")
+        {
+            delete this->camera;
+            this->isCameraInitialized = false;
+            QObject::connect(tracking, &Tracker::returnQImage, this, &TrackerGUI::showQImageSlot);
+            this->trackingFlag = true; 
+            ui->trackingModePin->setText("WZL");
+            ui->trackingMode->setText("Stop tracking");
+            QString warning = "Tracking...";
+            ui->warning->setText(warning);
+            ui->initialization->setEnabled(false);
+            ui->cameraPoseEstimate->setEnabled(false);
+            ui->moveNegative_x->setEnabled(false);
+            ui->moveNegative_y->setEnabled(false);
+            ui->movePositive_x->setEnabled(false);
+            ui->movePositive_y->setEnabled(false);
+            ui->displacement_x->setEnabled(false);
+            ui->displacement_y->setEnabled(false);
+            ui->trackingModePin->setEnabled(false);
+            ui->goto_x->setEnabled(false);
+            ui->goto_y->setEnabled(false);
+
             this->tracking->start();
-		}
-		else
-		{
-			QString warning = "Incorrect PIN!";
-			ui->trackingModePin->setText("WZL");
-			ui->warning->setText(warning);
-		}
-	}
-	else
-	{
-		this->tracking->quitThread();
-		this->tracking->quit();
-		this->tracking->wait();
-		delete this->tracking;
-		QString warning = "Tracking mode stopped!\nInitialization is required!";
-		this->trackingFlag = false;
-		ui->trackingMode->setText("Tracking");
-		ui->warning->setText(warning);
-		ui->initialization->setEnabled(true);
-		ui->trackingModePin->setEnabled(false);
-		ui->trackingMode->setEnabled(false);
-	}
+        }
+        else
+        {
+            QString warning = "Incorrect PIN!";
+            ui->trackingModePin->setText("WZL");
+            ui->warning->setText(warning);
+        }
+    }
+    else
+    {
+        this->tracking->quitThread();
+        this->tracking->quit();
+        this->tracking->wait();
+        delete this->tracking;
+        QString warning = "Tracking mode stopped!\nInitialization is required!";
+        this->trackingFlag = false;
+        ui->trackingMode->setText("Tracking");
+        ui->warning->setText(warning);
+        ui->initialization->setEnabled(true);
+        ui->trackingModePin->setEnabled(false);
+        ui->trackingMode->setEnabled(false);
+    }
 }
 
 void TrackerGUI::showQImageSlot(QImage qImg)
