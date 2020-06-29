@@ -22,8 +22,8 @@ void Tracker::run()
         {
             this->img = camera.getFrame();
             // this->img = cv::imread("../Images/01.jpg",cv::IMREAD_GRAYSCALE);
-            _emitImage();
             _computeRotationAngles(this->img);
+            _emitImage();
             this->rs.relativeMoveElevation(this->elevationAngle);
             this->rs.relativeMoveAzimuth(this->azimuthAngle);
         }
@@ -47,6 +47,7 @@ void Tracker::_computeRotationAngles(cv::Mat image)
     Chessboard chessboard(9, 7, 20);
 	ChessboardDetector detector(chessboard, image);
 	ChessboardDetectorResult detectionResullt = detector.getResult();
+    this->resizedImg = detector.preprocess(image);
 
     if (detectionResullt.success)
     {
@@ -54,7 +55,6 @@ void Tracker::_computeRotationAngles(cv::Mat image)
         PoseEstimation pose = PoseEstimation(chessboard.getGrid(), detectionResullt.scale, chessboard, detectionResullt.corners);
         cv::Mat raux = pose.getRvecs();
         cv::Mat taux = pose.getTvecs();
-        this->resizedImg = detector.preprocess(image);
         this->elevationAngle = atan(taux.at<double>(1, 0) / taux.at<double>(2, 0)) * (180 / atan(1) / 4) * -1;
 		this->azimuthAngle = atan(taux.at<double>(0, 0) / taux.at<double>(2, 0)) * (180 / atan(1) / 4);
     }
