@@ -1,3 +1,10 @@
+/**
+ * @file TrackerGUI.h
+ * @author Jiancong Zheng
+ * @brief This file contains declarations of the implementation for GUI
+ * @date 2020-06-25
+ */
+
 #ifndef TRACKERGUI_H
 #define TRACKERGUI_H
 
