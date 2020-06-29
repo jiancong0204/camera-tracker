@@ -51,6 +51,10 @@ link_directories(
     ${ZBAR_LINK_DIRS}
 )
 
+#PAHO-MQTT
+
+find_package(OpenSSL REQUIRED)
+
 # Include directories
 include_directories( 
     include
