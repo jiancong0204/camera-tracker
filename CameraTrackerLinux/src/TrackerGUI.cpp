@@ -402,9 +402,9 @@ void TrackerGUI::trackingModeSlot()
         this->tracking->quitThread();
         this->tracking->quit();
         this->tracking->wait();
-		std::cout << "Tracking thread is terminated!" << std::endl;
+        std::cout << "Tracking thread is terminated!" << std::endl;
         delete this->tracking;
-		std::cout << "Tracking thread is deleted!" << std::endl;
+        std::cout << "Tracking thread is deleted!" << std::endl;
         QString warning = "Tracking mode stopped!\nInitialization is required!";
         this->trackingFlag = false;
         ui->trackingMode->setText("Tracking");
