@@ -906,6 +906,11 @@
               <height>15</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Nimbus Roman No9 L</family>
+             </font>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -952,6 +957,11 @@
               <width>16777215</width>
               <height>15</height>
              </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Nimbus Roman No9 L</family>
+             </font>
             </property>
             <property name="text">
              <string/>
