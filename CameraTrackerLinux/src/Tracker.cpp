@@ -16,7 +16,7 @@ void Tracker::run()
     while (true)
     {
         if (this->quitting) {
-            break;
+            return;
         }
         else 
         {
@@ -29,7 +29,6 @@ void Tracker::run()
         }
     }
     // camera.detach();
-    return;
 }
 
 float Tracker::getAzimuth()
