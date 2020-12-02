@@ -3,7 +3,5 @@
 *Debug/
 *packages/
 build/
-html/
-latex/
 .vscode/settings.json
 .vscoe/
