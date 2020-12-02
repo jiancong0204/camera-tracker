@@ -1,0 +1,21 @@
+digraph "D:/Projects/camera-tracker/include/BaslerGigECamera.h"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="D:/Projects/camera\l-tracker/include/BaslerGig\lECamera.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Header file for the Basler GigE Camera class."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="D:/Projects/camera\l-tracker/include/Tracker.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_tracker_8h.html",tooltip="This file contains declarations of the Tracker class."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="D:/Projects/camera\l-tracker/include/TrackerGUI.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_tracker_g_u_i_8h.html",tooltip="This file contains declarations of the implementation for GUI."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="D:/Projects/camera\l-tracker/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip=" "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="D:/Projects/camera\l-tracker/src/TrackerGUI.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_tracker_g_u_i_8cpp.html",tooltip=" "];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="D:/Projects/camera\l-tracker/src/Tracker.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_tracker_8cpp.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="D:/Projects/camera\l-tracker/src/BaslerGigECamera.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_basler_gig_e_camera_8cpp.html",tooltip="Body file for the Basler GigE Camera class."];
+}

@@ -1,0 +1,8 @@
+digraph "nlohmann::json_sax&lt; BasicJsonType &gt;"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{nlohmann::json_sax\l\< BasicJsonType \>\n||+ null()\l+ boolean()\l+ number_integer()\l+ number_unsigned()\l+ number_float()\l+ string()\l+ start_object()\l+ key()\l+ end_object()\l+ start_array()\l+ end_array()\l+ parse_error()\l+ ~json_sax()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="SAX interface."];
+}

@@ -1,0 +1,8 @@
+digraph "nlohmann::detail::json_sax_dom_parser&lt; BasicJsonType &gt;"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{nlohmann::detail::json\l_sax_dom_parser\< BasicJsonType \>\n|- root\l- ref_stack\l- object_element\l- errored\l- allow_exceptions\l|+ json_sax_dom_parser()\l+ json_sax_dom_parser()\l+ json_sax_dom_parser()\l+ operator=()\l+ operator=()\l+ ~json_sax_dom_parser()\l+ null()\l+ boolean()\l+ number_integer()\l+ number_unsigned()\land 9 more...\l- handle_value()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="SAX implementation to create a JSON value from SAX events."];
+}

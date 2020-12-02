@@ -1,0 +1,16 @@
+digraph "D:/Projects/camera-tracker/include/Tracker.h"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="D:/Projects/camera\l-tracker/include/Tracker.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="This file contains declarations of the Tracker class."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="D:/Projects/camera\l-tracker/include/TrackerGUI.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_tracker_g_u_i_8h.html",tooltip="This file contains declarations of the implementation for GUI."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="D:/Projects/camera\l-tracker/main.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="D:/Projects/camera\l-tracker/src/TrackerGUI.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_tracker_g_u_i_8cpp.html",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="D:/Projects/camera\l-tracker/src/Tracker.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_tracker_8cpp.html",tooltip=" "];
+}

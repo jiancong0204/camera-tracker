@@ -1,0 +1,9 @@
+digraph "Graphical Class Hierarchy"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="nlohmann::detail::is\l_constructible_array\l_type_impl\< BasicJsonType,\l ConstructibleArrayType,\l enable_if_t\< not std::is\l_same\< ConstructibleArrayType,\l typename BasicJsonType::value\l_type \>::value and std::is_default\l_constructible\< ConstructibleArrayType\l \>::value and(std::is_move_assignable\l\< ConstructibleArrayType \>::value or std\l::is_copy_assignable\< ConstructibleArrayType\l \>::value) andis_detected\< value_type_t, ConstructibleArray\lType \>::value andis_detected\< iterator_t, ConstructibleArrayType\l \>::value andis_complete_type\< detected_t\< value_type_t, ConstructibleArrayType \> \>::value \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structnlohmann_1_1detail_1_1is__constructible__array__type__impl_3_01_basic_json_type_00_01_cons437c79c936c626a4ffcf289ee9218c26.html",tooltip=" "];
+}

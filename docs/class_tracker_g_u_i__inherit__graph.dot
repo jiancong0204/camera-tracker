@@ -1,0 +1,10 @@
+digraph "TrackerGUI"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{TrackerGUI\n|- ui\l- rs\l- camera\l- isCameraInitialized\l- tracking\l- trackingFlag\l|+ TrackerGUI()\l+ ~TrackerGUI()\l- _isNumber()\l- _labelDisplayMat()\l- initializationSlot()\l- movePositiveElevationSlot()\l- moveNegativeElevationSlot()\l- movePositiveAzimuthSlot()\l- moveNegativeAzimuthSlot()\l- gotoElevationSlot()\l- gotoAzimuthSlot()\l- cameraPoseEstimationSlot()\l- trackingModeSlot()\l- showQImageSlot()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node2 [label="{QMainWindow\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

@@ -1,0 +1,8 @@
+digraph "nlohmann::detail::binary_reader&lt; BasicJsonType, SAX &gt;"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{nlohmann::detail::binary\l_reader\< BasicJsonType, SAX \>\n|- ia\l- current\l- chars_read\l- is_little_endian\l- sax\l|+ binary_reader()\l+ binary_reader()\l+ binary_reader()\l+ operator=()\l+ operator=()\l+ ~binary_reader()\l+ sax_parse()\l+ little_endianess()\l- parse_bson_internal()\l- get_bson_cstr()\l- get_bson_string()\l- parse_bson_element\l_internal()\l- parse_bson_element_list()\l- parse_bson_array()\l- parse_cbor_internal()\l- get_cbor_string()\l- get_cbor_array()\l- get_cbor_object()\land 18 more...\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="deserialization of CBOR, MessagePack, and UBJSON values"];
+}

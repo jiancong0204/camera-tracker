@@ -1,0 +1,10 @@
+digraph "nlohmann::detail::lexer&lt; BasicJsonType &gt;"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{nlohmann::detail::lexer\l\< BasicJsonType \>\n|- ia\l- current\l- next_unget\l- token_string\l- token_buffer\l- error_message\l- value_integer\l- value_unsigned\l- value_float\l- decimal_point_char\l|+ lexer()\l+ lexer()\l+ lexer()\l+ operator=()\l+ operator=()\l+ ~lexer()\l+ get_number_integer()\l+ get_number_unsigned()\l+ get_number_float()\l+ get_string()\l+ get_position()\l+ get_token_string()\l+ get_error_message()\l+ skip_bom()\l+ scan()\l+ token_type_name()\l- get_codepoint()\l- next_byte_in_range()\l- scan_string()\l- scan_number()\l- scan_literal()\l- reset()\l- get()\l- unget()\l- add()\l- get_decimal_point()\l- strtof()\l- strtof()\l- strtof()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="lexical analysis"];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" -position" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{nlohmann::detail::position_t\n|+ chars_read_total\l+ chars_read_current_line\l+ lines_read\l|+ operator size_t()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structnlohmann_1_1detail_1_1position__t.html",tooltip="struct to capture the start position of the current token"];
+}

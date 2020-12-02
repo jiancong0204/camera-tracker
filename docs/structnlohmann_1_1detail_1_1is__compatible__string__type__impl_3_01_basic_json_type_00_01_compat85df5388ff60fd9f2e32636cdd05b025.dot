@@ -1,0 +1,8 @@
+digraph "nlohmann::detail::is_compatible_string_type_impl&lt; BasicJsonType, CompatibleStringType, enable_if_t&lt; is_detected_exact&lt; typename BasicJsonType::string_t::value_type, value_type_t, CompatibleStringType &gt;::value &gt; &gt;"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{nlohmann::detail::is\l_compatible_string_type\l_impl\< BasicJsonType, Compatible\lStringType, enable_if_t\< is\l_detected_exact\< typename BasicJsonType\l::string_t::value_type, value_type\l_t, CompatibleStringType \>::value \> \>\n|+ value\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

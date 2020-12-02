@@ -1,0 +1,8 @@
+digraph "nlohmann::json_pointer&lt; BasicJsonType &gt;"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{nlohmann::json_pointer\l\< BasicJsonType \>\n|- reference_tokens\l|+ json_pointer()\l+ to_string()\l+ operator std::string()\l+ operator/=()\l+ operator/=()\l+ operator/=()\l+ parent_pointer()\l+ pop_back()\l+ back()\l+ push_back()\l+ push_back()\l+ empty()\l- top()\l- get_and_create()\l- get_unchecked()\l- get_checked()\l- get_unchecked()\l- get_checked()\l- contains()\l- array_index()\l- split()\l- replace_substring()\l- escape()\l- unescape()\l- flatten()\l- unflatten()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="JSON Pointer."];
+}

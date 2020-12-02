@@ -1,0 +1,8 @@
+digraph "nlohmann::detail::iterator_traits&lt; T *, enable_if_t&lt; std::is_object&lt; T &gt;::value &gt; &gt;"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{nlohmann::detail::iterator\l_traits\< T *, enable_if\l_t\< std::is_object\< T \>::\lvalue \> \>\n||}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

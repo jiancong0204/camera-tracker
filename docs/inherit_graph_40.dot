@@ -1,0 +1,9 @@
+digraph "Graphical Class Hierarchy"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="nlohmann::detail::is\l_compatible_array_type\l_impl\< BasicJsonType, Compatible\lArrayType, enable_if_t\< is_detected\l\< value_type_t, CompatibleArrayType\l \>::value and is_detected\< iterator\l_t, CompatibleArrayType \>::value and\l not is_iterator_traits\< iterator_traits\l\< CompatibleArrayType \> \>::value \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structnlohmann_1_1detail_1_1is__compatible__array__type__impl_3_01_basic_json_type_00_01_compati04c4671a9fa75002365be1949a74f972.html",tooltip=" "];
+}

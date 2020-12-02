@@ -1,0 +1,8 @@
+digraph "nlohmann::detail::is_constructible_array_type_impl&lt; BasicJsonType, ConstructibleArrayType, enable_if_t&lt; not std::is_same&lt; ConstructibleArrayType, typename BasicJsonType::value_type &gt;::value and std::is_default_constructible&lt; ConstructibleArrayType &gt;::value and(std::is_move_assignable&lt; ConstructibleArrayType &gt;::value or std::is_copy_assignable&lt; ConstructibleArrayType &gt;::value) andis_detected&lt; value_type_t, ConstructibleArrayType &gt;::value andis_detected&lt; iterator_t, ConstructibleArrayType &gt;::value andis_complete_type&lt; detected_t&lt; value_type_t, ConstructibleArrayType &gt; &gt;::value &gt; &gt;"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{nlohmann::detail::is\l_constructible_array\l_type_impl\< BasicJsonType,\l ConstructibleArrayType,\l enable_if_t\< not std::is\l_same\< ConstructibleArrayType,\l typename BasicJsonType::value\l_type \>::value and std::is_default\l_constructible\< ConstructibleArrayType\l \>::value and(std::is_move_assignable\l\< ConstructibleArrayType \>::value or std\l::is_copy_assignable\< ConstructibleArrayType\l \>::value) andis_detected\< value_type_t, ConstructibleArray\lType \>::value andis_detected\< iterator_t, ConstructibleArrayType\l \>::value andis_complete_type\< detected_t\< value_type_t, ConstructibleArrayType \> \>::value \> \>\n|+ value\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

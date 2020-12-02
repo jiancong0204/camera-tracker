@@ -1,0 +1,8 @@
+digraph "nlohmann::detail::binary_writer&lt; BasicJsonType, CharType &gt;"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{nlohmann::detail::binary\l_writer\< BasicJsonType,\l CharType \>\n|- is_little_endian\l- oa\l|+ binary_writer()\l+ write_bson()\l+ write_cbor()\l+ write_msgpack()\l+ write_ubjson()\l+ to_char_type()\l+ to_char_type()\l+ to_char_type()\l+ to_char_type()\l- write_bson_entry_header()\l- write_bson_boolean()\l- write_bson_double()\l- write_bson_string()\l- write_bson_null()\l- write_bson_integer()\l- write_bson_unsigned()\l- write_bson_object_entry()\l- write_bson_array()\l- write_bson_element()\land 6 more...\l- calc_bson_entry_header_size()\l- calc_bson_string_size()\l- calc_bson_integer_size()\l- calc_bson_unsigned_size()\l- calc_bson_array_size()\l- calc_bson_element_size()\l- calc_bson_object_size()\l- get_cbor_float_prefix()\l- get_cbor_float_prefix()\l- get_msgpack_float_prefix()\l- get_msgpack_float_prefix()\l- get_ubjson_float_prefix()\l- get_ubjson_float_prefix()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="serialization to CBOR and MessagePack values"];
+}

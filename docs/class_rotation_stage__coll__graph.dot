@@ -1,0 +1,8 @@
+digraph "RotationStage"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{RotationStage\n|- serialPort\l- elevationPort\l- azimuthPort\l|+ RotationStage()\l+ ~RotationStage()\l+ setElevationPort()\l+ setAzimuthPort()\l+ initializeElevation()\l+ initializeAzimuth()\l+ relativeMoveElevation()\l+ relativeMoveAzimuth()\l+ absoluteMoveElevation()\l+ absoluteMoveAzimuth()\l- _openPort()\l- _write()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Control of the encoder."];
+}

@@ -1,0 +1,23 @@
+digraph "Graphical Class Hierarchy"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node129 [label="exception",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node129 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="GenericCamera::disconnected\l_exception",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_generic_camera_1_1disconnected__exception.html",tooltip="Exception if device is is disconnected Exception specificly for device disconnection,..."];
+  Node129 -> Node131 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node131 [label="nlohmann::detail::exception",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1detail_1_1exception.html",tooltip="general exception of the basic_json class"];
+  Node131 -> Node132 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node132 [label="nlohmann::detail::invalid\l_iterator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1detail_1_1invalid__iterator.html",tooltip="exception indicating errors with iterators"];
+  Node131 -> Node133 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node133 [label="nlohmann::detail::other\l_error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1detail_1_1other__error.html",tooltip="exception indicating other library errors"];
+  Node131 -> Node134 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node134 [label="nlohmann::detail::out\l_of_range",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1detail_1_1out__of__range.html",tooltip="exception indicating access out of the defined range"];
+  Node131 -> Node135 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node135 [label="nlohmann::detail::parse\l_error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1detail_1_1parse__error.html",tooltip="exception indicating a parse error"];
+  Node131 -> Node136 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node136 [label="nlohmann::detail::type\l_error",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1detail_1_1type__error.html",tooltip="exception indicating executing a member function with a wrong type"];
+}
